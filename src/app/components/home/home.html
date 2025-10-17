@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1Fly</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo-f1fly-minimal.png" alt="logo f1fly" class="img-logo">
+        </div>
+    
+    <h1 style="position: absolute; left: -9999px;">Bienvenido a F1Fly</h1>
+    <nav>
+        <a href="#carreras" class="nav-link">Carreras</a>
+        <a href="#" class="nav-link">Iniciar sesion</a>
+       <button class="btn-registrarse">Registrarse</button>
+    </nav>
+    </header>
+        <section class="hero">
+            <h2>Tu experiencia F1 completa, en un solo lugar</h2>
+            <p>Reserva carreras, viajes y hoteles juntos. Vivi la experiencia de la Formula 1 sin complicaciones</p>
+           <button class="btn-rojo" onclick="document.getElementById('#carreras').scrollIntoView({behavior:'smooth'})">Explorar Carreras</button>
+            <button class="btn-blanco">Crear Cuenta</button>
+        </section>
+    
+        <section class="servicios">
+            <h3>Todo lo que necesitas para tu fin de semana de F1</h3>
+            <div class="cards">
+                
+                <div class="card">🏎️Entradas a carrera
+                    <p>Asegura tu Asiento: Vive la emoción en primera fila.</p>
+                </div>
+                <div class="card">🏨Hoteles cercanos
+                    <p>Alojamiento Premium: Descanso a pocos minutos del circuito.</p>
+                </div>
+                <div class="card">✈️Vuelos directos a medida
+                    <p>Tu Viaje, Optimizado: Vuelos directos y flexibles para la ruta perfecta.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="carreras" id="carreras">
+    <h2 class="proxCarreras">Próximas Carreras</h2>
+    <div class="races-container">
+        <app-race-card 
+            *ngFor="let race of races" 
+            [race]="race">
+        </app-race-card>
+    </div>
+</section>
+        <footer>
+            <p>@2025 F1Fly - Todos los derechos reservados - Pagina a la venta para quien la quiera comprar</p>
+        </footer>
+
+</body>
+
+</html>

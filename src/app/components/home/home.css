@@ -1,0 +1,293 @@
+
+.img-logo{
+width: 600px;
+height: 100px;
+margin-right: 30px;
+object-fit: cover;
+margin: 0;
+filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.5));
+ filter: brightness(1.2) contrast(1.1); 
+ transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; 
+ clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+mask: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+
+mask-image: linear-gradient(
+        to bottom, 
+        black 80%,       /* La parte superior (80%) es visible (negro) */
+        transparent 100% /* La parte inferior se desvanece (transparente) */
+    );
+    
+    /* Máscara para difuminar los bordes laterales (opcional) */
+     mask-image: linear-gradient(
+        to right, 
+        transparent 0%, 
+        black 10%, 
+        black 90%, 
+        transparent 100%
+    ); 
+    
+}
+
+.logo-container {
+ 
+    flex-grow: 1; 
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    padding-right: 50px; 
+}
+.img-logo:hover {
+     transform: scale(1.05); 
+     filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.8)); 
+}
+
+body {
+    background-color: #060618; 
+    color: white; 
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden; 
+    transition: background-color 0.5s ease;
+}
+
+
+body::before {
+    content: ''; 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    /* Línea central más brillante para que se note */
+    background-color: rgba(255, 0, 0, 0.4); 
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.6); 
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Pseudoelemento para los brillos laterales más intensos y anchos */
+body::after {
+    content: '';
+    position: absolute;
+    
+    bottom: 0; 
+    left: 0;
+    right: 0;
+    
+    height: 200px; 
+    z-index: 0;
+
+    background: 
+        /* Brillo IZQUIERDO*/
+        radial-gradient(ellipse at 0% 100%, rgba(255, 0, 0, 0.9) 0%, transparent 35%),
+        /* Brillo DERECHO */
+        radial-gradient(ellipse at 100% 100%, rgba(255, 0, 0, 0.9) 0%, transparent 35%);
+    background-size: 50% 100%; 
+    background-repeat: no-repeat;
+    background-position: left bottom, right bottom;
+}
+
+
+header {
+   width: 100%; /* Mantener un ancho máximo */
+    display: flex;
+    justify-content: flex-start; /* El logo a la izquierda, la nav a la derecha */
+    align-items: center;
+    padding: 20px 0; /* Padding vertical, padding horizontal lo maneja el .main-header o width */
+    position: relative;
+    z-index: 10;
+    
+    
+}
+/*
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+*/
+nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: color 0.3s ease; /* Transición para el hover */
+}
+
+/* Animación de hover para enlaces */
+.nav-link:hover {
+    color: #e50000; /* Rojo F1 */
+}
+
+
+.btn-registrarse {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animación de hover para botón blanco */
+.btn-registrarse:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-3px); /* Pequeño movimiento hacia arriba */
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+
+.hero {
+    text-align: center;
+    padding: 80px 20px 60px;
+    width: 90%;
+    max-width: 800px;
+    z-index: 0; /* Para estar por encima del brillo */
+}
+
+.hero h2 {
+    color: #ff3333; /* Rojo para el título principal */
+    font-size: 32px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(255, 51, 51, 0.3);
+}
+
+.hero p {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+ 
+.btn-rojo {
+    background-color: #e50000;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin-right: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animación de hover para botón rojo */
+.btn-rojo:hover {
+    background-color: #ff3333; /* Rojo más claro al pasar el mouse */
+    transform: scale(1.05); /* Ligeramente más grande */
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.7); /* Brillo rojo */
+}
+
+
+.btn-blanco {
+    /* Reutilizamos el estilo del botón de registro para consistencia */
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animación de hover para botón blanco */
+.btn-blanco:hover {
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
+
+.servicios {
+    text-align: center;
+    padding: 50px 20px;
+    width: 90%;
+    max-width: 900px;
+}
+
+.servicios h3 {
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background-color: #1a1a33; /* Azul oscuro más sutil */
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 1px solid #333366; 
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    flex: 1; /* Ocupa el mismo espacio */
+    max-width: 250px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animación de hover para las tarjetas */
+.card:hover {
+    transform: translateY(-5px); /* Se levanta un poco */
+    border-color: #ff3333; /* Borde rojo al pasar el mouse */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 0, 0, 0.5); /* Sombra y brillo rojo */
+}
+
+/* --- Footer --- */
+footer {
+    padding: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    margin-top: auto;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+/* Ajuste del brillo "de cruz" en la esquina del footer */
+footer p::after {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    /* Un pequeño brillo radial para simular el destello */
+    background: radial-gradient(circle, #ff3333 0%, rgba(255, 0, 0, 0) 70%);
+    transform: rotate(45deg);
+}
+
+.proxCarreras {
+    color: white; /* Asumiendo un fondo oscuro en tu página */
+    font-size: 2.5em;
+    padding: 20px;
+}
+
+.races-container {
+    /* **Flexbox es la clave para la disposición horizontal** */
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 40px; /* Espacio entre las tarjetas */
+    justify-content: center; /* Centra el grupo de tarjetas si no ocupan todo el ancho */
+    padding: 20px;
+    
+}

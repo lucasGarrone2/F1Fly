@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-image-container">
+       <img [src]="race.imageURL" alt="race.title">
+        <span class="card-status">
+        {{race.status}}
+        </span>
+    </div>
+    <div class="card-body">
+        <h3 class="card-title">{{race.title}}</h3>
+        <p class="card-circuit">{{race.circuit}}</p>
+        <div class="card-footer">
+            <p class="card-date"> {{race.date}} </p>
+            <p class="card-location">{{race.location}}</p>
+            
+        </div>
+    </div>
+</div>
