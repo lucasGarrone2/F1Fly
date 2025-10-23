@@ -3,6 +3,6 @@ export interface Race{
     circuit: string,
     location:string,
     date:string,
-    status: "Proxima" | "En vivo",
+    status: "Proxima" | "En vivo" | "Expirada",
     imageURL: string
 };

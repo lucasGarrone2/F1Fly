@@ -1,0 +1,100 @@
+
+<body>
+    
+<h2>Te damos la bienvenida a F1Fly</h2>
+<div class="back-home">
+    <button routerLink="/" class="back-home-button"> Volver al Menu</button>
+</div>
+
+<form [formGroup]="form" (ngSubmit)="handleSubmit()" class="form">
+
+   <h5 class="informacion_personal">
+    <i class="fas fa-user"></i>Informacion Personal 
+</h5> 
+<div class="form-field">
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" formControlName="nombre" placeholder="Tu nombre...">
+</div>
+
+<div class="form-field">
+    <label for="apellido">Apellido</label>
+    <input type="text" id="apellido" formControlName="apellido" placeholder="Tu apellido...">
+</div>
+
+<div class="form-field">
+    <label for="email">Email</label>
+    <input type="email" id="email" formControlName="email" placeholder="tuEmail@email.com">
+</div>
+
+<div class="form-field">
+    <label for="dni">Dni</label>
+    <input type="number" id="dni" formControlName="dni" placeholder="12345678">
+</div>
+
+
+<div class="form-field">
+    <label for="nacionalidad">Nacionalidad</label>
+    <input type="string" id="nacionalidad" formControlName="nacionalidad" placeholder="Argentina">
+</div>
+
+
+<div class="form-field">
+    <label for="edad">Edad</label>
+    <input type="number" id="edad" formControlName="edad" placeholder="18">
+</div>
+
+<div class="form-field">
+    <label for="fecha_nacimiento">Fecha de nacimiento</label>
+    <input type="date" id="fecha_nacimiento" formControlName="fecha_nacimiento" placeholder="08/08/2003">
+</div>
+
+    <h5 class="seguridad">
+    <i class="fas fa-lock"></i>Seguridad
+    </h5>
+<div class="form-field">
+    <label for="contraseña">Contraseña</label>
+    <input type="password" id="contraseña" formControlName="contraseña" placeholder="*****">
+</div>
+
+<div class="form-field">
+    <label for="contraseña2">Repita su contraseña</label>
+    <input type="password" id="contraseña2" formControlName="contraseña2" placeholder="*****">
+</div>
+
+    <h5 class="preferencias">
+      <i class="fas fa-car"></i>Preferencias de Formula1 (Opcional)
+    </h5>
+<div class="form-field">
+    <label for="piloto">Piloto</label>
+    <select id="piloto">
+
+    <option value="" selected disabled>Seleccione su piloto Favorito</option>
+    @for (piloto of listaPilotos; track $index)
+    {
+        <option [value]="piloto">{{piloto}}</option>
+    }
+    </select>
+</div>
+
+<div class="form-field">
+    <label for="escuderia">Escuderia</label>
+    <select id="escuderia">
+
+    <option value="" selected disabled>Seleccione su escuderia favorita</option>
+    @for (escuderia of listaEscuderias; track $index)
+    {
+        <option [value]="escuderia">{{escuderia}}</option>
+    }
+    </select>
+</div>
+    <div class="btn-submit">
+        <button type="submit">Enviar</button>
+    </div>
+
+
+   <p class="text-AlreadyAccount">
+  ¿Ya tiene una cuenta?
+  <a routerLink="/inicio_sesion" class="login-link">Inicie sesión</a>
+</p>
+</form>
+</body>

@@ -1,0 +1,31 @@
+
+<body>
+    
+<h2>Iniciar sesion</h2>
+<div class="back-home">
+    <button routerLink="/" class="back-home-button">Volver al Menu</button>
+</div>
+
+<form [formGroup]="form" (ngSubmit)="handleSubmit()" class="form">
+<div class="form-field">
+
+<div class="form-field">
+    <label for="email">Email</label>
+    <input type="email" id="email" formControlName="email" placeholder="tuEmail@email.com">
+</div>
+
+<div class="form-field">
+    <label for="contraseña">Contraseña</label>
+    <input type="password" id="contraseña" formControlName="contraseña" placeholder="*****">
+</div>
+</div>
+    <div class="btn-submit">
+        <button type="submit">Iniciar sesion</button>
+    </div>
+    <p class="text-NoAccount">
+  ¿No tiene una cuenta?
+  <a routerLink="/registro" class="login-link">Registrese</a>
+</p>
+
+
+

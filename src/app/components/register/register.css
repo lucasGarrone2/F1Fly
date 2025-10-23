@@ -1,0 +1,195 @@
+
+:root {
+    --color-primary: #CC1C4A; /* Rojo de tu CSS de referencia */
+    --color-secondary: #0B162F; /* Fondo principal muy oscuro */
+    --color-text-light: white; /* Texto claro */
+    --color-form-bg: #0B162F; /* Fondo del formulario (igual que el body) */
+    --color-input-bg: #0c0c1a; /* Fondo del input */
+    --color-shadow: rgba(204, 28, 74, 0.5); /* Sombra roja/rosa fuerte */
+    --color-border: #182A4B; /* Borde sutil */
+}
+
+
+body{
+    background-color: #0B162F;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+    transition: background-color 0.5 ease;
+}
+.form {
+    /* CRÍTICO: El formulario ahora actúa como el contenedor de la parrilla de 2 columnas. */
+    background-color: var(--color-form-bg); 
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 30px 40px;
+    margin-top: 50px;
+    width: 90%;
+    max-width: 550px; 
+    
+    /* PROPIEDADES DE GRID PARA LAYOUT DE 2 COLUMNAS */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual ancho para los pares de campos */
+    gap: 1.2rem 1rem; /* Ajuste del espaciado entre filas y columnas */
+
+    box-shadow: 0 0 20px #CC1C4A;
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.form:hover {
+    box-shadow: 0 0 30px #CC1C4A;
+}
+
+h2{
+    text-align: center;
+    color : #CC1C4A;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.form h5 { 
+    grid-column: 1 / -1; 
+    text-align: left; 
+    font-size: 1.1rem; 
+    font-weight: 700; 
+    color: var(--color-primary);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem; 
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--color-border);
+    text-transform: uppercase;
+}
+/* Espacio entre el icono y el texto */
+.form h5 i {
+    font-style: normal;     
+    font-weight: 900; 
+    color: var(--color-primary); 
+    margin-right: 10px; 
+}
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.form-field label{
+    font-weight: bold;
+    color: white;
+    font-size: 0.95em;
+    letter-spacing: 0.75px;
+}
+
+/*Inputs y selects*/
+
+.form-field input,
+.form-field select {
+    background-color: #182A4B;
+    color: white;
+    border: 3px solid #444466; 
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 1em;
+    outline: none;
+}
+
+/*Esto es para cuando aprieto un campo para llenar, cambia el color*/
+.form-field input:focus, 
+.form-field select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 8px rgba(204, 28, 74, 0.5);
+}
+
+.form-field input::placeholder{
+    color: #888;
+}
+
+.form-field select{
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 15px;
+}
+
+.btn-submit {
+    grid-column: 1 / -1; /* Ocupa ambas columnas */
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+
+.btn-submit button[type="submit"] {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+}
+
+.btn-submit button[type="submit"]:hover {
+    background-color: #ff3333; /* Usando un rojo brillante para el hover */
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px rgba(204, 28, 74, 0.8);
+}
+
+.text-AlreadyAccount{
+    color: #888;
+    cursor: pointer;
+    text-align: center;
+    font-size: 0.7em;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 600px) {
+    form.form {
+        padding: 25px 20px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+}
+
+.back-home{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin-left: 125px;
+    
+}
+
+.back-home-button{
+    background-color: #CC1C4A;
+    color: white;
+    
+    
+}
+
+.back-home-button:hover{
+    background-color: #CC1C3A;
+    transform: translateY(-2px);
+}
+.login-link {
+  color: #CC1C4A;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 4px;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+  color: #ff1e2d; 
+  
+}

@@ -42,7 +42,7 @@ mask-image: linear-gradient(
 }
 
 body {
-    background-color: #060618; 
+    background-color: #0B162F; 
     color: white; 
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -53,7 +53,7 @@ body {
     align-items: center;
     position: relative;
     overflow-x: hidden; 
-    transition: background-color 0.5s ease;
+    
 }
 
 
@@ -97,6 +97,7 @@ body::after {
 header {
    width: 100%; /* Mantener un ancho máximo */
     display: flex;
+    background-color: #0B162F;
     justify-content: flex-start; /* El logo a la izquierda, la nav a la derecha */
     align-items: center;
     padding: 20px 0; /* Padding vertical, padding horizontal lo maneja el .main-header o width */
@@ -105,12 +106,7 @@ header {
     
     
 }
-/*
-h1 {
-    font-size: 24px;
-    font-weight: bold;
-}
-*/
+
 nav {
     display: flex;
     align-items: center;
@@ -134,6 +130,7 @@ nav {
     background-color: white;
     color: black;
     border: none;
+    text-decoration: none;
     padding: 8px 15px;
     cursor: pointer;
     font-weight: bold;
@@ -278,6 +275,7 @@ footer p::after {
 
 .proxCarreras {
     color: white; /* Asumiendo un fondo oscuro en tu página */
+    text-align: center;
     font-size: 2.5em;
     padding: 20px;
 }
