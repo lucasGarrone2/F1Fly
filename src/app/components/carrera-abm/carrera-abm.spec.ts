@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Carrera } from './carrera';
+import { CarreraAbm } from './carrera-abm';
 
-describe('Carrera', () => {
-  let component: Carrera;
-  let fixture: ComponentFixture<Carrera>;
+describe('CarreraAbm', () => {
+  let component: CarreraAbm;
+  let fixture: ComponentFixture<CarreraAbm>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Carrera]
+      imports: [CarreraAbm]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Carrera);
+    fixture = TestBed.createComponent(CarreraAbm);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
