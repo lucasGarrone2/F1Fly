@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 2;
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-image: url(/IMG/ALPINE_00001451_0001-scaled.jpg.jfif);
+    background-size: cover;  
+    background-position: center; 
+    padding-bottom: 300px;
+    color: white;
+    
+}
+
+#navegacion ul{
+    display: flex;
+    list-style: none;
+    gap: 50px;
+    margin: 0;
+    background-color: rgb(20, 46, 132);
+    padding: 5px 0;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 0, 217);
+}
+
+.navLI{
+    color: rgb(255, 0, 217);
+    text-decoration: none;
+    font-weight: normal;
+}
+
+#ListadoCarreras{
+    background-color: rgb(70, 2, 79);
+    margin: 0;
+    color: white;
+}
+
+.contenedorCarrera{
+    background-color: rgb(5, 5, 65);
+    color: white;
+    margin: 0 250px 70px 250px;
+    padding: 5px 20px 10px ;
+    border-radius: 10px;
+}
+
+.textoCircuitos{
+    padding-right: 400px;
+}
+
+footer{
+    background-color: blueviolet;
+    color: white;
+    margin: 0;
+}
+
+.home{
+list-style: none;
+text-decoration: none;
+padding-left: 50px ;
+color: white;
+margin: 0;
+}
+
+h2{
+    margin: 0px 0px 30px;
+}
+
+.icono-header {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%; 
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+footer {
+  margin-top: 0;
+  padding-top: 10px; /* opcional, para algo de espacio interno */
+}

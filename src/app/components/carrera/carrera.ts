@@ -1,0 +1,30 @@
+import { Component, inject } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+
+@Component({
+  selector: 'app-carrera',
+  imports: [ReactiveFormsModule],
+  templateUrl: './carrera.html',
+  styleUrl: './carrera.css'
+})
+export class Carrera {
+  private readonly formBuilder= inject(FormBuilder);
+  protected readonly form = this.formBuilder.nonNullable.group({
+    nombre_circuito: ['', [Validators.required]],
+    fecha_circuito: ['', [Validators.required]],
+    capacidad_circuito: ['', [Validators.required, Validators.min(5000)]],
+    descripcion_circuito: ['', [Validators.required]],
+    cantidad_vueltas: ['', [Validators.required, Validators.min(50)]],
+  });
+
+  handleSubmit()
+  {
+    if(this.form.invalid)
+    {
+      alert("Error al completar el formulario");
+      return;
+    }
+  }
+}
+
+
