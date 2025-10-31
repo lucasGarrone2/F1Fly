@@ -1,49 +1,48 @@
 
-.img-logo{
-width: 600px;
-height: 100px;
-margin-right: 30px;
-object-fit: cover;
-margin: 0;
-filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.5));
- filter: brightness(1.2) contrast(1.1); 
- transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; 
- clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-mask: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+.img-logo {
+    width: 600px;
+    height: 100px;
+    margin-right: 30px;
+    object-fit: cover;
+    margin: 0;
+    filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.5));
+    filter: brightness(1.2) contrast(1.1);
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    mask: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 
-mask-image: linear-gradient(
-        to bottom, 
-        black 80%,       /* La parte superior (80%) es visible (negro) */
-        transparent 100% /* La parte inferior se desvanece (transparente) */
+    mask-image: linear-gradient(
+        to bottom,
+        black 80%,
+        transparent 100%
     );
     
     /* Máscara para difuminar los bordes laterales (opcional) */
-     mask-image: linear-gradient(
-        to right, 
-        transparent 0%, 
-        black 10%, 
-        black 90%, 
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 10%,
+        black 90%,
         transparent 100%
-    ); 
-    
+    );
 }
 
 .logo-container {
- 
-    flex-grow: 1; 
+    flex-grow: 1;
     display: flex;
-    justify-content: flex-start; 
+    justify-content: flex-start;
     align-items: center;
-    padding-right: 50px; 
+    padding-right: 50px;
 }
+
 .img-logo:hover {
-     transform: scale(1.05); 
-     filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.8)); 
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.8));
 }
 
 body {
-    background-color: #0B162F; 
-    color: white; 
+    background-color: #0B162F;
+    color: white;
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
@@ -52,59 +51,49 @@ body {
     flex-direction: column;
     align-items: center;
     position: relative;
-    overflow-x: hidden; 
-    
+    overflow-x: hidden;
 }
 
-
 body::before {
-    content: ''; 
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     height: 1px;
-    /* Línea central más brillante para que se note */
-    background-color: rgba(255, 0, 0, 0.4); 
-    box-shadow: 0 0 8px rgba(255, 0, 0, 0.6); 
+    background-color: rgba(255, 0, 0, 0.4);
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
     z-index: 0;
     pointer-events: none;
 }
 
-/* Pseudoelemento para los brillos laterales más intensos y anchos */
 body::after {
     content: '';
     position: absolute;
-    
-    bottom: 0; 
+    bottom: 0;
     left: 0;
     right: 0;
-    
-    height: 200px; 
+    height: 200px;
     z-index: 0;
-
-    background: 
+    background:
         /* Brillo IZQUIERDO*/
         radial-gradient(ellipse at 0% 100%, rgba(255, 0, 0, 0.9) 0%, transparent 35%),
         /* Brillo DERECHO */
         radial-gradient(ellipse at 100% 100%, rgba(255, 0, 0, 0.9) 0%, transparent 35%);
-    background-size: 50% 100%; 
+    background-size: 50% 100%;
     background-repeat: no-repeat;
     background-position: left bottom, right bottom;
 }
 
-
 header {
-   width: 100%; /* Mantener un ancho máximo */
+    width: 100%;
     display: flex;
     background-color: #0B162F;
-    justify-content: flex-start; /* El logo a la izquierda, la nav a la derecha */
+    justify-content: flex-start;
     align-items: center;
-    padding: 20px 0; /* Padding vertical, padding horizontal lo maneja el .main-header o width */
+    padding: 20px 0;
     position: relative;
     z-index: 10;
-    
-    
 }
 
 nav {
@@ -117,13 +106,12 @@ nav {
     color: white;
     text-decoration: none;
     padding: 5px 10px;
-    transition: color 0.3s ease; 
+    transition: color 0.3s ease;
 }
 
 .nav-link:hover {
     color: #e50000;
 }
-
 
 .btn-registrarse {
     background-color: white;
@@ -137,20 +125,18 @@ nav {
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-
 .btn-registrarse:hover {
     background-color: #f0f0f0;
-    transform: translateY(-3px); 
+    transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
 }
-
 
 .hero {
     text-align: center;
     padding: 80px 20px 60px;
     width: 90%;
     max-width: 800px;
-    z-index: 0; 
+    z-index: 0;
 }
 
 .hero h2 {
@@ -166,7 +152,6 @@ nav {
     margin-bottom: 30px;
 }
 
- 
 .btn-rojo {
     background-color: #e50000;
     color: white;
@@ -179,16 +164,13 @@ nav {
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
 .btn-rojo:hover {
-    background-color: #ff3333; 
-    transform: scale(1.05); 
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.7); 
+    background-color: #ff3333;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
 }
 
-
 .btn-blanco {
-
     background-color: white;
     color: black;
     border: none;
@@ -199,9 +181,8 @@ nav {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
 .btn-blanco:hover {
-    transform: translateY(-2px); 
+    transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
 }
 
@@ -219,191 +200,110 @@ nav {
     margin-bottom: 30px;
 }
 
-.main-container {
-    width: 90%; 
-    max-width: 1200px; 
-    padding: 20px 0;
-}
-
-
-.page-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 30px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #3A4767; 
-}
-
-.page-header h1 {
-    font-size: 2.2em;
-    color: #FFD700; 
-}
-
-.add-button {
-    background-color: #E53935;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.add-button:hover {
-    background-color: #c62828;
-}
-
-
-.race-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    justify-content: center;
-}
-
-
-.loading-message, .no-races-message {
-    text-align: center;
-    font-size: 1.5em;
-    padding: 50px 0;
-    color: #9AA7C0;
-}
-
-
-
-
-.race-card {
-    background-color: #1A284A; 
-    border-radius: 12px;
-    overflow: hidden; 
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); 
-    transition: transform 0.3s ease-in-out;
-    height: 100%; 
-    display: flex;
-    flex-direction: column;
-}
-
-.race-card:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
-}
-
-.card-image {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-bottom: 3px solid #E53935;
-}
-
-.card-content {
-    padding: 20px;
-    flex-grow: 1;
-}
-
-.card-content h3 {
-    margin-top: 0;
-    color: #FFD700;
-    font-size: 1.5em;
-    border-bottom: 2px solid rgba(255, 215, 0, 0.2);
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-}
-
-.detail-row {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.9em;
-    margin-bottom: 8px;
-}
-
-.label {
-    color: #9AA7C0;
-}
-
-.value {
-    font-weight: bold;
-}
 
 .cards {
-  display: flex;
-  justify-content: center;  
-  align-items: stretch;
-  gap: 20px;
-  flex-wrap: nowrap; 
-  padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: nowrap;
+    padding: 20px;
 }
 
 .card {
-  background-color: #1A284A;
-  color: white;
-  width: 300px; 
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease-in-out;
-  overflow: hidden;
-  text-align: center;
-  padding: 20px;
+    background-color: #1A284A;
+    color: white;
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
 }
 
 .card:hover {
-  transform: translateY(-8px);
+    transform: translateY(-8px);
 }
+
+
 .carreras {
-  padding: 30px;
-  color: white;
+    padding: 30px;
+    color: white;
+    width: 100%; /* Asegura que ocupe el ancho */
+    box-sizing: border-box; /* Para que el padding no desborde */
 }
 
 .carousel-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow: hidden; /*No muestra lo que no esta en el carrusel*/
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden; /* Oculta las tarjetas que no caben */
 }
 
 .races-container {
-  display: flex;
-  gap: 20px;
-  overflow-x: hidden; 
-  scroll-behavior:smooth;
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* Permite el scroll horizontal (incluso arrastrando) */
+    scroll-behavior: smooth; /* Para el click en flechas */
+    scroll-snap-type: x mandatory; /* Ajusta las tarjetas al hacer scroll */
+    padding-bottom: 15px; 
 }
 
+
+.races-container::-webkit-scrollbar {
+    height: 8px;
+}
+.races-container::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
+.races-container::-webkit-scrollbar-track {
+    background: #111;
+}
+
+
+
+
 app-race-card {
-  flex: 0 0 auto;
-  width: 320px; /*Muestra cantidad de cartas que se muestran*/
+    flex: 0 0 auto; 
+    scroll-snap-align: start; 
+}
+
+.proxCarreras
+{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    
 }
 
 .arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(255,255,255,0.9);
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  z-index: 5;
-  transition: all 0.3s ease;
+    position: absolute;
+    top: 50%;
+   
+    margin-top: -60px; 
+    transform: translateY(-50%); 
+    
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    z-index: 5;
+    transition: all 0.3s ease;
 }
 
 .arrow:hover {
-  background-color: #c62828;
-  color: white;
+    background-color: #c62828;
+    color: white;
 }
 
 .left-arrow {
-  left: 2px;
+    left: 2px;
 }
 
 .right-arrow {
-  right: 2px;
-}
-
-@media (max-width: 768px) {
-  app-race-card {
-    width: 260px;
-  }
+    right: 2px;
 }

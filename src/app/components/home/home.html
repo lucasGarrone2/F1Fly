@@ -42,9 +42,9 @@
         <p style="text-align: center; width: 100%;">Cargando carreras...</p>
       } @else {
         <app-race-card
-          *ngFor="let race of raceSource()"
-          [race]="race">
-        </app-race-card>
+    *ngFor="let race of raceSource()"
+    [race]="race"
+    [layout]="'carousel'"> </app-race-card>
       }
     </div>
 
@@ -54,11 +54,6 @@
   </div>
 </section>
 
-        <footer>
-
-            <p>@2025 F1Fly - Todos los derechos reservados - Pagina a la venta para quien la quiera comprar</p>
-
-        </footer>
 </body>
 
 </html>

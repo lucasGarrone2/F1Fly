@@ -1,147 +1,186 @@
-/* --- VARIABLES LOCALES (para coherencia) --- */
 :root {
-    --color-card-bg: #1a1a33; /* Azul oscuro */
-    --color-border-subtle: #333366; 
-    --color-accent-red: #ff3333; 
-    --color-text-subtle: #aaaaaa;
+  --color-card-bg: #1a1a33;
+  --color-border-subtle: #333366;
+  --color-accent-red: #ff3333;
+  --color-text-subtle: #aaaaaa;
 }
 
-
+/* === BASE CARD === */
 .card {
-    background-color: var(--color-card-bg); 
-    color: white;
-    padding: 0; 
-    border-radius: 10px;
-    border: 1px solid var(--color-border-subtle); 
-    text-align: left;
-    flex: 0 0 320px; 
-    max-width: 320px;
-    width: 320px; 
-    font-size: 14px;
-    cursor: pointer;
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden; /* Importante para que la imagen se mantenga dentro del borde redondeado */
+  background-color: var(--color-card-bg);
+  color: white;
+  border-radius: 10px;
+  border: 1px solid var(--color-border-subtle);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 14px;
 }
 
-/* --- EFECTO HOVER --- */
 .card:hover {
-    transform: translateY(-5px); 
-    border-color: var(--color-accent-red); 
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 0, 0, 0.5); 
+  transform: translateY(-5px);
+  border-color: var(--color-accent-red);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 0, 0, 0.4);
 }
 
-/* --- IMAGEN Y CENTRADO --- */
-.card-image-container {
-    position: relative;
-    height: 180px; 
-    overflow: hidden;
-    width: 100%; 
-    
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* =========================================================
+    MODO CAROUSEL (Home)
+   ========================================================= */
+.card.carousel {
+  flex: 0 0 240px;
+  width: 240px;
+  max-width: 240px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
 }
 
-.card-image {
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    object-position: center center;
+.card.carousel .card-image-container {
+  position: relative;
+  width: 100%;
+  height: 135px; /* tamaño fijo miniatura */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0e0e1f;
 }
 
-
-/* CUERPO Y TEXTO  */
-.card-body {
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.card.carousel .card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 
-.card-title {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin: 0;
-    line-height: 1.2;
+/* =========================================================
+    MODO LIST (tipo YouTube)
+   ========================================================= */
+.card.list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  height: 160px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: var(--color-card-bg);
 }
 
-.card-location-info {
-    color: var(--color-text-subtle);
-    font-size: 0.9em;
+.card.list .card-image-container {
+  width: 280px;
+  height: 100%;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0e0e1f;
 }
 
-.card-stats {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.9em;
-    padding-top: 5px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+.card.list .card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 
-.card-stats p {
-    margin: 0;
+.card.list .card-body {
+  flex: 1;
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.card-stats .price {
-    color: var(--color-accent-red);
-    font-weight: bold;
+.card.list .card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0 0 5px;
 }
 
-/*  FOOTER Y BOTÓN */
-.card-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
+.card.list .card-location-info {
+  color: var(--color-text-subtle);
+  font-size: 0.9rem;
 }
 
-.card-date-time {
-    font-size: 0.85em; 
-    color: #e0e0e0;
+.card.list .card-stats {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 8px;
+  font-size: 0.9rem;
 }
 
-.btn-details {
-    background-color: var(--color-accent-red);
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    font-size: 0.8em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+.card.list .card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
 }
 
-.btn-details:hover {
-    background-color: #ff5555;
-    transform: translateY(-1px);
+.card.list .btn-details {
+  background-color: var(--color-accent-red);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
+.card.list .btn-details:hover {
+  background-color: #ff5555;
+}
+
+/* =========================================================
+    TAG DE ESTADO
+   ========================================================= */
 .race-status-tag {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-weight: bold;
-    color: white;
-    z-index: 5; 
-    text-transform: uppercase;
-    font-size: 0.8em;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  z-index: 5;
 }
-
 
 .race-status-tag.upcoming {
-    background-color: #4CAF50; 
+  background-color: #4caf50;
 }
 
 .race-status-tag.today {
-    background-color: #2196F3; 
+  background-color: #2196f3;
 }
 
-
 .race-status-tag.past {
-    background-color: #757575;
-    opacity: 0.8;
+  background-color: #757575;
+  opacity: 0.8;
+}
+
+/* =========================================================
+    RESPONSIVE
+   ========================================================= */
+@media (max-width: 768px) {
+  .card.list {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .card.list .card-image-container {
+    width: 100%;
+    height: 200px;
+  }
+
+  .card.list .card-body {
+    padding: 12px;
+  }
 }

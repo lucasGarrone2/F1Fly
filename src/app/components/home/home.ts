@@ -1,4 +1,4 @@
-import { Component, inject, linkedSignal } from '@angular/core';
+import { Component, inject, input, linkedSignal } from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {Race} from '../../race-card.interface';
 import { RaceCardComponent } from '../race-card/race-card';
@@ -6,6 +6,7 @@ import { RouterLink } from "@angular/router";
 import { RaceClient } from '../../services/race-client';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ViewChild, ElementRef } from '@angular/core';
+import { Input } from '@angular/core';
 
 
 @Component({
@@ -32,4 +33,7 @@ export class Home {
       container.scrollBy({ left: cardWidth, behavior: 'smooth' });
     }
   }
+
+ 
+
 }

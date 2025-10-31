@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 export class RaceCardComponent implements OnInit {
   @Input() race!: Race;
+  @Input() layout: 'carousel' | 'list' = 'carousel';
 
    private readonly sanitizer = inject(DomSanitizer);
     public safeImageUrl!: SafeUrl; 

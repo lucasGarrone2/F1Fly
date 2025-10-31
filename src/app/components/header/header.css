@@ -12,11 +12,11 @@ mask: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 
 mask-image: linear-gradient(
         to bottom, 
-        black 80%,       /* La parte superior (80%) es visible (negro) */
-        transparent 100% /* La parte inferior se desvanece (transparente) */
+        black 80%,       
+        transparent 100% 
     );
     
-    /* Máscara para difuminar los bordes laterales (opcional) */
+
      mask-image: linear-gradient(
         to right, 
         transparent 0%, 
@@ -41,12 +41,12 @@ mask-image: linear-gradient(
 }
 
 header {
-   width: 100%; /* Mantener un ancho máximo */
+   width: 100%; 
     display: flex;
     background-color: #0B162F;
-    justify-content: flex-start; /* El logo a la izquierda, la nav a la derecha */
+    justify-content: flex-start; 
     align-items: center;
-    padding: 20px 0; /* Padding vertical, padding horizontal lo maneja el .main-header o width */
+    padding: 20px 0; 
     position: relative;
     z-index: 10;
     
@@ -63,12 +63,12 @@ nav {
     color: white;
     text-decoration: none;
     padding: 5px 10px;
-    transition: color 0.3s ease; /* Transición para el hover */
+    transition: color 0.3s ease; 
 }
 
-/* Animación de hover para enlaces */
+
 .nav-link:hover {
-    color: #e50000; /* Rojo F1 */
+    color: #e50000; 
 }
 
 

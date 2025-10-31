@@ -1,0 +1,16 @@
+<section class="carreras" id="carreras">
+  <h2 class="proxCarreras">Próximas Carreras</h2>
+
+  <div class="races-container" #racesContainer>
+    @if (!raceSource()) {
+      <p style="text-align: center; width: 100%;">Cargando carreras...</p>
+    } @else {
+      @for (race of raceSource(); track race.id) {
+    <app-race-card
+        [race]="race"
+        [layout]="'list'">
+    </app-race-card>
+}
+    }
+  </div>
+</section>
