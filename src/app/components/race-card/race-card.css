@@ -1,82 +1,147 @@
+/* --- VARIABLES LOCALES (para coherencia) --- */
+:root {
+    --color-card-bg: #1a1a33; /* Azul oscuro */
+    --color-border-subtle: #333366; 
+    --color-accent-red: #ff3333; 
+    --color-text-subtle: #aaaaaa;
+}
+
 
 .card {
-    background-color: #1a1a33; 
+    background-color: var(--color-card-bg); 
     color: white;
-    padding: 5px;
+    padding: 0; 
     border-radius: 10px;
-    border: 1px solid #333366; 
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    border: 1px solid var(--color-border-subtle); 
+    text-align: left;
+    flex: 0 0 320px; 
+    max-width: 320px;
+    width: 320px; 
     font-size: 14px;
     cursor: pointer;
-    flex: 1 1 300px; 
-    max-width: 300px;
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Importante para que la imagen se mantenga dentro del borde redondeado */
 }
 
-.card-image-container{
+/* --- EFECTO HOVER --- */
+.card:hover {
+    transform: translateY(-5px); 
+    border-color: var(--color-accent-red); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 0, 0, 0.5); 
+}
+
+/* --- IMAGEN Y CENTRADO --- */
+.card-image-container {
     position: relative;
-    height: 200px; 
-    width: 100%;
+    height: 180px; 
     overflow: hidden;
+    width: 100%; 
+    
+    
     display: flex;
     justify-content: center;
-    justify-items: center;
+    align-items: center;
 }
 
-.card-image{
+.card-image {
     width: 100%; 
     height: 100%; 
-    object-fit: cover;
+    object-fit: cover; 
     object-position: center center;
 }
 
-.card-status{
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #ff4500;
-    color: white;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.75em;
+
+/* CUERPO Y TEXTO  */
+.card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.card-location-info {
+    color: var(--color-text-subtle);
+    font-size: 0.9em;
+}
+
+.card-stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    padding-top: 5px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-stats p {
+    margin: 0;
+}
+
+.card-stats .price {
+    color: var(--color-accent-red);
     font-weight: bold;
 }
 
-.card-body{
-    padding: 15px;
-}
-
-.card-circuit{
-    color:#aaaaaa;
-    font-size: 0.9em; 
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-.card-footer{
+/*  FOOTER Y BOTÓN */
+.card-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 10px;
+}
+
+.card-date-time {
     font-size: 0.85em; 
     color: #e0e0e0;
-    text-align: left;
-
 }
 
-/* Animación de hover para las tarjetas */
-.card:hover {
-    transform: translateY(-5px); /* Se levanta un poco */
-    border-color: #ff3333; /* Borde rojo al pasar el mouse */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 0, 0, 0.5); /* Sombra y brillo rojo */
-}
-
-.card-title{
-    font-size: 1.4em;
+.btn-details {
+    background-color: var(--color-accent-red);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.8em;
     font-weight: bold;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+.btn-details:hover {
+    background-color: #ff5555;
+    transform: translateY(-1px);
+}
+
+.race-status-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    z-index: 5; 
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
+
+.race-status-tag.upcoming {
+    background-color: #4CAF50; 
+}
+
+.race-status-tag.today {
+    background-color: #2196F3; 
+}
+
+
+.race-status-tag.past {
+    background-color: #757575;
+    opacity: 0.8;
+}

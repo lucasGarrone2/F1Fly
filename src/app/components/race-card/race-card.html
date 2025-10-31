@@ -1,17 +1,45 @@
-<div class="card">
+<div class="card" tabindex="0">
+
     <div class="card-image-container">
-       <img [src]="race.imageURL" alt="race.title">
-        <span class="card-status">
-        {{race.status}}
+        <img [src]="safeImageUrl" [alt]="'Circuito de ' + race.nombre_circuito" class="card-image"> 
+
+        <span 
+            class="race-status-tag"
+            [ngClass]="getRaceStatus(race.fecha)">
+            
+            @if (getRaceStatus(race.fecha) === 'upcoming') {
+                Próxima
+            } @else if (getRaceStatus(race.fecha) === 'today') {
+                ¡HOY!
+            } @else {
+                Pasada
+            }
         </span>
     </div>
+
     <div class="card-body">
-        <h3 class="card-title">{{race.title}}</h3>
-        <p class="card-circuit">{{race.circuit}}</p>
+        <h3 class="card-title">{{ race.nombre_circuito }}</h3>
+        <p class="card-location-info">
+            <i class="fas fa-map-marker-alt"></i> {{ race.ciudad }}, {{ race.pais }}
+        </p>
+
+        <div class="card-stats">
+            <p>
+                <i class="fas fa-users"></i> Capacidad: {{ race.capacidad}}
+            </p>
+            <p class="price">
+                <i class="fas fa-euro-sign"></i> Precio: {{ race.precio_promedio_entrada_eur }}
+            </p>
+        </div>
+
         <div class="card-footer">
-            <p class="card-date"> {{race.date}} </p>
-            <p class="card-location">{{race.location}}</p>
+            <span class="card-date-time">
+                <i class="fas fa-calendar-alt"></i> {{ race.fecha}}
+            </span>
             
+            <button class="btn-details">
+                Ver Más <i class="fas fa-arrow-right"></i>
+            </button>
         </div>
     </div>
 </div>

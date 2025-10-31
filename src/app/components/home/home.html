@@ -27,15 +27,33 @@
                 </div>
             </div>
         </section>
-        <section class="carreras" id="carreras">
-    <h2 class="proxCarreras">Próximas Carreras</h2>
-    <div class="races-container">
+<section class="carreras" id="carreras">
+  <h2 class="proxCarreras">Próximas Carreras</h2>
+
+  <div class="carousel-wrapper">
+   
+    <button class="arrow left-arrow" (click)="scrollCarousel('left')">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+
+
+    <div class="races-container" #racesContainer>        
+      @if (!raceSource()) {
+        <p style="text-align: center; width: 100%;">Cargando carreras...</p>
+      } @else {
         <app-race-card
-            *ngFor="let race of races"
-            [race]="race">
+          *ngFor="let race of raceSource()"
+          [race]="race">
         </app-race-card>
+      }
     </div>
+
+    <button class="arrow right-arrow" (click)="scrollCarousel('right')">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
 </section>
+
         <footer>
 
             <p>@2025 F1Fly - Todos los derechos reservados - Pagina a la venta para quien la quiera comprar</p>

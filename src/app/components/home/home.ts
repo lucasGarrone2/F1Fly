@@ -1,8 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, inject, linkedSignal } from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {Race} from '../../race-card.interface';
 import { RaceCardComponent } from '../race-card/race-card';
 import { RouterLink } from "@angular/router";
+import { RaceClient } from '../../services/race-client';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { ViewChild, ElementRef } from '@angular/core';
+
 
 @Component({
   selector: 'app-home',
@@ -12,33 +16,20 @@ import { RouterLink } from "@angular/router";
    styleUrls: ['./home.css']
 })
 export class Home {
+  private readonly client = inject(RaceClient);
+  protected raceSource = toSignal(this.client.getRaces());
 
-  races: Race[] =[
-    
-       {
-            title: 'Gran Premio de Mónaco',
-            circuit: 'Circuit de Monaco',
-            location: 'Mónaco',
-            date: '26 de Mayo, 2024',
-            status: 'Expirada',
-            imageURL: 'monaco.png'
-        },
-        {
-            title: 'Gran Premio de Azerbaiyán',
-            circuit: 'Baku City Circuit',
-            location: 'Azerbaiyán',
-            date: '15 de Septiembre, 2024',
-            status: 'Expirada',
-            imageURL: 'baku.png'
-    },
-    {
-            title: 'Gran Premio de la ciudad de Mexico',
-            circuit: 'Autodromo Hermanos Rodriguez',
-            location: 'Mexico',
-            date: '26 de Octubre, 2025',
-            status: 'Proxima',
-            imageURL: 'mexico.png'
-      },
-  ];
-  constructor(){};
+  
+  @ViewChild('racesContainer', { static: false }) racesContainer!: ElementRef;
+
+  scrollCarousel(direction: 'left' | 'right') {
+    const container = this.racesContainer.nativeElement;
+    const cardWidth = 340; // ancho aproximado de una card + margen
+
+    if (direction === 'left') {
+      container.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+    } else {
+      container.scrollBy({ left: cardWidth, behavior: 'smooth' });
+    }
+  }
 }

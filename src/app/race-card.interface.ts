@@ -1,8 +1,11 @@
 export interface Race{
-    title: string,
-    circuit: string,
-    location:string,
-    date:string,
-    status: "Proxima" | "En vivo" | "Expirada",
-    imageURL: string
+    id: string | number,
+    nombre_circuito: string,
+    pais: string,
+    ciudad:string,
+    fecha:string,
+    capacidad: number,
+    precio_promedio_entrada_eur: number,
+    descripcion: string
+    imageUrl: string
 };
