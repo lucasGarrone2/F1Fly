@@ -4,8 +4,8 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 @Component({
   selector: 'app-carrera',
   imports: [ReactiveFormsModule],
-  templateUrl: './carrera.html',
-  styleUrl: './carrera.css'
+  templateUrl: './carrera-form.html',
+  styleUrl: './carrera-form.css'
 })
 export class Carrera {
   private readonly formBuilder= inject(FormBuilder);
