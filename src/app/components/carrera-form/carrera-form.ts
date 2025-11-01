@@ -2,12 +2,12 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-carrera',
+  selector: 'app-carrera-form',
   imports: [ReactiveFormsModule],
   templateUrl: './carrera-form.html',
   styleUrl: './carrera-form.css'
 })
-export class Carrera {
+export class CarreraForm {
   private readonly formBuilder= inject(FormBuilder);
   protected readonly form = this.formBuilder.nonNullable.group({
     nombre_circuito: ['', [Validators.required]],

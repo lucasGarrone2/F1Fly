@@ -1,0 +1,62 @@
+#Formulario_Carrera {
+    position: fixed; /* Para que flote sobre todo el contenido */
+    top: 50%;         /* Centrado vertical */
+    left: 50%;        /* Centrado horizontal */
+    transform: translate(-50%, -50%); /* Ajuste exacto al centro */
+    background-color: #1a237e; /* Azul oscuro, combina con tu estilo */
+    color: white;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* efecto flotante */
+    width: 400px; /* ancho fijo */
+    z-index: 1000; /* siempre encima del contenido */
+    text-align: left;
+}
+
+#Formulario_Carrera h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+#Formulario_Carrera form ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#Formulario_Carrera form li {
+    margin-bottom: 15px;
+}
+
+#Formulario_Carrera label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#Formulario_Carrera input,
+#Formulario_Carrera textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+#Formulario_Carrera button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #3949ab;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#Formulario_Carrera button:hover {
+    background-color: #5c6bc0;
+}
