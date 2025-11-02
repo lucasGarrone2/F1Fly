@@ -15,6 +15,9 @@ export class CarreraForm {
     capacidad_circuito: ['', [Validators.required, Validators.min(5000)]],
     descripcion_circuito: ['', [Validators.required]],
     cantidad_vueltas: ['', [Validators.required, Validators.min(50)]],
+    ciudad_circuito: ['',[Validators.required]],
+    pais_circuito: ['',[Validators.required]],
+    precio_entrada: ['',[Validators.required, Validators.min(80)]]
   });
 
   handleSubmit()
