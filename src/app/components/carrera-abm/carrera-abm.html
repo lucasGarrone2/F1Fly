@@ -9,32 +9,35 @@
 <body>
 
         <ul id="accion-gestion-carrera">
-            <li class="gestionLI"><button type="button" class="botonGestion" (click)="activarFormulario_Carrera()">AGREGAR CARRERA</button></li>
+            <li class="gestionLI"><button type="button" class="botonGestion" >GESTION CARRERAS</button></li>
             <li>|</li>
-            <li class="gestionLI"><button type="button" class="botonGestion" >EDITAR CARRERA</button></li>
+            <li class="gestionLI"><button type="button" class="botonGestion" >GESTION HOTELES</button></li>
             <li>|</li>
-            <li class="gestionLI"><button type="button" class="botonGestion" >MODIFICAR CARRERA</button></li>
+            <li class="gestionLI"><button type="button" class="botonGestion" >GESTION VUELOS</button></li>
         </ul>
         
-    
-        @if (agregarCarrera()) {
-            <div id="overlay" class="hidden"></div>
-            <app-carrera-form></app-carrera-form>
-        }
 
         @let carreras = this.carreras();
+
+         @if (activarFormulzarioCarrera()) {
+                     <div id="overlay" class="hidden"></div>
+                     <app-carrera-form></app-carrera-form>
+            }   
 
        @if (carreras === undefined){
             <p>Cargando Carreras...</p>
        } @else {
             <section id="ListadoCarreras">
         <h2>F1FLY ADMIN CARRERAS</h2>
+            <div id="boton-agregar">
+                <button type="button" class="botonAgregar" (click)="activarFormulario_Carrera()" >➕ AGREGAR NUEVA CARRERA ➕</button>
+            </div>
         @for(carrera of carreras; track carrera.id_carrera){
             <div class="contenedorCarrera"> 
             <div>
                 <img src= {{carrera.imageUrl_carrera}} alt="imagen_carrera" class="imagen-carrera">
                 <div class="botones">
-                    <button type="button" class="botonModificar" >✏️ MODIFICAR</button>
+                    <button type="button" class="botonModificar" (click)="activarFormulario_Carrera()" >✏️ MODIFICAR</button>
                     <button type="button" class="botonEliminar" >🗑️ ELIMINAR</button>
                 </div>
             </div>

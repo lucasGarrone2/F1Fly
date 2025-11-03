@@ -119,6 +119,42 @@
       "precio_carrera": 210,
       "descripcion_carrera": "Circuito moderno con grandes cambios de elevación y ambiente festivo.",
       "imageUrl_carrera": "cota.jpg"
+    },
+    {
+      "id": "40c5",
+      "nombre_carrera": "Interlagos",
+      "fecha_carrera": "2025-02-01",
+      "capacidad_carrera": 7000,
+      "descripcion_carrera": "aaaaaaaaaaaa",
+      "cantidad_vueltas_carrera": 80,
+      "ciudad_carrera": "Interlagos",
+      "pais_carrera": "Brasil",
+      "precio_carrera": 150,
+      "imageUrl_carrera": "bahrein.jpg"
+    },
+    {
+      "id": "5e84",
+      "nombre_carrera": "fsfsgewg",
+      "fecha_carrera": "2025-01-31",
+      "capacidad_carrera": 8000,
+      "descripcion_carrera": "gewgewgew",
+      "cantidad_vueltas_carrera": 80,
+      "ciudad_carrera": "barcelona",
+      "pais_carrera": "espana",
+      "precio_carrera": 90,
+      "imageUrl_carrera": "bahrein.jpg"
+    },
+    {
+      "id": "dce4",
+      "nombre_carrera": "si",
+      "fecha_carrera": "2025-01-27",
+      "capacidad_carrera": 7000,
+      "descripcion_carrera": "ahpra si",
+      "cantidad_vueltas_carrera": 90,
+      "ciudad_carrera": "lllllll",
+      "pais_carrera": "llllllll",
+      "precio_carrera": 500,
+      "imageUrl_carrera": "bahrein.jpg"
     }
   ],
   "hoteles": [
@@ -128,12 +164,19 @@
       "carrera_id": 1,
       "pais": "Bahrain",
       "ciudad": "Sakhir",
-      "fechas_disponibles": ["2025-04-11", "2025-04-12", "2025-04-13", "2025-04-14"],
+      "fechas_disponibles": [
+        "2025-04-11",
+        "2025-04-12",
+        "2025-04-13",
+        "2025-04-14"
+      ],
       "precio_promedio_habitacion_eur": 160,
       "tieneAmenities": true,
       "tieneTransporte": true,
-      "ubicacion_mapa": { "latitud": 26.0325, "longitud": 50.5106 }
-      
+      "ubicacion_mapa": {
+        "latitud": 26.0325,
+        "longitud": 50.5106
+      }
     },
     {
       "id": 2,
@@ -141,11 +184,18 @@
       "carrera_id": 1,
       "pais": "Bahrain",
       "ciudad": "Manama",
-      "fechas_disponibles": ["2025-04-10", "2025-04-11", "2025-04-14"],
+      "fechas_disponibles": [
+        "2025-04-10",
+        "2025-04-11",
+        "2025-04-14"
+      ],
       "precio_promedio_habitacion_eur": 210,
       "tieneAmenities": true,
       "tieneTransporte": false,
-      "ubicacion_mapa": { "latitud": 26.2301, "longitud": 50.5847 }
+      "ubicacion_mapa": {
+        "latitud": 26.2301,
+        "longitud": 50.5847
+      }
     },
     {
       "id": 3,
@@ -153,11 +203,19 @@
       "carrera_id": 2,
       "pais": "Mónaco",
       "ciudad": "Montecarlo",
-      "fechas_disponibles": ["2025-05-23", "2025-05-24", "2025-05-25", "2025-05-26"],
+      "fechas_disponibles": [
+        "2025-05-23",
+        "2025-05-24",
+        "2025-05-25",
+        "2025-05-26"
+      ],
       "precio_promedio_habitacion_eur": 420,
       "tieneAmenities": true,
       "tieneTransporte": false,
-      "ubicacion_mapa": { "latitud": 43.7396, "longitud": 7.4276 }
+      "ubicacion_mapa": {
+        "latitud": 43.7396,
+        "longitud": 7.4276
+      }
     },
     {
       "id": 4,
@@ -165,11 +223,19 @@
       "carrera_id": 2,
       "pais": "Mónaco",
       "ciudad": "Montecarlo",
-      "fechas_disponibles": ["2025-05-22", "2025-05-23", "2025-05-26", "2025-05-27"],
+      "fechas_disponibles": [
+        "2025-05-22",
+        "2025-05-23",
+        "2025-05-26",
+        "2025-05-27"
+      ],
       "precio_promedio_habitacion_eur": 650,
       "tieneAmenities": true,
       "tieneTransporte": true,
-      "ubicacion_mapa": { "latitud": 43.7383, "longitud": 7.4261 }
+      "ubicacion_mapa": {
+        "latitud": 43.7383,
+        "longitud": 7.4261
+      }
     },
     {
       "id": 5,
@@ -177,11 +243,19 @@
       "carrera_id": 3,
       "pais": "Reino Unido",
       "ciudad": "Silverstone",
-      "fechas_disponibles": ["2025-07-04", "2025-07-05", "2025-07-06", "2025-07-07"],
+      "fechas_disponibles": [
+        "2025-07-04",
+        "2025-07-05",
+        "2025-07-06",
+        "2025-07-07"
+      ],
       "precio_promedio_habitacion_eur": 220,
       "tieneAmenities": true,
       "tieneTransporte": true,
-      "ubicacion_mapa": { "latitud": 52.0733, "longitud": -1.0149 }
+      "ubicacion_mapa": {
+        "latitud": 52.0733,
+        "longitud": -1.0149
+      }
     },
     {
       "id": 6,
@@ -189,11 +263,18 @@
       "carrera_id": 3,
       "pais": "Reino Unido",
       "ciudad": "Buckingham",
-      "fechas_disponibles": ["2025-07-03", "2025-07-07", "2025-07-08"],
+      "fechas_disponibles": [
+        "2025-07-03",
+        "2025-07-07",
+        "2025-07-08"
+      ],
       "precio_promedio_habitacion_eur": 180,
       "tieneAmenities": false,
       "tieneTransporte": true,
-      "ubicacion_mapa": { "latitud": 52.0003, "longitud": -0.9991 }
+      "ubicacion_mapa": {
+        "latitud": 52.0003,
+        "longitud": -0.9991
+      }
     },
     {
       "id": 7,
@@ -201,11 +282,19 @@
       "carrera_id": 4,
       "pais": "Italia",
       "ciudad": "Monza (Milán)",
-      "fechas_disponibles": ["2025-09-05", "2025-09-06", "2025-09-07", "2025-09-08"],
+      "fechas_disponibles": [
+        "2025-09-05",
+        "2025-09-06",
+        "2025-09-07",
+        "2025-09-08"
+      ],
       "precio_promedio_habitacion_eur": 150,
       "tieneAmenities": true,
       "tieneTransporte": true,
-      "ubicacion_mapa": { "latitud": 45.5840, "longitud": 9.2826 }
+      "ubicacion_mapa": {
+        "latitud": 45.584,
+        "longitud": 9.2826
+      }
     },
     {
       "id": 8,
@@ -213,11 +302,18 @@
       "carrera_id": 4,
       "pais": "Italia",
       "ciudad": "Milán",
-      "fechas_disponibles": ["2025-09-04", "2025-09-05", "2025-09-09"],
+      "fechas_disponibles": [
+        "2025-09-04",
+        "2025-09-05",
+        "2025-09-09"
+      ],
       "precio_promedio_habitacion_eur": 250,
       "tieneAmenities": true,
       "tieneTransporte": false,
-      "ubicacion_mapa": { "latitud": 45.4851, "longitud": 9.2045 }
+      "ubicacion_mapa": {
+        "latitud": 45.4851,
+        "longitud": 9.2045
+      }
     },
     {
       "id": 9,
@@ -225,11 +321,19 @@
       "carrera_id": 5,
       "pais": "Brasil",
       "ciudad": "São Paulo",
-      "fechas_disponibles": ["2025-11-07", "2025-11-08", "2025-11-09", "2025-11-10"],
+      "fechas_disponibles": [
+        "2025-11-07",
+        "2025-11-08",
+        "2025-11-09",
+        "2025-11-10"
+      ],
       "precio_promedio_habitacion_eur": 110,
       "tieneAmenities": true,
       "tieneTransporte": true,
-      "ubicacion_mapa": { "latitud": -23.7036, "longitud": -46.6997 }
+      "ubicacion_mapa": {
+        "latitud": -23.7036,
+        "longitud": -46.6997
+      }
     },
     {
       "id": 10,
@@ -237,11 +341,18 @@
       "carrera_id": 5,
       "pais": "Brasil",
       "ciudad": "São Paulo",
-      "fechas_disponibles": ["2025-11-06", "2025-11-10", "2025-11-11"],
+      "fechas_disponibles": [
+        "2025-11-06",
+        "2025-11-10",
+        "2025-11-11"
+      ],
       "precio_promedio_habitacion_eur": 180,
       "tieneAmenities": true,
       "tieneTransporte": false,
-      "ubicacion_mapa": { "latitud": -23.5658, "longitud": -46.6500 }
+      "ubicacion_mapa": {
+        "latitud": -23.5658,
+        "longitud": -46.65
+      }
     },
     {
       "id": 11,
@@ -249,11 +360,19 @@
       "carrera_id": 6,
       "pais": "Austria",
       "ciudad": "Spielberg",
-      "fechas_disponibles": ["2025-06-27", "2025-06-28", "2025-06-29", "2025-06-30"],
+      "fechas_disponibles": [
+        "2025-06-27",
+        "2025-06-28",
+        "2025-06-29",
+        "2025-06-30"
+      ],
       "precio_promedio_habitacion_eur": 280,
       "tieneAmenities": true,
       "tieneTransporte": true,
-      "ubicacion_mapa": { "latitud": 47.4526, "longitud": 13.6873 }
+      "ubicacion_mapa": {
+        "latitud": 47.4526,
+        "longitud": 13.6873
+      }
     },
     {
       "id": 12,
@@ -261,11 +380,18 @@
       "carrera_id": 6,
       "pais": "Austria",
       "ciudad": "Viena",
-      "fechas_disponibles": ["2025-06-26", "2025-06-30", "2025-07-01"],
+      "fechas_disponibles": [
+        "2025-06-26",
+        "2025-06-30",
+        "2025-07-01"
+      ],
       "precio_promedio_habitacion_eur": 190,
       "tieneAmenities": false,
       "tieneTransporte": false,
-      "ubicacion_mapa": { "latitud": 48.2082, "longitud": 16.3738 }
+      "ubicacion_mapa": {
+        "latitud": 48.2082,
+        "longitud": 16.3738
+      }
     },
     {
       "id": 13,
@@ -273,11 +399,19 @@
       "carrera_id": 7,
       "pais": "España",
       "ciudad": "Barcelona",
-      "fechas_disponibles": ["2025-05-09", "2025-05-10", "2025-05-11", "2025-05-12"],
+      "fechas_disponibles": [
+        "2025-05-09",
+        "2025-05-10",
+        "2025-05-11",
+        "2025-05-12"
+      ],
       "precio_promedio_habitacion_eur": 350,
       "tieneAmenities": true,
       "tieneTransporte": true,
-      "ubicacion_mapa": { "latitud": 41.3888, "longitud": 2.1884 }
+      "ubicacion_mapa": {
+        "latitud": 41.3888,
+        "longitud": 2.1884
+      }
     },
     {
       "id": 14,
@@ -285,11 +419,18 @@
       "carrera_id": 7,
       "pais": "España",
       "ciudad": "Barcelona",
-      "fechas_disponibles": ["2025-05-08", "2025-05-09", "2025-05-12"],
+      "fechas_disponibles": [
+        "2025-05-08",
+        "2025-05-09",
+        "2025-05-12"
+      ],
       "precio_promedio_habitacion_eur": 280,
       "tieneAmenities": true,
       "tieneTransporte": false,
-      "ubicacion_mapa": { "latitud": 41.3739, "longitud": 2.1742 }
+      "ubicacion_mapa": {
+        "latitud": 41.3739,
+        "longitud": 2.1742
+      }
     },
     {
       "id": 15,
@@ -297,11 +438,19 @@
       "carrera_id": 8,
       "pais": "Canadá",
       "ciudad": "Montreal",
-      "fechas_disponibles": ["2025-06-13", "2025-06-14", "2025-06-15", "2025-06-16"],
+      "fechas_disponibles": [
+        "2025-06-13",
+        "2025-06-14",
+        "2025-06-15",
+        "2025-06-16"
+      ],
       "precio_promedio_habitacion_eur": 320,
       "tieneAmenities": true,
       "tieneTransporte": true,
-      "ubicacion_mapa": { "latitud": 45.5009, "longitud": -73.5702 }
+      "ubicacion_mapa": {
+        "latitud": 45.5009,
+        "longitud": -73.5702
+      }
     },
     {
       "id": 16,
@@ -309,11 +458,18 @@
       "carrera_id": 8,
       "pais": "Canadá",
       "ciudad": "Montreal",
-      "fechas_disponibles": ["2025-06-12", "2025-06-16", "2025-06-17"],
+      "fechas_disponibles": [
+        "2025-06-12",
+        "2025-06-16",
+        "2025-06-17"
+      ],
       "precio_promedio_habitacion_eur": 250,
       "tieneAmenities": true,
       "tieneTransporte": false,
-      "ubicacion_mapa": { "latitud": 45.5008, "longitud": -73.5703 }
+      "ubicacion_mapa": {
+        "latitud": 45.5008,
+        "longitud": -73.5703
+      }
     },
     {
       "id": 17,
@@ -321,11 +477,19 @@
       "carrera_id": 9,
       "pais": "Singapur",
       "ciudad": "Singapur",
-      "fechas_disponibles": ["2025-10-03", "2025-10-04", "2025-10-05", "2025-10-06"],
+      "fechas_disponibles": [
+        "2025-10-03",
+        "2025-10-04",
+        "2025-10-05",
+        "2025-10-06"
+      ],
       "precio_promedio_habitacion_eur": 700,
       "tieneAmenities": true,
       "tieneTransporte": true,
-      "ubicacion_mapa": { "latitud": 1.2816, "longitud": 103.8617 }
+      "ubicacion_mapa": {
+        "latitud": 1.2816,
+        "longitud": 103.8617
+      }
     },
     {
       "id": 18,
@@ -333,11 +497,18 @@
       "carrera_id": 9,
       "pais": "Singapur",
       "ciudad": "Singapur",
-      "fechas_disponibles": ["2025-10-02", "2025-10-06", "2025-10-07"],
+      "fechas_disponibles": [
+        "2025-10-02",
+        "2025-10-06",
+        "2025-10-07"
+      ],
       "precio_promedio_habitacion_eur": 550,
       "tieneAmenities": true,
       "tieneTransporte": false,
-      "ubicacion_mapa": { "latitud": 1.2858, "longitud": 103.8569 }
+      "ubicacion_mapa": {
+        "latitud": 1.2858,
+        "longitud": 103.8569
+      }
     },
     {
       "id": 19,
@@ -345,11 +516,19 @@
       "carrera_id": 10,
       "pais": "Estados Unidos",
       "ciudad": "Austin, Texas",
-      "fechas_disponibles": ["2025-10-24", "2025-10-25", "2025-10-26", "2025-10-27"],
+      "fechas_disponibles": [
+        "2025-10-24",
+        "2025-10-25",
+        "2025-10-26",
+        "2025-10-27"
+      ],
       "precio_promedio_habitacion_eur": 400,
       "tieneAmenities": true,
       "tieneTransporte": true,
-      "ubicacion_mapa": { "latitud": 30.2644, "longitud": -97.7420 }
+      "ubicacion_mapa": {
+        "latitud": 30.2644,
+        "longitud": -97.742
+      }
     },
     {
       "id": 20,
@@ -357,11 +536,18 @@
       "carrera_id": 10,
       "pais": "Estados Unidos",
       "ciudad": "Austin, Texas",
-      "fechas_disponibles": ["2025-10-23", "2025-10-27", "2025-10-28"],
+      "fechas_disponibles": [
+        "2025-10-23",
+        "2025-10-27",
+        "2025-10-28"
+      ],
       "precio_promedio_habitacion_eur": 350,
       "tieneAmenities": true,
       "tieneTransporte": false,
-      "ubicacion_mapa": { "latitud": 30.2678, "longitud": -97.7402 }
+      "ubicacion_mapa": {
+        "latitud": 30.2678,
+        "longitud": -97.7402
+      }
     }
   ],
   "vuelos": [
@@ -724,11 +910,6 @@
       "tipo_avion": "Boeing 787",
       "clase_asiento": "Upper Class",
       "precio_promedio_ticket_eur": 2100
-      }
-    ]}
-    
-      
-
-
-
-
+    }
+  ]
+}

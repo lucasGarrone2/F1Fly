@@ -14,10 +14,10 @@ export class CarreraAbm {
   private readonly carreraClient = inject(CarreraClient);
   protected readonly carreras = toSignal(this.carreraClient.getCarreras());
   
-  protected readonly agregarCarrera = signal(false);
+  protected readonly activarFormulzarioCarrera = signal(false);
 
   activarFormulario_Carrera(){
-    this.agregarCarrera.set(!this.agregarCarrera());
+    this.activarFormulzarioCarrera.set(!this.activarFormulzarioCarrera());
   }
   
 }

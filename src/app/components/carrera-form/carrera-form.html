@@ -1,39 +1,43 @@
 <section id="Formulario_Carrera">
     <h2>Cargar Circuito</h2>
     <div>
-        <form>
+        <form [formGroup]="form" (ngSubmit)="handleSubmit()">
             <ul>
                 <li>
-                    <label for="nombre_circuito">Nombre:</label>
-                    <input type="text" id="nombre_circuito" name="nombre" placeholder="Circuito de Monaco...">
+                    <label for="nombre_carrera">Nombre:</label>
+                    <input type="text" id="nombre_circuito" formControlName="nombre_carrera" placeholder="Circuito de Monaco...">
                 </li>
                 <li>
-                    <label for="fecha_circuito">Fecha:</label>
-                    <input type="date" id="fecha_circuito" name="fecha_circuito">
+                    <label for="descripcion_carrera">Descripción:</label>
+                    <textarea id="descripcion_circuito" formControlName="descripcion_carrera" placeholder="Descripción..."></textarea>
+                </li>
+                <li>
+                    <label for="cantidad_vueltas_carrera">Cantidad Vueltas:</label>
+                    <input type="number" formControlName="cantidad_vueltas_carrera" id="cantidad_vueltas">
+                </li>
+                <li>
+                    <label for="capacidad_carrera">Capacidad:</label>
+                    <input type="number" id="capacidad_circuito" formControlName="capacidad_carrera">
+                </li>
+                  <li>
+                    <label for="pais_carrera">País:</label>
+                    <input type="text" formControlName="pais_carrera" id="pais_circuito" placeholder="Monaco...">
+                </li>
+                <li>
+                    <label for="ciudad_carrera">Ciudad:</label>
+                    <input type="text" formControlName="ciudad_carrera" id="ciudad_circuito" placeholder="Principado de Monaco...">
+                </li>
+                <li>
+                    <label for="fecha_carrera">Fecha:</label>
+                    <input type="date" id="fecha_circuito" formControlName="fecha_carrera">
                 </li>    
                 <li>
-                    <label for="capacidad_circuito">Capacidad:</label>
-                    <input type="number" id="capacidad_circuito" name="capacidad_circuito">
+                    <label for="precio_carrera">Precio:</label>
+                    <input type="number" formControlName="precio_carrera" id="precio_entrada">
                 </li>
                 <li>
-                    <label for="descripcion_circuito">Descripción:</label>
-                    <textarea id="descripcion_circuito" name="descripcion_circuito" placeholder="Descripción..."></textarea>
-                </li>
-                <li>
-                    <label for="cantidad_vueltas">Cantidad Vueltas:</label>
-                    <input type="number" name="cantidad_vueltas" id="cantidad_vueltas">
-                </li>
-                <li>
-                    <label for="ciudad_circuito">Ciudad:</label>
-                    <input type="text" name="ciudad_circuito" id="ciudad_circuito" placeholder="Principado de Monaco...">
-                </li>
-                <li>
-                    <label for="pais_circuito">País:</label>
-                    <input type="text" name="pais_circuito" id="pais_circuito" placeholder="Monaco...">
-                </li>
-                <li>
-                    <label for="precio_entrada">Precio:</label>
-                    <input type="number" name="precio_entrada" id="precio_entrada">
+                    <label for="imageUrl_carrera">URL Imagen:</label>
+                    <input type="text" id="urlImagen_circuito" formControlName="imageUrl_carrera" placeholder="Monaco.jpg...">
                 </li>
             </ul>
             <button type="submit" id="boton">ENVIAR</button>

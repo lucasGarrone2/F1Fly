@@ -1,11 +1,14 @@
 #Formulario_Carrera {
-    position: fixed; /* Para que flote sobre todo el contenido */
-    top: 50%;         /* Centrado vertical */
-    left: 50%;        /* Centrado horizontal */
-    transform: translate(-50%, -50%); /* Ajuste exacto al centro */
+   position: fixed;
+    /* --- CAMBIO CRÍTICO: Anclamos el inicio del formulario al 15% del borde superior --- */
+    top: 1%; 
+    
+    left: 50%; 
+    /* --- CAMBIO CLAVE: Solo centramos en el eje horizontal (X) --- */
+    transform: translateX(-50%);
     background-color: #1a237e; /* Azul oscuro, combina con tu estilo */
     color: white;
-    padding: 30px 40px;
+    padding: 0px 40px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* efecto flotante */
     width: 400px; /* ancho fijo */
@@ -15,7 +18,8 @@
 
 #Formulario_Carrera h2 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 7px;
+    margin-top: 5px;
     font-size: 24px;
 }
 
@@ -26,7 +30,7 @@
 }
 
 #Formulario_Carrera form li {
-    margin-bottom: 15px;
+    margin-bottom: 8px;
 }
 
 #Formulario_Carrera label {
@@ -47,6 +51,7 @@
 #Formulario_Carrera button {
     display: block;
     width: 100%;
+    margin-bottom: 5px;
     padding: 10px;
     background-color: #3949ab;
     color: white;
