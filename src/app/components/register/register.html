@@ -13,39 +13,107 @@
 </h5> 
 <div class="form-field">
     <label for="nombre">Nombre</label>
-    <input type="text" id="nombre" formControlName="nombre" placeholder="Tu nombre...">
+    <input type="text" id="nombre" formControlName="nombre" placeholder="Tu nombre..." [class.input-error]="form.controls.nombre.invalid && form.controls.nombre.touched">
+    <p class="error-text">
+        @if (form.controls.nombre.errors?.['required'] && form.controls.nombre.touched) {
+            El nombre es requerido
+        }
+    </p>
 </div>
 
 <div class="form-field">
     <label for="apellido">Apellido</label>
-    <input type="text" id="apellido" formControlName="apellido" placeholder="Tu apellido...">
+    <input type="text" id="apellido" formControlName="apellido" placeholder="Tu apellido..." [class.input-error]="form.controls.apellido.invalid && form.controls.apellido.touched">
+   
+   <p class="error-text">
+    @if (form.controls.apellido.errors?.['required'] && form.controls.apellido.touched) {
+            El apellido es requerido
+        }
+   </p>
+    
 </div>
 
 <div class="form-field">
     <label for="email">Email</label>
-    <input type="email" id="email" formControlName="email" placeholder="tuEmail@email.com">
+    <input type="email" id="email" formControlName="email" placeholder="tuEmail@email.com" [class.input-error]="form.controls.email.invalid && form.controls.email.touched">
+   
+    <p class="error-text">
+
+    @if (form.controls.email.errors?.['required'] && form.controls.email.touched) {
+            El email es requerido
+        }
+
+    @if (form.controls.email.errors?.['email'] && form.controls.email.touched) {
+            El formato del email no es valido
+        }
+    </p>
+    
+
 </div>
 
 <div class="form-field">
     <label for="dni">Dni</label>
-    <input type="number" id="dni" formControlName="dni" placeholder="12345678">
+    <input type="number" id="dni" formControlName="dni" placeholder="12345678" [class.input-error]="form.controls.dni.invalid && form.controls.dni.touched">
+    
+    <p class="error-text">
+
+    @if (form.controls.dni.errors?.['required'] && form.controls.dni.touched) {
+            El dni es requerido
+        }
+
+    @if (form.controls.dni.errors?.['dni'] && form.controls.dni.touched) {
+            El formato del dni no es valido
+        }
+
+    </p>
+
 </div>
 
 
 <div class="form-field">
     <label for="nacionalidad">Nacionalidad</label>
-    <input type="string" id="nacionalidad" formControlName="nacionalidad" placeholder="Argentina">
+    <input type="string" id="nacionalidad" formControlName="nacionalidad" placeholder="Argentina" [class.input-error]="form.controls.nacionalidad.invalid && form.controls.nacionalidad.touched">
+    <p class="error-text">
+
+@if (form.controls.nacionalidad.errors?.['required'] && form.controls.nacionalidad.touched) {
+            La nacionalidad es requerida
+        }
+    </p>
+      
+
+   
 </div>
 
 
 <div class="form-field">
     <label for="edad">Edad</label>
-    <input type="number" id="edad" formControlName="edad" placeholder="18">
+    <input type="number" id="edad" formControlName="edad" placeholder="18" [class.input-error]="form.controls.edad.invalid && form.controls.edad.touched">
+    <p class="error-text">
+
+    @if (form.controls.edad.errors?.['required'] && form.controls.edad.touched) {
+            La edad es requerida
+        }
+
+    @if (form.controls.edad.errors?.['min'] && form.controls.edad.touched) {
+        Debes ser mayor de 18 años.
+      }
+
+    </p>
+   
 </div>
 
 <div class="form-field">
     <label for="fecha_nacimiento">Fecha de nacimiento</label>
-    <input type="date" id="fecha_nacimiento" formControlName="fecha_nacimiento" placeholder="08/08/2003">
+    <input type="date" id="fecha_nacimiento" formControlName="fecha_nacimiento" placeholder="08/08/2003" [class.input-error]="form.controls.fecha_nacimiento.invalid && form.controls.fecha_nacimiento.touched">
+  
+    <p class="error-text">
+@if (form.controls.fecha_nacimiento.errors?.['required'] && form.controls.fecha_nacimiento.touched) {
+            La fecha de nacimiento no es valida
+        }
+
+    </p>
+    
+
 </div>
 
     <h5 class="seguridad">
@@ -88,7 +156,7 @@
     </select>
 </div>
     <div class="btn-submit">
-        <button type="submit">Enviar</button>
+        <button type="submit" [disabled]="form.invalid">Enviar</button>
     </div>
 
 

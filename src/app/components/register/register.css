@@ -144,6 +144,24 @@ h2{
     box-shadow: 0 0 12px rgba(204, 28, 74, 0.8);
 }
 
+
+.error-text {
+  color: #ff5555; /* Rojo para errores */
+  font-size: 0.85em;
+  margin: 4px 0 0 0;
+  height: 14px; /* Mantiene el espacio fijo */
+}
+
+.input-error {
+  border: 2px solid #ff5555 !important;
+  background-color: rgba(255, 85, 85, 0.1);
+}
+
+.btn-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .text-AlreadyAccount{
     color: #888;
     cursor: pointer;

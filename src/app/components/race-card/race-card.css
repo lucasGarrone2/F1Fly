@@ -137,6 +137,20 @@
   background-color: #ff5555;
 }
 
+.btn-seleccionar {
+  background-color: var(--color-accent-red);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-seleccionar:hover{
+    background-color: green;
+}
 /* =========================================================
     TAG DE ESTADO
    ========================================================= */

@@ -54,7 +54,7 @@ protected readonly listaPilotos = [
   protected readonly form = this.formBuilder.nonNullable.group({
     nombre: ['', [Validators.required]],
     apellido: ['', [Validators.required]],
-    email: ['', [Validators.required]],
+    email: ['', [Validators.required, Validators.email]],
     dni: ['', [Validators.required, Validators.min(10000000)]],
     nacionalidad: ['', [Validators.required]],
     edad: ['', [Validators.required, Validators.min(18)]],
@@ -67,8 +67,9 @@ protected readonly listaPilotos = [
   {
     if(this.form.invalid)
     {
-      alert("Error al completar el formulario");
+      this.form.markAllAsTouched();
       return;
     }
   }
+
 }
