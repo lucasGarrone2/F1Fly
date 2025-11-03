@@ -10,14 +10,14 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 export class CarreraForm {
   private readonly formBuilder= inject(FormBuilder);
   protected readonly form = this.formBuilder.nonNullable.group({
-    nombre_circuito: ['', [Validators.required]],
-    fecha_circuito: ['', [Validators.required]],
-    capacidad_circuito: ['', [Validators.required, Validators.min(5000)]],
-    descripcion_circuito: ['', [Validators.required]],
-    cantidad_vueltas: ['', [Validators.required, Validators.min(50)]],
-    ciudad_circuito: ['',[Validators.required]],
-    pais_circuito: ['',[Validators.required]],
-    precio_entrada: ['',[Validators.required, Validators.min(80)]]
+    nombre_carrera: ['', [Validators.required]],
+    fecha_carrera: ['', [Validators.required]],
+    capacidad_carrera: ['', [Validators.required, Validators.min(5000)]],
+    descripcion_carrera: ['', [Validators.required]],
+    cantidad_vueltas_carrera: ['', [Validators.required, Validators.min(50)]],
+    ciudad_carrera: ['',[Validators.required]],
+    pais_carrera: ['',[Validators.required]],
+    precio_carrera: ['',[Validators.required, Validators.min(80)]]
   });
 
   handleSubmit()
