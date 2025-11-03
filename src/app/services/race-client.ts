@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { inject } from '@angular/core';
-import { Race } from '../components/carrera/carrera-interface';
+import { Carrera } from '../components/carrera/carrera-interface';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -11,24 +11,24 @@ export class RaceClient {
   private http = inject(HttpClient);
   private baseUrl = 'http://localhost:3000/carreras';
 
-  getRaces(): Observable<Race[]> 
+  getRaces(): Observable<Carrera[]> 
   {
-    return this.http.get<Race[]>(this.baseUrl);
+    return this.http.get<Carrera[]>(this.baseUrl);
   }
 
-  getRaceById(id: string | number): Observable<Race[]>
+  getRaceById(id: string | number): Observable<Carrera[]>
   {
-    return this.http.get<Race[]>(`${this.baseUrl}/${id}`);
+    return this.http.get<Carrera[]>(`${this.baseUrl}/${id}`);
   }
 
-  addRace(race: Race): Observable<Race>
+  addRace(race: Carrera): Observable<Carrera>
   {
-    return this.http.post<Race>(this.baseUrl, race);
+    return this.http.post<Carrera>(this.baseUrl, race);
   }
 
-  updateRace(id: string | number, race: Race): Observable<Race[]>
+  updateRace(id: string | number, race: Carrera): Observable<Carrera[]>
   {
-    return this.http.put<Race[]>(`${this.baseUrl}/${id}`, race);
+    return this.http.put<Carrera[]>(`${this.baseUrl}/${id}`, race);
   }
 
   deleteRace(id: string | number)

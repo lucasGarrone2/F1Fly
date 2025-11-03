@@ -1,15 +1,15 @@
 <div class="card" [ngClass]="layout" tabindex="0">
 
     <div class="card-image-container">
-        <img [src]="safeImageUrl" [alt]="'Circuito de ' + race.nombre_circuito" class="card-image"> 
+        <img [src]="safeImageUrl" [alt]="'Circuito de ' + race.nombre_carrera" class="card-image"> 
 
         <span 
             class="race-status-tag"
-            [ngClass]="getRaceStatus(race.fecha)">
+            [ngClass]="getRaceStatus(race.fecha_carrera)">
             
-            @if (getRaceStatus(race.fecha) === 'upcoming') {
+            @if (getRaceStatus(race.fecha_carrera) === 'upcoming') {
                 Próxima
-            } @else if (getRaceStatus(race.fecha) === 'today') {
+            } @else if (getRaceStatus(race.fecha_carrera) === 'today') {
                 ¡HOY!
             } @else {
                 Pasada
@@ -18,23 +18,23 @@
     </div>
 
     <div class="card-body">
-        <h3 class="card-title">{{ race.nombre_circuito }}</h3>
+        <h3 class="card-title">{{ race.nombre_carrera }}</h3>
         <p class="card-location-info">
-            <i class="fas fa-map-marker-alt"></i> {{ race.ciudad }}, {{ race.pais }}
+            <i class="fas fa-map-marker-alt"></i> {{ race.ciudad_carrera }}, {{ race.pais_carrera }}
         </p>
 
         <div class="card-stats">
             <p>
-                <i class="fas fa-users"></i> Capacidad: {{ race.capacidad}}
+                <i class="fas fa-users"></i> Capacidad: {{ race.capacidad_carrera}}
             </p>
             <p class="price">
-                <i class="fas fa-euro-sign"></i> Precio: {{ race.precio_promedio_entrada_eur }}
+                <i class="fas fa-euro-sign"></i> Precio: {{ race.precio_carrera }}
             </p>
         </div>
 
         <div class="card-footer">
             <span class="card-date-time">
-                <i class="fas fa-calendar-alt"></i> {{ race.fecha}}
+                <i class="fas fa-calendar-alt"></i> {{ race.fecha_carrera}}
             </span>
             
             <button class="btn-details">

@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
-import {Race } from "../carrera/carrera-interface"
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { inject } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Carrera } from '../carrera/carrera-interface';
+
 @Component({
   selector: 'app-race-card',
   standalone:true,
@@ -12,7 +13,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './race-card.css'
 })
 export class RaceCardComponent implements OnInit {
-  @Input() race!: Race;
+  @Input() race!: Carrera;
   @Input() layout: 'carousel' | 'list' = 'carousel';
 
    private readonly sanitizer = inject(DomSanitizer);
@@ -20,8 +21,8 @@ export class RaceCardComponent implements OnInit {
 
     ngOnInit(): void {
       
-        if (this.race.imageUrl) {
-            this.safeImageUrl = this.sanitizer.bypassSecurityTrustUrl(this.race.imageUrl);
+        if (this.race.imageUrl_carrera) {
+            this.safeImageUrl = this.sanitizer.bypassSecurityTrustUrl(this.race.imageUrl_carrera);
         }
     }
   constructor(){}

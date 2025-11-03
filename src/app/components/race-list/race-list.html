@@ -5,7 +5,7 @@
     @if (!raceSource()) {
       <p style="text-align: center; width: 100%;">Cargando carreras...</p>
     } @else {
-      @for (race of raceSource(); track race.id) {
+      @for (race of raceSource(); track race.id_carrera) {
     <app-race-card
         [race]="race"
         [layout]="'list'">

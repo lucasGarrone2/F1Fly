@@ -1,6 +1,6 @@
 import { Component, inject, input, linkedSignal } from '@angular/core';
 import {CommonModule} from "@angular/common";
-import {Race} from '../carrera/carrera-interface';
+import { Carrera } from '../carrera/carrera-interface';
 import { RaceCardComponent } from '../race-card/race-card';
 import { RouterLink } from "@angular/router";
 import { RaceClient } from '../../services/race-client';

@@ -5,4 +5,16 @@ import {Carrera} from './carrera-interface';
 
 @Injectable({ providedIn: 'root' })
 
-export class Carrera
+export class CarreraClient{
+    private readonly http = inject(HttpClient);
+    private readonly baseUrl = 'http://localhost:3000/movies';
+
+
+
+
+
+
+
+
+
+}
