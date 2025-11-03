@@ -1,16 +1,93 @@
 <body>
 
-  <div class="races-container" #racesContainer>
-    @if (!raceSource()) {
-      <p style="text-align: center; width: 100%;">Cargando carreras...</p>
-    } @else {
-      @for (race of raceSource(); track race.id_carrera) {
-    <app-race-card
-        [race]="race"
-        [layout]="'list'">
-    </app-race-card>
-}
-    }
-  </div>
+  <div class="main-layout-container">
+    <aside class="filterBar">
+      <h2 class="sideBar-Title">Filtros de carrera</h2>
+
+      <div class="filterPrice">
+        <h3>Filtrar por precio</h3>
+
+        <form [formGroup]="priceForm">
+
+          <div class="filterPrice-Range">
+
+            <div class="MinMax-price-filter">
+              <label for="min-price">Min.</label>
+              <input type="number" id="min-price" placeholder="$ Min" 
+                     formControlName="minPrice"
+                     [class.input-error]="minPrice?.invalid && minPrice?.touched" />
+              
+              <p class="error-text">
+                @if (minPrice?.errors?.['min'] && minPrice?.touched) {
+                  ⚠️ Mínimo $50
+                }
+                @if (minPrice?.errors?.['max'] && minPrice?.touched) {
+                  ⚠️ Máximo $1000
+                }
+              </p>
+            </div>
+
+            <span class="range-separator">-</span>
+
+            <div class="MinMax-price-filter">
+              <label for="max-price">Max.</label>
+              <input type="number" id="max-price" placeholder="$ Max" 
+                     formControlName="maxPrice"
+                     [class.input-error]="maxPrice?.invalid && maxPrice?.touched" />
+              
+              <p class="error-text">
+                @if (maxPrice?.errors?.['min'] && maxPrice?.touched) {
+                  ⚠️ Mínimo $50
+                }
+                @if (maxPrice?.errors?.['max'] && maxPrice?.touched) {
+                  ⚠️ Máximo $1000
+                }
+              </p>
+            </div>
+
+          </div> <button class="btn-Filtrar" [disabled]="priceForm.invalid">
+            Aplicar Precio
+          </button>
+        
+        </form> </div>
+
+
+      <div class="filter-group date-filter-group">
+        <h3>Filtrar por Fecha</h3>
+
+        <ul class="filter-options-list">
+          <li>
+            <input type="checkbox" id="date-q1" name="date-filter" value="q1" />
+            <label for="date-q1">Primer Trimestre (Ene - Mar)</label>
+          </li>
+          <li>
+            <input type="checkbox" id="date-q2" name="date-filter" value="q2" />
+            <label for="date-q2">Segundo Trimestre (Abr - Jun)</label>
+          </li>
+          <li>
+            <input type="checkbox" id="date-q3" name="date-filter" value="q3" />
+            <label for="date-q3">Tercer Trimestre (Jul - Sep)</label>
+          </li>
+          <li>
+            <input type="checkbox" id="date-q4" name="date-filter" value="q4" />
+            <label for="date-q4">Cuarto Trimestre (Oct - Dic)</label>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <section class="carreras" id="carreras">
+      <h2 class="proxCarreras">Próximas Carreras</h2>
+
+      <div class="races-container" #racesContainer>
+        @if (!raceSource()) {
+        <p style="text-align: center; width: 100%">Cargando carreras...</p>
+        } @else { @for (race of raceSource(); track race.id_carrera) {
+        <app-race-card [race]="race" [layout]="'list'"> </app-race-card>
+        } }
+      </div>
+    </section>
+ 
+   </div>
 
   </body>
