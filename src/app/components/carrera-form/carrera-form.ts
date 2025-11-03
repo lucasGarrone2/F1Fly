@@ -26,8 +26,7 @@ export class CarreraForm {
     imageUrl_carrera: ['', [Validators.required]]
   });
 
-
-  handleSubmit() {
+   handleSubmit() {
     if (this.form.invalid) {
       alert("El formulario está invalido");
       return;
@@ -35,21 +34,15 @@ export class CarreraForm {
 
     if (confirm("Desea confirmar los datos?")) {
       const carrera = this.form.getRawValue() as Carrera;
-      this.carreraClient.addCarrera(carrera).subscribe({
-                    next: (carreraGuardada) => {
-                        alert("¡Carrera ${carreraGuardada.nombre_carrera} guardada con éxito!");
-                        this.form.reset(); 
-                        this.carreraABM.activarFormulario_Carrera();
-                        },
-                    error: (err) => {
-                        console.error("Error al guardar la carrera", err);
-                        alert("¡Error al guardar! El servidor no aceptó los datos.");
-                    }
-                });
-      this.form.reset();
+      this.carreraClient.addCarrera(carrera).subscribe(() => {
+          alert('Carrera agregada con éxito!');
+          this.carreraABM.activarFormulario_Carrera();
+          this.form.reset();
+          window.location.reload();
+        });
     }
   }
-
+ 
   
 }
 
