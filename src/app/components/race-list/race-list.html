@@ -1,6 +1,5 @@
 <body>
 
-<<<<<<< HEAD
   <div class="main-layout-container">
     <aside class="filterBar">
       <h2 class="sideBar-Title">Filtros de carrera</h2>
@@ -83,24 +82,12 @@
       <div class="races-container" #racesContainer>
         @if (!raceSource()) {
         <p style="text-align: center; width: 100%">Cargando carreras...</p>
-        } @else { @for (race of raceSource(); track race.id) {
+        } @else { @for (race of raceSource(); track race.id_carrera) {
         <app-race-card [race]="race" [layout]="'list'"> </app-race-card>
         } }
       </div>
     </section>
-=======
-  <div class="races-container" #racesContainer>
-    @if (!raceSource()) {
-      <p style="text-align: center; width: 100%;">Cargando carreras...</p>
-    } @else {
-      @for (race of raceSource(); track race.id_carrera) {
-    <app-race-card
-        [race]="race"
-        [layout]="'list'">
-    </app-race-card>
-}
-    }
->>>>>>> 8b60347a9e80fbbab5ec3a8fc12460b712ba102f
-  </div>
+ 
+   </div>
 
   </body>
