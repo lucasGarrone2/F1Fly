@@ -7,9 +7,9 @@ import {Carrera} from './carrera-interface';
 
 export class CarreraClient{
     private readonly http = inject(HttpClient);
-    private readonly baseUrl = 'http://localhost:3000/movies';
+    private readonly baseUrl = 'http://localhost:3000/carreras';
 
-    getCarreas(){
+    getCarreras(){
         return this.http.get<Carrera[]>(this.baseUrl);
     }
 
