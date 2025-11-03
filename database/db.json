@@ -1,6 +1,131 @@
 {
   "carreras": [
     {
+<<<<<<< HEAD
+      "id": 1,
+      "nombre_circuito": "Bahrain International Circuit",
+      "pais": "Bahrain",
+      "ciudad": "Sakhir",
+      "fecha": "2026-04-13",
+      "capacidad": 70000,
+      "precio_promedio_entrada_eur": 120,
+      "descripcion": "<h2>Bahrain International Circuit</h2><p>Pista desértica, diseño Tilke, carreras bajo luces.</p>",
+      "imageUrl": "bahrein.jpg"
+    },
+    {
+      "id": 2,
+      "nombre_circuito": "Circuit de Monaco",
+      "pais": "Mónaco",
+      "ciudad": "Montecarlo",
+      "fecha": "2026-05-25",
+      "capacidad": 37000,
+      "precio_promedio_entrada_eur": 250,
+       "descripcion": "<h2>Monaco Grand Prix (Circuit de Monaco)</h2><p>El clásico urbano: curvas estrechas y glamour en la Riviera.</p>",
+       "imageUrl": "monaco.png"
+      },
+    {
+      "id": 3,
+      "nombre_circuito": "Silverstone Circuit",
+      "pais": "Reino Unido",
+      "ciudad": "Silverstone",
+      "fecha": "2026-07-06",
+      "capacidad": 150000,
+      "precio_promedio_entrada_eur": 180,
+      "descripcion": "<h2>Silverstone</h2><p>La cuna del automovilismo británico, combinaciones rápidas y espectaculares gradas.</p>",
+      "imageUrl": "silverstone.jpg"
+    },
+    {
+      "id": 4,
+      "nombre_circuito": "Autodromo Nazionale Monza",
+      "pais": "Italia",
+      "ciudad": "Monza (Milán)",
+      "fecha": "2026-09-07",
+      "capacidad": 120000,
+      "precio_promedio_entrada_eur": 140,
+      "descripcion": "<h2>Monza - 'La Pista Mágica'</h2><p>Alta velocidad, largas rectas y la histórica banking.</p>",
+      "imageUrl": "monzaa.jpg"
+    },
+    {
+      "id": 5,
+      "nombre_circuito": "Autódromo José Carlos Pace (Interlagos)",
+      "pais": "Brasil",
+      "ciudad": "São Paulo",
+      "fecha": "2026-11-09",
+      "capacidad": 110000,
+      "precio_promedio_entrada_eur": 100,
+      "descripcion": "<h2>Interlagos - São Paulo</h2><p>Pista favorita por los aficionados latinoamericanos; ambiente de carnaval durante la carrera.</p>",
+      "imageUrl": "interlagos.jpg"
+    },
+    {
+      "id": 6,
+      "nombre_circuito": "Red Bull Ring",
+      "pais": "Austria",
+      "ciudad": "Spielberg",
+      "fecha": "2026-06-29",
+      "capacidad": 40000,
+      "precio_promedio_entrada_eur": 160,
+      "descripcion": "<h2>Red Bull Ring</h2><p>Pista corta y rápida rodeada de montañas verdes.</p>",
+      "imageUrl": "redbullring.jpg"
+    },
+    {
+      "id": 7,
+      "nombre_circuito": "Circuit de Barcelona-Catalunya",
+      "pais": "España",
+      "ciudad": "Barcelona",
+      "fecha": "2026-05-11",
+      "capacidad": 100000,
+      "precio_promedio_entrada_eur": 170,
+      "descripcion": "<h2>Circuit de Barcelona-Catalunya</h2><p>El clásico de pruebas de pretemporada y buen clima.</p>",
+      "imageUrl": "barcelona.jpeg"
+    },
+    {
+      "id": 8,
+      "nombre_circuito": "Circuit Gilles Villeneuve",
+      "pais": "Canadá",
+      "ciudad": "Montreal",
+      "fecha": "2026-06-15",
+      "capacidad": 120000,
+      "precio_promedio_entrada_eur": 190,
+      "descripcion": "<h2>Circuit Gilles Villeneuve</h2><p>Rápido circuito semi-urbano con el famoso 'Muro de los Campeones'.</p>",
+      "imageUrl": "canada.jpg"
+    },
+    {
+      "id": 9,
+      "nombre_circuito": "Marina Bay Street Circuit",
+      "pais": "Singapur",
+      "ciudad": "Singapur",
+      "fecha": "2026-10-05",
+      "capacidad": 80000,
+      "precio_promedio_entrada_eur": 280,
+      "descripcion": "<h2>Marina Bay Street Circuit</h2><p>Primera carrera nocturna en la historia de la F1; mucho calor y humedad.</p>",
+      "imageUrl": "singapur.avif"
+    },
+    {
+      "id": 10,
+      "nombre_circuito": "Circuit of the Americas (COTA)",
+      "pais": "Estados Unidos",
+      "ciudad": "Austin, Texas",
+      "fecha": "2026-10-26",
+      "capacidad": 150000,
+      "precio_promedio_entrada_eur": 210,
+      "descripcion": "<h2>Circuit of the Americas</h2><p>Circuito moderno con grandes cambios de elevación y ambiente festivo.</p>",
+      "imageUrl": "cota.jpg"
+    }
+  ],
+  "hoteles": [
+    {
+      "id": 1,
+      "nombre_hotel": "Sakhir Grand Hotel",
+      "carrera_id": 1,
+      "pais": "Bahrain",
+      "ciudad": "Sakhir",
+      "fechas_disponibles": ["2025-04-11", "2025-04-12", "2025-04-13", "2025-04-14"],
+      "precio_promedio_habitacion_eur": 160,
+      "tieneAmenities": true,
+      "tieneTransporte": true,
+      "ubicacion_mapa": { "latitud": 26.0325, "longitud": 50.5106 }
+      
+=======
       "id_carrera": 1,
       "nombre_carrera": "Bahrain International Circuit",
       "pais_carrera": "Bahrain",
@@ -107,6 +232,7 @@
       "precio_carrera": 280,
       "descripcion_carrera": "Marina Bay Street Circuit. Primera carrera nocturna en la historia de la F1; mucho calor y humedad.",
       "imageUrl_carrera": "singapur.avif"
+>>>>>>> 8b60347a9e80fbbab5ec3a8fc12460b712ba102f
     },
     {
       "id_carrera": 10,

@@ -1,23 +1,196 @@
+*{
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #0B162F;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.main-layout-container {
+    display: flex; 
+    gap: 30px; 
+    padding: 0 20px 20px 20px;
+    background-color: #0B162F; 
+    min-height: 100vh;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
 .carreras {
+    flex-grow: 1; 
+    padding: 0;
+    background-color: transparent; 
+}
+
+
+
+.proxCarreras {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #ff3333;
+    padding-bottom: 10px;
+}
+
+.races-container {
+    display: flex;
+    flex-direction: column; 
+    gap: 15px; 
+    max-width: 900px; 
+    margin: 0 auto; 
+}
+
+app-race-card{
+    background-color: #13244c; 
+    display: block;
+    border-radius: 8px; 
+    padding: 15px; 
+}
+
+.filterBar {
+ width: 280px; 
+ flex-shrink: 0; 
  padding: 20px;
- background-color: #0B162F;
+ background-color: #13244c; 
+ color: white;
+ border-radius: 12px;
+ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+ font-family: Arial, Helvetica, sans-serif;
+}
+
+.sidebar-title {
+ font-size: 1.5em;
+ border-bottom: 2px solid #ff3333; 
+ padding-bottom: 10px;
+ margin-top: 0;
+ margin-bottom: 25px;
  color: white;
 }
 
-.proxCarreras {
- font-size: 2em;
+.filterPrice,
+.filter-group {
+ margin-bottom: 30px;
+ padding-bottom: 20px;
+ border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.filterPrice h3,
+.filter-group h3 {
+font-size: 1.1em;
+ color: #ff3333; 
+ margin-bottom: 15px;
+ text-transform: uppercase;
+}
+
+.error-text {
+color: #ff5555;
+ font-size: 0.85em;
+margin: 4px 0 0 0;
+ height: 14px; /* mantiene el espacio aunque no haya error */
+}
+
+.input-error {
+ border: 2px solid #ff5555 !important;
+ background-color: rgba(255, 85, 85, 0.1);
+}
+
+.btn-Filtrar:disabled {
+ opacity: 0.5;
+ cursor: not-allowed;
+}
+
+.filterPrice-Range {
+ display: flex; 
+ align-items: center;
+gap: 8px; 
+}
+
+.MinMax-price-filter {
+ display: flex;
+ flex-direction: column;
+ flex-grow: 1;
+}
+
+.MinMax-price-filter label {
+ font-size: 0.85em;
+ opacity: 0.8;
+ margin-bottom: 3px;
+}
+
+.filterPrice-Range input[type="number"] {
+ width: 100%;
+ padding: 8px;
+ border: 1px solid rgba(255, 255, 255, 0.2);
+ border-radius: 6px;
+ background-color: #0B162F; 
+ color: white;
  text-align: center;
- font-family: Arial, Helvetica, sans-serif;
- margin-bottom: 25px;
- border-bottom: 2px solid #ff3333;
- padding-bottom: 10px;
+ 
+}
+
+.filterPrice-Range input::-webkit-outer-spin-button,
+.filterPrice-Range input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+.range-separator {
+ font-size: 1.5em;
+ opacity: 0.6;
+margin-top: 15px;
+}
+
+.btn-Filtrar {
+ display: block;
+ width: 100%;
+ padding: 10px;
+ margin-top: 20px;
+ background-color: #ff3333; 
+color: white;
+ border: none;
+ border-radius: 6px;
+ font-size: 1em;
+cursor: pointer;
+transition: background-color 0.3s ease;
+text-transform: uppercase;
+}
+
+.btn-Filtrar:hover {
+background-color: #ff5555;
 }
 
 
-.races-container {
-display: flex;
- flex-direction: column; 
- gap: 15px; 
-max-width: 900px; 
- margin: 0 auto; 
+.filter-options-list {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.filter-options-list li {
+    margin-bottom: 10px;
+ display: flex; 
+ align-items: center; 
+}
+
+/* --- CORRECCIÓN AQUÍ --- */
+.filter-options-list label {
+ /* display: block; */ /* <-- QUITADO: Esta era la línea del problema */
+ cursor: pointer;
+padding: 5px 0;
+transition: color 0.2s;
+font-size: 0.95em;
+}
+
+.filter-options-list label:hover {
+ color: #ff3333; 
+}
+
+.filter-options-list input[type="checkbox"] {
+ margin-right: 10px;
 }
