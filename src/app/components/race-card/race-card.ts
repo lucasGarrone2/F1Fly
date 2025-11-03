@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import {Race } from "../../race-card.interface"
+import {Race } from "../carrera/carrera-interface"
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { inject } from '@angular/core';
 import { OnInit } from '@angular/core';

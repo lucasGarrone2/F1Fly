@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { inject } from '@angular/core';
-import { Race } from '../race-card.interface';
+import { Race } from '../components/carrera/carrera-interface';
 import { Observable } from 'rxjs';
 
 @Injectable({
