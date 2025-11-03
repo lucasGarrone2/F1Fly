@@ -9,7 +9,7 @@
       "capacidad_carrera": 70000,
       "cantidad_vueltas_carrera": 57,
       "precio_carrera": 120,
-      "descripcion_carrera": "<h2>Bahrain International Circuit</h2><p>Pista desértica, diseño Tilke, carreras bajo luces.</p>",
+      "descripcion_carrera": "Bahrain International Circuit. Pista desértica, diseño Tilke, carreras bajo luces.",
       "imageUrl_carrera": "bahrein.jpg"
     },
     {
@@ -21,7 +21,7 @@
       "capacidad_carrera": 37000,
       "cantidad_vueltas_carrera": 78,
       "precio_carrera": 250,
-      "descripcion_carrera": "<h2>Monaco Grand Prix (Circuit de Monaco)</h2><p>El clásico urbano: curvas estrechas y glamour en la Riviera.</p>",
+      "descripcion_carrera": "Monaco Grand Prix (Circuit de Monaco). El clásico urbano: curvas estrechas y glamour en la Riviera.",
       "imageUrl_carrera": "monaco.png"
     },
     {
@@ -33,7 +33,7 @@
       "capacidad_carrera": 150000,
       "cantidad_vueltas_carrera": 52,
       "precio_carrera": 180,
-      "descripcion_carrera": "<h2>Silverstone</h2><p>La cuna del automovilismo británico, combinaciones rápidas y espectaculares gradas.</p>",
+      "descripcion_carrera": "Silverstone. La cuna del automovilismo británico, combinaciones rápidas y espectaculares gradas.",
       "imageUrl_carrera": "silverstone.jpg"
     },
     {
@@ -45,7 +45,7 @@
       "capacidad_carrera": 120000,
       "cantidad_vueltas_carrera": 53,
       "precio_carrera": 140,
-      "descripcion_carrera": "<h2>Monza - 'La Pista Mágica'</h2><p>Alta velocidad, largas rectas y la histórica banking.</p>",
+      "descripcion_carrera": "Monza - 'La Pista Mágica'. Alta velocidad, largas rectas y la histórica banking.",
       "imageUrl_carrera": "monzaa.jpg"
     },
     {
@@ -57,7 +57,7 @@
       "capacidad_carrera": 110000,
       "cantidad_vueltas_carrera": 71,
       "precio_carrera": 100,
-      "descripcion_carrera": "<h2>Interlagos - São Paulo</h2><p>Pista favorita por los aficionados latinoamericanos; ambiente de carnaval durante la carrera.</p>",
+      "descripcion_carrera": "Interlagos - São Paulo. Pista favorita por los aficionados latinoamericanos; ambiente de carnaval durante la carrera.",
       "imageUrl_carrera": "interlagos.jpg"
     },
     {
@@ -69,7 +69,7 @@
       "capacidad_carrera": 40000,
       "cantidad_vueltas_carrera": 71,
       "precio_carrera": 160,
-      "descripcion_carrera": "<h2>Red Bull Ring</h2><p>Pista corta y rápida rodeada de montañas verdes.</p>",
+      "descripcion_carrera": "Red Bull Ring. Pista corta y rápida rodeada de montañas verdes.",
       "imageUrl_carrera": "redbullring.jpg"
     },
     {
@@ -81,7 +81,7 @@
       "capacidad_carrera": 100000,
       "cantidad_vueltas_carrera": 66,
       "precio_carrera": 170,
-      "descripcion_carrera": "<h2>Circuit de Barcelona-Catalunya</h2><p>El clásico de pruebas de pretemporada y buen clima.</p>",
+      "descripcion_carrera": "Circuit de Barcelona-Catalunya. El clásico de pruebas de pretemporada y buen clima.",
       "imageUrl_carrera": "barcelona.jpeg"
     },
     {
@@ -93,7 +93,7 @@
       "capacidad_carrera": 120000,
       "cantidad_vueltas_carrera": 70,
       "precio_carrera": 190,
-      "descripcion_carrera": "<h2>Circuit Gilles Villeneuve</h2><p>Rápido circuito semi-urbano con el famoso 'Muro de los Campeones'.</p>",
+      "descripcion_carrera": "Circuit Gilles Villeneuve. Rápido circuito semi-urbano con el famoso 'Muro de los Campeones'.",
       "imageUrl_carrera": "canada.jpg"
     },
     {
@@ -105,7 +105,7 @@
       "capacidad_carrera": 80000,
       "cantidad_vueltas_carrera": 62,
       "precio_carrera": 280,
-      "descripcion_carrera": "<h2>Marina Bay Street Circuit</h2><p>Primera carrera nocturna en la historia de la F1; mucho calor y humedad.</p>",
+      "descripcion_carrera": "Marina Bay Street Circuit. Primera carrera nocturna en la historia de la F1; mucho calor y humedad.",
       "imageUrl_carrera": "singapur.avif"
     },
     {
@@ -117,7 +117,7 @@
       "capacidad_carrera": 150000,
       "cantidad_vueltas_carrera": 56,
       "precio_carrera": 210,
-      "descripcion_carrera": "<h2>Circuit of the Americas</h2><p>Circuito moderno con grandes cambios de elevación y ambiente festivo.</p>",
+      "descripcion_carrera": "Circuit of the Americas. Circuito moderno con grandes cambios de elevación y ambiente festivo.",
       "imageUrl_carrera": "cota.jpg"
     }
   ]
