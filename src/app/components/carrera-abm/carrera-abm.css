@@ -30,16 +30,38 @@ body{
 }
 
 .contenedorCarrera{
+    display: grid;
+    align-items: start;
+    grid-template-columns: 400px 1fr;
     background-color:  rgb(25, 40, 97);
     color: white;
-    margin: 0 250px 70px 250px;
-    padding: 5px 20px 10px ;
+    margin: 0 240px 70px 250px;
+    padding: 0px 15px 0px ;
     border-radius: 10px;
+    gap: 30px;
 }
 
-.textoCircuitos{
-    padding-right: 400px;
+.imagen-carrera{
+    padding-top: 10px;
+    width: 400px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 7px;
 }
+
+.info-carrera{
+    flex: 1;
+}
+
+.lista-informacion-carreras{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* dos columnas iguales */
+    gap: 10px 40px; /* espacio entre filas y columnas */
+    padding: 0;
+    margin: 20px 0;
+    color: white;
+}
+
 
 footer{
     background-color: blueviolet;
@@ -80,12 +102,38 @@ h2 {
     font-weight: bold;         /* Texto en negrita */
 }
 
+.botones{
+display: flex;
+  flex-direction: row; /* o row si los quieres en línea */
+  align-items: center;
+  gap: 20px; /* <-- espacio entre botones */
+  padding: 10px 0px;
+}
+
 .botonModificar{
     background-color: greenyellow;
 }
 
 .botonEliminar{
     background-color: rgb(255, 47, 47);
+}
+
+.botonModificar, .botonEliminar {
+  font-family: "Roboto Condensed", sans-serif;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.botonModificar:hover, .botonEliminar:hover {
+  transform: translateY(-2px);
 }
 
 #overlay {

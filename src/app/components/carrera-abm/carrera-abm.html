@@ -28,16 +28,35 @@
             <p>Cargando Carreras...</p>
        } @else {
             <section id="ListadoCarreras">
-        <h2>F1FLY ADMIN</h2>
+        <h2>F1FLY ADMIN CARRERAS</h2>
         @for(carrera of carreras; track carrera.id_carrera){
-            <div class="contenedorCarrera"><h3>{{carrera.nombre_carrera}}</h3>
-            <p class="textoCircuitos">{{carrera.descripcion_carrera}}</p>
+            <div class="contenedorCarrera"> 
+            <div>
+                <img src= {{carrera.imageUrl_carrera}} alt="imagen_carrera" class="imagen-carrera">
+                <div class="botones">
+                    <button type="button" class="botonModificar" >✏️ MODIFICAR</button>
+                    <button type="button" class="botonEliminar" >🗑️ ELIMINAR</button>
+                </div>
+            </div>
+                
+            <div class="info_carrera">
+                <ul class="lista-informacion-carreras">
+                <li><strong>ID CARRERA:</strong> {{carrera.id_carrera}}</li>
+                <li><strong>NOMBRE CARRERA:</strong> {{carrera.nombre_carrera}}</li>
+                <li><strong>DESCRIPCION CARRERA:</strong> {{carrera.descripcion_carrera}}</li>
+                <li><strong>CAPACIDAD CARRERA</strong> {{carrera.capacidad_carrera}}</li>
+                <li><strong>CANTIDAD VUELTAS CARRERA:</strong> {{carrera.cantidad_vueltas_carrera}}</li>
+                <li><strong>PAIS CARRERA:</strong> {{carrera.pais_carrera}}</li>
+                <li><strong>CIUDAD CARRERA:</strong> {{carrera.capacidad_carrera}}</li>
+                <li><strong>FECHA CARRERA:</strong> {{carrera.fecha_carrera}}</li>
+                <li><strong>PRECIO CARRERA:</strong> {{carrera.precio_carrera}}</li>
+                <li><strong>URL IMAGEN CARRERA:</strong> {{carrera.imageUrl_carrera}}</li>
+                </ul>
+            </div>
             
-            <button type="button" class="botonModificar" >MODIFICAR</button>
-            <button type="button" class="botonEliminar" >ELIMINIAR</button>
         </div>
         } @empty {
-            
+            <p>No hay carreras cargadas...</p>
         }
 
         <a class="home" href="#inicio">HOME</a>
