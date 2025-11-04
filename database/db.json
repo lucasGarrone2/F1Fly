@@ -1,7 +1,6 @@
 {
   "carreras": [
     {
-      "id_carrera": 1,
       "nombre_carrera": "Bahrain International Circuit",
       "pais_carrera": "Bahrain",
       "ciudad_carrera": "Sakhir",
@@ -14,7 +13,6 @@
       "id": "bbab"
     },
     {
-      "id_carrera": 2,
       "nombre_carrera": "Circuit de Monaco",
       "pais_carrera": "Mónaco",
       "ciudad_carrera": "Montecarlo",
@@ -27,7 +25,6 @@
       "id": "5d57"
     },
     {
-      "id_carrera": 3,
       "nombre_carrera": "Silverstone Circuit",
       "pais_carrera": "Reino Unido",
       "ciudad_carrera": "Silverstone",
@@ -40,7 +37,6 @@
       "id": "24cc"
     },
     {
-      "id_carrera": 4,
       "nombre_carrera": "Autodromo Nazionale Monza",
       "pais_carrera": "Italia",
       "ciudad_carrera": "Monza (Milán)",
@@ -53,7 +49,6 @@
       "id": "ad83"
     },
     {
-      "id_carrera": 5,
       "nombre_carrera": "Autódromo José Carlos Pace (Interlagos)",
       "pais_carrera": "Brasil",
       "ciudad_carrera": "São Paulo",
@@ -66,7 +61,6 @@
       "id": "625b"
     },
     {
-      "id_carrera": 6,
       "nombre_carrera": "Red Bull Ring",
       "pais_carrera": "Austria",
       "ciudad_carrera": "Spielberg",
@@ -79,7 +73,6 @@
       "id": "443a"
     },
     {
-      "id_carrera": 7,
       "nombre_carrera": "Circuit de Barcelona-Catalunya",
       "pais_carrera": "España",
       "ciudad_carrera": "Barcelona",
@@ -92,7 +85,6 @@
       "id": "6a4a"
     },
     {
-      "id_carrera": 8,
       "nombre_carrera": "Circuit Gilles Villeneuve",
       "pais_carrera": "Canadá",
       "ciudad_carrera": "Montreal",
@@ -105,7 +97,6 @@
       "id": "b97e"
     },
     {
-      "id_carrera": 9,
       "nombre_carrera": "Marina Bay Street Circuit",
       "pais_carrera": "Singapur",
       "ciudad_carrera": "Singapur",
@@ -118,7 +109,6 @@
       "id": "7ea8"
     },
     {
-      "id_carrera": 10,
       "nombre_carrera": "Circuit of the Americas (COTA)",
       "pais_carrera": "Estados Unidos",
       "ciudad_carrera": "Austin, Texas",
@@ -200,6 +190,30 @@
       "ciudad_carrera": "eeeeeeeeeeeeeeeeeeee",
       "pais_carrera": "eeeeeeeeeeeeeeeeeeee",
       "precio_carrera": 300,
+      "imageUrl_carrera": "bahrein.jpg"
+    },
+    {
+      "id": "5ffb",
+      "nombre_carrera": "Prueba 8",
+      "fecha_carrera": "2025-01-30",
+      "capacidad_carrera": 8000,
+      "descripcion_carrera": "Prueba 8Prueba 8Prueba 8Prueba 8Prueba 8Prueba 8Prueba 8Prueba 8Prueba 8Prueba 8Prueba 8Prueba 8",
+      "cantidad_vueltas_carrera": 70,
+      "ciudad_carrera": "lisboa",
+      "pais_carrera": "portugal",
+      "precio_carrera": 99,
+      "imageUrl_carrera": "bahrein.jpg"
+    },
+    {
+      "id": "b5e4",
+      "nombre_carrera": "PRUEBA ID",
+      "fecha_carrera": "2025-01-12",
+      "capacidad_carrera": 99999,
+      "descripcion_carrera": "PRUEBA IDPRUEBA IDPRUEBA IDPRUEBA IDPRUEBA IDPRUEBA IDPRUEBA IDPRUEBA ID",
+      "cantidad_vueltas_carrera": 70,
+      "ciudad_carrera": "PRUEBA IDPRUEBA IDPRUEBA ID",
+      "pais_carrera": "PRUEBA IDPRUEBA ID",
+      "precio_carrera": 888,
       "imageUrl_carrera": "bahrein.jpg"
     }
   ],

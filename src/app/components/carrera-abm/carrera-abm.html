@@ -32,7 +32,7 @@
             <div id="boton-agregar">
                 <button type="button" class="botonAgregar" (click)="activarFormulario_Carrera()" >➕ AGREGAR NUEVA CARRERA ➕</button>
             </div>
-        @for(carrera of carreras; track carrera.id_carrera){
+        @for(carrera of carreras; track carrera.id){
             <div class="contenedorCarrera"> 
             <div>
                 <img src= {{carrera.imageUrl_carrera}} alt="imagen_carrera" class="imagen-carrera">
@@ -44,13 +44,13 @@
                 
             <div class="info_carrera">
                 <ul class="lista-informacion-carreras">
-                <li><strong>ID CARRERA:</strong> {{carrera.id_carrera}}</li>
+                <li><strong>ID CARRERA:</strong> {{carrera.id}}</li>
                 <li><strong>NOMBRE CARRERA:</strong> {{carrera.nombre_carrera}}</li>
                 <li><strong>DESCRIPCION CARRERA:</strong> {{carrera.descripcion_carrera}}</li>
                 <li><strong>CAPACIDAD CARRERA</strong> {{carrera.capacidad_carrera}}</li>
                 <li><strong>CANTIDAD VUELTAS CARRERA:</strong> {{carrera.cantidad_vueltas_carrera}}</li>
                 <li><strong>PAIS CARRERA:</strong> {{carrera.pais_carrera}}</li>
-                <li><strong>CIUDAD CARRERA:</strong> {{carrera.capacidad_carrera}}</li>
+                <li><strong>CIUDAD CARRERA:</strong> {{carrera.ciudad_carrera}}</li>
                 <li><strong>FECHA CARRERA:</strong> {{carrera.fecha_carrera}}</li>
                 <li><strong>PRECIO CARRERA:</strong> {{carrera.precio_carrera}}</li>
                 <li><strong>URL IMAGEN CARRERA:</strong> {{carrera.imageUrl_carrera}}</li>

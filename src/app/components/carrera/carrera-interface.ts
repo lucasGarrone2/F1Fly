@@ -1,5 +1,5 @@
 export interface Carrera{
-    id_carrera?: string | number,
+    id: string | number,
     nombre_carrera: string,
     pais_carrera: string,
     ciudad_carrera:string,

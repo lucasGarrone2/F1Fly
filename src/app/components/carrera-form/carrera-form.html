@@ -1,5 +1,7 @@
 <section id="Formulario_Carrera">
-    <h2>Cargar Circuito</h2>
+    <div id="header-form">
+    <h2>Cargue su nueva carrera...</h2><div><button type="submit" id="boton-cerrar" (click)="cerrarFormulario()">❌</button></div>
+    </div>
     <div>
         <form [formGroup]="form" (ngSubmit)="handleSubmit()">
             <ul>
@@ -40,7 +42,9 @@
                     <input type="text" id="urlImagen_circuito" formControlName="imageUrl_carrera" placeholder="Monaco.jpg...">
                 </li>
             </ul>
-            <button type="submit" id="boton">ENVIAR</button>
+            <div>
+            <button type="submit" id="boton-enviar">ENVIAR</button>
+            </div>
         </form>
     </div>
 </section>

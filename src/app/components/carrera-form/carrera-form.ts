@@ -10,10 +10,13 @@ import { CarreraAbm } from '../carrera-abm/carrera-abm';
   styleUrl: './carrera-form.css'
 })
 export class CarreraForm {
+
   private readonly carreraClient = inject(CarreraClient);
   private readonly carreraABM = inject(CarreraAbm);
-
   private readonly formBuilder= inject(FormBuilder);
+
+
+  
   protected readonly form = this.formBuilder.nonNullable.group({
     nombre_carrera: ['', [Validators.required]],
     fecha_carrera: ['2025-01-01', [Validators.required]],
@@ -43,6 +46,9 @@ export class CarreraForm {
     }
   }
  
+  cerrarFormulario(){
+     this.carreraABM.activarFormulario_Carrera();
+  }
   
 }
 
