@@ -7,7 +7,7 @@
       <div class="filterPrice">
         <h3>Filtrar por precio</h3>
 
-        <form [formGroup]="priceForm">
+        <form [formGroup]="priceForm" (ngSubmit)="applyPriceFilter()">
 
           <div class="filterPrice-Range">
 
@@ -57,20 +57,43 @@
 
         <ul class="filter-options-list">
           <li>
-            <input type="checkbox" id="date-q1" name="date-filter" value="q1" />
+            <input type="checkbox" id="date-q1" name="date-filter" value="q1" (change)="onDateChange($event)"/>
             <label for="date-q1">Primer Trimestre (Ene - Mar)</label>
           </li>
           <li>
-            <input type="checkbox" id="date-q2" name="date-filter" value="q2" />
+            <input type="checkbox" id="date-q2" name="date-filter" value="q2" (change)="onDateChange($event)" />
             <label for="date-q2">Segundo Trimestre (Abr - Jun)</label>
           </li>
           <li>
-            <input type="checkbox" id="date-q3" name="date-filter" value="q3" />
+            <input type="checkbox" id="date-q3" name="date-filter" value="q3" (change)="onDateChange($event)"/>
             <label for="date-q3">Tercer Trimestre (Jul - Sep)</label>
           </li>
           <li>
-            <input type="checkbox" id="date-q4" name="date-filter" value="q4" />
+            <input type="checkbox" id="date-q4" name="date-filter" value="q4" (change)="onDateChange($event)"/>
             <label for="date-q4">Cuarto Trimestre (Oct - Dic)</label>
+          </li>
+        </ul>
+      </div>
+
+      <div class="filter-group region-filter-group">
+        <h3>Filtrar por Region</h3>
+
+        <ul class="filter-options-list">
+          <li>
+            <input type="checkbox" id="europe" name="region-filter" value="europe" (change)="onRegionChange($event)"/>
+            <label for="europe">Europa</label>
+          </li>
+          <li>
+            <input type="checkbox" id="asia" name="region-filter" value="asia" (change)="onRegionChange($event)"/>
+            <label for="asia">Asia</label>
+          </li>
+          <li>
+            <input type="checkbox" id="america" name="region-filter" value="america" (change)="onRegionChange($event)"/>
+            <label for="america">America</label>
+          </li>
+          <li>
+            <input type="checkbox" id="oceania" name="region-filter" value="oceania" (change)="onRegionChange($event)"/>
+            <label for="oceania">Oceania</label>
           </li>
         </ul>
       </div>
@@ -82,9 +105,15 @@
       <div class="races-container" #racesContainer>
         @if (!raceSource()) {
         <p style="text-align: center; width: 100%">Cargando carreras...</p>
-        } @else { @for (race of raceSource(); track race.id_carrera) {
+        } @else { @for (race of filteredRaces(); track race.id_carrera) {
         <app-race-card [race]="race" [layout]="'list'"> </app-race-card>
-        } }
+        }
+        @if (filteredRaces().length===0) {
+         <p style="text-align: center; width: 100%; font-weight: bold; margin-top: 20px;">
+          No se encontraron carreras con esos filtros
+         </p>
+        }
+      }
       </div>
     </section>
  

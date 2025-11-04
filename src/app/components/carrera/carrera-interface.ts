@@ -6,7 +6,7 @@ export interface Carrera{
     fecha_carrera:string,
     capacidad_carrera: string | number,
     cantidad_vueltas_carrera: string | number,
-    precio_carrera: string | number,
+    precio_carrera: number,
     descripcion_carrera: string
     imageUrl_carrera: string
 };

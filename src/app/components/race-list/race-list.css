@@ -178,9 +178,9 @@ margin: 0;
  align-items: center; 
 }
 
-/* --- CORRECCIÓN AQUÍ --- */
+
 .filter-options-list label {
- /* display: block; */ /* <-- QUITADO: Esta era la línea del problema */
+ 
  cursor: pointer;
 padding: 5px 0;
 transition: color 0.2s;
