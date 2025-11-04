@@ -36,8 +36,8 @@ font-family: "Roboto Condensed", sans-serif;
   font-weight: 600;
   cursor: pointer;
   transition: 0.2s;
-  cursor: pointer;          /* Cursor de mano para indicar que es clickeable */
-  font-weight: bold;         /* Texto en negrita */
+  cursor: pointer;         
+  font-weight: bold;        
   
 }
 
@@ -77,8 +77,8 @@ font-family: "Roboto Condensed", sans-serif;
 
 .lista-informacion-carreras{
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* dos columnas iguales */
-    gap: 10px 40px; /* espacio entre filas y columnas */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 40px; 
     padding: 0;
     margin: 20px 0;
     color: white;
@@ -119,16 +119,16 @@ h2 {
 }
 
 .botonGestion {
-    all: unset;               /* Quita todos los estilos por defecto del botón */
-    cursor: pointer;          /* Cursor de mano para indicar que es clickeable */
-    font-weight: bold;         /* Texto en negrita */
+    all: unset;               
+    cursor: pointer;          
+    font-weight: bold;         
 }
 
 .botones{
 display: flex;
-  flex-direction: row; /* o row si los quieres en línea */
+  flex-direction: row; 
   align-items: center;
-  gap: 20px; /* <-- espacio entre botones */
+  gap: 20px; 
   padding: 10px 0px;
 }
 
@@ -162,8 +162,8 @@ display: flex;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw; /* toda la pantalla */
+  width: 100vw; 
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6); /* negro semi-transparente */
-  z-index: 999; /* detrás del formulario */
+  background-color: rgba(0, 0, 0, 0.6); 
+  z-index: 999; 
 }
