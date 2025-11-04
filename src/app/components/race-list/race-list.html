@@ -105,7 +105,7 @@
       <div class="races-container" #racesContainer>
         @if (!raceSource()) {
         <p style="text-align: center; width: 100%">Cargando carreras...</p>
-        } @else { @for (race of filteredRaces(); track race.id_carrera) {
+        } @else { @for (race of filteredRaces(); track race.id) {
         <app-race-card [race]="race" [layout]="'list'"> </app-race-card>
         }
         @if (filteredRaces().length===0) {
