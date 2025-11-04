@@ -38,7 +38,7 @@
                 <img src= {{carrera.imageUrl_carrera}} alt="imagen_carrera" class="imagen-carrera">
                 <div class="botones">
                     <button type="button" class="botonModificar" (click)="activarEdicion_Carrera(carrera.id)" >✏️ MODIFICAR</button>
-                    <button type="button" class="botonEliminar" >🗑️ ELIMINAR</button>
+                    <button type="button" class="botonEliminar" (click)="activarEliminar_Carrera(carrera.id)" >🗑️ ELIMINAR</button>
                 </div>
             </div>
                     

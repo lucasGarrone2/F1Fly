@@ -25,9 +25,18 @@ export class CarreraAbm {
 
   activarEdicion_Carrera(id_bus : string | number){
     this.edicionCarrera.set(!this.edicionCarrera());
-   this.carreraClient.getCarrera_ID(id_bus).subscribe(carrera => {
+    this.carreraClient.getCarrera_ID(id_bus).subscribe(carrera => {
     this.carrera_editar.set(carrera);
   });
+  }
+
+  activarEliminar_Carrera(id_bus : string | number){
+    if(confirm("Desea borrar esta carrera?")){
+    this.carreraClient.deleteCarrera(id_bus).subscribe(()=>{
+      alert("Carrera borrada con EXITO!");
+      window.location.reload();
+    });
+  }
   }
 
   
