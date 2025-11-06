@@ -6,17 +6,32 @@
     <button routerLink="/" class="back-home-button">Volver al Menu</button>
 </div>
 
-<form [formGroup]="form" (ngSubmit)="handleSubmit()" class="form">
+<form [formGroup]="form" (ngSubmit)="login()" class="form">
 <div class="form-field">
 
 <div class="form-field">
-    <label for="email">Email</label>
-    <input type="email" id="email" formControlName="email" placeholder="tuEmail@email.com">
+    <label for="usuario"> nombre de usuario</label>
+    <input type="text" id="usuario" formControlName="usuario" placeholder="usuario123...">
 </div>
 
 <div class="form-field">
     <label for="contraseña">Contraseña</label>
-    <input type="password" id="contraseña" formControlName="contraseña" placeholder="*****">
+    <div class="password-wrapper">
+
+    <input 
+      [type]="passwordVisible ? 'text' : 'password'" 
+      id="contraseña" 
+      formControlName="password" 
+      placeholder="*****">
+
+    <button 
+      type="button" 
+      class="toggle-password" 
+      (click)="togglePasswordVisibility()">
+      
+      <span *ngIf="!passwordVisible">👁️</span> <span *ngIf="passwordVisible">🙈</span> </button>
+    
+  </div>
 </div>
 </div>
     <div class="btn-submit">

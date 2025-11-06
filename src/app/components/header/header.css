@@ -74,7 +74,7 @@ nav {
 }
 
 
-.btn-registrarse {
+.btn-registrarse, .btn-cerrar-sesion {
     background-color: white;
     color: black;
     border: none;
@@ -87,7 +87,14 @@ nav {
 }
 
 
+
 .btn-registrarse:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-3px); 
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+.btn-cerrar-sesion:hover {
     background-color: #f0f0f0;
     transform: translateY(-3px); 
     box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
