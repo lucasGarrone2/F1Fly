@@ -13,4 +13,3 @@ export interface Client{
 
 //timestamp para la fecha
 
-//rojo cagon
