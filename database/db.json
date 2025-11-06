@@ -119,30 +119,6 @@
       "descripcion_carrera": "Circuito moderno con grandes cambios de elevación y ambiente festivo.",
       "imageUrl_carrera": "cota.jpg",
       "id": "62ad"
-    },
-    {
-      "id": "40c5",
-      "nombre_carrera": "Interlagos",
-      "fecha_carrera": "2025-02-01",
-      "capacidad_carrera": 7000,
-      "descripcion_carrera": "aaaaaaaaaaaa",
-      "cantidad_vueltas_carrera": 80,
-      "ciudad_carrera": "Interlagos",
-      "pais_carrera": "Brasil",
-      "precio_carrera": 150,
-      "imageUrl_carrera": "bahrein.jpg"
-    },
-    {
-      "id": "5e84",
-      "nombre_carrera": "fsfsgewg",
-      "fecha_carrera": "2025-01-31",
-      "capacidad_carrera": 8000,
-      "descripcion_carrera": "gewgewgew",
-      "cantidad_vueltas_carrera": 80,
-      "ciudad_carrera": "barcelona",
-      "pais_carrera": "espana",
-      "precio_carrera": 90,
-      "imageUrl_carrera": "bahrein.jpg"
     }
   ],
   "hoteles": [

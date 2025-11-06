@@ -148,6 +148,11 @@
   transition: background-color 0.3s ease;
 }
 
+.fa-regular fa-heart::selection{
+  color: red;
+}
+
+
 .btn-seleccionar:hover{
     background-color: green;
 }
