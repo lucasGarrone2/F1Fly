@@ -8,7 +8,6 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { ViewChild, ElementRef } from '@angular/core';
 import { Input } from '@angular/core';
 
-
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -19,7 +18,6 @@ import { Input } from '@angular/core';
 export class Home {
   private readonly client = inject(RaceClient);
   protected raceSource = toSignal(this.client.getRaces());
-
   
   @ViewChild('racesContainer', { static: false }) racesContainer!: ElementRef;
 
@@ -33,7 +31,5 @@ export class Home {
       container.scrollBy({ left: cardWidth, behavior: 'smooth' });
     }
   }
-
- 
 
 }

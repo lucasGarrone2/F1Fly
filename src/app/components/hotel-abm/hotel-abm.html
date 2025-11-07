@@ -1,0 +1,65 @@
+<ul id="accion-gestion-carrera">
+    <li class="gestionLI">
+        <a routerLink="/gestion-carrera" class="botonGestion">GESTION CARRERAS</a>
+    </li>
+    <li>|</li>
+    <li class="gestionLI">
+        <a routerLink="/gestion-hoteles" class="botonGestion">GESTION HOTELES</a>
+    </li>
+    <li>|</li>
+    <li class="gestionLI">
+        <a routerLink="/gestion-vuelos" class="botonGestion">GESTION VUELOS</a>
+    </li>
+</ul>
+
+@let hoteles = this.hoteles();
+
+@if (activarFormularioHotel()) {
+    <div id="overlay"></div>
+    <app-hotel-form 
+        [estadoEdicion]="editarHotel()" 
+        [hotelEditar]="hotelEditar()"
+    ></app-hotel-form>
+}   
+
+@if (hoteles === undefined){
+    <p>Cargando Hoteles...</p>
+} @else {
+    <section id="ListadoCarreras">
+        <h2>F1FLY ADMIN HOTELES</h2>
+        <div id="boton-agregar">
+            <button type="button" class="botonAgregar" (click)="activarFormHotel()" >➕ AGREGAR NUEVO HOTEL ➕</button>
+        </div>
+        
+        @for(hotel of hoteles; track hotel.id){
+            <div class="contenedorCarrera"> 
+                <div>
+                    <img src="https://placehold.co/400x200/254097/ffffff?text=HOTEL" alt="imagen_hotel" class="imagen-carrera">
+                    <div class="botones">
+                        <button type="button" class="botonModificar" (click)="activarEditHotel(hotel.id!)" >✏️ MODIFICAR</button>
+                        <button type="button" class="botonEliminar" (click)="activarElimHotel(hotel.id!)" >🗑️ ELIMINAR</button>
+                    </div>
+                </div>
+                        
+                <div class="info_carrera">
+                    <ul class="lista-informacion-carreras">
+                        <li><strong>ID HOTEL:</strong> {{hotel.id}}</li>
+                        <li><strong>NOMBRE HOTEL:</strong> {{hotel.nombre_hotel}}</li>
+                        <li><strong>CARRERA ID ASOCIADA:</strong> {{hotel.carrera_id}}</li>
+                        <li><strong>PAIS:</strong> {{hotel.pais}}</li>
+                        <li><strong>CIUDAD:</strong> {{hotel.ciudad}}</li>
+                        <li><strong>PRECIO PROM. EUR:</strong> €{{hotel.precio_promedio_habitacion_eur}}</li>
+                        <li><strong>AMENITIES:</strong> @if(hotel.tieneAmenities) {✅ SÍ} @else {❌ NO}</li>
+                        <li><strong>TRANSPORTE:</strong> @if(hotel.tieneTransporte) {✅ SÍ} @else {❌ NO}</li>
+                        <li><strong>FECHAS DISP.:</strong> {{hotel.fechas_disponibles.join(', ')}}</li>
+                        <li><strong>Ubicación (Lat/Long):</strong> {{hotel.ubicacion_mapa.latitud}} / {{hotel.ubicacion_mapa.longitud}}</li>
+                    </ul>
+                </div>
+            </div>
+        } @empty {
+            <p>No hay hoteles cargados...</p>
+        }
+
+        <a class="home" href="#inicio">HOME</a>
+    </section>
+}
