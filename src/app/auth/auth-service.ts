@@ -9,14 +9,17 @@ export class AuthService {
 private readonly activeUser= signal<User | undefined> (undefined)
 public readonly isAdmin= computed (() => this.activeUser()?.isAdmin);
  
-  private readonly users: User[]=
-  [
+  private readonly users: User[]=[];
+  
+  constructor()
   {
-    username: 'Admin',
-    password: 'Admin123',
-    isAdmin: true
+    const savedUsers= localStorage.getItem("users");
+    if(savedUsers)
+    {
+      this.users= JSON.parse(savedUsers);
+    }
   }
-  ]
+  
 
 login(username: string, password: string)
 {
@@ -25,6 +28,12 @@ if(user)
 {
 this.activeUser.set(user);
 }
+else
+{
+  alert("Usuario o contraseña incorrectos");
+  throw new Error("Usuario o contraseña incorrectos");
+  return;
+}
 }
 
 logout()
@@ -32,5 +41,17 @@ logout()
 this.activeUser.set(undefined)
 }
 
+register(newUser: User)
+{
+  const exists= this.users.some(u=>u.username === newUser.username);
+  if(exists)
+  {
+    alert("El nombre de usuario ya existe");
+    return;
+  }
+  this.users.push(newUser);
+  localStorage.setItem('users', JSON.stringify(this.users));
+
+}
 
 }

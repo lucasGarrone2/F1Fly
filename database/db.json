@@ -875,5 +875,21 @@
       "clase_asiento": "Upper Class",
       "precio_promedio_ticket_eur": 2100
     }
-  ]
+  ],
+  "users": [{
+      "id": 1,
+      "username": "Admin",
+      "password": "Admin123",
+      "isAdmin": true,
+      "email": "admin@f1fly.com",
+      "nombre": "Administrador",
+      "apellido": "Principal",
+      "dni": "00000000",
+      "nacionalidad": "Argentina",
+      "edad": 30,
+      "fecha_nacimiento": "1995-01-01"
+    
+    
+  }
+]
 }
