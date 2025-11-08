@@ -140,7 +140,8 @@
       "ubicacion_mapa": {
         "latitud": 26.0325,
         "longitud": 50.5106
-      }
+      },
+      "imagenUrl": "fotosHotel/sakhir.jpg" 
     },
     {
       "id": "2",
@@ -159,7 +160,8 @@
       "ubicacion_mapa": {
         "latitud": 26.2301,
         "longitud": 50.5847
-      }
+      },
+      "imagenUrl": "fotosHotel/beach resort.webp" 
     },
     {
       "id": "3",
@@ -179,7 +181,8 @@
       "ubicacion_mapa": {
         "latitud": 43.7396,
         "longitud": 7.4276
-      }
+      },
+      "imagenUrl": "fotosHotel/montecarlo.jpeg" 
     },
     {
       "id": "4",
@@ -199,7 +202,8 @@
       "ubicacion_mapa": {
         "latitud": 43.7383,
         "longitud": 7.4261
-      }
+      },
+      "imagenUrl": "fotosHotel/fairmont.jpg" 
     },
     {
       "id": "5",
@@ -219,7 +223,8 @@
       "ubicacion_mapa": {
         "latitud": 52.0733,
         "longitud": -1.0149
-      }
+      },
+      "imagenUrl": "fotosHotel/silverstone.jpg" 
     },
     {
       "id": "6",
@@ -238,7 +243,8 @@
       "ubicacion_mapa": {
         "latitud": 52.0003,
         "longitud": -0.9991
-      }
+      },
+      "imagenUrl": "fotosHotel/buckingham.webp" 
     },
     {
       "id": "7",
@@ -258,7 +264,8 @@
       "ubicacion_mapa": {
         "latitud": 45.584,
         "longitud": 9.2826
-      }
+      },
+      "imagenUrl": "fotosHotel/dellaPista.jpg" 
     },
     {
       "id": "8",
@@ -277,7 +284,8 @@
       "ubicacion_mapa": {
         "latitud": 45.4851,
         "longitud": 9.2045
-      }
+      },
+      "imagenUrl": "fotosHotel/starhotels.webp" 
     },
     {
       "id": "9",
@@ -297,7 +305,8 @@
       "ubicacion_mapa": {
         "latitud": -23.7036,
         "longitud": -46.6997
-      }
+      },
+      "imagenUrl": "fotosHotel/saoPaulo.jpg" 
     },
     {
       "id": "10",
@@ -316,7 +325,8 @@
       "ubicacion_mapa": {
         "latitud": -23.5658,
         "longitud": -46.65
-      }
+      },
+      "imagenUrl": "fotosHotel/tivoli.jpg" 
     },
     {
       "id": "11",
@@ -336,7 +346,8 @@
       "ubicacion_mapa": {
         "latitud": 47.4526,
         "longitud": 13.6873
-      }
+      },
+      "imagenUrl": "fotosHotel/falkensteiner.jpg" 
     },
     {
       "id": "12",
@@ -355,7 +366,8 @@
       "ubicacion_mapa": {
         "latitud": 48.2082,
         "longitud": 16.3738
-      }
+      },
+      "imagenUrl": "fotosHotel/grandMercure.jpg" 
     },
     {
       "id": "13",
@@ -375,7 +387,8 @@
       "ubicacion_mapa": {
         "latitud": 41.3888,
         "longitud": 2.1884
-      }
+      },
+      "imagenUrl": "fotosHotel/artsBarcelo.jpg" 
     },
     {
       "id": "14",
@@ -394,7 +407,8 @@
       "ubicacion_mapa": {
         "latitud": 41.3739,
         "longitud": 2.1742
-      }
+      },
+      "imagenUrl": "fotosHotel/eurostars.avif" 
     },
     {
       "id": "15",
@@ -414,7 +428,8 @@
       "ubicacion_mapa": {
         "latitud": 45.5009,
         "longitud": -73.5702
-      }
+      },
+      "imagenUrl": "fotosHotel/ritz.jpg" 
     },
     {
       "id": "16",
@@ -433,7 +448,8 @@
       "ubicacion_mapa": {
         "latitud": 45.5008,
         "longitud": -73.5703
-      }
+      },
+      "imagenUrl": "fotosHotel/fairmont.webp" 
     },
     {
       "id": "17",
@@ -453,7 +469,8 @@
       "ubicacion_mapa": {
         "latitud": 1.2816,
         "longitud": 103.8617
-      }
+      },
+      "imagenUrl": "fotosHotel/Marina Bay Sands.avif" 
     },
     {
       "id": "18",
@@ -472,7 +489,8 @@
       "ubicacion_mapa": {
         "latitud": 1.2858,
         "longitud": 103.8569
-      }
+      },
+      "imagenUrl": "fotosHotel/fullerton.jpg" 
     },
     {
       "id": "19",
@@ -492,7 +510,8 @@
       "ubicacion_mapa": {
         "latitud": 30.2644,
         "longitud": -97.742
-      }
+      },
+      "imagenUrl": "fotosHotel/fourseasons.jpeg" 
     },
     {
       "id": "20",
@@ -511,9 +530,10 @@
       "ubicacion_mapa": {
         "latitud": 30.2678,
         "longitud": -97.7402
-      }
+      },
+      "imagenUrl": "fotosHotel/zaza.webp" 
     }
-  ],
+],
   "vuelos": [
     {
       "id": "1",

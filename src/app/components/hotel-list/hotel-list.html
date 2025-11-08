@@ -1,5 +1,5 @@
 <div class="list-container">
-    <h2 class="list-title">Listado Completo de Hoteles</h2>
+    <h2 class="list-title">Listado de Hoteles</h2>
     <p class="description">Encuentra el mejor alojamiento cerca de tu circuito favorito.</p>
 
     @if (hotelSource() === undefined) {
@@ -10,8 +10,13 @@
         @if (hotelSource() && hotelSource()!.length > 0) {
             @for(hotel of hotelSource(); track hotel.id) {
                 <div class="hotel-card">
-                    <img src="https://placehold.co/400x200/0b162f/ffffff?text={{hotel.nombre_hotel}}" alt="Imagen del Hotel {{hotel.nombre_hotel}}" class="hotel-img">
-                    
+    <img 
+        [src]="hotel.imagenUrl" 
+        alt="Imagen del Hotel {{ hotel.nombre_hotel }}"
+        class="hotel-img"
+        (error)="onImageError($event)" 
+    
+                    >
                     <div class="hotel-info">
                         <h3>{{hotel.nombre_hotel}}</h3>
                         <p class="hotel-location">{{hotel.ciudad}}, {{hotel.pais}}</p>

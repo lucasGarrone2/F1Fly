@@ -12,9 +12,17 @@ import { HotelService } from '../hotel/hotel-service';
   styleUrl: './hotel-list.css'
 })
 export class HotelList {
+    private readonly hotelService = inject(HotelService);
+    protected hotelSource = toSignal(this.hotelService.getHoteles()); 
 
-  private readonly hotelService = inject(HotelService);
-  protected hotelSource = toSignal(this.hotelService.getHoteles());
+   
+    onImageError(event: Event): void {
+        const imgElement = event.target as HTMLImageElement;
+        const fallbackSrc = 'assets/default-hotel.jpg'; 
 
-
+        // Solo cambiamos si la imagen que falló no es la de fallback, para prevenir bucles
+        if (imgElement.src.indexOf(fallbackSrc) === -1) {
+            imgElement.src = fallbackSrc;
+        }
+    }
 }
