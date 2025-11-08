@@ -10,11 +10,11 @@
         @if (hotelSource() && hotelSource()!.length > 0) {
             @for(hotel of hotelSource(); track hotel.id) {
                 <div class="hotel-card">
-    <img 
-        [src]="hotel.imagenUrl" 
-        alt="Imagen del Hotel {{ hotel.nombre_hotel }}"
-        class="hotel-img"
-        (error)="onImageError($event)" 
+        <img 
+            [src]="hotel.imagenUrl" 
+            alt="Imagen del Hotel {{ hotel.nombre_hotel }}"
+            class="hotel-img"
+            (error)="onImageError($event)" 
     
                     >
                     <div class="hotel-info">
