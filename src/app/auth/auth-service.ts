@@ -1,100 +1,82 @@
 import { computed, Injectable, signal } from '@angular/core';
 import { User } from '../interfaces/user';
+import { of, switchMap, tap, throwError } from 'rxjs';
+import { UserClient } from '../clients/user-client';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-   public readonly isLoggedin= computed( () => this.activeUser() !== undefined )
-private readonly activeUser= signal<User | undefined> (undefined)
-public readonly isAdmin= computed (() => this.activeUser()?.isAdmin);
+ public readonly activeUser = signal<User | undefined>(undefined);
+  public readonly isLoggedin = computed(() => this.activeUser() !== undefined);
+  public readonly isAdmin = computed(() => this.activeUser()?.isAdmin);
+
+  constructor(private userClient: UserClient) {}
+
+  // 🔹 LOGIN: busca el usuario por username y valida contraseña
+  login(username: string, password: string) {
+    this.userClient.getUsers().subscribe({
+      next: (users) => {
+        const user = users.find(u => u.username === username && u.password === password);
+        if (user) {
+          this.activeUser.set(user);
+          localStorage.setItem('loggedUser', JSON.stringify(user));
+        } else {
+          alert('Usuario o contraseña incorrectos');
+          throw new Error('Usuario o contraseña incorrectos');
+        }
+      },
+      error: (err) => {
+        console.error('Error al intentar iniciar sesión:', err);
+        alert('Error de conexión con el servidor');
+      }
+    });
+  }
+
+  logout() {
+    this.activeUser.set(undefined);
+    localStorage.removeItem('loggedUser');
+  }
+
+  // 🔹 Validar si un usuario ya existe por username, email o dni
+  private userExists(newUser: User) {
+    return this.userClient.getUsers().pipe(
+      switchMap(users => {
+        if (users.find(u => u.username === newUser.username)) {
+          return throwError(() => new Error('El nombre de usuario ya está elegido'));
+        }
+        if (users.find(u => u.email === newUser.email)) {
+          return throwError(() => new Error('El email ya está registrado'));
+        }
+        if (users.find(u => u.dni === newUser.dni)) {
+          return throwError(() => new Error('El número de DNI ya está registrado'));
+        }
+        return of(null); // Si pasa todas las validaciones, no hay error
+      })
+    );
+  }
+
  
-  private readonly users: User[]=[];
-  
-  constructor()
-  {
-    const savedUsers= localStorage.getItem("users");
-    if(savedUsers)
-    {
-      this.users= JSON.parse(savedUsers);
+  register(newUser: User) {
+    this.userExists(newUser).pipe(
+      switchMap(() => this.userClient.createUser({ ...newUser, isAdmin: false })),
+      tap(() => alert('Usuario registrado con éxito'))
+    ).subscribe({
+      next: () => {},
+      error: (error) => {
+        alert(error.message);
+        console.error('Error al registrar usuario:', error);
+      }
+    });
+  }
+
+  // 🔹 Restaurar sesión si había un usuario logueado en localStorage
+  restoreSession() {
+    const saved = localStorage.getItem('loggedUser');
+    if (saved) {
+      const user: User = JSON.parse(saved);
+      this.activeUser.set(user);
     }
   }
-  
-
-login(username: string, password: string)
-{
-	const user = this.users.find( (u) => u.username === username && u.password ===password );
-if(user)
-{
-this.activeUser.set(user);
-}
-else
-{
-  alert("Usuario o contraseña incorrectos");
-  throw new Error("Usuario o contraseña incorrectos");
-  return;
-}
 }
 
-logout()
-{
-this.activeUser.set(undefined)
-}
-
-
- private findUsername(username: string): User | undefined
-{
-  return this.users.find(u=>u.username === username);
-}
-
-private findEmail(email: string): User | undefined
-{
-  return this.users.find(u=>u.email === email);
-}
-
-private findDNI(dni: string) : User | undefined
-{
-  return this.users.find(u=>u.dni === dni);
-}
-
-
-private userExists(newUser: User): string | undefined
-{
-  if(this.findUsername(newUser.username))
-  {
-    throw new Error("El nombre de usuario ya esta elegido");
-    
-  }
-
-  if(this.findEmail(newUser.email))
-  {
-     throw new Error("El email ya esta registrado");
-    return;
-  }
-
-  if(this.findDNI(newUser.dni))
-  {
-     throw new Error("El numero de dni ya esta registrado");
-    return;
-  }
-  return undefined;
-}
-
-
-
-
-register(newUser: User)
-{
-  const mensajeValidacion= this.userExists(newUser);
-  if(mensajeValidacion)
-  {
-    alert(mensajeValidacion);
-    throw new Error(mensajeValidacion);
-    
-  }
-  this.users.push(newUser);
-  localStorage.setItem('users', JSON.stringify(this.users));
-
-}
-
-}
