@@ -105,7 +105,6 @@ protected readonly listaPilotos = [
   try
   {
     this.auth.register(newUser); /**Esto lo guarda en auth service */
-    alert("Uusuario registrado con exito");
     this.router.navigateByUrl("/inicio_sesion");
   }
   catch(error: any)

@@ -15,4 +15,12 @@ import { Footer } from "./components/footer/footer";
 })
 export class App {
   protected readonly title = signal('f1Fly');
+
+   public isLoading = signal(true);
+  ngOnInit() { 
+    setTimeout(() => {
+     
+      this.isLoading.set(false);
+    }, 500); 
+  }
 }
