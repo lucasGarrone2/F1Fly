@@ -74,11 +74,11 @@
     <p class="error-text">
 
     @if (form.controls.dni.errors?.['required'] && form.controls.dni.touched) {
-            El dni es requerido
+            <P>El dni es requerido</P>   
         }
 
     @if (form.controls.dni.errors?.['dni'] && form.controls.dni.touched) {
-            El formato del dni no es valido
+           <p>El formato del dni no es valido</p> 
         }
 
     </p>

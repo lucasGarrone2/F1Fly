@@ -41,13 +41,56 @@ logout()
 this.activeUser.set(undefined)
 }
 
+
+ private findUsername(username: string): User | undefined
+{
+  return this.users.find(u=>u.username === username);
+}
+
+private findEmail(email: string): User | undefined
+{
+  return this.users.find(u=>u.email === email);
+}
+
+private findDNI(dni: string) : User | undefined
+{
+  return this.users.find(u=>u.dni === dni);
+}
+
+
+private userExists(newUser: User): string | undefined
+{
+  if(this.findUsername(newUser.username))
+  {
+    throw new Error("El nombre de usuario ya esta elegido");
+    
+  }
+
+  if(this.findEmail(newUser.email))
+  {
+     throw new Error("El email ya esta registrado");
+    return;
+  }
+
+  if(this.findDNI(newUser.dni))
+  {
+     throw new Error("El numero de dni ya esta registrado");
+    return;
+  }
+  return undefined;
+}
+
+
+
+
 register(newUser: User)
 {
-  const exists= this.users.some(u=>u.username === newUser.username);
-  if(exists)
+  const mensajeValidacion= this.userExists(newUser);
+  if(mensajeValidacion)
   {
-    alert("El nombre de usuario ya existe");
-    return;
+    alert(mensajeValidacion);
+    throw new Error(mensajeValidacion);
+    
   }
   this.users.push(newUser);
   localStorage.setItem('users', JSON.stringify(this.users));
