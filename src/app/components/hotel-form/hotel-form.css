@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+#Formulario_Hotel {
+    position: fixed;
+    top: 1%; 
+    left: 50%; 
+    transform: translateX(-50%);
+    background-color: #1a237e; 
+    color: white;
+    padding: 0px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    width: 400px; 
+    z-index: 1000; 
+    text-align: left;
+    font-family: "Roboto Condensed", sans-serif; 
+}
+
+#Formulario_Hotel h2 {
+    text-align: center;
+    margin-bottom: 7px;
+    margin-top: 5px;
+    font-size: 24px;
+}
+
+#Formulario_Hotel form ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#Formulario_Hotel form li {
+    margin-bottom: 8px;
+}
+
+#Formulario_Hotel label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#Formulario_Hotel input:not([type="checkbox"]),
+#Formulario_Hotel textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    color: black; 
+}
+
+#Formulario_Hotel input[type="checkbox"] {
+    width: auto; 
+    margin-right: 10px;
+}
+
+#Formulario_Hotel button {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 10px;
+    background-color: #3949ab;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#Formulario_Hotel button:hover {
+    background-color: #5c6bc0;
+}
+
+
+#header-form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#boton-cerrar {
+    padding: 2px 6px;   
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white; 
+    transition: 0.2s;
+    line-height: 1;       
+}
+
+#boton-cerrar:hover {
+  color: red;
+  transform: scale(1.1);
+}
+
+#Formulario_Hotel #boton-enviar {
+  display: block;
+  width: 60%;             
+  margin: 15px auto 10px;  
+  padding: 10px 0;       
+  background-color: rgb(243, 60, 60);
+  color: white;
+  font-weight: bold;
+  font-size: 15px;       
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#Formulario_Hotel #boton-enviar:hover {
+  background-color: #ff7f7f; 
+  transform: scale(1.05);    
+}

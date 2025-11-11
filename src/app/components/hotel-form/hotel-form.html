@@ -1,0 +1,95 @@
+<section id="Formulario_Carrera">
+    <div id="header-form">
+        @if(estadoEdicion()){
+            <h2>Modifique los datos del Hotel...</h2>
+        } @else {
+            <h2>Cargue su nuevo Hotel...</h2>
+        }
+        <div>
+            <button type="button" id="boton-cerrar" (click)="cerrarForm()">❌</button>
+        </div>
+    </div>
+    
+    <div>
+        <form [formGroup]="form" (ngSubmit)="handleSubmit()">
+            <ul>
+                @if(estadoEdicion()){
+                    <li>
+                        <label for="id">ID HOTEL:</label>
+                        <input type="text" id="id" formControlName="id" readonly>
+                    </li>
+                }
+                
+                <li>
+                    <label for="nombre_hotel">Nombre del Hotel:</label>
+                    <input type="text" id="nombre_hotel" formControlName="nombre_hotel" placeholder="The Paddock Hotel...">
+                    @if (form.controls.nombre_hotel.invalid && (form.controls.nombre_hotel.dirty || form.controls.nombre_hotel.touched)) {
+                        <small style="color: red;">Nombre requerido y mínimo 3 caracteres.</small>
+                    }
+                </li>
+                <li>
+                    <label for="carrera_id">ID Carrera Asociada:</label>
+                    <input type="number" formControlName="carrera_id" id="carrera_id" placeholder="1, 2, 3...">
+                     @if (form.controls.carrera_id.invalid && (form.controls.carrera_id.dirty || form.controls.carrera_id.touched)) {
+                        <small style="color: red;">Debe ingresar un ID de Carrera válido (mínimo 1).</small>
+                    }
+                </li>
+                <li>
+                    <label for="pais">País:</label>
+                    <input type="text" formControlName="pais" id="pais" placeholder="España...">
+                </li>
+                <li>
+                    <label for="ciudad">Ciudad:</label>
+                    <input type="text" formControlName="ciudad" id="ciudad" placeholder="Barcelona...">
+                </li>
+                
+                <li>
+                    <label for="precio_promedio_habitacion_eur">Precio Promedio (€):</label>
+                    <input type="number" formControlName="precio_promedio_habitacion_eur" id="precio_promedio_habitacion_eur" placeholder="250">
+                    @if (form.controls.precio_promedio_habitacion_eur.invalid && (form.controls.precio_promedio_habitacion_eur.dirty || form.controls.precio_promedio_habitacion_eur.touched)) {
+                        <small style="color: red;">Precio requerido (mínimo €50).</small>
+                    }
+                </li>
+
+                <li>
+                    <label for="tieneAmenities">
+                        <input type="checkbox" formControlName="tieneAmenities" id="tieneAmenities"> 
+                        ¿Tiene Amenities (Piscina, Spa, etc.)?
+                    </label>
+                </li>
+
+                <li>
+                    <label for="tieneTransporte">
+                        <input type="checkbox" formControlName="tieneTransporte" id="tieneTransporte"> 
+                        ¿Ofrece Transporte al Circuito?
+                    </label>
+                </li>
+
+                <li>
+                    <label for="latitud">Ubicación (Latitud):</label>
+                    <input type="number" formControlName="latitud" id="latitud" placeholder="41.3851">
+                </li>
+                <li>
+                    <label for="longitud">Ubicación (Longitud):</label>
+                    <input type="number" formControlName="longitud" id="longitud" placeholder="2.1734">
+                </li>
+                
+                <li>
+                    <label for="fechas_disponibles_text">Fechas Disponibles (separadas por coma):</label>
+                    <textarea id="fechas_disponibles_text" formControlName="fechas_disponibles_text" placeholder="2025-05-20, 2025-05-21, 2025-05-22"></textarea>
+                    @if (form.controls.fechas_disponibles_text.invalid && (form.controls.fechas_disponibles_text.dirty || form.controls.fechas_disponibles_text.touched)) {
+                        <small style="color: red;">Debe ingresar al menos una fecha (separadas por coma).</small>
+                    }
+                </li>
+            </ul> 
+            
+            <button type="submit" id="boton-enviar">
+                @if(estadoEdicion()){
+                    ACTUALIZAR
+                } @else {
+                    ENVIAR
+                }
+            </button>
+        </form>
+    </div>
+</section>

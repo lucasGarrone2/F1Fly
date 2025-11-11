@@ -1,1 +1,54 @@
-/* You can add global styles to this file, and also import other style files */
+
+.app-loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  width: 100%;
+  background-color:#0B162F; 
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+
+.loader-car {
+  font-size: 48px; 
+  animation: drive 1.5s ease-in-out infinite; 
+  z-index: 2; 
+}
+
+
+.loader-road {
+  width: 200px;
+  height: 3px;
+  background-color: #0B162F;
+  margin-top: -10px; 
+  z-index: 1;
+}
+
+.app-loader p {
+  margin-top: 16px;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+}
+
+
+@keyframes drive {
+  0% {
+    transform: translateX(-100px); 
+    opacity: 0;
+  }
+  30% {
+    transform: translateX(0); 
+    opacity: 1;
+  }
+  70% {
+    transform: translateX(0); 
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+}

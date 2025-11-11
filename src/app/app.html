@@ -1,7 +1,16 @@
 <app-header></app-header>
 
 <main>
+
+    @if (isLoading()) {
+  <div class="app-loader">
+    <div class="loader-car">🏎️</div>
+    <div class="loader-road"></div>
+    <p>Cargando...</p>
+  </div>
+} @else {
 <router-outlet></router-outlet>
+ }
 </main>
 <app-footer></app-footer>
 
