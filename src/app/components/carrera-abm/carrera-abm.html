@@ -1,76 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CSS/style.css">
-    <title>F1Fly</title>
-</head>
-<body>
+<ul id="accion-gestion-carrera">
+  <li class="gestionLI"><button type="button" class="botonGestion">GESTION CARRERAS</button></li>
+  <li>|</li>
 
-        <ul id="accion-gestion-carrera">
-            <li class="gestionLI"><button type="button" class="botonGestion" >GESTION CARRERAS</button></li>
-            <li>|</li>
-            <li class="gestionLI"><button type="button" class="botonGestion" >GESTION HOTELES</button></li>
-            <li>|</li>
-            <li class="gestionLI"><button type="button" class="botonGestion" >GESTION VUELOS</button></li>
-        </ul>
-        
+  <li class="gestionLI">
+    <a routerLink="/gestion-hoteles" class="botonGestion">GESTION HOTELES</a>
+  </li>
 
-        @let carreras = this.carreras();
+  <li>|</li>
+  <li class="gestionLI"><button type="button" class="botonGestion">GESTION VUELOS</button></li>
+</ul>
 
-         @if (activarFormulzarioCarrera()) {
-                     <div id="overlay" class="hidden"></div>
-                     <app-carrera-form></app-carrera-form>
-            }   
+@let carreras = this.carreras(); @if (activarFormulzarioCarrera()) {
+<div id="overlay" class="hidden"></div>
+<app-carrera-form></app-carrera-form>
+} @if (carreras === undefined){
+<p>Cargando Carreras...</p>
+} @else {
+<section id="ListadoCarreras">
+  <h2>F1FLY ADMIN CARRERAS</h2>
+  <div id="boton-agregar">
+    <button type="button" class="botonAgregar" (click)="activarFormulario_Carrera()">
+      ➕ AGREGAR NUEVA CARRERA ➕
+    </button>
+  </div>
+  @for(carrera of carreras; track carrera.id){
+  <div class="contenedorCarrera">
+    <div>
+      <img src="{{ carrera.imageUrl_carrera }}" alt="imagen_carrera" class="imagen-carrera" />
+      <div class="botones">
+        <button type="button" class="botonModificar" (click)="activarEdicion_Carrera(carrera.id)">
+          ✏️ MODIFICAR
+        </button>
+        <button type="button" class="botonEliminar" (click)="activarEliminar_Carrera(carrera.id)">
+          🗑️ ELIMINAR
+        </button>
+      </div>
+    </div>
 
-       @if (carreras === undefined){
-            <p>Cargando Carreras...</p>
-       } @else {
-            <section id="ListadoCarreras">
-        <h2>F1FLY ADMIN CARRERAS</h2>
-            <div id="boton-agregar">
-                <button type="button" class="botonAgregar" (click)="activarFormulario_Carrera()" >➕ AGREGAR NUEVA CARRERA ➕</button>
-            </div>
-        @for(carrera of carreras; track carrera.id){
-            <div class="contenedorCarrera"> 
-            <div>
-                <img src= {{carrera.imageUrl_carrera}} alt="imagen_carrera" class="imagen-carrera">
-                <div class="botones">
-                    <button type="button" class="botonModificar" (click)="activarEdicion_Carrera(carrera.id)" >✏️ MODIFICAR</button>
-                    <button type="button" class="botonEliminar" (click)="activarEliminar_Carrera(carrera.id)" >🗑️ ELIMINAR</button>
-                </div>
-            </div>
-                    
-            <div class="info_carrera">
-                <ul class="lista-informacion-carreras">
-                <li><strong>ID CARRERA:</strong> {{carrera.id}}</li>
-                <li><strong>NOMBRE CARRERA:</strong> {{carrera.nombre_carrera}}</li>
-                <li><strong>DESCRIPCION CARRERA:</strong> {{carrera.descripcion_carrera}}</li>
-                <li><strong>CAPACIDAD CARRERA</strong> {{carrera.capacidad_carrera}}</li>
-                <li><strong>CANTIDAD VUELTAS CARRERA:</strong> {{carrera.cantidad_vueltas_carrera}}</li>
-                <li><strong>PAIS CARRERA:</strong> {{carrera.pais_carrera}}</li>
-                <li><strong>CIUDAD CARRERA:</strong> {{carrera.ciudad_carrera}}</li>
-                <li><strong>FECHA CARRERA:</strong> {{carrera.fecha_carrera}}</li>
-                <li><strong>PRECIO CARRERA:</strong> {{carrera.precio_carrera}}</li>
-                <li><strong>URL IMAGEN CARRERA:</strong> {{carrera.imageUrl_carrera}}</li>
-                </ul>
-            </div>
-            
-        </div>
-        } @empty {
-            <p>No hay carreras cargadas...</p>
-        }
+    <div class="info_carrera">
+      <ul class="lista-informacion-carreras">
+        <li><strong>ID CARRERA:</strong> {{ carrera.id }}</li>
+        <li><strong>NOMBRE CARRERA:</strong> {{ carrera.nombre_carrera }}</li>
+        <li><strong>DESCRIPCION CARRERA:</strong> {{ carrera.descripcion_carrera }}</li>
+        <li><strong>CAPACIDAD CARRERA</strong> {{ carrera.capacidad_carrera }}</li>
+        <li><strong>CANTIDAD VUELTAS CARRERA:</strong> {{ carrera.cantidad_vueltas_carrera }}</li>
+        <li><strong>PAIS CARRERA:</strong> {{ carrera.pais_carrera }}</li>
+        <li><strong>CIUDAD CARRERA:</strong> {{ carrera.ciudad_carrera }}</li>
+        <li><strong>FECHA CARRERA:</strong> {{ carrera.fecha_carrera }}</li>
+        <li><strong>PRECIO CARRERA:</strong> {{ carrera.precio_carrera }}</li>
+        <li><strong>URL IMAGEN CARRERA:</strong> {{ carrera.imageUrl_carrera }}</li>
+      </ul>
+    </div>
+  </div>
+  } @empty {
+  <p>No hay carreras cargadas...</p>
+  } @if(edicionCarrera()){
+  <div id="overlay" class="hidden"></div>
+  <app-carrera-form [estadoEdicion]="true" [carrera_edicion]="carrera_editar()"></app-carrera-form>
+  }
 
-         @if(edicionCarrera()){
-                <div id="overlay" class="hidden"></div>
-                <app-carrera-form [estadoEdicion]="true" [carrera_edicion]= "carrera_editar()" ></app-carrera-form>
-            }
-
-        <a class="home" href="#inicio">HOME</a>
-    </section>
-       }     
-</body>
-</html>
-
-
+  <a class="home" href="#inicio">HOME</a>
+</section>
+}

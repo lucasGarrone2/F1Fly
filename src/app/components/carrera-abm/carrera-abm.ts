@@ -3,11 +3,12 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { CarreraForm } from '../carrera-form/carrera-form';
 import { CarreraClient } from '../carrera/carrera-client';
 import { Carrera } from '../carrera/carrera-interface';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-carrera-abm',
-  imports: [CarreraForm],
+  imports: [CarreraForm, RouterLink],
   templateUrl: './carrera-abm.html',
   styleUrl: './carrera-abm.css'
 })

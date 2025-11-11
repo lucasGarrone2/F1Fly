@@ -148,7 +148,7 @@
       "nombre_hotel": "Manama Beach Resort",
       "carrera_id": 1,
       "pais": "Bahrain",
-      "ciudad": "Manama",
+      "ciudad": "Sakhir",
       "fechas_disponibles": [
         "2025-04-10",
         "2025-04-11",
@@ -231,7 +231,7 @@
       "nombre_hotel": "The Buckingham Arms",
       "carrera_id": 3,
       "pais": "Reino Unido",
-      "ciudad": "Buckingham",
+      "ciudad": "Silverstone",
       "fechas_disponibles": [
         "2025-07-03",
         "2025-07-07",
@@ -272,7 +272,7 @@
       "nombre_hotel": "Starhotels Anderson Milan",
       "carrera_id": 4,
       "pais": "Italia",
-      "ciudad": "Milán",
+      "ciudad": "Monza(Milán)",
       "fechas_disponibles": [
         "2025-09-04",
         "2025-09-05",
@@ -354,7 +354,7 @@
       "nombre_hotel": "Grand Mercure Vienna",
       "carrera_id": 6,
       "pais": "Austria",
-      "ciudad": "Viena",
+      "ciudad": "Spielberg",
       "fechas_disponibles": [
         "2025-06-26",
         "2025-06-30",

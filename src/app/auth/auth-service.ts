@@ -13,7 +13,7 @@ export class AuthService {
 
   constructor(private userClient: UserClient) {}
 
-  // 🔹 LOGIN: busca el usuario por username y valida contraseña
+
   login(username: string, password: string) {
     this.userClient.getUsers().subscribe({
       next: (users) => {
@@ -38,7 +38,7 @@ export class AuthService {
     localStorage.removeItem('loggedUser');
   }
 
-  // 🔹 Validar si un usuario ya existe por username, email o dni
+
   private userExists(newUser: User) {
     return this.userClient.getUsers().pipe(
       switchMap(users => {
@@ -51,7 +51,7 @@ export class AuthService {
         if (users.find(u => u.dni === newUser.dni)) {
           return throwError(() => new Error('El número de DNI ya está registrado'));
         }
-        return of(null); // Si pasa todas las validaciones, no hay error
+        return of(null); 
       })
     );
   }
@@ -70,7 +70,7 @@ export class AuthService {
     });
   }
 
-  // 🔹 Restaurar sesión si había un usuario logueado en localStorage
+  
   restoreSession() {
     const saved = localStorage.getItem('loggedUser');
     if (saved) {
