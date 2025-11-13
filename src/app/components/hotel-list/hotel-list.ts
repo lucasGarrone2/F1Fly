@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Hotel } from '../hotel/hotel-interface';
 import { HotelService } from '../hotel/hotel-service';
+import { ReservaClient } from '../../clients/reserva-client';
 
 @Component({
   selector: 'app-hotel-list',
@@ -24,5 +25,13 @@ export class HotelList {
         if (imgElement.src.indexOf(fallbackSrc) === -1) {
             imgElement.src = fallbackSrc;
         }
+    }
+
+    constructor(private reserva: ReservaClient, private router: Router){}
+
+    seleccionarHotel(hotel: Hotel)
+    {
+        this.reserva.setHotel(hotel);
+        this.router.navigate(['/reserva/vuelos']);
     }
 }

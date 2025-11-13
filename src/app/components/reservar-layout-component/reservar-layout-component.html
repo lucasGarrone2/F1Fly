@@ -1,0 +1,41 @@
+<div class="layout">
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <aside class="sidebar">
+    <h3>Ficha de Reserva</h3>
+
+    @let r = reservaCliente.reserva();
+
+    @if (r?.carrera) {
+      <div class="reserva-item">
+        <strong>Carrera:</strong>
+        <span>{{ r.carrera?.nombre_carrera }}</span>
+        <span class="precio">€{{ r.carrera?.precio_carrera }}</span>
+      </div>
+    }
+
+    @if (r?.hotel) {
+      <div class="reserva-item">
+        <strong>Hotel:</strong>
+        <span>{{ r.hotel?.nombre_hotel }}</span>
+        <span class="precio">€{{ r.hotel?.precio_promedio_habitacion_eur }}</span>
+      </div>
+    }
+
+    @if (r?.vuelo) {
+      <div class="reserva-item">
+        <strong>Vuelo:</strong>
+        <span>{{ r.vuelo?.ciudad_origen }} → {{ r.vuelo?.ciudad_destino }}</span>
+        <span class="precio">€{{ r.vuelo?.precio_promedio_ticket_eur }}</span>
+      </div>
+    }
+
+    <hr>
+    <div class="total">
+      <strong>Total:</strong>
+      <span>€{{ reservaCliente.total() }}</span>
+    </div>
+  </aside>
+</div>

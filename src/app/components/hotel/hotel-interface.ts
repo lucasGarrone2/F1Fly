@@ -1,5 +1,5 @@
 export interface Hotel {
-  id: string | undefined; 
+  id?: string | undefined; 
   nombre_hotel: string;
   carrera_id: number;
   pais: string;
