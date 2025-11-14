@@ -4,6 +4,8 @@ import { inject } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Carrera } from '../carrera/carrera-interface';
+import { ReservaClient } from '../../clients/reserva-client';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-race-card',
@@ -25,7 +27,7 @@ export class RaceCardComponent implements OnInit {
             this.safeImageUrl = this.sanitizer.bypassSecurityTrustUrl(this.race.imageUrl_carrera);
         }
     }
-  constructor(){}
+  constructor(private reserva: ReservaClient, private router: Router){}
 
     /**
      * Determina el estado de la carrera (Próxima, Pasada, Hoy).
@@ -55,5 +57,10 @@ export class RaceCardComponent implements OnInit {
             // Si ambas fechas son iguales (Hoy)
             return 'today';
         }
+    }
+    reservarCarrera(race: Carrera)
+    {
+        this.reserva.setCarrera(race);
+        this.router.navigate(['/reservar/hoteles']);
     }
 }

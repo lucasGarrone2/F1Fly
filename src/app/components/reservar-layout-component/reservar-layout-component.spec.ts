@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VueloForm } from './vuelo-form';
+import { ReservarLayoutComponent } from './reservar-layout-component';
 
-describe('VueloForm', () => {
-  let component: VueloForm;
-  let fixture: ComponentFixture<VueloForm>;
+describe('ReservarLayoutComponent', () => {
+  let component: ReservarLayoutComponent;
+  let fixture: ComponentFixture<ReservarLayoutComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [VueloForm]
+      imports: [ReservarLayoutComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(VueloForm);
+    fixture = TestBed.createComponent(ReservarLayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
