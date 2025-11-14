@@ -3,10 +3,10 @@ import {CommonModule} from "@angular/common";
 import { Carrera } from '../carrera/carrera-interface';
 import { RaceCardComponent } from '../race-card/race-card';
 import { RouterLink } from "@angular/router";
-import { RaceClient } from '../../services/race-client';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ViewChild, ElementRef } from '@angular/core';
 import { Input } from '@angular/core';
+import { CarreraClient } from '../carrera/carrera-client';
 
 @Component({
   selector: 'app-home',
@@ -16,8 +16,8 @@ import { Input } from '@angular/core';
    styleUrls: ['./home.css']
 })
 export class Home {
-  private readonly client = inject(RaceClient);
-  protected raceSource = toSignal(this.client.getRaces());
+  private readonly client = inject(CarreraClient);
+  protected raceSource = toSignal(this.client.getCarreras());
   
   @ViewChild('racesContainer', { static: false }) racesContainer!: ElementRef;
 
