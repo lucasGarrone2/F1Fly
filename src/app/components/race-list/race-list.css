@@ -46,13 +46,6 @@ html, body {
     margin: 0 auto; 
 }
 
-app-race-card{
-    background-color: #13244c; 
-    display: block;
-    border-radius: 8px; 
-    padding: 15px; 
-}
-
 .filterBar {
  width: 280px; 
  flex-shrink: 0; 

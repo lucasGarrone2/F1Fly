@@ -1,11 +1,12 @@
 import { Component, computed, inject } from '@angular/core';
 import { CarreraClient } from '../components/carrera/carrera-client';
 import { RaceCardComponent } from '../components/race-card/race-card';
-import { Carrera } from '../components/carrera/carrera-interface';
 import { HttpClient } from '@angular/common/http';
 import { FavCarrera } from '../interfaces/fav-carrera';
 import { ListaFavClient } from '../services/lista-fav-client';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { Carrera } from '../components/carrera/carrera-interface';
+
 
 @Component({
   selector: 'app-lista-favoritos-carrera',

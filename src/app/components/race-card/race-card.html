@@ -1,11 +1,10 @@
+<!--
 <div class="card" [ngClass]="layout" tabindex="0">
 
     <div class="card-image-container">
         <img [src]="safeImageUrl" [alt]="'Circuito de ' + race.nombre_carrera" class="card-image"> 
-
         
         <span class="race-status-tag" [ngClass]="getRaceStatus(race.fecha_carrera)">
-            
             @if (getRaceStatus(race.fecha_carrera) === 'upcoming') {
                 Próxima
             } @else if (getRaceStatus(race.fecha_carrera) === 'today') {
@@ -50,5 +49,81 @@
 
             <button class="btn-seleccionar" (click)="reservarCarrera(race)">Seleccionar <i class="fas fa-arrow-right"></i></button>
         </div>
+    </div>
+</div>
+--->
+<div class="race-card">
+
+    <!-- Imagen -->
+    <div class="race-image-wrapper">
+        <img 
+            [src]="safeImageUrl" 
+            [alt]="'Circuito de ' + race.nombre_carrera"
+        >
+    </div>
+
+    <!-- Contenido -->
+    <div class="race-content">
+
+        <!-- Header -->
+        <div class="race-header">
+            <h2 class="race-title">{{ race.nombre_carrera }}</h2>
+
+            <button class="btn-favorito" (click)="botonFavoritos(race)">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <span 
+                class="race-status" 
+                [ngClass]="getRaceStatus(race.fecha_carrera)">
+                @if (getRaceStatus(race.fecha_carrera) === 'upcoming') {
+                    PRÓXIMA
+                } @else if (getRaceStatus(race.fecha_carrera) === 'today') {
+                    ¡HOY!
+                } @else {
+                    PASADA
+                }
+            </span>
+        </div>
+
+        <!-- Ubicación -->
+        <p class="race-location">
+            <i class="fas fa-map-marker-alt"></i>
+            {{ race.ciudad_carrera }}, {{ race.pais_carrera }}
+        </p>
+
+        <hr class="divider">
+
+        <!-- Datos -->
+        <div class="race-data">
+
+            <p class="capacidad">
+                <i class="fas fa-users"></i>
+                Capacidad: {{ race.capacidad_carrera }}
+            </p>
+
+            <p class="precio">
+                <i class="fas fa-euro-sign"></i>
+                Precio: {{ race.precio_carrera }}
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <div class="race-footer">
+
+            <span class="race-date">
+                <i class="fas fa-calendar-alt"></i>
+                {{ race.fecha_carrera }}
+            </span>
+
+            <button class="btn-more">
+                Ver Más →
+            </button>
+
+            <button class="btn-select" (click)="reservarCarrera(race)">
+                Seleccionar →
+            </button>
+        </div>
+
     </div>
 </div>
