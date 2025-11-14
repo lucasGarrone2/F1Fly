@@ -38,6 +38,22 @@ export class ReservaClient {
       this._reserva.update(r=> ({...r, vuelo}));
     }
 
+    getCarrera(): Carrera | undefined
+    {
+      return this._reserva().carrera;
+    }
+
+    getHotel(): Hotel | undefined
+    {
+      return this._reserva().hotel;
+    }
+
+    getVuelo(): IVuelo | undefined
+    {
+      return this._reserva().vuelo;
+    } 
+
+
     reset()
     {
       this._reserva.set({});

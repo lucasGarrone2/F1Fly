@@ -1,45 +1,67 @@
 <div class="list-container">
-    <h2 class="list-title">Listado de Hoteles</h2>
-    <p class="description">Encuentra el mejor alojamiento cerca de tu circuito favorito.</p>
 
-    @if (hotelSource() === undefined) {
-        <div class="loading-state">Cargando listado de hoteles...</div>
-    }
+  <h2 class="list-title">Listado de Hoteles</h2>
+  <p class="description">Encuentra el mejor alojamiento cerca de tu circuito favorito.</p>
 
-    <div class="hotel-grid">
-        @if (hotelSource() && hotelSource()!.length > 0) {
-           @for(hotel of hotelSource(); track hotel.id) {
-<div class="hotel-card">
+  @if (hotelSource() === undefined) {
+    <div class="loading-state">Cargando listado de hoteles...</div>
+  }
 
-    <img class="hotel-img"
-         [src]="hotel.imagenUrl"
-         alt="Imagen del Hotel"
-         (error)="onImageError($event)">
+  <div class="hotel-grid">
 
-    <div class="hotel-info">
+    @if (HotelesFiltrados.length > 0) {
 
-        <h3>{{hotel.nombre_hotel}}</h3>
-        <p class="hotel-location">{{hotel.ciudad}}, {{hotel.pais}}</p>
+      @for (hotel of HotelesFiltrados; track hotel.id) {
 
-        <div class="hotel-details">
-            <p class="price-tag">
-                <strong>€{{hotel.precio_promedio_habitacion_eur}}</strong> / Noche
+        <div class="hotel-card">
+
+          <img class="hotel-img"
+               [src]="hotel.imagenUrl"
+               alt="Imagen del Hotel"
+               (error)="onImageError($event)">
+
+          <div class="hotel-info">
+
+            <h3>{{ hotel.nombre_hotel }}</h3>
+            <p class="hotel-location">
+              {{ hotel.ciudad }}, {{ hotel.pais }}
             </p>
 
-            <p class="hotel-feature">Amenities: {{hotel.tieneAmenities ? '✅' : '❌'}}</p>
-            <p class="hotel-feature">Transporte: {{hotel.tieneTransporte ? '✅' : '❌'}}</p>
+            <div class="hotel-details">
+              <p class="price-tag">
+                <strong>€{{ hotel.precio_promedio_habitacion_eur }}</strong> / Noche
+              </p>
+
+              <p class="hotel-feature">
+                Amenities: {{ hotel.tieneAmenities ? '✅' : '❌' }}
+              </p>
+
+              <p class="hotel-feature">
+                Transporte: {{ hotel.tieneTransporte ? '✅' : '❌' }}
+              </p>
+            </div>
+
+            <button routerLink="/hoteles/{{hotel.id}}" class="btn-rojo">
+              Ver Detalles
+            </button>
+
+            <button class="btn-seleccionar"
+                    (click)="seleccionarHotel(hotel)">
+              Seleccionar →
+            </button>
+
+          </div>
         </div>
 
-        <button routerLink="/hoteles/{{hotel.id}}" class="btn-rojo">Ver Detalles</button>
-        <button class="btn-seleccionar" (click)="seleccionarHotel(hotel)">
-            Seleccionar →
-        </button>
+      }
 
-    </div>
-</div>
-}
-        } @else if (hotelSource() && hotelSource()!.length === 0) {
-            <div class="empty-state">No hay hoteles disponibles en este momento.</div>
-        }
-    </div>
+    } @else {
+
+      <div class="empty-state">
+        No hay hoteles disponibles para esta carrera.
+      </div>
+
+    }
+
+  </div>
 </div>

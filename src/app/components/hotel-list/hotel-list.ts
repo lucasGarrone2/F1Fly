@@ -29,6 +29,18 @@ export class HotelList {
 
     constructor(private reserva: ReservaClient, private router: Router){}
 
+     get HotelesFiltrados(): Hotel[] {
+    const hoteles = this.hotelSource();
+    const carrera = this.reserva.getCarrera();
+
+    if (!hoteles || !carrera) return hoteles ?? [];
+
+    return hoteles.filter(h =>
+      h.pais.toLowerCase().trim() === carrera.pais_carrera.toLowerCase().trim() &&
+      h.ciudad.toLowerCase().trim() === carrera.ciudad_carrera.toLowerCase().trim()
+    );
+  }
+  
     seleccionarHotel(hotel: Hotel)
     {
         this.reserva.setHotel(hotel);

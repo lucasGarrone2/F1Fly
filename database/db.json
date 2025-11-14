@@ -973,6 +973,22 @@
         "imageUrl_carrera": "bahrein.jpg",
         "id": "bbab"
       }
+    },
+    {
+      "id": "de11",
+      "id_user": 1,
+      "carrera": {
+        "nombre_carrera": "Bahrain International Circuit",
+        "fecha_carrera": "2026-04-13",
+        "capacidad_carrera": 70000,
+        "descripcion_carrera": "Pista desértica, diseño Tilke, carreras bajo luces.",
+        "cantidad_vueltas_carrera": 99,
+        "ciudad_carrera": "Sakhir",
+        "pais_carrera": "Bahrain",
+        "precio_carrera": 120,
+        "imageUrl_carrera": "bahrein.jpg",
+        "id": "bbab"
+      }
     }
   ]
 }
