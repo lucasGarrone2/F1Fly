@@ -203,3 +203,39 @@
     padding: 12px;
   }
 }
+
+.dis{
+  display: flex;
+  gap: 10px;
+
+}
+
+.boton_corazon {
+  background: none;     /* sin fondo */
+  border: none;         /* sin borde */
+  padding: 0;           /* sin padding extra */
+  cursor: pointer;      /* cursor de botón */
+  font-size: 17px;      /* tamaño del corazón */
+  line-height: 1;       /* evita que se desacomode */
+  opacity: 0.4;         /* menos visible cuando no hay hover */
+  transition: opacity 0.2s, transform 0.2s;
+  color: white;         /* color del corazón */
+}
+
+.boton_corazon:focus {
+  outline: none;        /* sin borde azul de focus */
+}
+
+/* Hover: más visible y animación */
+.boton_corazon:hover {
+  opacity: 1;
+  transform: scale(1.2);
+  color: #ff69b4;       /* rosa */
+}
+
+/* Si querés que cambie el icono de vacío a lleno dentro */
+.boton_corazon:hover i {
+  content: "\f004"; /* Unicode de corazón sólido en FontAwesome */
+  font-family: "Font Awesome 5 Free"; /* Asegurate que coincida con tu FA */
+  font-weight: 900; /* sólido */
+}

@@ -1,0 +1,11 @@
+@let carreras_fav = lista_fav();
+
+    @if(isLoading()){
+        <p>Cargando lista de carreras favoritas...</p>
+    }@else if(carreras_fav && carreras_fav.length > 0){
+        @for (carrera_f of carreras_fav; track carrera_f.id) {
+            <app-race-card [race]="carrera_f.carrera" ></app-race-card>
+        }
+    }@else {
+        <p>No hay carreras cargadas!</p>
+    }

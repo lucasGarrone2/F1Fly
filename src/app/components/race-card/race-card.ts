@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, signal } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { inject } from '@angular/core';
 import { OnInit } from '@angular/core';
@@ -6,6 +6,10 @@ import { CommonModule } from '@angular/common';
 import { Carrera } from '../carrera/carrera-interface';
 import { ReservaClient } from '../../clients/reserva-client';
 import { Router } from '@angular/router';
+import { User } from '../../interfaces/user';
+import { FavCarrera } from '../../interfaces/fav-carrera';
+import { ListaFavClient } from '../../services/lista-fav-client';
+
 
 @Component({
   selector: 'app-race-card',
@@ -63,4 +67,22 @@ export class RaceCardComponent implements OnInit {
         this.reserva.setCarrera(race);
         this.router.navigate(['/reservar/hoteles']);
     }
+
+    protected readonly client_fav = inject(ListaFavClient);
+
+    botonFavoritos(carrera_fav : Carrera){
+        const fav_carrera: FavCarrera = {
+            id_user: 1,
+            carrera: carrera_fav 
+        };
+
+        this.client_fav.addFavoritos(fav_carrera).subscribe(()=>{
+            alert('Carrera agregada con exito a su favoritos!');
+        });
+    }
+
+    
+
+
+
 }

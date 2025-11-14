@@ -9,6 +9,8 @@ import { HotelAbm } from './components/hotel-abm/hotel-abm';
 import { HotelList } from './components/hotel-list/hotel-list';
 import { ReservarLayoutComponent } from './components/reservar-layout-component/reservar-layout-component';
 import { VueloList } from './components/vuelo-list/vuelo-list';
+import { ListaFavoritosCarrera } from './lista-favoritos-carrera/lista-favoritos-carrera';
+
 
 export const routes: Routes = [
 
@@ -21,6 +23,11 @@ export const routes: Routes = [
   { path: 'gestion-hoteles', component: HotelAbm },
   { path: 'lista-hoteles', component: HotelList },
 
+  {
+    path:"lista-favoritos",
+    title: 'Lista favoritos',
+    component: ListaFavoritosCarrera
+  },
   // RUTAS DEL LAYOUT "RESERVAR"
   {
     path: 'reservar',

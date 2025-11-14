@@ -306,7 +306,7 @@
         "latitud": -23.7036,
         "longitud": -46.6997
       },
-      "imagenUrl": "fotosHotel/saopaulo.jpeg" 
+      "imagenUrl": "fotosHotel/saopaulo.jpeg"
     },
     {
       "id": "10",
@@ -470,7 +470,7 @@
         "latitud": 1.2816,
         "longitud": 103.8617
       },
-      "imagenUrl": "fotosHotel/baysands.jpg" 
+      "imagenUrl": "fotosHotel/baysands.jpg"
     },
     {
       "id": "18",
@@ -898,7 +898,7 @@
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "Admin",
       "password": "Admin123",
       "isAdmin": true,
@@ -939,6 +939,40 @@
       "fecha_nacimiento": "1000-10-10",
       "piloto": "",
       "escuderia": ""
+    }
+  ],
+  "listadoFavoritos": [
+    {
+      "id": "37ad",
+      "id_user": 1,
+      "carrera": {
+        "nombre_carrera": "Bahrain International Circuit",
+        "fecha_carrera": "2026-04-13",
+        "capacidad_carrera": 70000,
+        "descripcion_carrera": "Pista desértica, diseño Tilke, carreras bajo luces.",
+        "cantidad_vueltas_carrera": 99,
+        "ciudad_carrera": "Sakhir",
+        "pais_carrera": "Bahrain",
+        "precio_carrera": 120,
+        "imageUrl_carrera": "bahrein.jpg",
+        "id": "bbab"
+      }
+    },
+    {
+      "id": "0edc",
+      "id_user": 1,
+      "carrera": {
+        "nombre_carrera": "Bahrain International Circuit",
+        "fecha_carrera": "2026-04-13",
+        "capacidad_carrera": 70000,
+        "descripcion_carrera": "Pista desértica, diseño Tilke, carreras bajo luces.",
+        "cantidad_vueltas_carrera": 99,
+        "ciudad_carrera": "Sakhir",
+        "pais_carrera": "Bahrain",
+        "precio_carrera": 120,
+        "imageUrl_carrera": "bahrein.jpg",
+        "id": "bbab"
+      }
     }
   ]
 }
