@@ -19,12 +19,18 @@ export class ListaFavClient {
     return this.http.get<FavCarrera[]>(this.url);
   }
 
+  getIDCarreraFav(id_bus : string | number){
+    return this.http.get<Carrera>(this.url + "/" + id_bus);
+  }
+
   addFavoritos(carrera_fav : FavCarrera){
     return this.http.post<FavCarrera>(this.url,carrera_fav);
   }
 
-  deleteFavoritos(id_bus : string | number){
+  deleteCarreraFavoritos(id_bus : string | number){
     return this.http.delete<Carrera>(this.url +'/'+id_bus);
   }
+
+  
   
 }

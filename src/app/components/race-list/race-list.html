@@ -102,11 +102,11 @@
     <section class="carreras" id="carreras">
       <h2 class="proxCarreras">Próximas Carreras</h2>
 
-      <div class="races-container" #racesContainer>
+      <div class="races-container">
         @if (!raceSource()) {
         <p style="text-align: center; width: 100%">Cargando carreras...</p>
         } @else { @for (race of filteredRaces(); track race.id) {
-        <app-race-card [race]="race" [layout]="'list'"> </app-race-card>
+        <app-race-card [race]="race" > </app-race-card>
         }
         @if (filteredRaces().length===0) {
          <p style="text-align: center; width: 100%; font-weight: bold; margin-top: 20px;">

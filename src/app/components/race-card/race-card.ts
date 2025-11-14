@@ -76,9 +76,14 @@ export class RaceCardComponent implements OnInit {
             carrera: carrera_fav 
         };
 
+        if(!this.client_fav.getIDCarreraFav(carrera_fav.id)){
         this.client_fav.addFavoritos(fav_carrera).subscribe(()=>{
             alert('Carrera agregada con exito a su favoritos!');
+            window.location.reload();
         });
+    }else{
+        alert('Esta carrera ya exite en su lista de favoritos!');
+    }
     }
 
     

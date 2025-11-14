@@ -959,19 +959,19 @@
       }
     },
     {
-      "id": "df0d",
+      "id": "1dd4",
       "id_user": 1,
       "carrera": {
-        "nombre_carrera": "Bahrain International Circuit",
-        "fecha_carrera": "2026-04-13",
-        "capacidad_carrera": 70000,
-        "descripcion_carrera": "Pista desértica, diseño Tilke, carreras bajo luces.",
+        "nombre_carrera": "Circuit de Monaco",
+        "fecha_carrera": "2026-05-25",
+        "capacidad_carrera": 37000,
+        "descripcion_carrera": "El clásico urbano: curvas estrechas y glamour en la Riviera.",
         "cantidad_vueltas_carrera": 99,
-        "ciudad_carrera": "Sakhir",
-        "pais_carrera": "Bahrain",
-        "precio_carrera": 120,
-        "imageUrl_carrera": "bahrein.jpg",
-        "id": "bbab"
+        "ciudad_carrera": "Montecarlo",
+        "pais_carrera": "Mónaco",
+        "precio_carrera": 250,
+        "imageUrl_carrera": "monaco.png",
+        "id": "5d57"
       }
     }
   ]
