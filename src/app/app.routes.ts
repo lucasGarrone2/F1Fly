@@ -8,7 +8,7 @@ import { authGuardGuard } from './guard/auth-guard-guard';
 import { HotelAbm } from './components/hotel-abm/hotel-abm';
 import { HotelList } from './components/hotel-list/hotel-list';
 import { ReservarLayoutComponent } from './components/reservar-layout-component/reservar-layout-component';
-import { VueloList } from './components/vuelo-list/vuelo-list';
+import { VueloAbm } from './components/vuelo-abm/vuelo-list';
 import { ListaFavoritosCarrera } from './lista-favoritos-carrera/lista-favoritos-carrera';
 
 
@@ -22,6 +22,7 @@ export const routes: Routes = [
   { path: 'lista-de-carreras', component: RaceList },
   { path: 'gestion-hoteles', component: HotelAbm },
   { path: 'lista-hoteles', component: HotelList },
+  {path: 'gestion-vuelos', component: VueloAbm},
 
   {
     path:"lista-favoritos",
@@ -35,7 +36,7 @@ export const routes: Routes = [
     children: [
       { path: 'carreras', component: RaceList },
       { path: 'hoteles', component: HotelList },
-      { path: 'vuelos', component: VueloList },
+      // { path: 'vuelos', component: VueloList }, Completar despues para mostrar vuelos
       { path: '', redirectTo: 'carreras', pathMatch: 'full' }
     ]
   }
