@@ -15,10 +15,10 @@
         } 
              @if(auth.isLoggedin())
         {
+            <a routerLink="lista-favoritos">Lista Favoritos</a>
 
             @if (auth.isAdmin()) {
              <a routerLink="/gestion-carrera" class="nav-link">Gestion Admin</a>
-            <a routerLink="lista-favoritos">Lista Favoritos</a>
             }
          
         <button class="btn-cerrar-sesion" (click)="logout()">Cerrar sesion</button>
