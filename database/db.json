@@ -943,7 +943,7 @@
   ],
   "listadoFavoritos": [
     {
-      "id": "37ad",
+      "id": "f752",
       "id_user": 1,
       "carrera": {
         "nombre_carrera": "Bahrain International Circuit",
@@ -959,19 +959,35 @@
       }
     },
     {
-      "id": "1dd4",
+      "id": "d362",
       "id_user": 1,
       "carrera": {
-        "nombre_carrera": "Circuit de Monaco",
-        "fecha_carrera": "2026-05-25",
-        "capacidad_carrera": 37000,
-        "descripcion_carrera": "El clásico urbano: curvas estrechas y glamour en la Riviera.",
-        "cantidad_vueltas_carrera": 99,
-        "ciudad_carrera": "Montecarlo",
-        "pais_carrera": "Mónaco",
-        "precio_carrera": 250,
-        "imageUrl_carrera": "monaco.png",
-        "id": "5d57"
+        "nombre_carrera": "Autodromo Nazionale Monza",
+        "pais_carrera": "Italia",
+        "ciudad_carrera": "Monza (Milán)",
+        "fecha_carrera": "2026-09-07",
+        "capacidad_carrera": 120000,
+        "cantidad_vueltas_carrera": 53,
+        "precio_carrera": 140,
+        "descripcion_carrera": "Alta velocidad, largas rectas y la histórica banking.",
+        "imageUrl_carrera": "monzaa.jpg",
+        "id": "ad83"
+      }
+    },
+    {
+      "id": "1c7d",
+      "id_user": 1,
+      "carrera": {
+        "nombre_carrera": "Autódromo José Carlos Pace (Interlagos)",
+        "pais_carrera": "Brasil",
+        "ciudad_carrera": "São Paulo",
+        "fecha_carrera": "2026-11-09",
+        "capacidad_carrera": 110000,
+        "cantidad_vueltas_carrera": 71,
+        "precio_carrera": 100,
+        "descripcion_carrera": "Pista favorita por los aficionados latinoamericanos; ambiente de carnaval durante la carrera.",
+        "imageUrl_carrera": "interlagos.jpg",
+        "id": "625b"
       }
     }
   ]

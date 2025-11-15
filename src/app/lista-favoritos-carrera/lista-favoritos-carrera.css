@@ -4,14 +4,84 @@
     gap: 15px; 
     max-width: 900px; 
     margin: 0 auto; 
+    margin-left: 30px;
     margin-bottom: 40px;
-        font-family: Arial, Helvetica, sans-serif;
- font-weight: 300; /* ligero */
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300; 
     
 }
 
-h1{
+h1,h2{
     text-align: center;
     color: white;
     border-bottom: 2px solid red;
+        font-family: Arial, Helvetica, sans-serif;
+
+}
+.race-item {
+    position: relative;       
+}
+
+.btn-close {
+    position: absolute;       
+    top: 4px;               
+    right: -90px;             
+    border-radius: 8px;          
+    font-size: 20px;       
+    cursor: pointer;         
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn-close:hover {
+    transform: scale(1.2);   
+    opacity: 0.8;            
+}
+
+.contenedor-acciones {
+    width: 300px;        
+    padding: 10px;      
+    background-color:  #29406c;
+    margin-left: 20px;
+    max-height: 150px;   
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.contenedor-fav{
+    display: flex;
+    gap: 20px; 
+}
+
+.contenedor-carreras{
+    flex: 1; 
+}
+
+h2{
+    text-align: center;
+    color: white;
+    border-bottom: 2px solid red;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 4px;
+
+}
+
+ul{
+    list-style: none;
+    padding-left: 0px;
+}
+ul li{
+    padding-bottom: 10px;
+
+}
+
+ul button{
+    border-radius: 9px;
+    cursor: pointer;
+        transition: transform 0.2s, opacity 0.2s;
+
+}
+
+ul button:hover{
+    transform: scale(1.04);   
+    opacity: 0.8; 
 }

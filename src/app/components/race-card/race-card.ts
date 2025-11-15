@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 import { User } from '../../interfaces/user';
 import { FavCarrera } from '../../interfaces/fav-carrera';
 import { ListaFavClient } from '../../services/lista-fav-client';
-
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-race-card',
@@ -75,15 +75,11 @@ export class RaceCardComponent implements OnInit {
             id_user: 1,
             carrera: carrera_fav 
         };
-
-        if(!this.client_fav.getIDCarreraFav(carrera_fav.id)){
         this.client_fav.addFavoritos(fav_carrera).subscribe(()=>{
             alert('Carrera agregada con exito a su favoritos!');
             window.location.reload();
         });
-    }else{
-        alert('Esta carrera ya exite en su lista de favoritos!');
-    }
+    
     }
 
     

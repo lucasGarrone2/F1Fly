@@ -1,15 +1,33 @@
 @let carreras_fav = lista_fav();
-    <h1 >LISTADO DE FAVORITOS</h1>
+    <h1 >Carreras Favoritas</h1>
+    <div class="contenedor-fav">
+    <aside class="contenedor-acciones">
+        <h2>Acciones lista de favoritos</h2>
+        <div class="lista-acciones"> 
+        <ul>
+            <li><button type="button" (click)="botonEliminar()">Eliminar carrera de favoritos</button></li>
+            <li><button type="button" (click)="botonListaCarreras()">Listado de carreras</button></li>
+        </ul>
+        </div>
+    </aside>
+    <div class="contenedor-carreras">
     @if(isLoading()){
         <p>Cargando lista de carreras favoritas...</p>
     }@else if(carreras_fav && carreras_fav.length > 0){
         @for (carrera_f of carreras_fav; track carrera_f.id) {
             <section class="carreras" id="carreras">
-             <div class="races-container">
-             <app-race-card [race]="carrera_f.carrera"></app-race-card>
-            </div>
+                <div class="races-container">
+                    <div class="race-item">
+                        <app-race-card [race]="carrera_f.carrera"></app-race-card>
+                        @if(eliminar()){
+                        <button type="button" class="btn-close" (click)="eliminarCarreraFav(carrera_f.id!)">❌</button>
+                        }
+                    </div>
+                </div>
             </section>
-        }
+}
     }@else {
         <p>No hay carreras cargadas!</p>
     }
+    </div>
+    </div>
