@@ -1,17 +1,11 @@
 <div class="race-card">
-
-    <!-- Imagen -->
     <div class="race-image-wrapper">
         <img 
             [src]="safeImageUrl" 
             [alt]="'Circuito de ' + race.nombre_carrera"
         >
     </div>
-
-    <!-- Contenido -->
     <div class="race-content">
-
-        <!-- Header -->
         <div class="race-header">
             <h2 class="race-title">{{ race.nombre_carrera }}</h2>
 
@@ -31,18 +25,13 @@
                 }
             </span>
         </div>
-
-        <!-- Ubicación -->
         <p class="race-location">
             <i class="fas fa-map-marker-alt"></i>
             {{ race.ciudad_carrera }}, {{ race.pais_carrera }}
         </p>
 
         <hr class="divider">
-
-        <!-- Datos -->
         <div class="race-data">
-
             <p class="capacidad">
                 <i class="fas fa-users"></i>
                 Capacidad: {{ race.capacidad_carrera }}
@@ -53,8 +42,6 @@
                 Precio: {{ race.precio_carrera }}
             </p>
         </div>
-
-        <!-- Footer -->
         <div class="race-footer">
 
             <span class="race-date">

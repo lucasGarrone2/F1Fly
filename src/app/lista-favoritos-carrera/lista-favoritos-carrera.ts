@@ -7,6 +7,7 @@ import { ListaFavClient } from '../services/lista-fav-client';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Carrera } from '../components/carrera/carrera-interface';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-lista-favoritos-carrera',
@@ -19,14 +20,14 @@ import { Router } from '@angular/router';
 export class ListaFavoritosCarrera {
   protected readonly client = inject(ListaFavClient);
   protected readonly router = inject(Router);
+  protected readonly route = inject(ActivatedRoute);
 
-  protected readonly lista_fav = toSignal(this.client.getListaFavoritos()); 
+  protected readonly lista_fav = toSignal(this.client.getFavoritosByUser(2)); 
   protected readonly isLoading = computed(()=>this.lista_fav===undefined);
 
   readonly eliminar = signal(false);
 
-
-  botonEliminar(){
+   botonEliminar(){
   this.eliminar.set(!this.eliminar());
   }
 
@@ -36,7 +37,6 @@ export class ListaFavoritosCarrera {
       window.location.reload();
     });
   }
-
 
   botonListaCarreras(){
     this.router.navigateByUrl("lista-de-carreras");
