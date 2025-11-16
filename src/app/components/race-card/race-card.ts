@@ -81,14 +81,22 @@ export class RaceCardComponent implements OnInit {
 
     botonFavoritos(carrera_fav : Carrera){
         const fav_carrera: FavCarrera = {
-            id_user: 1,
+            id_user: 2,
             carrera: carrera_fav 
         };
-        this.client_fav.addFavoritos(fav_carrera).subscribe(()=>{
-            alert('Carrera agregada con exito a su favoritos!');
-            window.location.reload();
+
+        this.client_fav.getFavoritosByCarreraId(carrera_fav.id).subscribe((existe) => {
+
+        const existe_user = existe.filter((fav) => fav.id_user === fav_carrera.id_user);
+        
+        if (existe_user.length === 0) {
+        this.client_fav.addFavoritos(fav_carrera).subscribe(() => {
+          alert('Carrera agregada con éxito a sus favoritos!');
+          window.location.reload();
         });
-    
+        } else {
+        alert('Carrera ya existente en su lista');
+        }});
     }
 
     

@@ -6,36 +6,32 @@
 }
 
 .boton_corazon {
-  background: none;     /* sin fondo */
-  border: none;         /* sin borde */
-  padding: 0;           /* sin padding extra */
-  cursor: pointer;      /* cursor de botón */
-  font-size: 17px;      /* tamaño del corazón */
-  line-height: 1;       /* evita que se desacomode */
-  opacity: 0.4;         /* menos visible cuando no hay hover */
+  background: none;     
+  border: none;         
+  padding: 0;           
+  cursor: pointer;     
+  font-size: 17px;      
+  line-height: 1;       
+  opacity: 0.4;         
   transition: opacity 0.2s, transform 0.2s;
-  color: white;         /* color del corazón */
+  color: white;        
 }
 
 .boton_corazon:focus {
-  outline: none;        /* sin borde azul de focus */
+  outline: none;      
 }
-
-/* Hover: más visible y animación */
 .boton_corazon:hover {
   opacity: 1;
   transform: scale(1.2);
-  color: #ff69b4;       /* rosa */
+  color: #ff69b4;      
 }
 
-/* Si querés que cambie el icono de vacío a lleno dentro */
 .boton_corazon:hover i {
-  content: "\f004"; /* Unicode de corazón sólido en FontAwesome */
-  font-family: "Font Awesome 5 Free"; /* Asegurate que coincida con tu FA */
-  font-weight: 900; /* sólido */
+  content: "\f004"; 
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 900; 
 }
 
-/* Card general */
 .race-card {
     display: flex;
     background: #0b1e46;
@@ -49,7 +45,6 @@
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* Imagen fija */
 .race-image-wrapper img {
     width: 300px;
     height: 180px;
@@ -57,14 +52,12 @@
     border-radius: 10px;
 }
 
-/* Contenido */
 .race-content {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-/* Header */
 .race-header {
     display: flex;
     align-items: center;
@@ -77,7 +70,6 @@
     margin: 0;
 }
 
-/* Botón favoritos */
 .btn-favorito {
     background: transparent;
     border: none;
@@ -86,7 +78,6 @@
     color: #bbb;
 }
 
-/* Estado */
 .race-status {
     padding: 5px 12px;
     border-radius: 8px;
@@ -98,7 +89,6 @@
 .race-status.today { background: #facc15; color: black; }
 .race-status.past { background: #ef4444; }
 
-/* Ubicación */
 .race-location i {
     margin-right: 5px;
 }
@@ -109,7 +99,6 @@
     margin: 10px 0;
 }
 
-/* Datos */
 .race-data {
     display: flex;
     justify-content: space-between;
@@ -120,7 +109,6 @@
     margin-right: 5px;
 }
 
-/* Footer */
 .race-footer {
     margin-top: auto;
     display: flex;
@@ -140,7 +128,6 @@
 .btn-select:hover {
     color: white;
 }
-/* Hover de la tarjeta: resaltar */
 .race-card {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -151,7 +138,6 @@
     border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-/* Hover botones Ver Más / Seleccionar */
 .btn-more,
 .btn-select {
     transition: color 0.25s ease, transform 0.25s ease;
@@ -163,7 +149,6 @@
     transform: translateX(3px);
 }
 
-/* Hover del tag de estado */
 .race-status {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     cursor: default;
@@ -174,7 +159,6 @@
     box-shadow: 0 0 10px rgba(255,255,255,0.25);
 }
 
-/* Corazón favorito: hover suave */
 .btn-favorito {
     transition: transform 0.25s ease, color 0.25s ease, opacity 0.25s ease;
     opacity: 0.6;

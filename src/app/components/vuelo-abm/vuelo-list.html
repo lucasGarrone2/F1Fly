@@ -1,1 +1,52 @@
-<p>vuelo-list works!</p>
+<ul id="accion-gestion-carrera">
+  <li class="gestionLI">
+    <button type="button" routerLink="/gestion-carrera" class="botonGestion">GESTION CARRERAS</button></li>
+  <li>|</li>
+
+  <li class="gestionLI">
+    <a routerLink="/gestion-hoteles" class="botonGestion">GESTION HOTELES</a>
+  </li>
+
+  
+  <li>|</li>
+  <li class="gestionLI">
+  <button type="button" routerLink="/gestion-vuelos" class="botonGestion">GESTION VUELOS</button></li>
+</ul>
+
+@if (isLoading() && vuelos().length === 0) {
+    <p class="estado-carga">Cargando vuelos..</p>
+} @else {
+<section id="ListadoVuelos">
+    <h2>F1FLY Admin vuelos</h2>
+
+    <div id="boton-agregar">
+        <button type="button" class="botonAgregar" (click)="activarFormularioVuelo()" >➕ AGREGAR NUEVO VUELO ➕</button>
+    </div>
+
+    @for (vuelo of vuelos(); track vuelo.id) {
+        <div class="contenedorVuelo">
+            <div class="info_vuelo">
+                <ul class="lista_infromacion_vuelos">
+                    <li><strong>ORIGEN:</strong>{{vuelo.pais_origen}} - FALTA CIUDAD ORIGEN</li>
+                    <li><strong>DESTINO:</strong>{{vuelo.pais_destino}} - {{vuelo.ciudad_destino}}</li>
+                    <li><strong>AEROLINEA:</strong> {{vuelo.aerolinea}}</li>
+                    <li><strong>FECHA DISPONIBLE:</strong> {{vuelo.fecha_disponible}}</li>
+                    <li><strong>TIPO AVION:</strong> {{vuelo.tipo_avion}}</li>
+                    <li><strong>CLASE ASIENTO:</strong> {{vuelo.clase_asiento}}</li>
+                    <li><strong>PRECIO PROMEDIO TICKET EUR:</strong> €{{vuelo.precio_promedio_ticket_eur}}</li>
+                </ul>
+                <div class="botones">
+                    <button type="button" class="botonModificar" (click)="editarVuelo(vuelo.id)">
+                        MODIFICAR
+                    </button>
+                    <button type="button" class="botonEliminar" (click)="eliminarVuelo(vuelo.id)">
+                        ELIMINAR
+                    </button>
+                </div>
+            </div>
+        </div>
+    } @empty {
+        <p class="estado-vacio"> No hay vuelos cargados</p>
+    }
+</section>
+}

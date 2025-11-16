@@ -11,11 +11,12 @@
         @if (!auth.isLoggedin())
          {
             <a routerLink="/registro" class="btn-registrarse">Registrarse</a> 
+            <a routerLink="lista-favoritos/:id">Lista Favoritos</a>
+
         
         } 
              @if(auth.isLoggedin())
         {
-            <a routerLink="lista-favoritos">Lista Favoritos</a>
 
             @if (auth.isAdmin()) {
              <a routerLink="/gestion-carrera" class="nav-link">Gestion Admin</a>

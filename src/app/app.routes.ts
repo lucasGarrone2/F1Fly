@@ -25,7 +25,7 @@ export const routes: Routes = [
   {path: 'gestion-vuelos', component: VueloAbm, canActivate: [authGuardGuard]},
 
   {
-    path:"lista-favoritos",
+    path:"lista-favoritos/:id",
     title: 'Lista favoritos',
     component: ListaFavoritosCarrera
   },

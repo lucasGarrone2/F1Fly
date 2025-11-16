@@ -973,6 +973,86 @@
         "imageUrl_carrera": "singapur.avif",
         "id": "7ea8"
       }
+    },
+    {
+      "id": "dea9",
+      "id_user": 1,
+      "carrera": {
+        "nombre_carrera": "Red Bull Ring",
+        "pais_carrera": "Austria",
+        "ciudad_carrera": "Spielberg",
+        "fecha_carrera": "2026-06-29",
+        "capacidad_carrera": 40000,
+        "cantidad_vueltas_carrera": 71,
+        "precio_carrera": 160,
+        "descripcion_carrera": "Pista corta y rápida rodeada de montañas verdes.",
+        "imageUrl_carrera": "redbullring.jpg",
+        "id": "443a"
+      }
+    },
+    {
+      "id": "c23b",
+      "id_user": 2,
+      "carrera": {
+        "nombre_carrera": "Circuit de Monaco",
+        "fecha_carrera": "2026-05-25",
+        "capacidad_carrera": 37000,
+        "descripcion_carrera": "El clásico urbano: curvas estrechas y glamour en la Riviera.",
+        "cantidad_vueltas_carrera": 99,
+        "ciudad_carrera": "Montecarlo",
+        "pais_carrera": "Mónaco",
+        "precio_carrera": 250,
+        "imageUrl_carrera": "monaco.png",
+        "id": "5d57"
+      }
+    },
+    {
+      "id": "201b",
+      "id_user": 2,
+      "carrera": {
+        "nombre_carrera": "Silverstone Circuit",
+        "pais_carrera": "Reino Unido",
+        "ciudad_carrera": "Silverstone",
+        "fecha_carrera": "2026-07-06",
+        "capacidad_carrera": 150000,
+        "cantidad_vueltas_carrera": 52,
+        "precio_carrera": 180,
+        "descripcion_carrera": " La cuna del automovilismo británico, combinaciones rápidas y espectaculares gradas.",
+        "imageUrl_carrera": "silverstone.jpg",
+        "id": "24cc"
+      }
+    },
+    {
+      "id": "3ad8",
+      "id_user": 2,
+      "carrera": {
+        "nombre_carrera": "Bahrain International Circuit",
+        "fecha_carrera": "2026-04-13",
+        "capacidad_carrera": 70000,
+        "descripcion_carrera": "Pista desértica, diseño Tilke, carreras bajo luces.",
+        "cantidad_vueltas_carrera": 99,
+        "ciudad_carrera": "Sakhir",
+        "pais_carrera": "Bahrain",
+        "precio_carrera": 120,
+        "imageUrl_carrera": "bahrein.jpg",
+        "id": "bbab"
+      }
+    },
+    {
+      "id": "fe1c",
+      "id_user": 2,
+      "carrera": {
+        "nombre_carrera": "Marina Bay Street Circuit",
+        "pais_carrera": "Singapur",
+        "ciudad_carrera": "Singapur",
+        "fecha_carrera": "2026-10-05",
+        "capacidad_carrera": 80000,
+        "cantidad_vueltas_carrera": 62,
+        "precio_carrera": 280,
+        "descripcion_carrera": "Primera carrera nocturna en la historia de la F1; mucho calor y humedad.",
+        "imageUrl_carrera": "singapur.avif",
+        "id": "7ea8"
+      }
     }
   ]
 }

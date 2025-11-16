@@ -5,8 +5,8 @@
         <h2>Acciones lista de favoritos</h2>
         <div class="lista-acciones"> 
         <ul>
-            <li><button type="button" (click)="botonEliminar()">Eliminar carrera de favoritos</button></li>
-            <li><button type="button" (click)="botonListaCarreras()">Listado de carreras</button></li>
+            <li><button type="button" class="boton_eliminar_acciones" (click)="botonEliminar()" > <strong>Eliminar carrera de favoritos</strong></button></li>
+            <li><button type="button" class="boton_lista_acciones" (click)="botonListaCarreras()"><strong>Listado de carreras</strong></button></li>
         </ul>
         </div>
     </aside>
@@ -20,7 +20,7 @@
                     <div class="race-item">
                         <app-race-card [race]="carrera_f.carrera"></app-race-card>
                         @if(eliminar()){
-                        <button type="button" class="btn-close" (click)="eliminarCarreraFav(carrera_f.id!)">❌</button>
+                        <button type="button" class="boton_eliminar" (click)="eliminarCarreraFav(carrera_f.id!)">❌</button>
                         }
                     </div>
                 </div>
