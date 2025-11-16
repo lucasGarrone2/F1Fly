@@ -20,9 +20,9 @@ export const routes: Routes = [
   { path: 'inicio_sesion', component: Login },
   { path: 'gestion-carrera', component: CarreraAbm, canActivate: [authGuardGuard] },
   { path: 'lista-de-carreras', component: RaceList },
-  { path: 'gestion-hoteles', component: HotelAbm },
+  { path: 'gestion-hoteles', component: HotelAbm, canActivate: [authGuardGuard] },
   { path: 'lista-hoteles', component: HotelList },
-  {path: 'gestion-vuelos', component: VueloAbm},
+  {path: 'gestion-vuelos', component: VueloAbm, canActivate: [authGuardGuard]},
 
   {
     path:"lista-favoritos/:id",

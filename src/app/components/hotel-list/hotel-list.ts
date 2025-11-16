@@ -5,6 +5,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { Hotel } from '../hotel/hotel-interface';
 import { HotelService } from '../hotel/hotel-service';
 import { ReservaClient } from '../../clients/reserva-client';
+import { AuthService } from '../../auth/auth-service';
 
 @Component({
   selector: 'app-hotel-list',
@@ -27,7 +28,7 @@ export class HotelList {
         }
     }
 
-    constructor(private reserva: ReservaClient, private router: Router){}
+    constructor(private reserva: ReservaClient, private router: Router, private auth: AuthService){}
 
      get HotelesFiltrados(): Hotel[] {
     const hoteles = this.hotelSource();
@@ -41,8 +42,14 @@ export class HotelList {
     );
   }
   
+   get hayCarreraSeleccionada(): boolean {
+      return this.reserva.getCarrera() !== undefined;
+    }
+
+
     seleccionarHotel(hotel: Hotel)
-    {
+    { 
+    
         this.reserva.setHotel(hotel);
         this.router.navigate(['/reserva/vuelos']);
     }

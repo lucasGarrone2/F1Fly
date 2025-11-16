@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { VueloService } from '../vuelo/vuelo-service';
 import { Router, RouterLink } from '@angular/router';
@@ -15,6 +15,7 @@ export class VueloAbm {
 
   public vuelos = this.vueloService.vuelo;
   public isLoading = this.vueloService.isLoading;
+    protected readonly activarFormularioVuelo = signal(false);
 
   constructor() { }
 
@@ -23,6 +24,9 @@ export class VueloAbm {
     this.router.navigate(['/vuelo-edit', id]);
   }
 
+activarFormulario_Vuelo(){
+this.activarFormularioVuelo.set(!this.activarFormularioVuelo());
+}
   eliminarVuelo(id: string | number | undefined): void {
     if (!id) {
       console.error('El ID de vuelo proporcionado es inválido.');

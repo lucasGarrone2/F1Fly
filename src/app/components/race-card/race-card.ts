@@ -10,6 +10,7 @@ import { User } from '../../interfaces/user';
 import { FavCarrera } from '../../interfaces/fav-carrera';
 import { ListaFavClient } from '../../services/lista-fav-client';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { AuthService } from '../../auth/auth-service';
 
 @Component({
   selector: 'app-race-card',
@@ -31,7 +32,7 @@ export class RaceCardComponent implements OnInit {
             this.safeImageUrl = this.sanitizer.bypassSecurityTrustUrl(this.race.imageUrl_carrera);
         }
     }
-  constructor(private reserva: ReservaClient, private router: Router){}
+  constructor(private reserva: ReservaClient, private router: Router, private auth: AuthService){}
 
     /**
      * Determina el estado de la carrera (Próxima, Pasada, Hoy).
@@ -63,11 +64,19 @@ export class RaceCardComponent implements OnInit {
         }
     }
     reservarCarrera(race: Carrera)
-    {
+    {   
+        if(!this.auth.isLoggedin())
+        {
+            this.router.navigate(['/inicio_sesion']);
+            return;
+        }
+
         this.reserva.setCarrera(race);
         this.router.navigate(['/reservar/hoteles']);
     }
 
+
+   
     protected readonly client_fav = inject(ListaFavClient);
 
     botonFavoritos(carrera_fav : Carrera){

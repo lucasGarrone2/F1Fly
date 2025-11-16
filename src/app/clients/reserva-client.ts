@@ -3,59 +3,78 @@ import { IReserva } from '../interfaces/ireserva';
 import { Carrera } from '../components/carrera/carrera-interface';
 import { Hotel } from '../components/hotel/hotel-interface';
 import { IVuelo } from '../interfaces/ivuelo';
+
 @Injectable({
   providedIn: 'root'
 })
-
 export class ReservaClient {
-  
-  private readonly _reserva= signal<IReserva>({});
 
-   readonly reserva = computed(()=> this._reserva());
-   readonly total= computed(()=>{
+  private readonly _reserva = signal<IReserva>({});
+
+  readonly reserva = computed(() => this._reserva());
+
+  // CONTROL DEL CUPÓN
+  readonly tieneDescuento = signal(false);
+  private readonly porcentaje = 20;
+
+
+  aplicarCupon(codigo: string): boolean {
+    if (this.tieneDescuento()) return false; 
+
+    if (codigo.toUpperCase() === 'F1FLY20') {
+      this.tieneDescuento.set(true);
+      return true;
+    }
+
+    return false; 
+  }
+
+  readonly subtotal = computed(() => {
     const r = this._reserva();
-    return(
-      (r.carrera?.precio_carrera ?? 0)
-      +
-      (r.hotel?.precio_promedio_habitacion_eur ?? 0)
-      +
+    return (
+      (r.carrera?.precio_carrera ?? 0) +
+      (r.hotel?.precio_promedio_habitacion_eur ?? 0) +
       (r.vuelo?.precio_promedio_ticket_eur ?? 0)
-  );
-  })
+    );
+  });
 
-    setCarrera(carrera: Carrera)
-    {
-      this._reserva.update(r=> ({...r,carrera}));
+  readonly total = computed(() => {
+    const sub = this.subtotal();
+    if (this.tieneDescuento()) {
+      return sub - (sub * this.porcentaje / 100);
     }
+    return sub;
+  });
 
-    setHotel(hotel: Hotel)
-    {
-      this._reserva.update(r=> ({...r,hotel}));
-    }
+  setCarrera(carrera: Carrera) {
+    this._reserva.update(r => ({ ...r, carrera }));
+    this.tieneDescuento.set(false); 
+  }
 
-    setVuelo(vuelo: IVuelo)
-    {
-      this._reserva.update(r=> ({...r, vuelo}));
-    }
+  setHotel(hotel: Hotel) {
+    this._reserva.update(r => ({ ...r, hotel }));
+    this.tieneDescuento.set(false);
+  }
 
-    getCarrera(): Carrera | undefined
-    {
-      return this._reserva().carrera;
-    }
+  setVuelo(vuelo: IVuelo) {
+    this._reserva.update(r => ({ ...r, vuelo }));
+    this.tieneDescuento.set(false);
+  }
 
-    getHotel(): Hotel | undefined
-    {
-      return this._reserva().hotel;
-    }
+  getCarrera(): Carrera | undefined {
+    return this._reserva().carrera;
+  }
 
-    getVuelo(): IVuelo | undefined
-    {
-      return this._reserva().vuelo;
-    } 
+  getHotel(): Hotel | undefined {
+    return this._reserva().hotel;
+  }
 
+  getVuelo(): IVuelo | undefined {
+    return this._reserva().vuelo;
+  }
 
-    reset()
-    {
-      this._reserva.set({});
-    }
+  reset() {
+    this._reserva.set({});
+    this.tieneDescuento.set(false);
+  }
 }

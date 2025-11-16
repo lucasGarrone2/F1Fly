@@ -32,12 +32,43 @@
       </div>
     }
 
-    <hr>
-    <div class="total">
-      <strong>Total:</strong>
-      <span>€{{ reservaCliente.total() }}</span>
+    <!-- CUPON -->
+    <div class="cupon-container">
+      <input type="text"
+             placeholder="Ingresa tu cupon"
+             [(ngModel)]="cuponIngresado"
+             class="cupon-input">
+
+      <button (click)="aplicarCupon()" class="cupon-btn">
+        Aplicar cupon
+      </button>
+
+      @if (cuponError) {
+        <p class="cupon-error">{{ cuponError }}</p>
+      }
     </div>
-      <div id="paypal-button-container" style="margin-top: 20px;"></div>
-  
+
+    <hr>
+
+    <!-- SIN DESCUENTO -->
+    @if (!reservaCliente.tieneDescuento()) {
+      <div class="total">
+        <strong>Total:</strong>
+        <span>€{{ reservaCliente.subtotal() }}</span>
+      </div>
+    }
+
+    <!-- DESCUENTO -->
+    @else {
+      <div class="total">
+        <strong>Total:</strong>
+        <span class="original">€{{ reservaCliente.subtotal() }}</span>
+        <span class="final">€{{ reservaCliente.total() }}</span>
+      </div>
+    }
+
+    <!-- PAYPAL -->
+    <div id="paypal-button-container" style="margin-top: 20px;"></div>
+
   </aside>
 </div>
