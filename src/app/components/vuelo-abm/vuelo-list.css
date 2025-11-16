@@ -1,0 +1,16 @@
+#accion-gestion-carrera{
+    display: flex;
+    list-style: none;
+    gap: 50px;
+    margin: 0;
+    background-color: rgb(25, 40, 97);
+    padding: 5px 0;
+    align-items: center;
+    justify-content: center;
+    color: rgb(243, 60, 60);
+}
+
+.gestionLI{
+    text-decoration: none;
+    font-weight: normal;
+}

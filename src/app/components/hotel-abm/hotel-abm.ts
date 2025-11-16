@@ -3,12 +3,13 @@ import { Hotel } from '../hotel/hotel-interface';
 import { HotelService } from '../hotel/hotel-service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { HotelForm } from '../hotel-form/hotel-form';
+import { Router, RouterLink } from '@angular/router';
 
 
 
 @Component({
   selector: 'app-hotel-abm',
-  imports: [HotelForm],
+  imports: [HotelForm, RouterLink],
   templateUrl: './hotel-abm.html',
   styleUrl: './hotel-abm.css'
 })
