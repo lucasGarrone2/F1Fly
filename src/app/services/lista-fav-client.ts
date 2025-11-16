@@ -19,9 +19,14 @@ export class ListaFavClient {
     return this.http.get<FavCarrera[]>(this.url);
   }
 
-  getCarreraFavByID(id_bus : string | number){
-    return this.http.get<FavCarrera>(this.url + "/" + id_bus);
-  }
+  getFavoritosByUser(id_user: number) {
+  return this.http.get<FavCarrera[]>(this.url + "?id_user=" + id_user);
+}
+
+  getFavoritosByCarreraId(id_carrera: string | number) {
+  return this.http.get<FavCarrera[]>(this.url + "?carrera.id=" + id_carrera);
+}
+
 
   addFavoritos(carrera_fav : FavCarrera){
     return this.http.post<FavCarrera>(this.url,carrera_fav);

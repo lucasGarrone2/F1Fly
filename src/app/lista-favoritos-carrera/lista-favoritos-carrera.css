@@ -22,7 +22,7 @@ h1,h2{
     position: relative;       
 }
 
-.btn-close {
+.boton_eliminar {
     position: absolute;       
     top: 4px;               
     right: -90px;             
@@ -32,7 +32,7 @@ h1,h2{
     transition: transform 0.2s, opacity 0.2s;
 }
 
-.btn-close:hover {
+.boton_eliminar:hover {
     transform: scale(1.2);   
     opacity: 0.8;            
 }
@@ -77,11 +77,22 @@ ul li{
 ul button{
     border-radius: 9px;
     cursor: pointer;
-        transition: transform 0.2s, opacity 0.2s;
-
+    transition: transform 0.2s, opacity 0.2s;
+    font-size: medium;
+    
 }
 
 ul button:hover{
     transform: scale(1.04);   
     opacity: 0.8; 
+}
+
+.boton_eliminar_acciones:hover {
+    border-color: #ff0000;              
+    color: #ff0000;  
+}
+
+.boton_lista_acciones:hover {
+    border-color: #0d00ff;              
+    color:#0d00ff;  
 }
