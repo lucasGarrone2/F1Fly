@@ -6,10 +6,13 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } 
 import { CommonModule } from '@angular/common';
 import { every, race } from 'rxjs';
 import { CarreraClient } from '../carrera/carrera-client';
+import { ToastService } from '../../services/toast-service';
+import { ToastComponent } from "../toast-component/toast-component";
+import { ReservaClient } from '../../clients/reserva-client';
 
 @Component({
   selector: 'app-race-list',
-  imports: [RaceCardComponent, CommonModule, ReactiveFormsModule],
+  imports: [RaceCardComponent, CommonModule, ReactiveFormsModule, ToastComponent],
   templateUrl: './race-list.html',
   styleUrl: './race-list.css'
 })
@@ -17,16 +20,24 @@ export class RaceList {
 private readonly client = inject(CarreraClient);
 protected raceSource = toSignal(this.client.getCarreras());
 private readonly formBuilder = inject(FormBuilder);
+
+constructor(private toastService: ToastService, private reserva: ReservaClient){}
+
+ngOnInit()
+{
+  this.toastService.show("Felicidades! Obtuviste un descuento del 20% utilizando el cupon F1FLY20")
+}
+
 priceForm = new FormGroup({
     
     
-    minPrice: new FormControl(50, [ // Valor inicial 50
+    minPrice: new FormControl(50, [ 
       Validators.required, 
       Validators.min(50),  
       Validators.max(1000)
     ]),
     
-    maxPrice: new FormControl(1000, [ // Valor inicial 1000
+    maxPrice: new FormControl(1000, [ 
       Validators.required,
       Validators.min(50),
       Validators.max(1000)

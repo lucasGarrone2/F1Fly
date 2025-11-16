@@ -52,6 +52,8 @@
               </button>
 
               <button class="btn-seleccionar"
+                      [disabled]="!hayCarreraSeleccionada"
+                      [title]="!hayCarreraSeleccionada ? 'Primero seleccione una carrera' : '' "
                       (click)="seleccionarHotel(hotel)">
                 Seleccionar →
               </button>
