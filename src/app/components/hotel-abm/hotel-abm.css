@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
-
-:host {
-    display: block;
+body{
     font-family: "Roboto Condensed", sans-serif;
+    font-weight: 2;
+    margin: 0;
+    padding: 0;
 }
 
 #accion-gestion-carrera{
@@ -14,19 +15,12 @@
     padding: 5px 0;
     align-items: center;
     justify-content: center;
-    color: rgb(243, 60, 60); 
+    color: rgb(243, 60, 60);
 }
 
 .gestionLI{
     text-decoration: none;
     font-weight: normal;
-}
-
-.botonGestion {
-    all: unset;               
-    cursor: pointer;          
-    font-weight: bold;
-    color: rgb(243, 60, 60);          
 }
 
 #boton-agregar{
@@ -38,25 +32,70 @@
   font-family: "Roboto Condensed", sans-serif;
   border: none;
   border-radius: 8px;
-  padding: 10px 15px; 
+  padding: 5px 5px;
   font-weight: 600;
   cursor: pointer;
   transition: 0.2s;
-  font-weight: bold;
-  background-color: rgb(243, 60, 60);
-  color: white;
+  cursor: pointer;         
+  font-weight: bold;        
 }
 
 .botonAgregar:hover{
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(243, 60, 60, 0.5);
 }
 
-#ListadoHoteles{ 
+#ListadoCarreras{
     background-color: rgb(11, 20, 53);
     margin: 0;
     color: white;
-    padding-bottom: 50px;
+}
+
+.contenedorCarrera{
+    display: grid;
+    align-items: start;
+    grid-template-columns: 400px 1fr;
+    background-color:  rgb(25, 40, 97);
+    color: white;
+    margin: 0 240px 70px 250px;
+    padding: 0px 15px 0px ;
+    border-radius: 10px;
+    gap: 30px;
+}
+
+.imagen-carrera{
+    padding-top: 10px;
+    width: 400px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+.info-carrera{
+    flex: 1;
+}
+
+.lista-informacion-carreras{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 40px; 
+    padding: 0;
+    margin: 20px 0;
+    color: white;
+}
+
+
+footer{
+    background-color: blueviolet;
+    color: white;
+    margin: 0;
+}
+
+.home{
+  list-style: none;
+  text-decoration: none;
+  padding-left: 50px ;
+  color: white;
+  margin: 0;
 }
 
 h2 {
@@ -66,48 +105,30 @@ h2 {
     padding-bottom: 20px;
 }
 
-.contenedorHotel{ 
-    display: grid;
-    align-items: start;
-    grid-template-columns: 400px 1fr;
-    background-color:  rgb(25, 40, 97);
-    color: white;
-    margin: 0 auto 70px auto;
-    max-width: 1200px;
-    padding: 15px; 
-    border-radius: 10px;
-    gap: 30px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+.icono-header {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%; 
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
 
-.imagen-hotel{ 
-    padding-top: 10px;
-    width: 400px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 7px;
-}
-
-.info-hotel{ 
-    flex: 1;
-}
-
-.lista-informacion-hoteles{ 
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px 40px; 
-    padding: 0;
-    margin: 20px 0;
-    color: white;
-    list-style: none;
+.botonGestion {
+    all: unset;               
+    cursor: pointer;          
+    font-weight: bold;         
 }
 
 .botones{
-    display: flex;
-    flex-direction: row; 
-    align-items: center;
-    gap: 20px; 
-    padding: 10px 0px;
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  gap: 20px; 
+  padding: 10px 0px;
 }
 
 .botonModificar{
@@ -122,16 +143,13 @@ h2 {
   font-family: "Roboto Condensed", sans-serif;
   border: none;
   border-radius: 8px;
-  padding: 5px 10px;
+  padding: 5px 5px;
   font-weight: 600;
   cursor: pointer;
   transition: 0.2s;
   display: flex;
   align-items: center;
   gap: 8px;
-  color: black;
-  text-transform: uppercase;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -147,29 +165,4 @@ h2 {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6); 
   z-index: 999; 
-}
-
-.home{
-    list-style: none;
-    text-decoration: none;
-    padding-left: 50px ;
-    color: rgb(243, 60, 60);
-    margin: 0;
-    display: block;
-    font-weight: bold;
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 1024px) {
-    .contenedorHotel {
-        grid-template-columns: 1fr;
-        margin: 0 5% 40px 5%;
-    }
-    .imagen-hotel {
-        width: 100%;
-        height: auto;
-    }
-    .lista-informacion-hoteles {
-        grid-template-columns: 1fr;
-    }
 }

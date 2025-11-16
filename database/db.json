@@ -137,11 +137,11 @@
       "precio_promedio_habitacion_eur": 160,
       "tieneAmenities": true,
       "tieneTransporte": true,
+      "imagenUrl": "fotosHotel/sakhir.jpg",
       "ubicacion_mapa": {
         "latitud": 26.0325,
         "longitud": 50.5106
-      },
-      "imagenUrl": "fotosHotel/sakhir.jpg"
+      }
     },
     {
       "id": "2",
