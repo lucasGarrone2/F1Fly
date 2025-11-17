@@ -157,11 +157,11 @@
       "precio_promedio_habitacion_eur": 210,
       "tieneAmenities": true,
       "tieneTransporte": false,
+      "imagenUrl": "fotosHotel/beach resort.webp",
       "ubicacion_mapa": {
         "latitud": 26.2301,
         "longitud": 50.5847
-      },
-      "imagenUrl": "fotosHotel/beach resort.webp"
+      }
     },
     {
       "id": "3",

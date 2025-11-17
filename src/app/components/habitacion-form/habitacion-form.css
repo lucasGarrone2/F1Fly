@@ -1,0 +1,173 @@
+/* ==================================================
+   1. Estilos del Contenedor Principal (.habitacion-modal-content)
+   ==================================================
+*/
+.habitacion-modal-content {
+    /* POSICIONAMIENTO CLAVE: Usamos las reglas recomendadas anteriormente */
+    position: fixed;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); /* Centrado */
+    z-index: 1001; /* Z-index ALTO para estar por encima del overlay (999) */
+    
+    /* Estilos Visuales */
+    background-color: #1a237e; /* Fondo oscuro */
+    color: white;
+    padding: 20px 40px 20px; 
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    width: 400px; 
+    text-align: left;
+}
+
+.habitacion-modal-content h2 {
+    text-align: center;
+    margin-bottom: 7px;
+    margin-top: 5px;
+    font-size: 24px;
+    margin-right: 20px;
+    flex-grow: 1; 
+}
+
+/* ==================================================
+   2. Estilos Comunes (Header, Inputs, Labels)
+   ==================================================
+*/
+
+.modal-header { 
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  margin-bottom: 15px; 
+  position: relative; 
+}
+
+.cerrar-btn { 
+    background: none;
+    border: none;
+    font-size: 1.5em;      
+    cursor: pointer;
+    color: white; 
+    transition: 0.2s;
+    line-height: 1;       
+    position: absolute; 
+    top: -15px; 
+    right: -25px; 
+    padding: 5px; 
+    z-index: 10; 
+}
+
+.cerrar-btn:hover {
+  color: red;
+  transform: scale(1.1);
+}
+
+/* Lista y Labels */
+.habitacion-modal-content form ul { 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.habitacion-modal-content form li { 
+    margin-bottom: 8px;
+}
+
+.habitacion-modal-content label { 
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Inputs y Select */
+.habitacion-modal-content input[type="number"],
+.habitacion-modal-content select {
+    width: 100%; 
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    box-sizing: border-box; 
+    font-size: 1em; 
+}
+
+/* ==================================================
+   3. Estilos Específicos de Habitaciones (Precio y Botones)
+   ==================================================
+*/
+
+/* Resumen de Precio */
+.precio-resumen {
+    text-align: center;
+    margin: 15px 0 10px;
+    padding: 10px;
+    background-color: #3949ab; 
+    border-radius: 8px;
+    color: white; 
+}
+
+.precio-resumen h3 {
+    margin: 0 0 5px 0;
+    font-size: 1em;
+}
+
+.precio-total {
+    font-size: 2em;
+    font-weight: bold;
+    color: #ffeb3b; 
+}
+
+/* Contenedor de botones (modal-footer) */
+.modal-footer { 
+    display: flex;
+    justify-content: space-between; 
+    gap: 10px;
+    margin-top: 15px; 
+}
+
+/* Estilos de botones comunes */
+.confirmar-btn,
+.cancelar-btn {
+    width: 50%; /* Ocupan la mitad del espacio */
+    padding: 8px; 
+    color: white;
+    font-weight: bold;
+    font-size: 13px;       
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-sizing: border-box; 
+    margin: 0; 
+}
+
+
+/* Botón de Confirmar (AHORA VERDE) */
+.confirmar-btn { 
+    background-color: #4CAF50; /* Verde */
+}
+
+.confirmar-btn:hover:not([disabled]) {
+  background-color: #66BB6A; /* Verde más claro */
+}
+
+.confirmar-btn[disabled] {
+    background-color: #757575; /* Gris cuando está deshabilitado */
+    cursor: not-allowed;
+}
+
+/* Botón de Cancelar (AHORA ROJO) */
+.cancelar-btn {
+    background-color: #F44336; /* Rojo */
+}
+
+.cancelar-btn:hover {
+    background-color: #E57373; /* Rojo más claro al pasar el ratón */
+}
+
+
+.error-msg {
+    color: #ffeb3b; 
+    font-size: 0.9em;
+    margin-top: 5px;
+}
