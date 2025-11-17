@@ -1,93 +1,28 @@
+<div id="overlay-vuelo">
+  <section id="formulario-vuelo">
 
-<section id="Formulario_Carrera"> <!-- <-- Cambia esto a "Formulario_Vuelo" -->
-    
-    <!-- HEADER DEL FORMULARIO -->
     <div id="header-form">
-        <h2>
-            <!-- Esto ahora funcionará gracias a CommonModule -->
-            @if (!estadoEdicion()) {
-                Cargue su nuevo vuelo...
-            } @else {
-                Edite los datos del vuelo...
-            }
-        </h2>
-
-        <div>
-            <!-- [CORREGIDO] Llama a la función de cerrar, no navega -->
-            <button type="button" id="boton-cerrar" (click)="cerrarFormulario()">
-                ❌
-            </button>
-        </div>
+      <h2>{{ modoEdicion ? 'Editar vuelo' : 'Nuevo vuelo' }}</h2>
+      <button id="boton-cerrar" (click)="cerrar.emit()">❌</button>
     </div>
 
-    <!-- FORMULARIO -->
-    <div>
-        <form [formGroup]="form" (ngSubmit)="handleSubmit()">
-            <ul>
+    <form [formGroup]="form" (ngSubmit)="submit()">
 
-                <!-- ORIGEN -->
-                <li>
-                    <label for="pais_origen">País Origen:</label>
-                    <input type="text" id="pais_origen" formControlName="pais_origen" placeholder="Argentina...">
-                </li>
+      <ul>
+        <li><label>Carrera ID</label><input type="text" formControlName="carrera_id"></li>
+        <li><label>País origen</label><input type="text" formControlName="pais_origen"></li>
+        <li><label>Ciudad origen</label><input type="text" formControlName="ciudad_origen"></li>
+        <li><label>País destino</label><input type="text" formControlName="pais_destino"></li>
+        <li><label>Ciudad destino</label><input type="text" formControlName="ciudad_destino"></li>
+        <li><label>Aerolínea</label><input type="text" formControlName="aerolinea"></li>
+        <li><label>Fecha disponible</label><input type="date" formControlName="fecha_disponible"></li>
+        <li><label>Tipo avión</label><input type="text" formControlName="tipo_avion"></li>
+        <li><label>Clase asiento</label><input type="text" formControlName="clase_asiento"></li>
+        <li><label>Precio promedio (€)</label><input type="number" formControlName="precio_promedio_ticket_eur"></li>
+      </ul>
 
-                <li>
-                    <label for="ciudad_origen">Ciudad Origen:</label>
-                    <input type="text" id="ciudad_origen" formControlName="ciudad_origen" placeholder="Buenos Aires...">
-                </li>
+      <button id="guardar" type="submit">{{ modoEdicion ? 'Actualizar' : 'Guardar' }}</button>
+    </form>
 
-                <!-- DESTINO -->
-                <li>
-                    <label for="pais_destino">País Destino:</label>
-                    <input type="text" id="pais_destino" formControlName="pais_destino" placeholder="España...">
-                </li>
-
-                <li>
-                    <label for="ciudad_destino">Ciudad Destino:</label>
-                    <input type="text" id="ciudad_destino" formControlName="ciudad_destino" placeholder="Barcelona...">
-                </li>
-
-                <!-- AEROLÍNEA -->
-                <li>
-                    <label for="aerolinea">Aerolínea:</label>
-                    <input type="text" id="aerolinea" formControlName="aerolinea" placeholder="Iberia, Aerolíneas, etc.">
-                </li>
-
-                <!-- FECHA -->
-                <li>
-                    <label for="fecha_disponible">Fecha Disponible:</label>
-                    <input type="date" id="fecha_disponible" formControlName="fecha_disponible">
-                </li>
-
-                <!-- TIPO AVIÓN -->
-                <li>
-                    <label for="tipo_avion">Tipo de Avión:</label>
-                    <input type="text" id="tipo_avion" formControlName="tipo_avion" placeholder="Airbus A320...">
-                </li>
-
-                <!-- CLASE ASIENTO -->
-                <li>
-                    <label for="clase_asiento">Clase Asiento:</label>
-                    <input type="text" id="clase_asiento" formControlName="clase_asiento" placeholder="Económica, Business...">
-                </li>
-
-                <!-- PRECIO -->
-                <li>
-                    <label for="precio_promedio_ticket_eur">Precio Ticket (€):</label>
-                    <input type="number" id="precio_promedio_ticket_eur" formControlName="precio_promedio_ticket_eur">
-                </li>
-
-            </ul>
-
-            <!-- BOTÓN ENVIAR -->
-            <button type="submit" id="boton-enviar" [disabled]="form.invalid">
-                @if (!estadoEdicion()) {
-                    ENVIAR
-                } @else {
-                    ACTUALIZAR
-                }
-            </button>
-        </form>
-    </div>
-
-</section>
+  </section>
+</div>
