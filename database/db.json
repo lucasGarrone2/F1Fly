@@ -1,11 +1,11 @@
 {
   "carreras": [
     {
-      "nombre_carrera": "Bahrain International Circuita",
+      "nombre_carrera": "Bahrain International Circuit",
       "fecha_carrera": "2026-04-13",
       "capacidad_carrera": 70000,
       "descripcion_carrera": "Pista desértica, diseño Tilke, carreras bajo luces.",
-      "cantidad_vueltas_carrera": 99,
+      "cantidad_vueltas_carrera": 100,
       "ciudad_carrera": "Sakhir",
       "pais_carrera": "Bahrain",
       "precio_carrera": 120,
@@ -119,6 +119,18 @@
       "descripcion_carrera": "Circuito moderno con grandes cambios de elevación y ambiente festivo.",
       "imageUrl_carrera": "cota.jpg",
       "id": "62ad"
+    },
+    {
+      "id": "d45c",
+      "nombre_carrera": "Prueba",
+      "fecha_carrera": "2025-01-01",
+      "capacidad_carrera": 9000,
+      "descripcion_carrera": "PruebaPruebaPruebaPruebaPrueba",
+      "cantidad_vueltas_carrera": 77,
+      "ciudad_carrera": "PruebaPruebaPruebaPrueba",
+      "pais_carrera": "PruebaPruebaPruebaPruebaPrueba",
+      "precio_carrera": 150,
+      "imageUrl_carrera": "bahrein.jpg"
     }
   ],
   "hoteles": [

@@ -10,18 +10,24 @@ import { CarreraAbm } from '../carrera-abm/carrera-abm';
   styleUrl: './carrera-form.css'
 })
 export class CarreraForm {
-
   private readonly carreraClient = inject(CarreraClient);
   private readonly carreraABM = inject(CarreraAbm);
   private readonly formBuilder= inject(FormBuilder);
 
   readonly carrera_edicion = input<Carrera>();
   readonly estadoEdicion = input(false);
-  readonly out_carrera_edicion = output();
+  readonly out_carrera_edicion = output<Carrera>();
   
+  constructor(){
+    effect(()=>{
+      if(this.carrera_edicion() && this.estadoEdicion()){
+        this.form.patchValue(this.carrera_edicion()!);
+      }
+    })
+  }
   protected readonly form = this.formBuilder.nonNullable.group({
     nombre_carrera: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(40)]],
-    fecha_carrera: ['2025-01-01', [Validators.required]],
+    fecha_carrera: ['', [Validators.required]],
     capacidad_carrera: [0, [Validators.required, Validators.min(5000)]],
     descripcion_carrera: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(200)]],
     cantidad_vueltas_carrera: [0, [Validators.required, Validators.min(50)]],
@@ -60,15 +66,6 @@ export class CarreraForm {
     return this.form.controls.precio_carrera;
   }
 
- constructor() {
-  effect(() => {
-    const carrera = this.carrera_edicion();
-    if (this.estadoEdicion() && carrera) {
-      this.form.patchValue(carrera);
-    }
-  });
-}
-
    handleSubmit() {
     if (this.form.invalid) {
       alert("El formulario está inválido");
@@ -81,29 +78,25 @@ export class CarreraForm {
       if (!this.estadoEdicion()) {
         this.carreraClient.addCarrera(carrera).subscribe(() => {
           alert('Carrera agregada con éxito!');
-          this.carreraABM.activarFormulario_Carrera();
+          this.carreraABM.botonAgregar();
           this.form.reset();
           window.location.reload();
         });
       } else {
-        const carreraEdit = this.carrera_edicion();
-        if (carreraEdit) {
-          this.carreraClient.updateCarrera(carrera, carreraEdit.id).subscribe(() => {
-            alert("Carrera actualizada con éxito!");
-            this.carreraABM.activarFormulario_Carrera();
+          this.carreraClient.updateCarrera(carrera, this.carrera_edicion()?.id!).subscribe((c) => {
+            this.out_carrera_edicion.emit(c);
             this.form.reset();
             window.location.reload();
           });
-        }
       }
     }
   }
 
   cerrarFormulario(){
   if (this.estadoEdicion()) {
-    this.carreraABM.edicionCarrera.set(false);
+    this.carreraABM.editando.set(false);
   } else {
-    this.carreraABM.activarFormulario_Carrera();
+    this.carreraABM.botonAgregar();
   }
 }
   

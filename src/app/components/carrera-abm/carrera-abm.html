@@ -1,20 +1,18 @@
 <app-header-gestion-admin></app-header-gestion-admin>
 @let carreras = this.carreras(); 
 
-
-
-@if (activarFormulzarioCarrera()) {
+@if (activarFormulario()) {
 <div id="overlay" class="hidden"></div>
 <app-carrera-form></app-carrera-form>
 } 
 
-@if (carreras === undefined){
+@if (isLoading()){
 <p>Cargando Carreras...</p>
-} @else {
+} @else if(carreras && carreras.length > 0){
 <section id="ListadoCarreras">
   <h2>F1FLY ADMIN CARRERAS</h2>
   <div id="boton-agregar">
-    <button type="button" class="botonAgregar" (click)="activarFormulario_Carrera()">
+    <button type="button" class="botonAgregar" (click)="botonAgregar()">
       ➕ AGREGAR NUEVA CARRERA ➕
     </button>
   </div>
@@ -24,10 +22,14 @@
       <img [ngSrc]="carrera.imageUrl_carrera" alt="imagen_carrera" width="100" 
   height="100" class="imagen-carrera" />
       <div class="botones">
-        <button type="button" class="botonModificar" (click)="activarEdicion_Carrera(carrera.id)">
+        <button type="button" class="botonModificar" (click)="botonEditar()">
           ✏️ MODIFICAR
         </button>
-        <button type="button" class="botonEliminar" (click)="activarEliminar_Carrera(carrera.id)">
+         @if(editando()){
+        <div id="overlay" class="hidden"></div>
+        <app-carrera-form [estadoEdicion]="true" [carrera_edicion]="carrera" (out_carrera_edicion)="finzalizarEdicion($event)"></app-carrera-form>
+        }
+        <button type="button" class="botonEliminar" (click)="botonEliminar(carrera.id)">
           🗑️ ELIMINAR
         </button>
       </div>
@@ -52,9 +54,6 @@
   </div>
   } @empty {
   <p>No hay carreras cargadas...</p>
-  } @if(edicionCarrera()){
-  <div id="overlay" class="hidden"></div>
-  <app-carrera-form [estadoEdicion]="true" [carrera_edicion]="carrera_editar()"></app-carrera-form>
   }
 
 </section>
