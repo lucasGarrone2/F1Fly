@@ -2,6 +2,14 @@
 import { Component, inject, signal } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
+<<<<<<< HEAD
+import { HeaderGestionAdmin } from '../../header-gestion-admin/header-gestion-admin';
+
+
+@Component({
+  selector: 'app-vuelo-list',
+  imports: [ReactiveFormsModule,HeaderGestionAdmin],
+=======
 import { VueloClient } from '../vuelo/vuelo-service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { IVuelo } from '../../interfaces/ivuelo';
@@ -10,6 +18,7 @@ import { VueloForm } from "../vuelo-form/vuelo-form";
 @Component({
   selector: 'app-vuelo-list',
   imports: [ReactiveFormsModule, RouterLink, VueloForm],
+>>>>>>> dbd26dbb9e1f7aafa9e3544316f606139f8cbd6b
   templateUrl: './vuelo-list.html',
   styleUrl: './vuelo-list.css'
 })

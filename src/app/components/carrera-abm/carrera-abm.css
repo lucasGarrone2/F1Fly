@@ -5,23 +5,6 @@ body{
     padding: 0;
 }
 
-#accion-gestion-carrera{
-    display: flex;
-    list-style: none;
-    gap: 50px;
-    margin: 0;
-    background-color: rgb(25, 40, 97);
-    padding: 5px 0;
-    align-items: center;
-    justify-content: center;
-    color: rgb(243, 60, 60);
-}
-
-.gestionLI{
-    text-decoration: none;
-    font-weight: normal;
-}
-
 #boton-agregar{
     text-align: center;
     margin-bottom: 30px;
@@ -121,11 +104,7 @@ h2 {
   box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
 
-.botonGestion {
-    all: unset;               
-    cursor: pointer;          
-    font-weight: bold;         
-}
+
 
 
 .botonModificar{
