@@ -19,8 +19,27 @@
     @if (r?.hotel) {
       <div class="reserva-item">
         <strong>Hotel:</strong>
-        <span>{{ r.hotel?.nombre_hotel }}</span>
-        <span class="precio">€{{ r.hotel?.precio_promedio_habitacion_eur }}</span>
+        <span>{{r.hotel?.nombre_hotel}}</span>
+
+      </div>
+    }
+
+    @if(r?.habitacion)
+    {
+      <div class="reserva-item">
+        <strong>Habitacion:</strong>
+        <span> {{r.habitacion?.tipoHabitacion}} </span>
+        
+      </div>
+    }
+
+    @if(r?.habitacion)
+    {
+      <div class="reserva-item">
+        <strong>Cantidad de personas:</strong>
+        <span> {{r.habitacion?.cantPersonas}}  </span>
+        <strong>Precio:</strong>
+        <span class="precio"> € {{r.habitacion?.precioTotal}} </span>
       </div>
     }
 

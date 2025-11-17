@@ -129,10 +129,10 @@
       "pais": "Bahrain",
       "ciudad": "Sakhir",
       "fechas_disponibles": [
-        "2025-04-11",
-        "2025-04-12",
-        "2025-04-13",
-        "2025-04-14"
+        "2026-04-11",
+        "2026-04-12",
+        "2026-04-13",
+        "2026-04-14"
       ],
       "precio_promedio_habitacion_eur": 160,
       "tieneAmenities": true,
@@ -150,9 +150,9 @@
       "pais": "Bahrain",
       "ciudad": "Sakhir",
       "fechas_disponibles": [
-        "2025-04-10",
-        "2025-04-11",
-        "2025-04-14"
+        "2026-04-10",
+        "2026-04-11",
+        "2026-04-14"
       ],
       "precio_promedio_habitacion_eur": 210,
       "tieneAmenities": true,
@@ -170,10 +170,10 @@
       "pais": "Mónaco",
       "ciudad": "Montecarlo",
       "fechas_disponibles": [
-        "2025-05-23",
-        "2025-05-24",
-        "2025-05-25",
-        "2025-05-26"
+        "2026-05-23",
+        "2026-05-24",
+        "2026-05-25",
+        "2026-05-26"
       ],
       "precio_promedio_habitacion_eur": 420,
       "tieneAmenities": true,
@@ -191,10 +191,10 @@
       "pais": "Mónaco",
       "ciudad": "Montecarlo",
       "fechas_disponibles": [
-        "2025-05-22",
-        "2025-05-23",
-        "2025-05-26",
-        "2025-05-27"
+        "2026-05-22",
+        "2026-05-23",
+        "2026-05-26",
+        "2026-05-27"
       ],
       "precio_promedio_habitacion_eur": 650,
       "tieneAmenities": true,
@@ -212,10 +212,10 @@
       "pais": "Reino Unido",
       "ciudad": "Silverstone",
       "fechas_disponibles": [
-        "2025-07-04",
-        "2025-07-05",
-        "2025-07-06",
-        "2025-07-07"
+        "2026-07-04",
+        "2026-07-05",
+        "2026-07-06",
+        "2026-07-07"
       ],
       "precio_promedio_habitacion_eur": 220,
       "tieneAmenities": true,
@@ -233,9 +233,9 @@
       "pais": "Reino Unido",
       "ciudad": "Silverstone",
       "fechas_disponibles": [
-        "2025-07-03",
-        "2025-07-07",
-        "2025-07-08"
+        "2026-07-03",
+        "2026-07-07",
+        "2026-07-08"
       ],
       "precio_promedio_habitacion_eur": 180,
       "tieneAmenities": false,
@@ -253,10 +253,10 @@
       "pais": "Italia",
       "ciudad": "Monza (Milán)",
       "fechas_disponibles": [
-        "2025-09-05",
-        "2025-09-06",
-        "2025-09-07",
-        "2025-09-08"
+        "2026-09-05",
+        "2026-09-06",
+        "2026-09-07",
+        "2026-09-08"
       ],
       "precio_promedio_habitacion_eur": 150,
       "tieneAmenities": true,
@@ -274,9 +274,9 @@
       "pais": "Italia",
       "ciudad": "Monza(Milán)",
       "fechas_disponibles": [
-        "2025-09-04",
-        "2025-09-05",
-        "2025-09-09"
+        "2026-09-04",
+        "2026-09-05",
+        "2026-09-09"
       ],
       "precio_promedio_habitacion_eur": 250,
       "tieneAmenities": true,
@@ -294,10 +294,10 @@
       "pais": "Brasil",
       "ciudad": "São Paulo",
       "fechas_disponibles": [
-        "2025-11-07",
-        "2025-11-08",
-        "2025-11-09",
-        "2025-11-10"
+        "2026-11-07",
+        "2026-11-08",
+        "2026-11-09",
+        "2026-11-10"
       ],
       "precio_promedio_habitacion_eur": 110,
       "tieneAmenities": true,
@@ -315,9 +315,9 @@
       "pais": "Brasil",
       "ciudad": "São Paulo",
       "fechas_disponibles": [
-        "2025-11-06",
-        "2025-11-10",
-        "2025-11-11"
+        "2026-11-06",
+        "2026-11-10",
+        "2026-11-11"
       ],
       "precio_promedio_habitacion_eur": 180,
       "tieneAmenities": true,
@@ -335,10 +335,10 @@
       "pais": "Austria",
       "ciudad": "Spielberg",
       "fechas_disponibles": [
-        "2025-06-27",
-        "2025-06-28",
-        "2025-06-29",
-        "2025-06-30"
+        "2026-06-27",
+        "2026-06-28",
+        "2026-06-29",
+        "2026-06-30"
       ],
       "precio_promedio_habitacion_eur": 280,
       "tieneAmenities": true,
@@ -356,9 +356,9 @@
       "pais": "Austria",
       "ciudad": "Spielberg",
       "fechas_disponibles": [
-        "2025-06-26",
-        "2025-06-30",
-        "2025-07-01"
+        "2026-06-26",
+        "2026-06-30",
+        "2026-07-01"
       ],
       "precio_promedio_habitacion_eur": 190,
       "tieneAmenities": false,
@@ -376,10 +376,10 @@
       "pais": "España",
       "ciudad": "Barcelona",
       "fechas_disponibles": [
-        "2025-05-09",
-        "2025-05-10",
-        "2025-05-11",
-        "2025-05-12"
+        "2026-05-09",
+        "2026-05-10",
+        "2026-05-11",
+        "2026-05-12"
       ],
       "precio_promedio_habitacion_eur": 350,
       "tieneAmenities": true,
@@ -397,9 +397,9 @@
       "pais": "España",
       "ciudad": "Barcelona",
       "fechas_disponibles": [
-        "2025-05-08",
-        "2025-05-09",
-        "2025-05-12"
+        "2026-05-08",
+        "2026-05-09",
+        "2026-05-12"
       ],
       "precio_promedio_habitacion_eur": 280,
       "tieneAmenities": true,
@@ -417,10 +417,10 @@
       "pais": "Canadá",
       "ciudad": "Montreal",
       "fechas_disponibles": [
-        "2025-06-13",
-        "2025-06-14",
-        "2025-06-15",
-        "2025-06-16"
+        "2026-06-13",
+        "2026-06-14",
+        "2026-06-15",
+        "2026-06-16"
       ],
       "precio_promedio_habitacion_eur": 320,
       "tieneAmenities": true,
@@ -438,9 +438,9 @@
       "pais": "Canadá",
       "ciudad": "Montreal",
       "fechas_disponibles": [
-        "2025-06-12",
-        "2025-06-16",
-        "2025-06-17"
+        "2026-06-12",
+        "2026-06-16",
+        "2026-06-17"
       ],
       "precio_promedio_habitacion_eur": 250,
       "tieneAmenities": true,
@@ -458,10 +458,10 @@
       "pais": "Singapur",
       "ciudad": "Singapur",
       "fechas_disponibles": [
-        "2025-10-03",
-        "2025-10-04",
-        "2025-10-05",
-        "2025-10-06"
+        "2026-10-03",
+        "2026-10-04",
+        "2026-10-05",
+        "2026-10-06"
       ],
       "precio_promedio_habitacion_eur": 700,
       "tieneAmenities": true,
@@ -479,9 +479,9 @@
       "pais": "Singapur",
       "ciudad": "Singapur",
       "fechas_disponibles": [
-        "2025-10-02",
-        "2025-10-06",
-        "2025-10-07"
+        "2026-10-02",
+        "2026-10-06",
+        "2026-10-07"
       ],
       "precio_promedio_habitacion_eur": 550,
       "tieneAmenities": true,
@@ -499,10 +499,10 @@
       "pais": "Estados Unidos",
       "ciudad": "Austin, Texas",
       "fechas_disponibles": [
-        "2025-10-24",
-        "2025-10-25",
-        "2025-10-26",
-        "2025-10-27"
+        "2026-10-24",
+        "2026-10-25",
+        "2026-10-26",
+        "2026-10-27"
       ],
       "precio_promedio_habitacion_eur": 400,
       "tieneAmenities": true,
@@ -520,9 +520,9 @@
       "pais": "Estados Unidos",
       "ciudad": "Austin, Texas",
       "fechas_disponibles": [
-        "2025-10-23",
-        "2025-10-27",
-        "2025-10-28"
+        "2026-10-23",
+        "2026-10-27",
+        "2026-10-28"
       ],
       "precio_promedio_habitacion_eur": 350,
       "tieneAmenities": true,
@@ -542,7 +542,7 @@
       "pais_destino": "Bahrain",
       "ciudad_destino": "Manama",
       "aerolinea": "Qatar Airways",
-      "fecha_disponible": "2025-04-11",
+      "fecha_disponible": "2026-04-11",
       "tipo_avion": "Boeing 777",
       "clase_asiento": "Economy",
       "precio_promedio_ticket_eur": 1250
@@ -554,7 +554,7 @@
       "pais_destino": "Bahrain",
       "ciudad_destino": "Manama",
       "aerolinea": "Lufthansa",
-      "fecha_disponible": "2025-04-12",
+      "fecha_disponible": "2026-04-12",
       "tipo_avion": "Airbus A330",
       "clase_asiento": "Business",
       "precio_promedio_ticket_eur": 750
@@ -566,7 +566,7 @@
       "pais_destino": "Bahrain",
       "ciudad_destino": "Manama",
       "aerolinea": "British Airways",
-      "fecha_disponible": "2025-04-13",
+      "fecha_disponible": "2026-04-13",
       "tipo_avion": "Boeing 787",
       "clase_asiento": "Economy",
       "precio_promedio_ticket_eur": 550
@@ -578,7 +578,7 @@
       "pais_destino": "Mónaco (Francia)",
       "ciudad_destino": "Niza",
       "aerolinea": "Air France",
-      "fecha_disponible": "2025-05-23",
+      "fecha_disponible": "2026-05-23",
       "tipo_avion": "Airbus A320",
       "clase_asiento": "Economy",
       "precio_promedio_ticket_eur": 180
@@ -590,7 +590,7 @@
       "pais_destino": "Mónaco (Francia)",
       "ciudad_destino": "Niza",
       "aerolinea": "ITA Airways",
-      "fecha_disponible": "2025-05-24",
+      "fecha_disponible": "2026-05-24",
       "tipo_avion": "Embraer 190",
       "clase_asiento": "Business",
       "precio_promedio_ticket_eur": 350
@@ -602,7 +602,7 @@
       "pais_destino": "Mónaco (Francia)",
       "ciudad_destino": "Niza",
       "aerolinea": "EasyJet",
-      "fecha_disponible": "2025-05-25",
+      "fecha_disponible": "2026-05-25",
       "tipo_avion": "Airbus A319",
       "clase_asiento": "Economy",
       "precio_promedio_ticket_eur": 95
@@ -614,7 +614,7 @@
       "pais_destino": "Reino Unido",
       "ciudad_destino": "Londres",
       "aerolinea": "British Airways",
-      "fecha_disponible": "2025-07-04",
+      "fecha_disponible": "2026-07-04",
       "tipo_avion": "Boeing 787",
       "clase_asiento": "Economy",
       "precio_promedio_ticket_eur": 650
@@ -626,7 +626,7 @@
       "pais_destino": "Reino Unido",
       "ciudad_destino": "Londres",
       "aerolinea": "Aerolíneas Argentinas",
-      "fecha_disponible": "2025-07-03",
+      "fecha_disponible": "2026-07-03",
       "tipo_avion": "Airbus A330",
       "clase_asiento": "Business",
       "precio_promedio_ticket_eur": 1800
@@ -638,7 +638,7 @@
       "pais_destino": "Reino Unido",
       "ciudad_destino": "Londres",
       "aerolinea": "Air France",
-      "fecha_disponible": "2025-07-05",
+      "fecha_disponible": "2026-07-05",
       "tipo_avion": "Airbus A320",
       "clase_asiento": "Economy",
       "precio_promedio_ticket_eur": 150
@@ -650,7 +650,7 @@
       "pais_destino": "Italia",
       "ciudad_destino": "Milán",
       "aerolinea": "ITA Airways",
-      "fecha_disponible": "2025-09-05",
+      "fecha_disponible": "2026-09-05",
       "tipo_avion": "Airbus A321",
       "clase_asiento": "Economy",
       "precio_promedio_ticket_eur": 120
@@ -662,7 +662,7 @@
       "pais_destino": "Italia",
       "ciudad_destino": "Milán",
       "aerolinea": "Ryanair",
-      "fecha_disponible": "2025-09-06",
+      "fecha_disponible": "2026-09-06",
       "tipo_avion": "Boeing 737",
       "clase_asiento": "Economy",
       "precio_promedio_ticket_eur": 85
@@ -674,7 +674,7 @@
       "pais_destino": "Italia",
       "ciudad_destino": "Milán",
       "aerolinea": "EasyJet",
-      "fecha_disponible": "2025-09-07",
+      "fecha_disponible": "2026-09-07",
       "tipo_avion": "Airbus A319",
       "clase_asiento": "Economy",
       "precio_promedio_ticket_eur": 110
@@ -686,7 +686,7 @@
       "pais_destino": "Brasil",
       "ciudad_destino": "São Paulo",
       "aerolinea": "LATAM",
-      "fecha_disponible": "2025-11-07",
+      "fecha_disponible": "2026-11-07",
       "tipo_avion": "Airbus A321",
       "clase_asiento": "Economy",
       "precio_promedio_ticket_eur": 220
@@ -698,7 +698,7 @@
       "pais_destino": "Brasil",
       "ciudad_destino": "São Paulo",
       "aerolinea": "GOL",
-      "fecha_disponible": "2025-11-08",
+      "fecha_disponible": "2026-11-08",
       "tipo_avion": "Boeing 737",
       "clase_asiento": "Economy",
       "precio_promedio_ticket_eur": 180
@@ -710,7 +710,7 @@
       "pais_destino": "Brasil",
       "ciudad_destino": "São Paulo",
       "aerolinea": "Sky Airline",
-      "fecha_disponible": "2025-11-09",
+      "fecha_disponible": "2026-11-09",
       "tipo_avion": "Airbus A320",
       "clase_asiento": "Business",
       "precio_promedio_ticket_eur": 350
@@ -722,7 +722,7 @@
       "pais_destino": "Austria",
       "ciudad_destino": "Graz",
       "aerolinea": "Austrian Airlines",
-      "fecha_disponible": "2025-06-27",
+      "fecha_disponible": "2026-06-27",
       "tipo_avion": "Airbus A320",
       "clase_asiento": "Economy",
       "precio_promedio_ticket_eur": 140
@@ -734,7 +734,7 @@
       "pais_destino": "Austria",
       "ciudad_destino": "Graz",
       "aerolinea": "Ryanair",
-      "fecha_disponible": "2025-06-28",
+      "fecha_disponible": "2026-06-28",
       "tipo_avion": "Boeing 737",
       "clase_asiento": "Economy",
       "precio_promedio_ticket_eur": 70
@@ -746,7 +746,7 @@
       "pais_destino": "Austria",
       "ciudad_destino": "Viena",
       "aerolinea": "Wizz Air",
-      "fecha_disponible": "2025-06-29",
+      "fecha_disponible": "2026-06-29",
       "tipo_avion": "Airbus A320",
       "clase_asiento": "Economy",
       "precio_promedio_ticket_eur": 120
@@ -758,7 +758,7 @@
       "pais_destino": "España",
       "ciudad_destino": "Barcelona",
       "aerolinea": "Iberia",
-      "fecha_disponible": "2025-05-09",
+      "fecha_disponible": "2026-05-09",
       "tipo_avion": "Airbus A330",
       "clase_asiento": "Business",
       "precio_promedio_ticket_eur": 1500
@@ -770,7 +770,7 @@
       "pais_destino": "España",
       "ciudad_destino": "Barcelona",
       "aerolinea": "Aeroméxico",
-      "fecha_disponible": "2025-05-10",
+      "fecha_disponible": "2026-05-10",
       "tipo_avion": "Boeing 787",
       "clase_asiento": "Economy",
       "precio_promedio_ticket_eur": 780
@@ -782,7 +782,7 @@
       "pais_destino": "España",
       "ciudad_destino": "Barcelona",
       "aerolinea": "Vueling",
-      "fecha_disponible": "2025-05-11",
+      "fecha_disponible": "2026-05-11",
       "tipo_avion": "Airbus A320",
       "clase_asiento": "Economy",
       "precio_promedio_ticket_eur": 65
@@ -794,7 +794,7 @@
       "pais_destino": "Canadá",
       "ciudad_destino": "Montreal",
       "aerolinea": "Air Canada",
-      "fecha_disponible": "2025-06-13",
+      "fecha_disponible": "2026-06-13",
       "tipo_avion": "Boeing 737",
       "clase_asiento": "Economy",
       "precio_promedio_ticket_eur": 190
@@ -806,7 +806,7 @@
       "pais_destino": "Canadá",
       "ciudad_destino": "Montreal",
       "aerolinea": "United Airlines",
-      "fecha_disponible": "2025-06-14",
+      "fecha_disponible": "2026-06-14",
       "tipo_avion": "Airbus A320",
       "clase_asiento": "Economy",
       "precio_promedio_ticket_eur": 250
@@ -818,7 +818,7 @@
       "pais_destino": "Canadá",
       "ciudad_destino": "Montreal",
       "aerolinea": "Air France",
-      "fecha_disponible": "2025-06-15",
+      "fecha_disponible": "2026-06-15",
       "tipo_avion": "Boeing 777",
       "clase_asiento": "Premium Economy",
       "precio_promedio_ticket_eur": 850
@@ -830,7 +830,7 @@
       "pais_destino": "Singapur",
       "ciudad_destino": "Singapur",
       "aerolinea": "Singapore Airlines",
-      "fecha_disponible": "2025-10-03",
+      "fecha_disponible": "2026-10-03",
       "tipo_avion": "Airbus A380",
       "clase_asiento": "Business",
       "precio_promedio_ticket_eur": 950
@@ -842,7 +842,7 @@
       "pais_destino": "Singapur",
       "ciudad_destino": "Singapur",
       "aerolinea": "ANA",
-      "fecha_disponible": "2025-10-04",
+      "fecha_disponible": "2026-10-04",
       "tipo_avion": "Boeing 787",
       "clase_asiento": "Economy",
       "precio_promedio_ticket_eur": 450
@@ -854,7 +854,7 @@
       "pais_destino": "Singapur",
       "ciudad_destino": "Singapur",
       "aerolinea": "Emirates",
-      "fecha_disponible": "2025-10-05",
+      "fecha_disponible": "2026-10-05",
       "tipo_avion": "Boeing 777",
       "clase_asiento": "First Class",
       "precio_promedio_ticket_eur": 1800
@@ -866,7 +866,7 @@
       "pais_destino": "Estados Unidos",
       "ciudad_destino": "Austin, TX",
       "aerolinea": "Air Canada",
-      "fecha_disponible": "2025-10-24",
+      "fecha_disponible": "2026-10-24",
       "tipo_avion": "Airbus A321",
       "clase_asiento": "Economy",
       "precio_promedio_ticket_eur": 320
@@ -878,7 +878,7 @@
       "pais_destino": "Estados Unidos",
       "ciudad_destino": "Austin, TX",
       "aerolinea": "Viva Aerobus",
-      "fecha_disponible": "2025-10-25",
+      "fecha_disponible": "2026-10-25",
       "tipo_avion": "Airbus A320",
       "clase_asiento": "Economy",
       "precio_promedio_ticket_eur": 190
@@ -890,7 +890,7 @@
       "pais_destino": "Estados Unidos",
       "ciudad_destino": "Austin, TX",
       "aerolinea": "Virgin Atlantic",
-      "fecha_disponible": "2025-10-26",
+      "fecha_disponible": "2026-10-26",
       "tipo_avion": "Boeing 787",
       "clase_asiento": "Upper Class",
       "precio_promedio_ticket_eur": 2100

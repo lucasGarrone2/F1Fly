@@ -13,6 +13,21 @@ export class ReservaClient {
 
   readonly reserva = computed(() => this._reserva());
 
+   setHabitacion(data: {
+    tipoHabitacion: string,
+    cantPersonas: number,
+    precioTotal: number
+  }) {
+    this._reserva.update(r => ({
+      ...r,
+      habitacion: data   
+    }));
+  }
+
+  getHabitacion() {
+    return this._reserva().habitacion;
+  }
+
   // CONTROL DEL CUPÓN
   readonly tieneDescuento = signal(false);
   private readonly porcentaje = 20;
@@ -34,7 +49,8 @@ export class ReservaClient {
     return (
       (r.carrera?.precio_carrera ?? 0) +
       (r.hotel?.precio_promedio_habitacion_eur ?? 0) +
-      (r.vuelo?.precio_promedio_ticket_eur ?? 0)
+      (r.vuelo?.precio_promedio_ticket_eur ?? 0) +
+      (r.habitacion?.precioTotal ?? 0) 
     );
   });
 

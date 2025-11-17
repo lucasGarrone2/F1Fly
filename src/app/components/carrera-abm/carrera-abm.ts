@@ -18,7 +18,7 @@ export class CarreraAbm {
   
   protected readonly activarFormulzarioCarrera = signal(false);
   readonly edicionCarrera = signal(false);
-  protected readonly carrera_editar = signal<Carrera | undefined>(undefined);
+  protected readonly  carrera_editar = signal<Carrera | undefined>(undefined);
   
   activarFormulario_Carrera(){
     this.activarFormulzarioCarrera.set(!this.activarFormulzarioCarrera());

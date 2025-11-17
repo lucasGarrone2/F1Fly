@@ -1,17 +1,13 @@
-/* ==================================================
-   1. Estilos del Contenedor Principal (.habitacion-modal-content)
-   ==================================================
-*/
+
 .habitacion-modal-content {
-    /* POSICIONAMIENTO CLAVE: Usamos las reglas recomendadas anteriormente */
     position: fixed;
     top: 50%; 
     left: 50%; 
-    transform: translate(-50%, -50%); /* Centrado */
-    z-index: 1001; /* Z-index ALTO para estar por encima del overlay (999) */
+    transform: translate(-50%, -50%); 
+    z-index: 1001; 
     
-    /* Estilos Visuales */
-    background-color: #1a237e; /* Fondo oscuro */
+    
+    background-color: #1a237e; 
     color: white;
     padding: 20px 40px 20px; 
     border-radius: 15px;
@@ -29,10 +25,6 @@
     flex-grow: 1; 
 }
 
-/* ==================================================
-   2. Estilos Comunes (Header, Inputs, Labels)
-   ==================================================
-*/
 
 .modal-header { 
   display: flex;
@@ -91,10 +83,7 @@
     font-size: 1em; 
 }
 
-/* ==================================================
-   3. Estilos Específicos de Habitaciones (Precio y Botones)
-   ==================================================
-*/
+
 
 /* Resumen de Precio */
 .precio-resumen {

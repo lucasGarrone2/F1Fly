@@ -137,11 +137,28 @@ html, body {
     gap: 15px; 
 }
 
-.btn-detalles,
-.btn-seleccionar {
+.btn-detalles
+ {
     flex: 1;
     padding: 10px 15px; 
     background-color: #ff3333; 
+    border: none;
+    border-radius: 8px;
+    color: white; 
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.25s ease, transform 0.15s ease;
+    font-size: 0.95em; 
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap; 
+}
+
+.btn-seleccionar{
+    flex: 1;
+    padding: 10px 15px; 
+    background-color: #4CAF50; 
     border: none;
     border-radius: 8px;
     color: white; 

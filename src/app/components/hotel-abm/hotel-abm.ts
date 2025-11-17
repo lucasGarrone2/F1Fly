@@ -25,7 +25,6 @@ export class HotelAbm {
   protected readonly hotelEditar = signal<Hotel | undefined> (undefined);
 
 
-  //NUEVO: SEÑALES PARA EL FORM D SELEC D HABI
   activarFormHabitacion = signal(false);
   hotelSeleccionadoId = signal<string | undefined>(undefined);
   hotelSeleccNombre = signal<string | undefined>(undefined);
@@ -67,7 +66,6 @@ export class HotelAbm {
     }
   }
 
-  ///NUEVAS FUNCIONES PARA HABITACION
   activarSelecHabi(hotel: Hotel){
     if( hotel.id && hotel.nombre_hotel){
       this.hotelSeleccionadoId.set(String(hotel.id));
