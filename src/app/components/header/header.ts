@@ -35,6 +35,11 @@ export class Header {
  {
   this.router.navigateByUrl("/editar-perfil")
  }
+
+ gestionarUsuarios()
+ {
+
+ }
  logout()
  {
   this.auth.logout();
