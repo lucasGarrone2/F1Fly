@@ -5,11 +5,11 @@ import { CarreraClient } from '../carrera/carrera-client';
 import { Carrera } from '../carrera/carrera-interface';
 import { RouterLink } from '@angular/router';
 import { NgOptimizedImage } from '@angular/common';
-
+import { HeaderGestionAdmin } from "../../header-gestion-admin/header-gestion-admin";
 
 @Component({
   selector: 'app-carrera-abm',
-  imports: [CarreraForm, RouterLink, NgOptimizedImage],
+  imports: [CarreraForm, NgOptimizedImage, HeaderGestionAdmin],
   templateUrl: './carrera-abm.html',
   styleUrl: './carrera-abm.css'
 })

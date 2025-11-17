@@ -5,12 +5,13 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { HotelForm } from '../hotel-form/hotel-form';
 import { Router, RouterLink } from '@angular/router';
 import { HabitacionForm } from '../habitacion-form/habitacion-form';
+import { HeaderGestionAdmin } from "../../header-gestion-admin/header-gestion-admin";
 
 
 
 @Component({
   selector: 'app-hotel-abm',
-  imports: [HotelForm, RouterLink, HabitacionForm],
+  imports: [HotelForm, HeaderGestionAdmin, HabitacionForm, HeaderGestionAdmin],
   templateUrl: './hotel-abm.html',
   styleUrl: './hotel-abm.css'
 })

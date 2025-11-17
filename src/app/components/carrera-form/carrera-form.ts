@@ -17,21 +17,50 @@ export class CarreraForm {
 
   readonly carrera_edicion = input<Carrera>();
   readonly estadoEdicion = input(false);
+  readonly out_carrera_edicion = output();
   
   protected readonly form = this.formBuilder.nonNullable.group({
-    nombre_carrera: ['', [Validators.required]],
+    nombre_carrera: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(40)]],
     fecha_carrera: ['2025-01-01', [Validators.required]],
     capacidad_carrera: [0, [Validators.required, Validators.min(5000)]],
-    descripcion_carrera: ['', [Validators.required]],
+    descripcion_carrera: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(200)]],
     cantidad_vueltas_carrera: [0, [Validators.required, Validators.min(50)]],
-    ciudad_carrera: ['',[Validators.required]],
-    pais_carrera: ['',[Validators.required]],
+    ciudad_carrera: ['',[Validators.required,Validators.minLength(2), Validators.maxLength(40)]],
+    pais_carrera: ['',[Validators.required,Validators.minLength(2), Validators.maxLength(40)]],
     precio_carrera: [0,[Validators.required, Validators.min(80)]],
-    imageUrl_carrera: ['', [Validators.required]]
+    imageUrl_carrera: ['', [Validators.required,Validators.minLength(2)]]
   });
 
+  get nombre_carrera(){
+    return this.form.controls.nombre_carrera;
+  }
+
+  get cantidad_vueltas_carrera(){
+    return this.form.controls.cantidad_vueltas_carrera;
+  }
+  get capacidad_carrera(){
+    return this.form.controls.capacidad_carrera;
+  }
+  get ciudad_carrera(){
+    return this.form.controls.ciudad_carrera;
+  }
+  get descripcion_carrera(){
+    return this.form.controls.descripcion_carrera;
+  }
+  get fecha_carrera(){
+    return this.form.controls.fecha_carrera;
+  }
+  get imageUrl_carrera(){
+    return this.form.controls.imageUrl_carrera;
+  }
+  get pais_carrera(){
+    return this.form.controls.pais_carrera;
+  }
+  get precio_carrera(){
+    return this.form.controls.precio_carrera;
+  }
+
  constructor() {
-  // Escucha los cambios del input carrera_edicion
   effect(() => {
     const carrera = this.carrera_edicion();
     if (this.estadoEdicion() && carrera) {

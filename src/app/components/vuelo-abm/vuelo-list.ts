@@ -2,10 +2,12 @@ import { Component, inject, signal } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { VueloService } from '../vuelo/vuelo-service';
 import { Router, RouterLink } from '@angular/router';
+import { HeaderGestionAdmin } from '../../header-gestion-admin/header-gestion-admin';
+
 
 @Component({
   selector: 'app-vuelo-list',
-  imports: [ReactiveFormsModule, RouterLink],
+  imports: [ReactiveFormsModule,HeaderGestionAdmin],
   templateUrl: './vuelo-list.html',
   styleUrl: './vuelo-list.css'
 })

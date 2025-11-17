@@ -1,17 +1,5 @@
-<ul id="accion-gestion-carrera">
-  <li class="gestionLI">
-    <button type="button" routerLink="/gestion-carrera" class="botonGestion">GESTION CARRERAS</button></li>
-  <li>|</li>
+<app-header-gestion-admin></app-header-gestion-admin>
 
-  <li class="gestionLI">
-    <a routerLink="/gestion-hoteles" class="botonGestion">GESTION HOTELES</a>
-  </li>
-
-  
-  <li>|</li>
-  <li class="gestionLI">
-  <button type="button" routerLink="/gestion-vuelos" class="botonGestion">GESTION VUELOS</button></li>
-</ul>
 
 @if (isLoading() && vuelos().length === 0) {
     <p class="estado-carga">Cargando vuelos..</p>
