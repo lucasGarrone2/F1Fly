@@ -10,6 +10,8 @@ import { HotelList } from './components/hotel-list/hotel-list';
 import { ReservarLayoutComponent } from './components/reservar-layout-component/reservar-layout-component';
 import { VueloAbm } from './components/vuelo-abm/vuelo-list';
 import { ListaFavoritosCarrera } from './lista-favoritos-carrera/lista-favoritos-carrera';
+import { PerfilUsuario } from './components/perfil-usuario/perfil-usuario';
+import { EditarPerfilUsuario } from './components/editar-perfil-usuario/editar-perfil-usuario';
 
 
 export const routes: Routes = [
@@ -23,7 +25,8 @@ export const routes: Routes = [
   { path: 'gestion-hoteles', component: HotelAbm, canActivate: [authGuardGuard] },
   { path: 'lista-hoteles', component: HotelList },
   {path: 'gestion-vuelos', component: VueloAbm, canActivate: [authGuardGuard]},
-
+{path: 'mi-informacion', component: PerfilUsuario,  canActivate: [authGuardGuard]},
+{path: 'editar-perfil', component: EditarPerfilUsuario,  canActivate: [authGuardGuard]},
   {
     path:"lista-favoritos/:id",
     title: 'Lista favoritos',

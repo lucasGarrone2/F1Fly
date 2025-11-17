@@ -4,11 +4,12 @@ import { CarreraForm } from '../carrera-form/carrera-form';
 import { CarreraClient } from '../carrera/carrera-client';
 import { Carrera } from '../carrera/carrera-interface';
 import { RouterLink } from '@angular/router';
+import { NgOptimizedImage } from '@angular/common';
 
 
 @Component({
   selector: 'app-carrera-abm',
-  imports: [CarreraForm, RouterLink],
+  imports: [CarreraForm, RouterLink, NgOptimizedImage],
   templateUrl: './carrera-abm.html',
   styleUrl: './carrera-abm.css'
 })
@@ -18,7 +19,7 @@ export class CarreraAbm {
   
   protected readonly activarFormulzarioCarrera = signal(false);
   readonly edicionCarrera = signal(false);
-  protected readonly carrera_editar = signal<Carrera | undefined>(undefined);
+  protected readonly  carrera_editar = signal<Carrera | undefined>(undefined);
   
   activarFormulario_Carrera(){
     this.activarFormulzarioCarrera.set(!this.activarFormulzarioCarrera());

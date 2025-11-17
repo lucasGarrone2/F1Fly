@@ -25,7 +25,7 @@ constructor(private toastService: ToastService, private reserva: ReservaClient){
 
 ngOnInit()
 {
-  this.toastService.show("Felicidades! Obtuviste un descuento del 20% utilizando el cupon F1FLY20")
+  this.toastService.show("🎊🎊Felicidades! Obtuviste un descuento del 20% utilizando el cupon F1FLY20 🏎️")
 }
 
 priceForm = new FormGroup({

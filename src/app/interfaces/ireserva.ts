@@ -6,5 +6,10 @@ export interface IReserva {
     carrera?: Carrera;
     hotel?:Hotel;
     vuelo?:IVuelo;
+    habitacion?:{
+        tipoHabitacion: string,
+        cantPersonas: number,
+        precioTotal: number,
+    };
 }
 

@@ -6,10 +6,12 @@ import { Hotel } from '../hotel/hotel-interface';
 import { HotelService } from '../hotel/hotel-service';
 import { ReservaClient } from '../../clients/reserva-client';
 import { AuthService } from '../../auth/auth-service';
+import { HabitacionForm } from '../habitacion-form/habitacion-form';
+import { signal } from '@angular/core';
 
 @Component({
   selector: 'app-hotel-list',
-  imports: [ CommonModule, RouterLink],
+  imports: [ CommonModule, RouterLink, HabitacionForm],
   templateUrl: './hotel-list.html',
   styleUrl: './hotel-list.css'
 })
@@ -17,6 +19,10 @@ export class HotelList {
     private readonly hotelService = inject(HotelService);
     protected hotelSource = toSignal(this.hotelService.getHoteles()); 
 
+    ///HABITACION NUEVO
+    activarFormHabitacion = signal(false);
+    hotelSeleccionadoId = signal<string | undefined>(undefined);
+    hotelSeleccNombre = signal<string | undefined>(undefined);
    
     onImageError(event: Event): void {
         const imgElement = event.target as HTMLImageElement;
@@ -28,9 +34,13 @@ export class HotelList {
         }
     }
 
-    constructor(private reserva: ReservaClient, private router: Router, private auth: AuthService){}
+    constructor(
+      protected reserva: ReservaClient, 
+      private router: Router, 
+      private auth: AuthService
+    ){}
 
-     get HotelesFiltrados(): Hotel[] {
+    get HotelesFiltrados(): Hotel[] {
     const hoteles = this.hotelSource();
     const carrera = this.reserva.getCarrera();
 
@@ -47,10 +57,21 @@ export class HotelList {
     }
 
 
-    seleccionarHotel(hotel: Hotel)
-    { 
-    
-        this.reserva.setHotel(hotel);
-        this.router.navigate(['/reserva/vuelos']);
+    seleccionarHotel(hotel: Hotel) {
+        this.reserva.setHotel(hotel); 
+        
+        ////nuevo hbitacion
+        if (hotel.id) { 
+          this.hotelSeleccionadoId.set(String(hotel.id));
+          this.hotelSeleccNombre.set(String(hotel.nombre_hotel));
+          this.activarFormHabitacion.set(true);
+        } else {
+            console.error('El hotel seleccionado no tiene ID válido.');
+        }
+    }
+        cerrarHab() {
+        this.activarFormHabitacion.set(false);
+        this.hotelSeleccionadoId.set(undefined);
+        this.hotelSeleccNombre.set(undefined);
     }
 }

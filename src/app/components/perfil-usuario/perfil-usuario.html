@@ -1,0 +1,65 @@
+<div class="perfil-container">
+    <h2>Informacion Personal </h2>
+    <div class="dato">
+        <strong>Nombre:</strong> <span>{{user?.nombre}}</span>
+    </div>
+
+    <div class="dato">
+        <strong>Apellido:</strong> <span>{{user?.apellido}}</span>
+    </div>
+
+    <div class="dato">
+        <strong>Username:</strong> <span>{{user?.username}}</span>
+    </div>
+
+    <div class="dato">
+        <strong>Email:</strong> <span>{{user?.email}}</span>
+    </div>
+
+    <div class="dato">
+        <strong>Edad:</strong> <span>{{user?.edad}}</span>
+    </div>
+
+    <div class="dato">
+        <strong>Fecha de nacimiento:</strong> <span>{{user?.fecha_nacimiento}}</span>
+    </div>
+
+    <div class="dato">
+        <strong>DNI:</strong> <span>{{user?.dni}}</span>
+    </div>
+
+    <div class="dato">
+        <strong>Nacionalidad:</strong> <span>{{user?.nacionalidad}}</span>
+    </div>
+
+
+    <div class="dato">
+  <strong>Contraseña:</strong>
+
+  <div class="password-wrapper">
+    <span class="password-text">
+      {{ passwordVisible ? user?.password : '••••••••' }}
+    </span>
+
+    <button 
+      type="button"
+      class="toggle-password"
+      (click)="togglePasswordVisibility()">
+      <i *ngIf="!passwordVisible" class="fa-regular fa-eye"></i>
+      <i *ngIf="passwordVisible" class="fa-regular fa-eye-slash"></i>
+    </button>
+  </div>
+</div>
+
+    <div class="dato">
+        <strong>Escuderia favorita:</strong> <span>{{user?.listaPilotos}}</span>
+    </div>
+
+    <div class="dato">
+        <strong>Piloto favorito:</strong> <span>{{user?.ListaEscuderias}}</span>
+    </div>
+
+    <button class="btn-volver" (click)="volver()">Volver</button>
+</div>
+
+

@@ -1,15 +1,13 @@
-
-
 .layout {
   max-width: 1600px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 330px;
   gap: 2rem;
-  padding: 2.5rem 1.5rem 1.5rem; 
+  padding: 2.5rem 1.5rem 1.5rem;
 }
 
-
+/* SIDEBAR */
 .sidebar {
   background: #13244c;
   border-radius: 12px;
@@ -30,18 +28,33 @@
   padding-bottom: 6px;
 }
 
+
+
 .reserva-item {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.75rem;
-  font-size: 0.95rem;
+  display: grid;
+  grid-template-columns: 1fr auto; /* info izquierda - precio derecha */
+  row-gap: 6px;
+  column-gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.reserva-item strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.reserva-item span {
   color: #ddd;
 }
 
 .precio {
+  grid-column: 2; /* siempre alineado a la derecha */
   font-weight: bold;
-  color: #ff5555;
+  color: #ff5555 !important;
 }
+
+
 
 .total {
   display: flex;
@@ -51,6 +64,7 @@
   color: #ffffff;
   margin-top: 1rem;
 }
+
 
 .cupon-container {
   display: flex;

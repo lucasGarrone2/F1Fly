@@ -14,6 +14,32 @@ export class Header {
  protected readonly auth= inject(AuthService);
  private readonly router= inject(Router);
 
+ menuOpen= false;
+
+ toggleMenu()
+ {
+  this.menuOpen= !this.menuOpen;
+ }
+
+ verInfo()
+ {
+  this.router.navigateByUrl("/mi-informacion");
+ }
+
+ verMisReservas()
+ {
+
+ }
+
+ modificarPerfil()
+ {
+  this.router.navigateByUrl("/editar-perfil")
+ }
+
+ gestionarUsuarios()
+ {
+
+ }
  logout()
  {
   this.auth.logout();

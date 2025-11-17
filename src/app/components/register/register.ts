@@ -68,8 +68,8 @@ protected readonly listaPilotos = [
     nacionalidad: ['', [Validators.required]],
     edad: ['', [Validators.required, Validators.min(18)]],
     fecha_nacimiento: ['', [Validators.required]],
-    piloto: [''],
-    escuderia: [''],
+    listaPilotos: [''],
+    ListaEscuderias: [''],
   });
 
   handleSubmit()
@@ -80,7 +80,7 @@ protected readonly listaPilotos = [
       return;
     }
 
-    const {nombre, username,apellido, email, password, password2,dni, nacionalidad, edad, fecha_nacimiento, piloto, escuderia}= this.form.getRawValue();
+    const {nombre, username,apellido, email, password, password2,dni, nacionalidad, edad, fecha_nacimiento, listaPilotos, ListaEscuderias}= this.form.getRawValue();
 
     if(password!== password2)
     {
@@ -99,8 +99,8 @@ protected readonly listaPilotos = [
     nacionalidad,
     edad:  Number(edad),
     fecha_nacimiento,
-    piloto,
-    escuderia
+    listaPilotos,
+    ListaEscuderias
   };
   try
   {

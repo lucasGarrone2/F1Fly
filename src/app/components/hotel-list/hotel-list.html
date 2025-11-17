@@ -1,7 +1,17 @@
+@if (activarFormHabitacion() && hotelSeleccionadoId() && hotelSeleccNombre()) {
+    <div id="overlay"></div> 
+    
+    <app-habitacion-form
+        [hotelId]="hotelSeleccionadoId()!" 
+        [hotelNombre]="hotelSeleccNombre()!"
+        (cerrarFormulario)="cerrarHab()"
+    ></app-habitacion-form>
+}
+
 <div class="list-container">
 
   <h2 class="list-title">Hoteles Disponibles</h2>
-  <p class="description">Encuentra el mejor alojamiento cerca del circuito seleccionado.</p>
+  <p class="description">Encuentra el mejor alojamiento cerca del circuito seleccionado{{ reserva.getCarrera()?.nombre_carrera }}.</p>
 
   @if (hotelSource() === undefined) {
     <div class="loading-state">Cargando hoteles...</div>
@@ -33,7 +43,7 @@
 
             <div class="hotel-row">
               <span class="icon">💶</span>
-              <span>Precio por noche: <strong>€{{ hotel.precio_promedio_habitacion_eur }}</strong></span>
+              <span>Precio prom. por noche: <strong>€{{ hotel.precio_promedio_habitacion_eur }}</strong></span>
             </div>
 
             <div class="hotel-row">
@@ -45,6 +55,17 @@
               <span class="icon">🚌</span>
               <span>Transporte: {{ hotel.tieneTransporte ? 'Sí' : 'No' }}</span>
             </div>
+            
+            <div class="hotel-row fechas-row">
+                <span class="icon">📅</span>
+                <span>Fechas Disp.: </span>
+                <ul class="dates-list">
+                    @for (fecha of hotel.fechas_disponibles; track $index) {
+                        <li>{{ fecha }}</li>
+                    }
+                </ul>
+            </div>
+
 
             <div class="btn-row">
               <button routerLink="/hoteles/{{hotel.id}}" class="btn-detalles">
@@ -52,10 +73,9 @@
               </button>
 
               <button class="btn-seleccionar"
-                      [disabled]="!hayCarreraSeleccionada"
-                      [title]="!hayCarreraSeleccionada ? 'Primero seleccione una carrera' : '' "
+                      [title]="!hayCarreraSeleccionada ? 'Primero seleccione una carrera' : 'Seleccionar habitación para este hotel' "
                       (click)="seleccionarHotel(hotel)">
-                Seleccionar →
+                Seleccionar Habitación →
               </button>
             </div>
 

@@ -1,0 +1,55 @@
+<div class="habitacion-modal-content">
+  <div class="modal-header">
+    <h2>Seleccionar Habitación en: {{ hotelNombre() }}</h2>
+    <button type="button" class="cerrar-btn" (click)="cerrarFormularioHabitacion()">❌</button>
+  </div>
+
+  <form [formGroup]="formu" (ngSubmit)="seleccionarHabitacion()">
+    
+    <ul class="form-list">
+      
+      <li>
+        <label for="tipo">Tipo de Habitación:</label>
+        <select id="tipo" formControlName="tipoHabitacion" required>
+          <option value="estandar">Estandar (€{{ getTarifa('estandar') }} / persona)</option>
+          <option value="premiun">Premium (€{{ getTarifa('premiun') }} / persona)</option>
+          <option value="vip">VIP (€{{ getTarifa('vip') }} / persona)</option>
+        </select>
+      </li>
+
+      <li>
+        <label for="personas">Cantidad de Personas (1-6):</label>
+        <input 
+          id="personas" 
+          type="number" 
+          formControlName="cantPersonas" 
+          min="1" 
+          max="6" 
+          required
+        >
+        @if (formu.controls.cantPersonas.invalid && formu.controls.cantPersonas.touched) {
+          <p class="error-msg">Debe ser entre 1 y 6 personas.</p>
+        }
+      </li>
+    </ul>
+
+    
+    <div class="modal-footer">
+      <button 
+        type="button" 
+        class="cancelar-btn"
+        (click)="cerrarFormularioHabitacion()"
+      >
+        CANCELAR RESERVA
+      </button>
+
+      <button 
+        type="submit" 
+        class="confirmar-btn" 
+        [disabled]="formu.invalid"
+      >
+        CONFIRMAR RESERVA
+      </button>
+    </div>
+  </form>
+</div>

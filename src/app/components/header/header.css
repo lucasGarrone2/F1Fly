@@ -99,3 +99,66 @@ nav {
     transform: translateY(-3px); 
     box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
 }
+
+
+.profile-menu-container {
+  position: relative;
+  display: inline-block;
+}
+
+
+.btn-perfil {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 28px;
+  color: white;
+  padding: 5px;
+}
+
+
+.btn-perfil i {
+  font-size: 28px;
+  color: white;
+}
+
+
+.menu-perfil {
+  position: absolute;
+  top: 45px;        
+  right: 0;
+  width: 200px;
+  background: #1c1c1c;
+  color: white;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.2s ease-out;
+}
+
+
+.menu-perfil.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.menu-perfil li {
+  padding: 12px 18px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.menu-perfil li:hover {
+  background: #333;
+}
+
+
+.btn-cerrar-sesion {
+  display: none;
+}
