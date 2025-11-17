@@ -536,30 +536,6 @@
   ],
   "vuelos": [
     {
-      "id": "1",
-      "carrera_id": 1,
-      "pais_origen": "Argentina",
-      "pais_destino": "Bahrain",
-      "ciudad_destino": "Manama",
-      "aerolinea": "Qatar Airways",
-      "fecha_disponible": "2025-04-11",
-      "tipo_avion": "Boeing 777",
-      "clase_asiento": "Economy",
-      "precio_promedio_ticket_eur": 1250
-    },
-    {
-      "id": "2",
-      "carrera_id": 1,
-      "pais_origen": "Alemania",
-      "pais_destino": "Bahrain",
-      "ciudad_destino": "Manama",
-      "aerolinea": "Lufthansa",
-      "fecha_disponible": "2025-04-12",
-      "tipo_avion": "Airbus A330",
-      "clase_asiento": "Business",
-      "precio_promedio_ticket_eur": 750
-    },
-    {
       "id": "3",
       "carrera_id": 1,
       "pais_origen": "Reino Unido",

@@ -13,40 +13,49 @@
   <button type="button" routerLink="/gestion-vuelos" class="botonGestion">GESTION VUELOS</button></li>
 </ul>
 
-@if (isLoading() && vuelos().length === 0) {
+@let vuelo = this.vuelos();
+
+@if (activarFormularioVuelo()) {
+    <div id="overlay" class="hidden"></div>
+    <app-vuelo-form (cerrar)="cerrarFormulario_Vuelo()"></app-vuelo-form>
+}
+
+@if (vuelo === undefined) {
     <p class="estado-carga">Cargando vuelos..</p>
 } @else {
 <section id="ListadoVuelos">
     <h2>F1FLY Admin vuelos</h2>
 
     <div id="boton-agregar">
-        <button type="button" class="botonAgregar" (click)="activarFormularioVuelo()" >➕ AGREGAR NUEVO VUELO ➕</button>
+        <button type="button" class="botonAgregar" (click)="activarFormulario_Vuelo()">
+            ➕ AGREGAR NUEVO VUELO ➕
+        </button>
     </div>
 
-    @for (vuelo of vuelos(); track vuelo.id) {
+    @for (vuelos of vuelo; track vuelos.id) {
         <div class="contenedorVuelo">
             <div class="info_vuelo">
                 <ul class="lista_infromacion_vuelos">
-                    <li><strong>ORIGEN:</strong>{{vuelo.pais_origen}} - FALTA CIUDAD ORIGEN</li>
-                    <li><strong>DESTINO:</strong>{{vuelo.pais_destino}} - {{vuelo.ciudad_destino}}</li>
-                    <li><strong>AEROLINEA:</strong> {{vuelo.aerolinea}}</li>
-                    <li><strong>FECHA DISPONIBLE:</strong> {{vuelo.fecha_disponible}}</li>
-                    <li><strong>TIPO AVION:</strong> {{vuelo.tipo_avion}}</li>
-                    <li><strong>CLASE ASIENTO:</strong> {{vuelo.clase_asiento}}</li>
-                    <li><strong>PRECIO PROMEDIO TICKET EUR:</strong> €{{vuelo.precio_promedio_ticket_eur}}</li>
+                    <li><strong>ORIGEN:</strong> {{vuelos.pais_origen}} - {{vuelos.ciudad_origen}}</li>
+                    <li><strong>DESTINO:</strong> {{vuelos.pais_destino}} - {{vuelos.ciudad_destino}}</li>
+                    <li><strong>AEROLINEA:</strong> {{vuelos.aerolinea}}</li>
+                    <li><strong>FECHA DISPONIBLE:</strong> {{vuelos.fecha_disponible}}</li>
+                    <li><strong>TIPO AVION:</strong> {{vuelos.tipo_avion}}</li>
+                    <li><strong>CLASE ASIENTO:</strong> {{vuelos.clase_asiento}}</li>
+                    <li><strong>PRECIO PROMEDIO TICKET EUR:</strong> €{{vuelos.precio_promedio_ticket_eur}}</li>
                 </ul>
                 <div class="botones">
-                    <button type="button" class="botonModificar" (click)="editarVuelo(vuelo.id)">
+                    <button type="button" class="botonModificar" (click)="activarEdicion_Vuelo(vuelos.id!)">
                         MODIFICAR
                     </button>
-                    <button type="button" class="botonEliminar" (click)="eliminarVuelo(vuelo.id)">
+                    <button type="button" class="botonEliminar" (click)="eliminarVuelo(vuelos.id!)">
                         ELIMINAR
                     </button>
                 </div>
             </div>
         </div>
     } @empty {
-        <p class="estado-vacio"> No hay vuelos cargados</p>
+        <p class="estado-vacio">No hay vuelos cargados</p>
     }
 </section>
 }

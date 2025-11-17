@@ -1,32 +1,36 @@
 import { Component, inject, signal } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { VueloService } from '../vuelo/vuelo-service';
 import { Router, RouterLink } from '@angular/router';
+import { VueloClient } from '../vuelo/vuelo-service';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { IVuelo } from '../../interfaces/ivuelo';
+import { VueloForm } from "../vuelo-form/vuelo-form";
 
 @Component({
   selector: 'app-vuelo-list',
-  imports: [ReactiveFormsModule, RouterLink],
+  imports: [ReactiveFormsModule, RouterLink, VueloForm],
   templateUrl: './vuelo-list.html',
   styleUrl: './vuelo-list.css'
 })
 export class VueloAbm {
-  private vueloService = inject(VueloService);
-  private router = inject(Router);
+  private vueloService = inject(VueloClient);
+  protected router = inject(Router);
+  protected isLoading = signal(false);
+  readonly editarVuelo = signal(false);
+  protected readonly vueloEdicion = signal<IVuelo | undefined >(undefined);
+  protected readonly vuelos = toSignal(this.vueloService.getVuelos());
 
-  public vuelos = this.vueloService.vuelo;
-  public isLoading = this.vueloService.isLoading;
-    protected readonly activarFormularioVuelo = signal(false);
+  protected readonly activarFormularioVuelo = signal(false);
 
   constructor() { }
 
-  editarVuelo(id: string | number | undefined): void {
-    if (!id) return;
-    this.router.navigate(['/vuelo-edit', id]);
-  }
 
-activarFormulario_Vuelo(){
-this.activarFormularioVuelo.set(!this.activarFormularioVuelo());
-}
+  activarFormulario_Vuelo() {
+    this.activarFormularioVuelo.set(true);
+  }
+  cerrarFormulario_Vuelo() {
+    this.activarFormularioVuelo.set(false);
+  }
   eliminarVuelo(id: string | number | undefined): void {
     if (!id) {
       console.error('El ID de vuelo proporcionado es inválido.');
@@ -43,4 +47,11 @@ this.activarFormularioVuelo.set(!this.activarFormularioVuelo());
       });
     }
   }
+  activarEdicion_Vuelo(id_bus: string | number) {
+    this.editarVuelo.set(!this.editarVuelo());
+    this.vueloService.getVuelo_ID(id_bus).subscribe(vuelos => {
+      this.vueloEdicion.set(vuelos);
+    });
+  }
+
 }
