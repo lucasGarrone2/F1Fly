@@ -27,7 +27,7 @@ export class CarreraForm {
   }
   protected readonly form = this.formBuilder.nonNullable.group({
     nombre_carrera: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(40)]],
-    fecha_carrera: ['', [Validators.required]],
+    fecha_carrera: ['2026-01-01', [Validators.required]],
     capacidad_carrera: [0, [Validators.required, Validators.min(5000)]],
     descripcion_carrera: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(200)]],
     cantidad_vueltas_carrera: [0, [Validators.required, Validators.min(50)]],
@@ -98,6 +98,10 @@ export class CarreraForm {
   } else {
     this.carreraABM.botonAgregar();
   }
+}
+
+botonReiniciar(){
+  this.form.reset();
 }
   
 }

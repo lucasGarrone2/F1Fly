@@ -18,19 +18,7 @@
                     }
                 }
                 </li>
-                <li>
-                    <label for="descripcion_carrera">Descripción:</label>
-                    <textarea id="descripcion_circuito" formControlName="descripcion_carrera" placeholder="Descripción..."></textarea>
-                    @if(descripcion_carrera.dirty || descripcion_carrera.touched){
-                    @if(descripcion_carrera.hasError('required')){
-                        <span>Campo requerido</span>
-                    }@else if (descripcion_carrera.hasError('minlength')) {
-                        <span>Debe contener mas de 5 caracteres</span>
-                    }@else if (descripcion_carrera.hasError('maxlength')) {
-                        <span>Debe contener menos de 200 caracteres</span>
-                    }
-                }
-                </li>
+                
                 <li>
                     <label for="cantidad_vueltas_carrera">Cantidad Vueltas:</label>
                     <input type="number" formControlName="cantidad_vueltas_carrera" id="cantidad_vueltas">
@@ -108,8 +96,24 @@
                     }
                 }
                 </li>
+                <li>
+                    <label for="descripcion_carrera">Descripción:</label>
+                    <textarea id="descripcion_circuito" formControlName="descripcion_carrera" placeholder="Descripción..."></textarea>
+                    @if(descripcion_carrera.dirty || descripcion_carrera.touched){
+                    @if(descripcion_carrera.hasError('required')){
+                        <span>Campo requerido</span>
+                    }@else if (descripcion_carrera.hasError('minlength')) {
+                        <span>Debe contener mas de 5 caracteres</span>
+                    }@else if (descripcion_carrera.hasError('maxlength')) {
+                        <span>Debe contener menos de 200 caracteres</span>
+                    }
+                }
+                </li>
             </ul> 
+            <div  class="botones-formulario">
             <button type="submit" id="boton-enviar" [disabled]="form.invalid">ENVIAR</button>
+            <button type="button" id="boton-reiniciar" (click)="botonReiniciar()">REINICIAR</button>
+                </div>
         </form>
     </div>
 </section>
