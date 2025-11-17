@@ -78,5 +78,19 @@ export class AuthService {
       this.activeUser.set(user);
     }
   }
+
+ updateUser(updated: Partial<User>) {
+  const user = this.activeUser();
+  if (!user) return;
+
+  return this.userClient.actualizarPerfil(user.id!, updated).pipe(
+    tap((patchedData) => {
+      const merged = { ...user, ...patchedData }; 
+
+      this.activeUser.set(merged);
+      localStorage.setItem('loggedUser', JSON.stringify(merged));
+    })
+  );
+}
 }
 

@@ -1,4 +1,5 @@
 export interface User {
+    id?: string | number,
     email: string,
     password: string
     username: string,
@@ -9,6 +10,6 @@ export interface User {
     nacionalidad: string,
     edad: number,
     fecha_nacimiento: string,
-    piloto?: string,
-    escuderia?: string
+    listaPilotos?: string,
+    ListaEscuderias?: string
 }

@@ -1,0 +1,47 @@
+<div class="perfil-edit-container">
+
+  <h2>Modificar Perfil</h2>
+
+  <form [formGroup]="form" (ngSubmit)="guardarCambios()">
+
+    <div class="campo">
+      <label>Username</label>
+      <input type="text" formControlName="username">
+    </div>
+
+    <div class="campo">
+      <label>Email</label>
+      <input type="email" formControlName="email">
+    </div>
+
+    <div class="campo">
+      <label>Contraseña</label>
+      <input type="password" formControlName="password">
+    </div>
+
+    <div class="campo">
+      <label>Piloto favorito</label>
+      <select formControlName="listaPilotos">
+        <option value="">Seleccionar</option>
+
+        @for (p of listaPilotos; track $index) {
+          <option [value]="p">{{ p }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="campo">
+      <label>Escudería favorita</label>
+      <select formControlName="ListaEscuderias">
+        <option value="">Seleccionar</option>
+
+        @for (e of listaEscuderias; track $index) {
+          <option [value]="e">{{ e }}</option>
+        }
+      </select>
+    </div>
+
+    <button class="btn-guardar" type="submit">Guardar cambios</button>
+
+  </form>
+</div>

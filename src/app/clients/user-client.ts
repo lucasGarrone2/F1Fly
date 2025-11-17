@@ -26,6 +26,10 @@ export class UserClient {
     return this.http.post<User>(this.apiUrl, user);   
   }
 
+  actualizarPerfil(id: number | string, cambios: any) {
+  return this.http.patch(`${this.apiUrl}/${id}`, cambios);
+}
+
   deleteUser(id:number)
   {
     return this.http.delete<User>(`${this.apiUrl}/${id}`);

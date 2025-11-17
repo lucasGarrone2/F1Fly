@@ -912,33 +912,24 @@
     },
     {
       "id": "428b",
-      "nombre": "Lucas",
-      "apellido": "Garrone",
       "username": "lucasgarrone2",
-      "email": "lucasgarrone2@gmail.com",
       "password": "Futbolteamo2",
       "isAdmin": false,
-      "dni": "44860455",
+      "email": "lucasgarrone3@gmail.com",
+      "nombre": "Lucas",
+      "apellido": "Garrone",
+      "dni": 44860455,
       "nacionalidad": "Argentina",
       "edad": 22,
       "fecha_nacimiento": "2003-08-08",
-      "piloto": "",
-      "escuderia": ""
+      "listaPilotos": "Franco Colapinto",
+      "ListaEscuderias": "Mercedes"
     },
     {
-      "id": "c6e4",
-      "nombre": "Prueba1",
-      "apellido": "f1",
-      "username": "prueba1",
-      "email": "prueba@gmail.com",
-      "password": "Prueba123",
-      "isAdmin": false,
-      "dni": "44444444",
-      "nacionalidad": "Argentina",
-      "edad": 22,
-      "fecha_nacimiento": "1000-10-10",
-      "piloto": "",
-      "escuderia": ""
+      "username": "prueba2",
+      "email": "prueba2@gmail.com",
+      "password": "Prueba1234",
+      "id": "c6e4"
     }
   ],
   "listadoFavoritos": [
