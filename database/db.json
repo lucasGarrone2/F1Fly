@@ -119,6 +119,18 @@
       "descripcion_carrera": "Circuito moderno con grandes cambios de elevación y ambiente festivo.",
       "imageUrl_carrera": "cota.jpg",
       "id": "62ad"
+    },
+    {
+      "id": "9b4d",
+      "nombre_carrera": "Circuito Galvez",
+      "fecha_carrera": "2026-12-28",
+      "capacidad_carrera": 30000,
+      "descripcion_carrera": "Circuito galvez",
+      "cantidad_vueltas_carrera": 50,
+      "ciudad_carrera": "Buenos Aires",
+      "pais_carrera": "Argentina",
+      "precio_carrera": 200,
+      "imageUrl_carrera": "https://www.solotc.com.ar/wp-content/uploads/2025/07/autodromo-buenos-aires-reformas-f1-scaled.jpg"
     }
   ],
   "hoteles": [

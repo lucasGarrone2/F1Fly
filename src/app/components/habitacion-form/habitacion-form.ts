@@ -23,6 +23,8 @@ export class HabitacionForm implements OnInit {
 
   cerrarFormulario = output<void>(); 
 
+  habitacionSeleccionada = output<void>();
+
   formu = new FormGroup({
     tipoHabitacion: new FormControl('estandar', { nonNullable: true, validators: [Validators.required] }),
     
@@ -69,6 +71,7 @@ export class HabitacionForm implements OnInit {
       }
       this.reserva.setHabitacion(seleccion);
       
+       this.habitacionSeleccionada.emit();  
       this.cerrarFormularioHabitacion();
     }
   }

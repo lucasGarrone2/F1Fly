@@ -1,6 +1,6 @@
 import { computed, Injectable, signal } from '@angular/core';
 import { User } from '../interfaces/user';
-import { of, switchMap, tap, throwError } from 'rxjs';
+import { map, of, switchMap, tap, throwError } from 'rxjs';
 import { UserClient } from '../clients/user-client';
 
 @Injectable({
@@ -13,25 +13,23 @@ export class AuthService {
 
   constructor(private userClient: UserClient) {}
 
+login(username: string, password: string) {
+  return this.userClient.getUsers().pipe(
+    map(users => {
+      const user = users.find(
+        u => u.username === username && u.password === password
+      );
 
-  login(username: string, password: string) {
-    this.userClient.getUsers().subscribe({
-      next: (users) => {
-        const user = users.find(u => u.username === username && u.password === password);
-        if (user) {
-          this.activeUser.set(user);
-          localStorage.setItem('loggedUser', JSON.stringify(user));
-        } else {
-          alert('Usuario o contraseña incorrectos');
-          throw new Error('Usuario o contraseña incorrectos');
-        }
-      },
-      error: (err) => {
-        console.error('Error al intentar iniciar sesión:', err);
-        alert('Error de conexión con el servidor');
+      if (!user) { 
+        throw new Error('Usuario o contraseña incorrectos');
       }
-    });
-  }
+      this.activeUser.set(user);
+      localStorage.setItem('loggedUser', JSON.stringify(user));
+
+      return user;
+    })
+  );
+}
 
   logout() {
     this.activeUser.set(undefined);

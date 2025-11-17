@@ -21,26 +21,35 @@ export class Login {
 
   protected readonly wrongCredentials= signal(false);
   public  passwordVisible= false;
-  login()
-  {
-     if(this.form.invalid)
-    {
+
+constructor()
+{
+  if (this.auth.isLoggedin()) {
+      this.router.navigateByUrl("");
+} 
+}
+
+   login() {
+    if (this.form.invalid) {
       alert("Error al completar el formulario");
       return;
     }
-    const {usuario, password} = this.form.getRawValue();
-    this.auth.login(usuario, password);
-    if(this.auth.isLoggedin())
-    {
-      this.router.navigateByUrl("/");
-    }
-    else
-    {
-      this.wrongCredentials.set(true);
-      setTimeout(()=>{
-        this.wrongCredentials.set(false);
-      },3000);
-    }
+
+    const { usuario, password } = this.form.getRawValue();
+
+    this.auth.login(usuario, password).subscribe({
+      next: () => {
+       
+        this.router.navigateByUrl("");
+      },
+      error: () => {
+        
+        this.wrongCredentials.set(true);
+        setTimeout(() => {
+          this.wrongCredentials.set(false);
+        }, 3000);
+      }
+    });
   }
   togglePasswordVisibility(): void {
     this.passwordVisible = !this.passwordVisible;

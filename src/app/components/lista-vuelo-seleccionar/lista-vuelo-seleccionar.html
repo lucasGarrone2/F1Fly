@@ -1,0 +1,56 @@
+<div class="flight-list-wrapper">
+    
+  <h2 class="title">✈️ Vuelos disponibles</h2>
+
+  <div class="flight-grid">
+
+    @for (v of vuelosFiltrados; track v.id) {
+
+      <div class="flight-card">
+
+        <div class="header">
+          <span class="airline">{{ v.aerolinea }}</span>
+          <span class="class">{{ v.clase_asiento }}</span>
+        </div>
+
+        <div class="route">
+          <div class="city">
+            <span class="label">Origen</span>
+            <strong>{{ v.ciudad_origen }} ({{ v.pais_origen }})</strong>
+          </div>
+
+          <div class="arrow">➡️</div>
+
+          <div class="city">
+            <span class="label">Destino</span>
+            <strong>{{ v.ciudad_destino }} ({{ v.pais_destino }})</strong>
+          </div>
+        </div>
+
+        <div class="info">
+          <div>
+            <span class="label">Fecha</span>
+            <p>{{ v.fecha_disponible }}</p>
+          </div>
+
+          <div>
+            <span class="label">Tipo avión</span>
+            <p>{{ v.tipo_avion }}</p>
+          </div>
+
+          <div>
+            <span class="label">Precio desde</span>
+            <p class="price">€{{ v.precio_promedio_ticket_eur }}</p>
+          </div>
+        </div>
+
+        <button class="btn-seleccionar"
+                [disabled]="!reserva.getHotel() || !reserva.getCarrera()"
+                (click)="seleccionarVuelo(v)">
+            Seleccionar vuelo →
+        </button>
+
+      </div>
+    }
+  </div>
+</div>

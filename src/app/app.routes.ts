@@ -12,6 +12,7 @@ import { VueloAbm } from './components/vuelo-abm/vuelo-list';
 import { ListaFavoritosCarrera } from './lista-favoritos-carrera/lista-favoritos-carrera';
 import { PerfilUsuario } from './components/perfil-usuario/perfil-usuario';
 import { EditarPerfilUsuario } from './components/editar-perfil-usuario/editar-perfil-usuario';
+import { ListaVueloSeleccionar } from './components/lista-vuelo-seleccionar/lista-vuelo-seleccionar';
 
 
 export const routes: Routes = [
@@ -27,6 +28,7 @@ export const routes: Routes = [
   {path: 'gestion-vuelos', component: VueloAbm, canActivate: [authGuardGuard]},
 {path: 'mi-informacion', component: PerfilUsuario,  canActivate: [authGuardGuard]},
 {path: 'editar-perfil', component: EditarPerfilUsuario,  canActivate: [authGuardGuard]},
+{ path: 'vuelos', component: ListaVueloSeleccionar },
   {
     path:"lista-favoritos/:id",
     title: 'Lista favoritos',
@@ -39,7 +41,7 @@ export const routes: Routes = [
     children: [
       { path: 'carreras', component: RaceList },
       { path: 'hoteles', component: HotelList },
-      // { path: 'vuelos', component: VueloList }, Completar despues para mostrar vuelos
+      { path: 'vuelos', component: ListaVueloSeleccionar },
       { path: '', redirectTo: 'carreras', pathMatch: 'full' }
     ]
   }

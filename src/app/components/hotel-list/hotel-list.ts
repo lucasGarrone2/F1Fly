@@ -57,21 +57,33 @@ export class HotelList {
     }
 
 
-    seleccionarHotel(hotel: Hotel) {
-        this.reserva.setHotel(hotel); 
-        
-        ////nuevo hbitacion
-        if (hotel.id) { 
-          this.hotelSeleccionadoId.set(String(hotel.id));
-          this.hotelSeleccNombre.set(String(hotel.nombre_hotel));
-          this.activarFormHabitacion.set(true);
-        } else {
-            console.error('El hotel seleccionado no tiene ID válido.');
-        }
-    }
+     seleccionarHotel(hotel: Hotel) {
+
+  this.reserva.setHotel(hotel);
+
+  if (hotel.id) {
+    this.hotelSeleccionadoId.set(String(hotel.id));
+    this.hotelSeleccNombre.set(hotel.nombre_hotel);
+    this.activarFormHabitacion.set(true); // ✔ abre el modal correctamente
+  } else {
+    console.error('El hotel seleccionado no tiene ID válido.');
+    return;
+  }
+}
+
         cerrarHab() {
         this.activarFormHabitacion.set(false);
         this.hotelSeleccionadoId.set(undefined);
         this.hotelSeleccNombre.set(undefined);
     }
+    irAVuelos() {
+  const carrera = this.reserva.getCarrera();
+  if (!carrera) {
+    console.error("No hay carrera seleccionada, no se puede ir a vuelos");
+    return;
+  }
+
+  this.router.navigate(['/reservar/vuelos']);
 }
+
+  }
