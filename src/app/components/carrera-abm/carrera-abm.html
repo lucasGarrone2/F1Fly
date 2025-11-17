@@ -2,12 +2,9 @@
   <li class="gestionLI">
     <button type="button" routerLink="/gestion-carrera" class="botonGestion">GESTION CARRERAS</button></li>
   <li>|</li>
-
   <li class="gestionLI">
     <a routerLink="/gestion-hoteles" class="botonGestion">GESTION HOTELES</a>
   </li>
-
-  
   <li>|</li>
   <li class="gestionLI">
   <button type="button" routerLink="/gestion-vuelos" class="botonGestion">GESTION VUELOS</button></li>
@@ -28,8 +25,9 @@
   </div>
   @for(carrera of carreras; track carrera.id){
   <div class="contenedorCarrera">
-    <div>
-      <img src="{{ carrera.imageUrl_carrera }}" alt="imagen_carrera" class="imagen-carrera" />
+    <div class="columna-izquierda">
+      <img [ngSrc]="carrera.imageUrl_carrera" alt="imagen_carrera" width="100" 
+  height="100" class="imagen-carrera" />
       <div class="botones">
         <button type="button" class="botonModificar" (click)="activarEdicion_Carrera(carrera.id)">
           ✏️ MODIFICAR
@@ -41,6 +39,7 @@
     </div>
 
     <div class="info_carrera">
+      <div class="info-wrapper">
       <ul class="lista-informacion-carreras">
         <li><strong>ID CARRERA:</strong> {{ carrera.id }}</li>
         <li><strong>NOMBRE CARRERA:</strong> {{ carrera.nombre_carrera }}</li>
@@ -53,6 +52,7 @@
         <li><strong>PRECIO CARRERA:</strong> {{ carrera.precio_carrera }}</li>
         <li><strong>URL IMAGEN CARRERA:</strong> {{ carrera.imageUrl_carrera }}</li>
       </ul>
+      </div>
     </div>
   </div>
   } @empty {
