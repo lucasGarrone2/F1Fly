@@ -1,204 +1,104 @@
-<!-- @if (activarFormHabitacion() && hotelSeleccionadoId() && hotelSeleccNombre()) {
-    <div id="overlay"></div> 
-    
-    <app-habitacion-form
-        [hotelId]="hotelSeleccionadoId()!" 
-        [hotelNombre]="hotelSeleccNombre()!"
-        (cerrarFormulario)="cerrarHab()"
-        (habitacionSeleccionada)="irAVuelos()"
-    ></app-habitacion-form>
+
+@if (activarFormHabitacion() && hotelSeleccionado()) {
+<div id="overlay"></div>
+
+<app-habitacion-form
+    [hotelId]="hotelSeleccionado()!.id!.toString()" 
+    [hotelNombre]="hotelSeleccionado()!.nombre_hotel!"
+    (cerrarFormulario)="cerrarHab()"
+    (habitacionSeleccionada)="irAVuelos()"
+    [fechasDisponibles]="hotelSeleccionado()!.fechas_disponibles!"
+></app-habitacion-form>
+
+
 }
 
 <div class="list-container">
 
-  <h2 class="list-title">Hoteles Disponibles</h2>
-  <p class="description">Encuentra el mejor alojamiento cerca del circuito seleccionado: {{ reserva.getCarrera()?.nombre_carrera || '...' }}.</p>
+<h2 class="list-title">Hoteles Disponibles</h2>
+<p class="description">Encuentra el mejor alojamiento cerca del circuito seleccionado: {{ reserva.getCarrera()?.nombre_carrera || '...' }}.</p>
 
-  @if (hotelSource() === undefined) {
-    <div class="loading-state">Cargando hoteles...</div>
-  }
+@if (hotelSource() === undefined) {
+<div class="loading-state">Cargando hoteles...</div>
+}
 
-  @if (HotelesFiltrados.length > 0) {
+@if (HotelesFiltrados.length > 0) {
 
-    <div class="hotels-container">
+<div class="hotels-container">
 
-      @for (hotel of HotelesFiltrados; track hotel.id) {
+  @for (hotel of HotelesFiltrados; track hotel.id) {
 
-        <div class="hotel-card">
+    <div class="hotel-card">
 
-          <div class="hotel-image-wrapper">
-              <img 
-                   [src]="hotel.imagenUrl"
-                   [alt]="'Imagen del hotel ' + hotel.nombre_hotel"
-                   (error)="onImageError($event)">
-          </div>
-          
-          <div class="hotel-content">
+      <div class="hotel-image-wrapper">
+          <img 
+               [src]="hotel.imagenUrl"
+               [alt]="'Imagen del hotel ' + hotel.nombre_hotel"
+               (error)="onImageError($event)">
+      </div>
+      
+      <div class="hotel-content">
 
-            <div class="hotel-header">
-                <h3 class="hotel-title">{{ hotel.nombre_hotel }}</h3>
+        <div class="hotel-header">
+            <h3 class="hotel-title">{{ hotel.nombre_hotel }}</h3>
+        </div>
+        <p class="hotel-location">
+           📍 {{ hotel.pais }} - {{ hotel.direccionExacta }}
+        </p>
+
+        <hr class="divider">
+
+        <div class="hotel-data">
+            <div class="hotel-row">
+                <span class="icon">💶</span>
+                <span>Precio prom. por noche: <strong>€{{ hotel.precio_promedio_habitacion_eur }}</strong></span>
             </div>
-            <p class="hotel-location">
-               📍 {{ hotel.pais }} - {{ hotel.direccionExacta }}
-            </p>
 
-            <hr class="divider">
+            <div class="hotel-row">
+                <span class="icon">🏨</span>
+                <span>Amenities: {{ hotel.tieneAmenities ? 'Sí ✅' : 'No ❌' }}</span>
+            </div>
 
-            <div class="hotel-data">
-                <div class="hotel-row">
-                    <span class="icon">💶</span>
-                    <span>Precio prom. por noche: <strong>€{{ hotel.precio_promedio_habitacion_eur }}</strong></span>
-                </div>
-
-                <div class="hotel-row">
-                    <span class="icon">🏨</span>
-                    <span>Amenities: {{ hotel.tieneAmenities ? 'Sí ✅' : 'No ❌' }}</span>
-                </div>
-
-                <div class="hotel-row">
-                    <span class="icon">🚌</span>
-                    <span>Transporte: {{ hotel.tieneTransporte ? 'Sí ✅' : 'No ❌' }}</span>
-                </div>
+            <div class="hotel-row">
+                <span class="icon">🚌</span>
+                <span>Transporte: {{ hotel.tieneTransporte ? 'Sí ✅' : 'No ❌' }}</span>
+            </div>
+            
+            <div class="hotel-row fechas-row">
+                <span class="icon">📅</span>
                 
-                <div class="hotel-row fechas-row">
-                    <span class="icon">📅</span>
-                    
-                    <ul class="dates-list">
-                        @for (fecha of hotel.fechas_disponibles; track $index) {
-                            <li>{{ fecha }}</li>
-                        } @empty {
-                            <li>(Sin fechas)</li>
-                        }
-                    </ul>
-                </div>
+                <ul class="dates-list">
+                    @for (fecha of hotel.fechas_disponibles; track $index) {
+                        <li>{{ fecha }}</li>
+                    } @empty {
+                        <li>(Sin fechas)</li>
+                    }
+                </ul>
             </div>
-
-            <div class="hotel-footer">
-              <button routerLink="/hoteles/{{hotel.id}}" class="btn-detalles">
-                Ver Detalles →
-              </button>
-
-              <button class="btn-seleccionar"
-<<<<<<< HEAD
-                      [title]="!hayCarreraSeleccionada ? 'Primero seleccione una carrera' : 'Abrir formulario de gestión de habitaciones' "
-                      (click)="seleccionarHotel(hotel)">
-=======
-                      [title]="!hayCarreraSeleccionada ? 'Primero seleccione una carrera' : 'Seleccionar habitación para este hotel' "
-                      (click)="seleccionarHotel(hotel)" >
->>>>>>> d5e7aa7d8171b5270ffc4af004e51a95a6c8ebd5
-                Seleccionar Habitación →
-              </button>
-            </div>
-
-          </div>
         </div>
 
-      }
+        <div class="hotel-footer">
+          <button routerLink="/hoteles/{{hotel.id}}" class="btn-detalles">
+            Ver Detalles →
+          </button>
 
-    </div> 
+          <button class="btn-seleccionar"
+                  [title]="!hayCarreraSeleccionada ? 'Primero seleccione una carrera' : 'Abrir formulario de gestión de habitaciones' "
+                  (click)="seleccionarHotel(hotel)">
+            Seleccionar Habitación →
+          </button>
+        </div>
 
-  } @else {
-    <div class="empty-state">No hay hoteles disponibles para esta carrera.</div>
+      </div>
+    </div>
+
   }
 
-</div> -->
-@if (activarFormHabitacion() && hotelSeleccionado()) {
-        <div id="overlay"></div> 
-        
-        <app-habitacion-form
-            [hotelId]="hotelSeleccionado()!.id?.toString() ?? '0'" 
-            [hotelNombre]="hotelSeleccionado()!.nombre_hotel"
-            [fechasDisponibles]="hotelSeleccionado()!.fechas_disponibles ?? []"
-            (cerrarFormulario)="cerrarHab()"
-            (habitacionSeleccionada)="irAVuelos()"
-        ></app-habitacion-form>
-    }
+</div> 
 
-    <div class="list-container">
 
-      <h2 class="list-title">Hoteles Disponibles</h2>
-      <p class="description">Encuentra el mejor alojamiento cerca del circuito seleccionado: {{ reserva.getCarrera()?.nombre_carrera || '...' }}.</p>
+} @else {
+<div class="empty-state">No hay hoteles disponibles para esta carrera.</div>
+}
 
-      @if (hotelSource() === undefined) {
-        <div class="loading-state">Cargando hoteles...</div>
-      }
-
-      @if (HotelesFiltrados.length > 0) {
-
-        <div class="hotels-container">
-
-          @for (hotel of HotelesFiltrados; track hotel.id) {
-
-            <div class="hotel-card">
-
-              <div class="hotel-image-wrapper">
-                  <img 
-                      [src]="hotel.imagenUrl"
-                      [alt]="'Imagen del hotel ' + hotel.nombre_hotel"
-                      (error)="onImageError($event)">
-              </div>
-              
-              <div class="hotel-content">
-
-                <div class="hotel-header">
-                    <h3 class="hotel-title">{{ hotel.nombre_hotel }}</h3>
-                </div>
-                <p class="hotel-location">
-                  📍 {{ hotel.pais }} - {{ hotel.direccionExacta }}
-                </p>
-
-                <hr class="divider">
-
-                <div class="hotel-data">
-                    <div class="hotel-row">
-                        <span class="icon">💶</span>
-                        <span>Precio prom. por noche: <strong>€{{ hotel.precio_promedio_habitacion_eur }}</strong></span>
-                    </div>
-
-                    <div class="hotel-row">
-                        <span class="icon">🏨</span>
-                        <span>Amenities: {{ hotel.tieneAmenities ? 'Sí ✅' : 'No ❌' }}</span>
-                    </div>
-
-                    <div class="hotel-row">
-                        <span class="icon">🚌</span>
-                        <span>Transporte: {{ hotel.tieneTransporte ? 'Sí ✅' : 'No ❌' }}</span>
-                    </div>
-                    
-                    <div class="hotel-row fechas-row">
-                        <span class="icon">📅</span>
-                        
-                        <ul class="dates-list">
-                            @for (fecha of hotel.fechas_disponibles; track $index) {
-                                <li>{{ fecha }}</li>
-                            } @empty {
-                                <li>(Sin fechas)</li>
-                            }
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="hotel-footer">
-                  <button routerLink="/hoteles/{{hotel.id}}" class="btn-detalles">
-                    Ver Detalles →
-                  </button>
-
-                  <button class="btn-seleccionar"
-                          [title]="!hayCarreraSeleccionada ? 'Primero seleccione una carrera' : 'Abrir formulario de gestión de habitaciones' "
-                          (click)="seleccionarHotel(hotel)">
-                    Seleccionar Habitación →
-                  </button>
-                </div>
-
-              </div>
-            </div>
-
-          }
-
-        </div> 
-
-      } @else {
-        <div class="empty-state">No hay hoteles disponibles para esta carrera.</div>
-      }
-
-    </div>
+</div>

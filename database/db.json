@@ -1061,6 +1061,38 @@
         "imageUrl_carrera": "monaco.png",
         "id": "5d57"
       }
+    },
+    {
+      "id": "37af",
+      "id_user": "21b6",
+      "carrera": {
+        "nombre_carrera": "Bahrain International Circuit",
+        "fecha_carrera": "2026-04-13",
+        "capacidad_carrera": 70000,
+        "descripcion_carrera": "Pista desértica, diseño Tilke, carreras bajo luces.",
+        "cantidad_vueltas_carrera": 100,
+        "ciudad_carrera": "Sakhir",
+        "pais_carrera": "Bahrain",
+        "precio_carrera": 120,
+        "imageUrl_carrera": "bahrein.jpg",
+        "id": "bbab"
+      }
+    },
+    {
+      "id": "236d",
+      "id_user": "21b6",
+      "carrera": {
+        "nombre_carrera": "Circuit Gilles Villeneuve",
+        "pais_carrera": "Canadá",
+        "ciudad_carrera": "Montreal",
+        "fecha_carrera": "2026-06-15",
+        "capacidad_carrera": 120000,
+        "cantidad_vueltas_carrera": 70,
+        "precio_carrera": 190,
+        "descripcion_carrera": "Rápido circuito semi-urbano con el famoso 'Muro de los Campeones'.",
+        "imageUrl_carrera": "canada.jpg",
+        "id": "b97e"
+      }
     }
   ]
 }
