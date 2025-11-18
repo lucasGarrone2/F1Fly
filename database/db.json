@@ -592,7 +592,7 @@
       "carrera_id": 2,
       "pais_origen": "Reino Unido",
       "ciudad_origen": "Londres",
-      "pais_destino": "Mónaco (Francia)",
+      "pais_destino": "Mónaco",
       "ciudad_destino": "Niza",
       "aerolinea": "EasyJet",
       "fecha_disponible": "2026-05-25",
@@ -1120,6 +1120,22 @@
         "precio_carrera": 250,
         "imageUrl_carrera": "monaco.png",
         "id": "5d57"
+      }
+    },
+    {
+      "id": "01ac",
+      "id_user": "428b",
+      "carrera": {
+        "nombre_carrera": "Circuit of the Americas (COTA)",
+        "pais_carrera": "Estados Unidos",
+        "ciudad_carrera": "Austin, Texas",
+        "fecha_carrera": "2026-10-26",
+        "capacidad_carrera": 150000,
+        "cantidad_vueltas_carrera": 56,
+        "precio_carrera": 210,
+        "descripcion_carrera": "Circuito moderno con grandes cambios de elevación y ambiente festivo.",
+        "imageUrl_carrera": "cota.jpg",
+        "id": "62ad"
       }
     }
   ]
