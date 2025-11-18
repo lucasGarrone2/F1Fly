@@ -12,12 +12,15 @@ import { ListaFavClient } from '../../services/lista-fav-client';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { AuthService } from '../../auth/auth-service';
 import { NgOptimizedImage } from '@angular/common';
+import { FormsModule, Validators } from "@angular/forms";
+
+import { ReactiveFormsModule, FormBuilder, FormControl } from '@angular/forms';
 
 
 @Component({
   selector: 'app-race-card',
   standalone:true,
-  imports: [CommonModule,NgOptimizedImage],
+  imports: [CommonModule, NgOptimizedImage, FormsModule, ReactiveFormsModule],
   templateUrl: './race-card.html',
   styleUrl: './race-card.css'
 })
@@ -67,6 +70,20 @@ export class RaceCardComponent implements OnInit {
     }
     reservarCarrera(race: Carrera)
     {   
+
+        if(!this.tipoEntradaSeleccionada){
+            alert('No selecciono el tipo de entrada!');
+        }else{
+
+        if(this.tipoEntradaSeleccionada === 'Regular'){
+            race.precio_carrera = race.precio_entrada_regular;
+        }else if(this.tipoEntradaSeleccionada === 'Premium'){
+            race.precio_carrera = race.precio_entrada_premium;
+        }else if(this.tipoEntradaSeleccionada === 'VIP'){
+            race.precio_carrera = race.precio_entrada_vip;
+        }
+
+
         if(!this.auth.isLoggedin())
         {
             this.router.navigate(['/inicio_sesion']);
@@ -78,16 +95,34 @@ export class RaceCardComponent implements OnInit {
         
 
         this.router.navigate(['/reservar/hoteles']);
+        }
     }
 
 
-   
     protected readonly client_fav = inject(ListaFavClient);
+    protected readonly fb = inject(FormBuilder);
+    
+    protected readonly tipos_ent = ['Regular','Premium', 'VIP'];
+
+    protected readonly form = this.fb.nonNullable.group({
+    tipo_entrada: ['', [Validators.required]],
+    precio_carrera: [0, Validators.required]
+    });
+
+    get precio_carrera(){
+        return this.form.controls.precio_carrera;
+    }
+
+    get tipo_entrada(){
+    return this.form.controls.tipo_entrada;
+  }
+    get tipoEntradaSeleccionada() {
+  return this.form.controls.tipo_entrada.value;
+  }
 
     botonVerMas(c : Carrera){
         this.router.navigateByUrl('carrera-details/' + c.id);
     }
-
 
     botonFavoritos(carrera_fav : Carrera){
         const user = this.auth.activeUser(); 
@@ -115,9 +150,6 @@ export class RaceCardComponent implements OnInit {
         }});
         
     }
-
-    
-
     }
 
     

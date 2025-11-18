@@ -94,6 +94,11 @@
                         <option [value]="te"><strong>{{te}}</strong></option>
                     }
                     </select>
+                    @if(tipo_entrada.dirty || tipo_entrada.touched){
+                        @if(tipo_entrada.hasError('required')){
+                            <span>Campo requerido</span>
+                        }
+                    }
                 </li> 
                 <li>
                     <label for="descripcion_carrera">Descripción:</label>

@@ -173,3 +173,31 @@
     transform: scale(1.25);
     color: #ff4d8f;
 }
+
+.formulario select {
+    padding: 2px 5px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.formulario option{
+        font-weight: bold;
+
+}
+
+.capacidad{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.race-footer .race-date {
+    margin-bottom: auto;
+    margin-top: -50px; 
+    display: flex;
+    align-items: center;
+}
+

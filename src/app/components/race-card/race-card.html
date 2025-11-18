@@ -33,17 +33,33 @@
                 <i class="fas fa-users"></i>
                 Capacidad: {{ race.capacidad_carrera }}
             </p>
-
-            <p class="precio">
-                <i class="fas fa-euro-sign"></i>
-                Precio: {{ race.precio_carrera }}
-            </p>
+            <div class="formulario">
+                <form [formGroup]="form">
+                    <label for="tipo_entrada">Tipo de entrada: </label>
+                    <select formControlName="tipo_entrada" id="tipo_entrada">
+                    <option value="" disabled> <strong>Seleccione el tipo de entrada...</strong></option>
+                    @for (te of tipos_ent ; track $index) {
+                        <option [value]="te"><strong>{{te}}</strong></option>                       
+                    }
+                </select>
+                </form>
+            @if (!tipoEntradaSeleccionada) {
+               <p><i class="fas fa-euro-sign"></i> Precio: Seleccione un tipo de entrada...</p>
+            }
+            @if(tipoEntradaSeleccionada === 'Regular'){
+            <p><i class="fas fa-euro-sign"></i>Precio: {{race.precio_entrada_regular}}</p>    
+            }@else if (tipoEntradaSeleccionada === 'Premium') {
+            <p><i class="fas fa-euro-sign"></i>Precio: {{race.precio_entrada_premium}}</p>
+             }@else if (tipoEntradaSeleccionada === 'VIP') {
+            <p><i class="fas fa-euro-sign"></i>Precio: {{race.precio_entrada_vip}}</p>
+             }
+         </div>
         </div>
         <div class="race-footer">
 
             <span class="race-date">
-                <i class="fas fa-calendar-alt"></i>
-                {{ race.fecha_carrera }}
+                <p><i class="fas fa-calendar-alt"></i>  {{ race.fecha_carrera }}</p>
+                
             </span>
 
             <button class="btn-more" (click)="botonVerMas(race)">Ver Más →</button>

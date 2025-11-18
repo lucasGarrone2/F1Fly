@@ -1,10 +1,9 @@
-import { Component, computed, linkedSignal, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { RaceCardComponent } from '../race-card/race-card';
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { every, race } from 'rxjs';
 import { CarreraClient } from '../carrera/carrera-client';
 import { ToastService } from '../../services/toast-service';
 import { ToastComponent } from "../toast-component/toast-component";
@@ -17,46 +16,19 @@ import { ReservaClient } from '../../clients/reserva-client';
   styleUrl: './race-list.css'
 })
 export class RaceList {
-private readonly client = inject(CarreraClient);
-protected raceSource = toSignal(this.client.getCarreras());
-private readonly formBuilder = inject(FormBuilder);
+  private readonly client = inject(CarreraClient);
+  protected raceSource = toSignal(this.client.getCarreras());
 
-constructor(private toastService: ToastService, private reserva: ReservaClient){}
+  private readonly formBuilder = inject(FormBuilder);
 
-ngOnInit()
-{
-  this.toastService.show("🎊🎊Felicidades! Obtuviste un descuento del 20% utilizando el cupon F1FLY20 🏎️")
-}
+  constructor(private toastService: ToastService, private reserva: ReservaClient) {}
 
-priceForm = new FormGroup({
-    
-    
-    minPrice: new FormControl(50, [ 
-      Validators.required, 
-      Validators.min(50),  
-      Validators.max(1000)
-    ]),
-    
-    maxPrice: new FormControl(1000, [ 
-      Validators.required,
-      Validators.min(50),
-      Validators.max(1000)
-    ])
-    
-  });
-
-
-  get minPrice() {
-    return this.priceForm.get('minPrice');
-  }
-
-  get maxPrice() {
-    return this.priceForm.get('maxPrice');
+  ngOnInit() {
+    this.toastService.show("🎊🎊Felicidades! Obtuviste un descuento del 20% utilizando el cupon F1FLY20 🏎️")
   }
 
   /**Diccionario para el tema de las regiones y paises */
-private readonly countryRegionMap: { [key: string]: string } = {
-    // Europa
+  private readonly countryRegionMap: { [key: string]: string } = {
     'italia': 'europe',
     'españa': 'europe',
     'reino unido': 'europe',
@@ -67,14 +39,10 @@ private readonly countryRegionMap: { [key: string]: string } = {
     'austria': 'europe',
     'bélgica': 'europe',
     'hungría': 'europe',
-
-    // America
     'canadá': 'america',
     'estados unidos': 'america',
     'méxico': 'america',
     'brasil': 'america',
-
-    // Asia
     'japón': 'asia',
     'china': 'asia',
     'singapur': 'asia',
@@ -82,118 +50,76 @@ private readonly countryRegionMap: { [key: string]: string } = {
     'arabia saudita': 'asia',
     'qatar': 'asia',
     'azerbaiyán': 'asia',
-
-    // Oceania
     'australia': 'oceania'
   };
 
-  
   private getRegionFromCountry(pais: string): string {
-    // Normalizamos el país (minúsculas y sin espacios extra)
     const normalizedCountry = pais.toLowerCase().trim();
-    
-    // Busca en el mapa y, si no lo encuentra, devuelve 'other'
     return this.countryRegionMap[normalizedCountry] || 'other'; 
   }
 
-  /*Codigo para los filtros*/
-
-  /*Signals para almacenar los filtros*/
-  
-  protected readonly priceFilter= signal({min: 50, max:1000});
+  /* Signals para almacenar los filtros */
   protected readonly dateFilter = signal<string[]>([]); 
   protected readonly regionFilter= signal<string[]>([]);
 
-  /*Signal computado, esto recalcula sola cada vez que raceSource o cualquier filtro cambie, entonces se cambia lo que se muestra */
-
+  /* Signal computado para filtrar carreras */
   protected readonly filteredRaces= computed(()=> {
-    const races= this.raceSource(); /**Se agarra la lista original */
-    
-    /**Obtenemos los valores actuales de las variables o filtros */
-    const price = this.priceFilter();
-    const dates= this.dateFilter();
-    const regions= this.regionFilter();
+    const races = this.raceSource(); 
+    const dates = this.dateFilter();
+    const regions = this.regionFilter();
 
-    /**Si no cargo devuelve un arreglo vacio */
-    if(!races)
-    {
-      return [];
-    }
+    if(!races) return [];
 
-    let filteredList = races.filter(race => race.precio_carrera >= price.min && race.precio_carrera <= price.max);
-    
+    let filteredList = races;
 
-    if(regions.length>0)
-    {
-      filteredList= filteredList.filter(race =>{
+    if(regions.length>0) {
+      filteredList = filteredList.filter(race => {
         const raceRegion = this.getRegionFromCountry(race.pais_carrera);
         return regions.includes(raceRegion);
       });
     }
 
-     if(dates.length>0)
-   {
-     filteredList = filteredList.filter(race => {
-      dates.includes(this.getQuarter(race.fecha_carrera));
-      return dates.includes(this.getQuarter(race.fecha_carrera));
+    if(dates.length>0) {
+      filteredList = filteredList.filter(race => dates.includes(this.getQuarter(race.fecha_carrera)));
+    }
+
+    return filteredList;
+  });
+
+  /** Handlers para actualizar los signals */
+  onDateChange(event: Event) {
+    const input = event.target as HTMLInputElement;
+    const quarter = input.value; 
+    const isChecked = input.checked;
+
+    this.dateFilter.update(currentDates => {
+      if (isChecked) {
+        return [...currentDates, quarter]; 
+      } else {
+        return currentDates.filter(d => d !== quarter); 
+      }
     });
-   }
-   return filteredList;
-  });
-
-  /**Handlers para actualizar los signals */
-
-  applyPriceFilter()
-  {
-    if(this.priceForm.invalid)
-    {
-      return;
-    }
-    const min= this.minPrice?.value ?? 0;
-    const max= this.maxPrice?.value ?? 1000;
-
-    this.priceFilter.set({min, max});
   }
-    /**Para los checked de las fechas */
 
-   onDateChange(event: Event) {
-
-  const input = event.target as HTMLInputElement;
-  
-  const quarter = input.value; 
-  const isChecked = input.checked;
-
-  this.dateFilter.update(currentDates => {
-    if (isChecked) {
-      return [...currentDates, quarter]; 
-    } else {
-      return currentDates.filter(d => d !== quarter); 
-    }
-  });
-}
- /**Para los checked de las regiones */
-onRegionChange(evt: Event) {
-  const input = evt.target as HTMLInputElement;
+  onRegionChange(evt: Event) {
+    const input = evt.target as HTMLInputElement;
     const region = input.value;
-  const isChecked = input.checked;
+    const isChecked = input.checked;
 
-  this.regionFilter.update(currentRegions => {
-    if (isChecked) {
-      return [...currentRegions, region];
-    } else {
-      return currentRegions.filter(r => r !== region);
-    }
-  });
-}
-   getQuarter(dateString: string): string{
-      const month = new Date(dateString).getMonth()+1;
-      if(month <= 3) return 'q1';
-      if(month <= 6) return 'q2'; 
-      if(month <= 9) return 'q3';   
-      return 'q4';
-    }
+    this.regionFilter.update(currentRegions => {
+      if (isChecked) {
+        return [...currentRegions, region];
+      } else {
+        return currentRegions.filter(r => r !== region);
+      }
+    });
   }
- 
-  
 
-
+  getQuarter(dateString: string): string {
+    const month = new Date(dateString).getMonth() + 1;
+    if(month <= 3) return 'q1';
+    if(month <= 6) return 'q2'; 
+    if(month <= 9) return 'q3';   
+    return 'q4';
+  }
+}
