@@ -180,6 +180,22 @@ html, body {
     background-color: transparent;
 }
 
+/* Estilos de la versión remota que fueron cruciales para el botón [disabled] */
+.btn-seleccionar:hover{
+    background-color: #66bb66; 
+    transform: translateY(-2px);
+}
+
+.btn-seleccionar[disabled] {
+    background-color: #555; 
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+.btn-seleccionar[disabled]:hover {
+    background-color: #555;
+}
+
 
 .loading-state,
 .empty-state {

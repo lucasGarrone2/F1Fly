@@ -1,93 +1,86 @@
 <div class="layout">
-  <main class="main-content">
-    <router-outlet></router-outlet>
-  </main>
+    <main class="main-content">
+        <router-outlet></router-outlet>
+    </main>
 
-  <aside class="sidebar">
-    <h3>Ficha de Reserva</h3>
+    <!-- Panel lateral de reserva (SOLO visible si NO estamos en la ruta de hoteles) -->
+    @if (!estaEnHoteles()) {
+        <aside class="sidebar">
+            <h3>Ficha de Reserva</h3>
 
-    @let r = reservaCliente.reserva();
+            @let r = reservaCliente.reserva();
 
-    @if (r?.carrera) {
-      <div class="reserva-item">
-        <strong>Carrera:</strong>
-        <span>{{ r.carrera?.nombre_carrera }}</span>
-        <span class="precio">€{{ r.carrera?.precio_carrera }}</span>
-      </div>
+            <!-- Detalle de la Carrera -->
+            @if (r?.carrera) {
+                <div class="reserva-item">
+                    <strong>Carrera:</strong>
+                    <span>{{ r.carrera?.nombre_carrera }}</span>
+                    <span class="precio">€{{ r.carrera?.precio_carrera | number:'1.0-2' }}</span>
+                </div>
+            }
+
+            <!-- Detalle del Hotel -->
+            @if (r?.hotel) {
+                <div class="reserva-item">
+                    <strong>Hotel:</strong>
+                    <span>{{ r.hotel?.nombre_hotel }}</span>
+                </div>
+            }
+
+            <!-- Detalle de la Habitación (Combinado) -->
+            @if (r?.habitacion) {
+                <div class="reserva-item">
+                    <strong>Habitación ({{ r.habitacion?.cantPersonas }} pers.):</strong>
+                    <span>{{ r.habitacion?.tipoHabitacion }}</span>
+                    <span class="precio">€{{ r.habitacion?.precioTotal | number:'1.0-2' }}</span>
+                </div>
+            }
+
+            <!-- Detalle del Vuelo -->
+            @if (r?.vuelo) {
+                <div class="reserva-item">
+                    <strong>Vuelo:</strong>
+                    <span>{{ r.vuelo?.ciudad_origen }} → {{ r.vuelo?.ciudad_destino }}</span>
+                    <span class="precio">€{{ r.vuelo?.precio_promedio_ticket_eur | number:'1.0-2' }}</span>
+                </div>
+            }
+
+            <div class="cupon-container">
+                <input type="text"
+                      placeholder="Ingresa tu cupón"
+                      [(ngModel)]="cuponIngresado"
+                      class="cupon-input">
+
+                <button (click)="aplicarCupon()" class="cupon-btn">
+                    Aplicar cupón
+                </button>
+
+                @if (cuponError) {
+                    <p class="cupon-error">{{ cuponError }}</p>
+                }
+            </div>
+
+            <hr>
+
+            <!-- Resumen de Totales -->
+            <div class="total-container">
+                
+                @if (reservaCliente.tieneDescuento()) {
+                    <div class="total-item descuento-line">
+                        <strong>Descuento (20%):</strong>
+                        <!-- Cálculo del descuento para mostrar el valor restado -->
+                        <span class="descuento-valor">- €{{ (reservaCliente.subtotal() - reservaCliente.total()) | number:'1.0-2' }}</span>
+                    </div>
+                }
+
+                <div class="total-item total-final">
+                    <strong>Total a Pagar:</strong>
+                    <span>€{{ reservaCliente.total()}}</span>
+                </div>
+            </div>
+
+            <div id="paypal-button-container" style="margin-top: 20px;"></div>
+
+        </aside>
     }
-
-    @if (r?.hotel) {
-      <div class="reserva-item">
-        <strong>Hotel:</strong>
-        <span>{{r.hotel?.nombre_hotel}}</span>
-
-      </div>
-    }
-
-    @if(r?.habitacion)
-    {
-      <div class="reserva-item">
-        <strong>Habitacion:</strong>
-        <span> {{r.habitacion?.tipoHabitacion}} </span>
-        
-      </div>
-    }
-
-    @if(r?.habitacion)
-    {
-      <div class="reserva-item">
-        <strong>Cantidad de personas:</strong>
-        <span> {{r.habitacion?.cantPersonas}}  </span>
-        <strong>Precio:</strong>
-        <span class="precio"> € {{r.habitacion?.precioTotal}} </span>
-      </div>
-    }
-
-    @if (r?.vuelo) {
-      <div class="reserva-item">
-        <strong>Vuelo:</strong>
-        <span>{{ r.vuelo?.ciudad_origen }} → {{ r.vuelo?.ciudad_destino }}</span>
-        <span class="precio">€{{ r.vuelo?.precio_promedio_ticket_eur }}</span>
-      </div>
-    }
-
-    <!-- CUPON -->
-    <div class="cupon-container">
-      <input type="text"
-             placeholder="Ingresa tu cupon"
-             [(ngModel)]="cuponIngresado"
-             class="cupon-input">
-
-      <button (click)="aplicarCupon()" class="cupon-btn">
-        Aplicar cupon
-      </button>
-
-      @if (cuponError) {
-        <p class="cupon-error">{{ cuponError }}</p>
-      }
-    </div>
-
-    <hr>
-
-    <!-- SIN DESCUENTO -->
-    @if (!reservaCliente.tieneDescuento()) {
-      <div class="total">
-        <strong>Total:</strong>
-        <span>€{{ reservaCliente.subtotal() }}</span>
-      </div>
-    }
-
-    <!-- DESCUENTO -->
-    @else {
-      <div class="total">
-        <strong>Total:</strong>
-        <span class="original">€{{ reservaCliente.subtotal() }}</span>
-        <span class="final">€{{ reservaCliente.total() }}</span>
-      </div>
-    }
-
-    <!-- PAYPAL -->
-    <div id="paypal-button-container" style="margin-top: 20px;"></div>
-
-  </aside>
 </div>

@@ -1,1 +1,50 @@
-<p>reserva works!</p>
+<div class="confirmation-container">
+    <div class="ticket-card">
+        <div class="notch"></div>
+
+        <div class="icon-container">
+            <div class="success-circle">
+                <i class="fa-solid fa-check"></i>
+            </div>
+        </div>
+
+        <h2 class="title">¡RESERVA<br>CONFIRMADA!</h2>
+
+        <div class="details">
+            
+            <div class="detail-row">
+                <span class="label">CARRERA</span>
+                <span class="value">{{ reserva?.carrera?.nombre_carrera || '-' }}</span>
+            </div>
+
+            <div class="detail-row">
+                <span class="label">HOTEL</span>
+                <span class="value">{{ reserva?.hotel?.nombre_hotel || '-' }}</span>
+            </div>
+
+            <div class="detail-row">
+                <span class="label">VUELO</span>
+                @if(reserva?.vuelo) {
+                    <span class="value">{{ reserva?.vuelo?.ciudad_origen }} ➝ {{ reserva?.vuelo?.ciudad_destino }}  {{reserva.vuelo?.fecha_disponible}} </span>
+                } @else {
+                    <span class="value">-</span>
+                }
+            </div>
+
+            <div class="detail-row total-row">
+                <span class="label">PRECIO TOTAL</span>
+                <span class="value">€{{ total }}</span>
+            </div>
+        </div>
+
+        <div class="footer">
+            
+            
+            <div class="plane-icon">
+                <i class="fa-solid fa-plane"></i>
+            </div>
+        </div>
+
+        <button class="btn-home" (click)="volver()">Volver al Inicio</button>
+    </div>
+</div>

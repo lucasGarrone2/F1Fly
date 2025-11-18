@@ -8,27 +8,30 @@ import { authGuardGuard } from './guard/auth-guard-guard';
 import { HotelAbm } from './components/hotel-abm/hotel-abm';
 import { HotelList } from './components/hotel-list/hotel-list';
 import { ReservarLayoutComponent } from './components/reservar-layout-component/reservar-layout-component';
-import { VueloABM } from './components/vuelo-abm/vuelo-list';
 import { ListaFavoritosCarrera } from './lista-favoritos-carrera/lista-favoritos-carrera';
 import { PerfilUsuario } from './components/perfil-usuario/perfil-usuario';
 import { EditarPerfilUsuario } from './components/editar-perfil-usuario/editar-perfil-usuario';
 import { ListaVueloSeleccionar } from './components/lista-vuelo-seleccionar/lista-vuelo-seleccionar';
+import { VueloABM } from './components/vuelo-abm/vuelo-list';
+import { UsuariosRegistrados } from './components/usuarios-registrados/usuarios-registrados';
+import { Reserva } from './components/reserva/reserva';
 
 
 export const routes: Routes = [
 
-  // RUTAS GENERALES
   { path: '', component: Home, pathMatch: 'full' },
   { path: 'registro', component: Register },
   { path: 'inicio_sesion', component: Login },
-  { path: 'gestion-carrera', component: CarreraAbm, canActivate: [authGuardGuard] },
   { path: 'lista-de-carreras', component: RaceList },
+  { path: 'gestion-carrera', component: CarreraAbm, canActivate: [authGuardGuard] },
   { path: 'gestion-hoteles', component: HotelAbm, canActivate: [authGuardGuard] },
   { path: 'lista-hoteles', component: HotelList },
  {path: 'gestion-vuelos', component: VueloABM, canActivate: [authGuardGuard]},
 {path: 'mi-informacion', component: PerfilUsuario,  canActivate: [authGuardGuard]},
 {path: 'editar-perfil', component: EditarPerfilUsuario,  canActivate: [authGuardGuard]},
-{ path: 'vuelos', component: ListaVueloSeleccionar },
+{path: 'gestionar-usuarios', component: UsuariosRegistrados, canActivate: [authGuardGuard] },
+{ path: 'vuelos', component: ListaVueloSeleccionar, canActivate: [authGuardGuard] },
+{ path: 'reserva-confirmada', component: Reserva, canActivate: [authGuardGuard]},
   {
     path:"lista-favoritos/:id",
     title: 'Lista favoritos',
@@ -38,6 +41,7 @@ export const routes: Routes = [
   {
     path: 'reservar',
     component: ReservarLayoutComponent,
+    canActivate: [authGuardGuard],
     children: [
       { path: 'carreras', component: RaceList },
       { path: 'hoteles', component: HotelList },

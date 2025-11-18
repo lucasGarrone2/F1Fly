@@ -98,4 +98,17 @@ export class ReservaClient {
     this._reserva.set({});
     this.tieneDescuento.set(false);
   }
+
+    resetReserva() {
+  this._reserva.set({
+    carrera: undefined,
+    hotel: undefined,
+    habitacion: undefined,
+    vuelo: undefined
+  });
+ 
+}
+
+
+
 }
