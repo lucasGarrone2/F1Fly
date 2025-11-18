@@ -15,7 +15,7 @@ import { ListaVueloSeleccionar } from './components/lista-vuelo-seleccionar/list
 import { VueloABM } from './components/vuelo-abm/vuelo-list';
 import { UsuariosRegistrados } from './components/usuarios-registrados/usuarios-registrados';
 import { Reserva } from './components/reserva/reserva';
-
+import { DetailsCarrera } from './components/details-carrera/details-carrera';
 
 export const routes: Routes = [
 
@@ -36,6 +36,10 @@ export const routes: Routes = [
     path:"lista-favoritos/:id",
     title: 'Lista favoritos',
     component: ListaFavoritosCarrera
+  },{
+    path: 'carrera-details/:id',
+    title: 'Detalles Carrera',
+    component: DetailsCarrera
   },
   // RUTAS DEL LAYOUT "RESERVAR"
   {

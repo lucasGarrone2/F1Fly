@@ -1,0 +1,17 @@
+@let carrera = carrera_bus();
+@if (carrera) {
+<div>
+<h2 class="titulo-details">Informacion Adicional: {{carrera.nombre_carrera}}</h2>
+<div class="contenedor-details">
+    <ul>
+        <li class="nombre-carrera"><strong>{{carrera.nombre_carrera}}</strong></li>
+        <li><strong>Pais: </strong>{{carrera.pais_carrera}}</li>
+        <li><strong>Ciudad: </strong>{{carrera.ciudad_carrera}}</li>
+        <li><strong>Cantidad de vueltas: </strong>{{carrera.cantidad_vueltas_carrera}} vueltas</li>
+        <li><strong>Capacidad del circuito:</strong> {{carrera.capacidad_carrera}} personas</li>
+        <li class="details-carrera" ><strong>Descripcion del circuito </strong></li>
+        <li>{{carrera.descripcion_carrera}}</li>
+    </ul>
+</div>
+</div>
+}
