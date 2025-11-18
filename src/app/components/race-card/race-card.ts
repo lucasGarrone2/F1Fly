@@ -101,7 +101,7 @@ export class RaceCardComponent implements OnInit {
             carrera: carrera_fav 
         };
 
-        this.client_fav.getFavoritosByCarreraId(carrera_fav.id).subscribe((existe) => {
+        this.client_fav.getFavoritosByCarreraId(carrera_fav.id!).subscribe((existe) => {
 
         const existe_user = existe.filter((fav) => fav.id_user === fav_carrera.id_user);
         
@@ -119,5 +119,7 @@ export class RaceCardComponent implements OnInit {
     
 
     }
+
+    
 
 }

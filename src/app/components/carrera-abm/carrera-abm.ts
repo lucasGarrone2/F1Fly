@@ -20,21 +20,19 @@ export class CarreraAbm {
   protected readonly isLoading = computed(()=>this.carreras() === undefined);
 
   protected readonly activarFormulario = signal(false);
-  readonly editando = signal(false);
-
+  readonly carreraSeleccionada = signal<Carrera | null>(null);    
+  
   botonAgregar(){
     this.activarFormulario.set(!this.activarFormulario());
   }
 
-  botonEditar(){
-    this.editando.set(!this.editando());
+  botonEditar(carrera: Carrera) {
+    this.carreraSeleccionada.set(carrera);
   }
 
-  finzalizarEdicion(carrera_e : Carrera){
-    this.editando.set(false);
-    if (carrera_e) {
-            alert("Carrera actualizada con éxito!");
-    }
+  finzalizarEdicion(carreraEditada: Carrera) {
+    this.carreraSeleccionada.set(null);
+    alert("Carrera actualizada con éxito!");
   }
 
   botonEliminar(id_bus : string | number){

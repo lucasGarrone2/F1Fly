@@ -30,18 +30,7 @@
                     }
                 }              
               </li>
-                <li>
-                    <label for="capacidad_carrera">Capacidad:</label>
-                    <input type="number" id="capacidad_circuito" formControlName="capacidad_carrera">
-                    @if(capacidad_carrera.dirty || capacidad_carrera.touched){
-                    @if(capacidad_carrera.hasError('required')){
-                        <span>Campo requerido</span>
-                    }@else if (capacidad_carrera.hasError('min')) {
-                        <span>Debe contar con mas de 5000 espectadores</span>
-                    }
-                }  
-                </li>
-                  <li>
+               <li>
                     <label for="pais_carrera">País:</label>
                     <input type="text" formControlName="pais_carrera" id="pais_circuito" placeholder="Monaco...">
                     @if(pais_carrera.dirty || pais_carrera.touched){
@@ -54,6 +43,18 @@
                     }
                 }
                 </li>
+                <li>
+                    <label for="capacidad_carrera">Capacidad:</label>
+                    <input type="number" id="capacidad_circuito" formControlName="capacidad_carrera">
+                    @if(capacidad_carrera.dirty || capacidad_carrera.touched){
+                    @if(capacidad_carrera.hasError('required')){
+                        <span>Campo requerido</span>
+                    }@else if (capacidad_carrera.hasError('min')) {
+                        <span>Debe contar con mas de 5000 espectadores</span>
+                    }
+                }  
+                </li>
+                 
                 <li>
                     <label for="ciudad_carrera">Ciudad:</label>
                     <input type="text" formControlName="ciudad_carrera" id="ciudad_circuito" placeholder="Principado de Monaco...">
@@ -77,17 +78,6 @@
                 }
                 </li>    
                 <li>
-                    <label for="precio_carrera">Precio:</label>
-                    <input type="number" formControlName="precio_carrera" id="precio_entrada">
-                    @if(precio_carrera.dirty || precio_carrera.touched){
-                    @if(precio_carrera.hasError('required')){
-                        <span>Campo requerido</span>
-                    }@else if(precio_carrera.hasError('min')){
-                        <span>El precio minimo debe ser de 80$</span>
-                    }
-                }
-                </li>
-                <li>
                     <label for="imageUrl_carrera">URL Imagen:</label>
                     <input type="text" id="urlImagen_circuito" formControlName="imageUrl_carrera" placeholder="Monaco.jpg...">
                     @if(imageUrl_carrera.dirty || imageUrl_carrera.touched){
@@ -96,6 +86,15 @@
                     }
                 }
                 </li>
+                <li>
+                    <label for="tipo_entrada">Tipo de entrada: </label>
+                    <select formControlName="tipo_entrada" id="tipo_entrada">
+                    <option value="" disabled>Seleccione el tipo de entrada...</option>
+                    @for (te of tipos_ent; track $index) {
+                        <option [value]="te"><strong>{{te}}</strong></option>
+                    }
+                    </select>
+                </li> 
                 <li>
                     <label for="descripcion_carrera">Descripción:</label>
                     <textarea id="descripcion_circuito" formControlName="descripcion_carrera" placeholder="Descripción..."></textarea>
@@ -109,6 +108,49 @@
                     }
                 }
                 </li>
+                 @if(tipoEntradaSeleccionada === 'Regular'){
+                    <li>
+                    <label for="precio_entrada_regular">Precio:</label>
+                    <input type="number" formControlName="precio_entrada_regular" id="precio_entrada_regular">
+                    @if(precio_entrada_regular.dirty || precio_entrada_regular.touched){
+                    @if(precio_entrada_regular.hasError('required')){
+                        <span>Campo requerido</span>
+                    }@else if(precio_entrada_regular.hasError('min')){
+                        <span>El precio minimo debe ser de 80$</span>
+                    }@else if (precio_entrada_regular.hasError('max')){
+                        <span>El precio maximo debe ser de 150$</span>
+                    }
+                }
+                </li>
+                }@else if(tipoEntradaSeleccionada === 'Premium'){
+                    <li>
+                    <label for="precio_entrada_premium">Precio:</label>
+                    <input type="number" formControlName="precio_entrada_premium" id="precio_entrada_premium">
+                    @if(precio_entrada_premium.dirty || precio_entrada_premium.touched){
+                    @if(precio_entrada_premium.hasError('required')){
+                        <span>Campo requerido</span>
+                    }@else if(precio_entrada_premium.hasError('min')){
+                        <span>El precio minimo debe ser de 150$</span>
+                    }@else if (precio_entrada_premium.hasError('max')){
+                        <span>El precio maximo debe ser de 300$</span>
+                    }
+                }
+                </li>
+                }@else if(tipoEntradaSeleccionada === 'VIP'){
+                    <li>
+                    <label for="precio_entrada_vip">Precio:</label>
+                    <input type="number" formControlName="precio_entrada_vip" id="precio_entrada_vip">
+                    @if(precio_entrada_vip.dirty || precio_entrada_vip.touched){
+                    @if(precio_entrada_vip.hasError('required')){
+                        <span>Campo requerido</span>
+                    }@else if(precio_entrada_vip.hasError('min')){
+                        <span>El precio minimo debe ser de 300$</span>
+                    }@else if (precio_entrada_vip.hasError('max')){
+                        <span>El precio maximo debe ser de 300$</span>
+                    }
+                }
+                </li>
+                }
             </ul> 
             <div  class="botones-formulario">
             <button type="submit" id="boton-enviar" [disabled]="form.invalid">ENVIAR</button>

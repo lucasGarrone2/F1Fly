@@ -44,14 +44,25 @@ export class ReservaClient {
     return false; 
   }
 
+
+  
   readonly subtotal = computed(() => {
-    const r = this._reserva();
-    return (
-      (r.carrera?.precio_carrera ?? 0) +
-      (r.vuelo?.precio_promedio_ticket_eur ?? 0) +
-      (r.habitacion?.precioTotal ?? 0) 
-    );
-  });
+  const r = this._reserva();
+
+  const precioCarrera = (() => {
+    if (!r.carrera) return 0;
+    switch (r.carrera.tipo_entrada) {
+      case 'Regular': return r.carrera.precio_entrada_regular;
+      case 'Premium': return r.carrera.precio_entrada_premium;
+      case 'VIP': return r.carrera.precio_entrada_vip;
+      default: return 0;
+    }
+  })();
+
+  return precioCarrera +
+         (r.vuelo?.precio_promedio_ticket_eur ?? 0) +
+         (r.habitacion?.precioTotal ?? 0);
+});
 
   readonly total = computed(() => {
     const sub = this.subtotal();

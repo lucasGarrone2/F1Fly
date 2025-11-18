@@ -28,12 +28,14 @@
 }
 
 #Formulario_Carrera input,
-#Formulario_Carrera textarea {
+#Formulario_Carrera textarea,
+#Formulario_Carrera select {
     width: 100%;
     padding: 8px 10px;
     border-radius: 8px;
     border: none;
     outline: none;
+    cursor: pointer;
 }
 
 textarea {
@@ -48,14 +50,20 @@ textarea {
     gap: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-    
+
 }
 .botones-formulario button {
     flex: 0.4;
     padding: 10px 0;
     font-size: 15px;
     border-radius: 10px;
-        cursor: pointer;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+}
+
+.botones-formulario button:hover{
+  transform: translateY(-2px);
 }
 
 #header-form {
@@ -94,5 +102,6 @@ textarea {
 span {
     color: red;
     font-size: 12px;
+    font-weight: bold;
 }
 
