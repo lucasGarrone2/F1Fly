@@ -562,7 +562,7 @@
       "carrera_id": 2,
       "pais_origen": "Reino Unido",
       "ciudad_origen": "Londres",
-      "pais_destino": "Mónaco",
+      "pais_destino": "Mónaco (Francia)",
       "ciudad_destino": "Niza",
       "aerolinea": "EasyJet",
       "fecha_disponible": "2026-05-25",
@@ -945,6 +945,21 @@
       "fecha_nacimiento": "2004-06-09",
       "listaPilotos": "",
       "ListaEscuderias": ""
+    },
+    {
+      "id": "6d93",
+      "nombre": "Pepe",
+      "apellido": "Reyes",
+      "username": "pepe444",
+      "email": "pepe444@gmail.com",
+      "password": "Prueba1234",
+      "isAdmin": false,
+      "dni": "88888888",
+      "nacionalidad": "Argentina",
+      "edad": 44,
+      "fecha_nacimiento": "2000-01-01",
+      "listaPilotos": "",
+      "ListaEscuderias": ""
     }
   ],
   "listadoFavoritos": [
@@ -1090,6 +1105,44 @@
         "precio_carrera": 250,
         "imageUrl_carrera": "monaco.png",
         "id": "5d57"
+      }
+    },
+    {
+      "id": "559c",
+      "id_user": "1",
+      "carrera": {
+        "nombre_carrera": "Bahrain International Circuit",
+        "fecha_carrera": "2026-04-13",
+        "capacidad_carrera": 70000,
+        "descripcion_carrera": "Pista desértica, diseño Tilke, carreras bajo luces.",
+        "cantidad_vueltas_carrera": 100,
+        "ciudad_carrera": "Sakhir",
+        "pais_carrera": "Bahrain",
+        "imageUrl_carrera": "bahrein.jpg",
+        "precio_entrada_regular": 120,
+        "precio_entrada_premium": 150,
+        "precio_entrada_vip": 600,
+        "tipo_entrada": "VIP",
+        "id": "bbab"
+      }
+    },
+    {
+      "id": "d619",
+      "id_user": "6d93",
+      "carrera": {
+        "nombre_carrera": "Bahrain International Circuit",
+        "fecha_carrera": "2026-04-13",
+        "capacidad_carrera": 70000,
+        "descripcion_carrera": "Pista desértica, diseño Tilke, carreras bajo luces.",
+        "cantidad_vueltas_carrera": 100,
+        "ciudad_carrera": "Sakhir",
+        "pais_carrera": "Bahrain",
+        "imageUrl_carrera": "bahrein.jpg",
+        "precio_entrada_regular": 120,
+        "precio_entrada_premium": 150,
+        "precio_entrada_vip": 600,
+        "tipo_entrada": "VIP",
+        "id": "bbab"
       }
     }
   ]

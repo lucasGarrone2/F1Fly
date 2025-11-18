@@ -76,11 +76,11 @@ export class RaceCardComponent implements OnInit {
         }else{
 
         if(this.tipoEntradaSeleccionada === 'Regular'){
-            race.precio_carrera = race.precio_entrada_regular;
+            race.precio_carrera = race.precio_entrada_regular * this.cantidadSeleccionada!;
         }else if(this.tipoEntradaSeleccionada === 'Premium'){
-            race.precio_carrera = race.precio_entrada_premium;
+            race.precio_carrera = race.precio_entrada_premium * this.cantidadSeleccionada!;
         }else if(this.tipoEntradaSeleccionada === 'VIP'){
-            race.precio_carrera = race.precio_entrada_vip;
+            race.precio_carrera = race.precio_entrada_vip * this.cantidadSeleccionada!;
         }
 
 
@@ -95,7 +95,7 @@ export class RaceCardComponent implements OnInit {
         
 
         this.router.navigate(['/reservar/hoteles']);
-        }
+    }
     }
 
 
@@ -103,10 +103,12 @@ export class RaceCardComponent implements OnInit {
     protected readonly fb = inject(FormBuilder);
     
     protected readonly tipos_ent = ['Regular','Premium', 'VIP'];
+    protected readonly cantidades = [1,2,3,4,5,6];
 
     protected readonly form = this.fb.nonNullable.group({
     tipo_entrada: ['', [Validators.required]],
-    precio_carrera: [0, Validators.required]
+    precio_carrera: [0, [Validators.required]],
+    cantidad: [null,[Validators.required]]
     });
 
     get precio_carrera(){
@@ -119,6 +121,14 @@ export class RaceCardComponent implements OnInit {
     get tipoEntradaSeleccionada() {
   return this.form.controls.tipo_entrada.value;
   }
+
+   get cantidad(){
+    return this.form.controls.cantidad;
+   }
+
+   get cantidadSeleccionada(){
+    return this.form.controls.cantidad.value;
+   }
 
     botonVerMas(c : Carrera){
         this.router.navigateByUrl('carrera-details/' + c.id);

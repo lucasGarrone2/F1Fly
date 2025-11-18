@@ -1,203 +1,202 @@
-
-.dis{
-  display: flex;
-  gap: 10px;
-
-}
-
-.boton_corazon {
-  background: none;     
-  border: none;         
-  padding: 0;           
-  cursor: pointer;     
-  font-size: 17px;      
-  line-height: 1;       
-  opacity: 0.4;         
-  transition: opacity 0.2s, transform 0.2s;
-  color: white;        
-}
-
-.boton_corazon:focus {
-  outline: none;      
-}
-.boton_corazon:hover {
-  opacity: 1;
-  transform: scale(1.2);
-  color: #ff69b4;      
-}
-
-.boton_corazon:hover i {
-  content: "\f004"; 
-  font-family: "Font Awesome 5 Free"; 
-  font-weight: 900; 
-}
-
 .race-card {
-    display: flex;
-    background: #0b1e46;
-    border-radius: 15px;
-    padding: 15px;
-    gap: 20px;
-    color: #fff;
-    width: 100%;
-    max-width: 1100px;
-    margin: auto;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  display: flex;
+  background: #0b1e46;
+  border-radius: 15px;
+  padding: 15px;
+  gap: 20px;
+  color: #fff;
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.race-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .race-image-wrapper img {
-    width: 300px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
+  width: 300px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .race-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .race-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .race-title {
-    flex: 1;
-    font-size: 1.4rem;
-    margin: 0;
+  flex: 1;
+  font-size: 1.4rem;
+  margin: 0;
 }
 
 .btn-favorito {
-    background: transparent;
-    border: none;
-    font-size: 1.4rem;
-    cursor: pointer;
-    color: #bbb;
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #bbb;
+  transition: transform 0.25s ease, color 0.25s ease, opacity 0.25s ease;
+  opacity: 0.6;
+}
+
+.btn-favorito:hover {
+  opacity: 1;
+  transform: scale(1.25);
+  color: #ff4d8f;
 }
 
 .race-status {
-    padding: 5px 12px;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 0.9rem;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: default;
 }
 
 .race-status.upcoming { background: #22c55e; }
 .race-status.today { background: #facc15; color: black; }
 .race-status.past { background: #ef4444; }
 
+.race-status:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 10px rgba(255,255,255,0.25);
+}
+
 .race-location i {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 .divider {
-    border: 0;
-    border-top: 1px solid #29406c;
-    margin: 10px 0;
+  border: 0;
+  border-top: 1px solid #29406c;
+  margin: 10px 0;
 }
 
-.race-data {
-    display: flex;
-    justify-content: space-between;
-    padding-right: 20px;
+.race-data-form {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+
 }
 
-.race-data p i {
-    margin-right: 5px;
+.col-left,
+.col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
+
+.col-left p,
+.col-right p,
+.col-right select,
+.col-right label {
+  margin: 0;
+}
+
+.formulario select {
+  padding: 2px 5px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.formulario option {
+  font-weight: bold;
+}
+
+.cantidad-display {
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+  gap: 10px; 
+}
+
 
 .race-footer {
-    margin-top: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .btn-select {
-     background: rgb(7, 202, 111);
-    border-radius: 8px;
-    color: #ffffff;
-    cursor: pointer;
-    font-weight: bold;
+  background: rgb(7, 202, 111);
+  border-radius: 8px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
-.btn-more{
-    background: rgb(87, 90, 85);
-    border-radius: 8px;
-    color: #ddd;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.race-card {
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.race-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.btn-more,
-.btn-select {
-    transition: color 0.25s ease, transform 0.25s ease;
+.btn-more {
+  background: rgb(87, 90, 85);
+  border-radius: 8px;
+  color: #ddd;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
 .btn-more:hover,
 .btn-select:hover {
-    color: #ffffff;
-    transform: translateX(3px);
+  color: #ffffff;
+  transform: translateX(3px);
 }
 
-.race-status {
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    cursor: default;
+.cantidad-display label {
+  margin: 0;
+  white-space: nowrap; 
 }
 
-.race-status:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 10px rgba(255,255,255,0.25);
+.cantidad-display select {
+  padding: 2px 5px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-.btn-favorito {
-    transition: transform 0.25s ease, color 0.25s ease, opacity 0.25s ease;
-    opacity: 0.6;
+.capacidad {
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  gap: 5px; 
+  white-space: nowrap; 
 }
 
-.btn-favorito:hover {
-    opacity: 1;
-    transform: scale(1.25);
-    color: #ff4d8f;
+.tipo-entrada-block {
+  margin-bottom: 20px; 
 }
 
-.formulario select {
-    padding: 2px 5px;
-    border-radius: 8px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    font-weight: bold;
+.tipo-entrada-display,
+.cantidad-display {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
 }
 
-.formulario option{
-        font-weight: bold;
-
+.precio-display {
+  margin-top: 50px; 
 }
 
-.capacidad{
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
+.precio-display {
+  margin-top: 50px; 
 }
-
-.race-footer .race-date {
-    margin-bottom: auto;
-    margin-top: -50px; 
-    display: flex;
-    align-items: center;
-}
-

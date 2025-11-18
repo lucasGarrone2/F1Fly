@@ -1,73 +1,91 @@
 <div class="race-card">
-    <div class="race-image-wrapper">
-        <img [ngSrc]="race.imageUrl_carrera" [alt]="'Circuito de ' + race.nombre_carrera" width="100" height="100"  />
+  <div class="race-image-wrapper">
+    <img [ngSrc]="race.imageUrl_carrera" 
+         [alt]="'Circuito de ' + race.nombre_carrera" 
+         width="100" height="100" />
+  </div>
+
+  <div class="race-content">
+    <div class="race-header">
+      <h2 class="race-title">{{ race.nombre_carrera }}</h2>
+
+      <button class="btn-favorito" (click)="botonFavoritos(race)">
+        <i class="fa-regular fa-heart"></i>
+      </button>
+
+      <span class="race-status" [ngClass]="getRaceStatus(race.fecha_carrera)">
+        @if (getRaceStatus(race.fecha_carrera) === 'upcoming') {
+            PRÓXIMA
+        } @else if (getRaceStatus(race.fecha_carrera) === 'today') {
+            ¡HOY!
+        } @else {
+            PASADA
+        }
+      </span>
     </div>
-    <div class="race-content">
-        <div class="race-header">
-            <h2 class="race-title">{{ race.nombre_carrera }}</h2>
 
-            <button class="btn-favorito" (click)="botonFavoritos(race)">
-                <i class="fa-regular fa-heart"></i>
-            </button>
+    <p class="race-location">
+      <i class="fas fa-map-marker-alt"></i>
+      {{ race.ciudad_carrera }}, {{ race.pais_carrera }}
+    </p>
 
-            <span 
-                class="race-status" 
-                [ngClass]="getRaceStatus(race.fecha_carrera)">
-                @if (getRaceStatus(race.fecha_carrera) === 'upcoming') {
-                    PRÓXIMA
-                } @else if (getRaceStatus(race.fecha_carrera) === 'today') {
-                    ¡HOY!
-                } @else {
-                    PASADA
-                }
-            </span>
-        </div>
-        <p class="race-location">
-            <i class="fas fa-map-marker-alt"></i>
-            {{ race.ciudad_carrera }}, {{ race.pais_carrera }}
+    <hr class="divider">
+
+    <div class="race-data-form">
+      <div class="col-left">
+        <p class="capacidad">
+          <i class="fas fa-users"></i>
+          Capacidad: {{ race.capacidad_carrera }}
         </p>
+        <p class="race-date">
+          <i class="fas fa-calendar-alt"></i> {{ race.fecha_carrera }}
+        </p>
+      </div>
 
-        <hr class="divider">
-        <div class="race-data">
-            <p class="capacidad">
-                <i class="fas fa-users"></i>
-                Capacidad: {{ race.capacidad_carrera }}
-            </p>
-            <div class="formulario">
-                <form [formGroup]="form">
-                    <label for="tipo_entrada">Tipo de entrada: </label>
-                    <select formControlName="tipo_entrada" id="tipo_entrada">
-                    <option value="" disabled> <strong>Seleccione el tipo de entrada...</strong></option>
-                    @for (te of tipos_ent ; track $index) {
-                        <option [value]="te"><strong>{{te}}</strong></option>                       
-                    }
-                </select>
-                </form>
+      <div class="col-right formulario">
+        <form [formGroup]="form">
+          <div class="tipo-entrada-block">
+            <div class="tipo-entrada-display">
+              <label for="tipo_entrada">Tipo de entrada:</label>
+              <select formControlName="tipo_entrada" id="tipo_entrada">
+                <option value="" disabled>Seleccione el tipo de entrada...</option>
+                @for (te of tipos_ent ; track $index) {
+                  <option [value]="te">{{te}}</option>
+                }
+              </select>
+            </div>
+
             @if (!tipoEntradaSeleccionada) {
-               <p><i class="fas fa-euro-sign"></i> Precio: Seleccione un tipo de entrada...</p>
-            }
-            @if(tipoEntradaSeleccionada === 'Regular'){
-            <p><i class="fas fa-euro-sign"></i>Precio: {{race.precio_entrada_regular}}</p>    
-            }@else if (tipoEntradaSeleccionada === 'Premium') {
-            <p><i class="fas fa-euro-sign"></i>Precio: {{race.precio_entrada_premium}}</p>
-             }@else if (tipoEntradaSeleccionada === 'VIP') {
-            <p><i class="fas fa-euro-sign"></i>Precio: {{race.precio_entrada_vip}}</p>
-             }
-         </div>
-        </div>
-        <div class="race-footer">
+  <p class="precio-display"><i class="fas fa-euro-sign"></i> Precio: Seleccione un tipo de entrada...</p>
+} @else {
+  @if(tipoEntradaSeleccionada === 'Regular'){
+    <p class="precio-display"><i class="fas fa-euro-sign"></i> Precio por persona: {{race.precio_entrada_regular}}</p>    
+  } @else if (tipoEntradaSeleccionada === 'Premium') {
+    <p class="precio-display"><i class="fas fa-euro-sign"></i> Precio por persona: {{race.precio_entrada_premium}}</p>    
+  } @else if (tipoEntradaSeleccionada === 'VIP') {
+    <p class="precio-display"><i class="fas fa-euro-sign"></i> Precio por persona: {{race.precio_entrada_vip}}</p>    
+  }
+}
 
-            <span class="race-date">
-                <p><i class="fas fa-calendar-alt"></i>  {{ race.fecha_carrera }}</p>
-                
-            </span>
+          </div>
 
-            <button class="btn-more" (click)="botonVerMas(race)">Ver Más →</button>
+          <div class="cantidad-display">
+            <label for="cantidad">Cantidad personas:</label>
+            <select formControlName="cantidad" id="cantidad">
+              <option value="" disabled>Seleccione la cantidad de personas...</option>
+              @for (can of cantidades; track $index) {
+                <option [value]="can">{{can}}</option>
+              }
+            </select>
+          </div>
 
-            <button class="btn-select" (click)="reservarCarrera(race)">
-                Seleccionar →
-            </button>
-        </div>
-
+        </form>
+      </div>
     </div>
+
+    <div class="race-footer">
+      <button class="btn-more" (click)="botonVerMas(race)">Ver Más →</button>
+      <button class="btn-select" (click)="reservarCarrera(race)">Seleccionar →</button>
+    </div>
+  </div>
 </div>
