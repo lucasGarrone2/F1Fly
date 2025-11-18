@@ -77,11 +77,6 @@
                 }
             </div>
 
-            <div class="price-container">
-                <p>Precio Total Estimado ({{ calcularNoches() }} noches):</p>
-                <p class="price-value">€{{ precioTotal() | number:'1.0-2' }}</p>
-            </div>
-
             <div class="button-group">
                 <button type="button" class="btn-cancel" (click)="cerrarFormulario.emit()">
                     CANCELAR

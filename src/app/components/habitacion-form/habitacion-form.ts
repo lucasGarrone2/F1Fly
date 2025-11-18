@@ -14,7 +14,7 @@ const tarifas: { [key: string]: number } = {
 
 @Component({
   selector: 'app-habitacion-form',
-  imports: [CommonModule, ReactiveFormsModule, CurrencyPipe, DecimalPipe, DatePipe],
+  imports: [CommonModule, ReactiveFormsModule, DecimalPipe],
   templateUrl: './habitacion-form.html',
   styleUrl: './habitacion-form.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -42,7 +42,7 @@ export class HabitacionForm implements OnInit, OnDestroy {
   });
 
 
-  // Verifica que las noches sean válidas y la duración esté dentro del rango (1-3)
+  // Verifica que las noches sean válidas y este adentro del rango (max 3 dias minimo 1)
   calcularNoches = computed((): number => {
     const fechaEntradaStr = this.formu.controls.fechaEntrada.value;
     const fechaSalidaStr = this.formu.getRawValue().fechaSalida; 
@@ -65,19 +65,22 @@ export class HabitacionForm implements OnInit, OnDestroy {
     return 0;
   });
 
-  precioTotal = computed(() => {
+
+ precioTotal = computed(() => {
     const tipoHab = this.formu.controls.tipoHabitacion.value;
     const personas = this.formu.controls.cantPersonas.value; 
     const noches = this.calcularNoches();
 
-    let tarifa = this.tarifas[tipoHab as keyof typeof this.tarifas];
 
-    if (typeof tarifa === 'number' && noches > 0 && personas >= 1) {
-      return tarifa * personas * noches; 
+    let tarifaBasePorPersona = this.tarifas[tipoHab as keyof typeof this.tarifas];
+
+    // Aseguramos que la tarifa sea válida y haya al menos 1 persona y 1 noche
+    if (typeof tarifaBasePorPersona === 'number' && noches > 0 && personas >= 1) {
+        
+        return tarifaBasePorPersona * personas * noches; 
     }
     return 0;
-  });
-
+});
   getTarifa(tipo: string): number {
     return tarifas[tipo] || 0;
   }
@@ -167,7 +170,7 @@ export class HabitacionForm implements OnInit, OnDestroy {
   }
 
 
-  reserva = inject(ReservaClient); // Esto es una suposición del servicio
+  reserva = inject(ReservaClient); 
   seleccionarHabitacion() {
     this.formu.markAllAsTouched();
     const noches = this.calcularNoches();
