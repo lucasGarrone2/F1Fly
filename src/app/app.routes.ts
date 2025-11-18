@@ -14,6 +14,7 @@ import { EditarPerfilUsuario } from './components/editar-perfil-usuario/editar-p
 import { ListaVueloSeleccionar } from './components/lista-vuelo-seleccionar/lista-vuelo-seleccionar';
 import { VueloABM } from './components/vuelo-abm/vuelo-list';
 import { UsuariosRegistrados } from './components/usuarios-registrados/usuarios-registrados';
+import { Reserva } from './components/reserva/reserva';
 
 
 export const routes: Routes = [
@@ -29,7 +30,8 @@ export const routes: Routes = [
 {path: 'mi-informacion', component: PerfilUsuario,  canActivate: [authGuardGuard]},
 {path: 'editar-perfil', component: EditarPerfilUsuario,  canActivate: [authGuardGuard]},
 {path: 'gestionar-usuarios', component: UsuariosRegistrados, canActivate: [authGuardGuard] },
-{ path: 'vuelos', component: ListaVueloSeleccionar },
+{ path: 'vuelos', component: ListaVueloSeleccionar, canActivate: [authGuardGuard] },
+{ path: 'reserva-confirmada', component: Reserva, canActivate: [authGuardGuard]},
   {
     path:"lista-favoritos/:id",
     title: 'Lista favoritos',

@@ -1,17 +1,9 @@
  declare var paypal: any;
-
-
-
 import { AfterViewInit, Component, inject, signal } from '@angular/core';
-
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
-
 import { CommonModule } from '@angular/common';
-
 import { ReservaClient } from '../../clients/reserva-client';
-
 import { FormsModule } from '@angular/forms';
-
 import { ToastService } from '../../services/toast-service';
 import { filter, Subscription } from 'rxjs';
 
@@ -20,15 +12,10 @@ import { filter, Subscription } from 'rxjs';
 @Component({
 
   selector: 'app-reservar-layout-component',
-
   standalone: true,
-
   imports: [CommonModule, RouterOutlet, FormsModule],
-
   templateUrl: './reservar-layout-component.html',
-
   styleUrls: ['./reservar-layout-component.css']
-
 })
 
 export class ReservarLayoutComponent implements AfterViewInit{
@@ -74,18 +61,12 @@ export class ReservarLayoutComponent implements AfterViewInit{
  cuponIngresado = '';
  cuponError = '';
 aplicarCupon() {
-
   const ok = this.reservaCliente.aplicarCupon(this.cuponIngresado);
   if (!ok) {
-
     this.cuponError = 'Cupón inválido o ya aplicado';
-
   } else {
-
     this.cuponError = '';
-
   }
-
 }
 
   loadPayPalScript()
@@ -128,7 +109,7 @@ aplicarCupon() {
       onApprove: async (data: any, actions: any) => {
         const order = await actions.order.capture();
         console.log("Pago completado:", order);
-        this.router.navigateByUrl("/");
+        this.router.navigateByUrl("/reserva-confirmada");
       },
       onError: (err: any) => {
         console.log("Error en Paypal:", err);
