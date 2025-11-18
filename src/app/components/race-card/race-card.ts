@@ -11,11 +11,13 @@ import { FavCarrera } from '../../interfaces/fav-carrera';
 import { ListaFavClient } from '../../services/lista-fav-client';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { AuthService } from '../../auth/auth-service';
+import { NgOptimizedImage } from '@angular/common';
+
 
 @Component({
   selector: 'app-race-card',
   standalone:true,
-  imports: [CommonModule],
+  imports: [CommonModule,NgOptimizedImage],
   templateUrl: './race-card.html',
   styleUrl: './race-card.css'
 })
@@ -80,8 +82,14 @@ export class RaceCardComponent implements OnInit {
     protected readonly client_fav = inject(ListaFavClient);
 
     botonFavoritos(carrera_fav : Carrera){
+        const user = this.auth.activeUser(); 
+        
+        if (!user) {
+            alert("Debe iniciar sesión para agregar favoritos");
+            return;
+        }else{
         const fav_carrera: FavCarrera = {
-            id_user: 2,
+            id_user: user.id!,
             carrera: carrera_fav 
         };
 
@@ -97,10 +105,11 @@ export class RaceCardComponent implements OnInit {
         } else {
         alert('Carrera ya existente en su lista');
         }});
+        
     }
 
     
 
-
+    }
 
 }

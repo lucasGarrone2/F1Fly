@@ -1,9 +1,6 @@
 <div class="race-card">
     <div class="race-image-wrapper">
-        <img 
-            [src]="safeImageUrl" 
-            [alt]="'Circuito de ' + race.nombre_carrera"
-        >
+        <img [ngSrc]="race.imageUrl_carrera" [alt]="'Circuito de ' + race.nombre_carrera" width="100" height="100"  />
     </div>
     <div class="race-content">
         <div class="race-header">

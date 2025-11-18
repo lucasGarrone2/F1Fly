@@ -21,6 +21,12 @@ export class Header {
   this.menuOpen= !this.menuOpen;
  }
 
+ verListadoFavoritos(){
+  const user = this.auth.activeUser(); 
+  this.router.navigateByUrl('lista-favoritos/' + user?.id);
+ }
+
+
  verInfo()
  {
   this.router.navigateByUrl("/mi-informacion");

@@ -11,8 +11,11 @@ export class AuthService {
   public readonly isLoggedin = computed(() => this.activeUser() !== undefined);
   public readonly isAdmin = computed(() => this.activeUser()?.isAdmin);
 
-  constructor(private userClient: UserClient) {}
 
+
+  constructor(private userClient: UserClient) {
+  this.restoreSession();
+}
 login(username: string, password: string) {
   return this.userClient.getUsers().pipe(
     map(users => {

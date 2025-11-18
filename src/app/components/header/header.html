@@ -11,7 +11,6 @@
         @if (!auth.isLoggedin())
          {
             <a routerLink="/registro" class="btn-registrarse">Registrarse</a> 
-            <a routerLink="lista-favoritos/:id">Lista Favoritos</a>
 
         
         } 
@@ -35,6 +34,7 @@
                 <li (click)="gestionarUsuarios()">Gestionar usuarios</li>
              }
             <li (click)="verMisReservas()">Ver mis reservas</li>
+            <li (click)="verListadoFavoritos()">Mi lista de favoritos</li>
             <li (click)="logout()">Cerrar sesion</li>
         </ul>
         <button class="btn-cerrar-sesion" (click)="logout()">Cerrar sesion</button>

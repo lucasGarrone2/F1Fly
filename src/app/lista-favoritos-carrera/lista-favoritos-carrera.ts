@@ -8,6 +8,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { Carrera } from '../components/carrera/carrera-interface';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from '../auth/auth-service';
 
 @Component({
   selector: 'app-lista-favoritos-carrera',
@@ -22,7 +23,9 @@ export class ListaFavoritosCarrera {
   protected readonly router = inject(Router);
   protected readonly route = inject(ActivatedRoute);
 
-  protected readonly lista_fav = toSignal(this.client.getFavoritosByUser(2)); 
+  readonly id_bus = this.route.snapshot.paramMap.get('id');
+
+  protected readonly lista_fav = toSignal(this.client.getFavoritosByUser(this.id_bus!)); 
   protected readonly isLoading = computed(()=>this.lista_fav===undefined);
 
   readonly eliminar = signal(false);

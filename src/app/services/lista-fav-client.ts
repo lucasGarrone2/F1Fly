@@ -19,7 +19,7 @@ export class ListaFavClient {
     return this.http.get<FavCarrera[]>(this.url);
   }
 
-  getFavoritosByUser(id_user: number) {
+  getFavoritosByUser(id_user: number | string) {
   return this.http.get<FavCarrera[]>(this.url + "?id_user=" + id_user);
 }
 
