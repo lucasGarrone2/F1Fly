@@ -131,10 +131,13 @@
 
 .race-footer {
   margin-top: auto;
+  padding-top: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
+  gap: 10px; 
 }
+
 
 .btn-select {
   background: rgb(7, 202, 111);
@@ -200,3 +203,4 @@
 .precio-display {
   margin-top: 50px; 
 }
+
