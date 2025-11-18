@@ -536,19 +536,6 @@
   ],
   "vuelos": [
     {
-      "id": "1",
-      "carrera_id": 1,
-      "pais_origen": "Argentina",
-      "ciudad_origen": "Buenos Aires",
-      "pais_destino": "Bahrain",
-      "ciudad_destino": "Manama",
-      "aerolinea": "Qatar Airways",
-      "fecha_disponible": "2026-04-11",
-      "tipo_avion": "Boeing 777",
-      "clase_asiento": "Economy",
-      "precio_promedio_ticket_eur": 1250
-    },
-    {
       "id": "2",
       "carrera_id": 1,
       "pais_origen": "Alemania",
@@ -926,69 +913,17 @@
       "precio_promedio_ticket_eur": 2100
     },
     {
-      "id": null,
-      "carrera_id": "ab123",
-      "pais_origen": "prueba",
-      "ciudad_origen": "prueba",
-      "pais_destino": "prueba",
-      "ciudad_destino": "prueab",
-      "aerolinea": "prueba",
-      "fecha_disponible": "2026-12-12",
-      "tipo_avion": "golf",
-      "clase_asiento": "baja",
-      "precio_promedio_ticket_eur": 10
-    },
-    {
-      "id": null,
-      "carrera_id": "prueba",
-      "pais_origen": "prueba",
-      "ciudad_origen": "uashd",
-      "pais_destino": "hs",
-      "ciudad_destino": "hsu",
-      "aerolinea": "hwsu",
-      "fecha_disponible": "3213-03-12",
-      "tipo_avion": "asdasd",
-      "clase_asiento": "asda",
-      "precio_promedio_ticket_eur": 123
-    },
-    {
-      "id": null,
-      "carrera_id": "prueba",
-      "pais_origen": "prueba",
-      "ciudad_origen": "uashd",
-      "pais_destino": "hs",
-      "ciudad_destino": "hsu",
-      "aerolinea": "hwsu",
-      "fecha_disponible": "3213-03-12",
-      "tipo_avion": "asdasd",
-      "clase_asiento": "asda",
-      "precio_promedio_ticket_eur": 123
-    },
-    {
-      "id": null,
-      "carrera_id": "prueba",
-      "pais_origen": "prueba",
-      "ciudad_origen": "uashd",
-      "pais_destino": "hs",
-      "ciudad_destino": "hsu",
-      "aerolinea": "hwsu",
-      "fecha_disponible": "3213-03-12",
-      "tipo_avion": "asdasd",
-      "clase_asiento": "asda",
-      "precio_promedio_ticket_eur": 123
-    },
-    {
-      "id": null,
-      "carrera_id": "prueba",
-      "pais_origen": "prueba",
-      "ciudad_origen": "uashd",
-      "pais_destino": "hs",
-      "ciudad_destino": "hsu",
-      "aerolinea": "hwsu",
-      "fecha_disponible": "3213-03-12",
-      "tipo_avion": "asdasd",
-      "clase_asiento": "asda",
-      "precio_promedio_ticket_eur": 123
+      "id": "815d",
+      "carrera_id": "1",
+      "pais_origen": "Argentina",
+      "ciudad_origen": "Buenos Aires",
+      "pais_destino": "Italia",
+      "ciudad_destino": "Roma",
+      "aerolinea": "Alitalia",
+      "fecha_disponible": "2026-01-01",
+      "tipo_avion": "Airbus a380",
+      "clase_asiento": "Economica",
+      "precio_promedio_ticket_eur": 450
     }
   ],
   "users": [

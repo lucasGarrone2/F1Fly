@@ -12,88 +12,49 @@
   </li>
 </ul>
 
-@let vuelos = this.vuelos(); 
-
-@if (mostrarForm()) {
-  <app-vuelo-form 
-      [attr.estadoEdicion]="modoEdicion()" 
-      [attr.vuelo_edicion]="vuelo_editar()"
-      (cerrar)="cerrarFormulario()">
-  </app-vuelo-form>
+@let vuelos = this.vuelos(); @if (activarFormulzarioVuelo()) {
+<div id="overlay" class="hidden"></div>
+<app-vuelo-form></app-vuelo-form>
 }
-
-
 @if (vuelos === undefined) {
-  <p>Cargando Vuelos...</p>
+<p>Cargando vuelos..</p>
 } @else {
 <section id="ListadoVuelos">
   <h2>F1FLY ADMIN VUELOS</h2>
-
   <div id="boton-agregar">
-    <button type="button" class="botonAgregar" (click)="abrirFormulario()">
-      ➕ AGREGAR NUEVO VUELO ➕
+    <button type="button" class="botonAgregar" (click)="activarFormulario_Vuelo()">
+      AGREGAR NUEVO VUELO
     </button>
   </div>
-
   @for (vuelo of vuelos; track vuelo.id) {
-  <div class="contenedorVuelo">
-
-    <!-- COLUMNA IZQUIERDA -->
-    <div class="columna-izquierda">
-      <img 
-        src="https://cdn-icons-png.flaticon.com/512/34/34163.png"
-        alt="imagen_vuelo"
-        width="100"
-        height="100"
-        class="imagen-vuelo"
-      />
-
-      <div class="botones">
-        <button type="button" class="botonModificar" (click)="editarVuelo(vuelo)">
-          ✏️ MODIFICAR
-        </button>
-        <button type="button" class="botonEliminar" (click)="eliminarVuelo(vuelo.id)">
-          🗑️ ELIMINAR
-        </button>
-      </div>
+   <div class="contenedorVuelo">
+    <div class="info-wrapper">
+      <ul class="lista-informacion-vuelos">
+        <li><strong>ID VUELO:</strong> {{ vuelo.id }}</li>
+        <li><strong>ID CARRERA:</strong> {{vuelo.carrera_id}}</li>
+        <li><strong>ORIGEN:</strong> {{ vuelo.ciudad_origen }}, {{vuelo.pais_origen}}</li>
+        <li><strong>DESTINO:</strong> {{ vuelo.ciudad_destino }}, {{vuelo.pais_destino}}</li>
+        <li><strong>FECHA DE SALIDA:</strong> {{ vuelo.fecha_disponible }}</li>
+        <li><strong>AEROLINEA:</strong> {{ vuelo.aerolinea }}</li>
+        <li><strong>TIPO DE AVION:</strong> {{vuelo.tipo_avion}}</li>
+        <li><strong>CLASE DE ASIENTO:</strong> {{vuelo.clase_asiento}}</li>
+        <li><strong>PRECIO:</strong> ${{ vuelo.precio_promedio_ticket_eur }}</li>
+      </ul>
     </div>
-
-    <!-- INFO DERECHA -->
-    <div class="info_vuelo">
-      <div class="info-wrapper">
-        <ul class="lista-informacion-vuelos">
-
-          <li><strong>ID VUELO:</strong> {{ vuelo.id }}</li>
-          <li><strong>ID CARRERA:</strong> {{ vuelo.carrera_id }}</li>
-
-          <li><strong>PAIS ORIGEN:</strong> {{ vuelo.pais_origen }}</li>
-          <li><strong>CIUDAD ORIGEN:</strong> {{ vuelo.ciudad_origen }}</li>
-
-          <li><strong>PAIS DESTINO:</strong> {{ vuelo.pais_destino }}</li>
-          <li><strong>CIUDAD DESTINO:</strong> {{ vuelo.ciudad_destino }}</li>
-
-          <li><strong>AEROLÍNEA:</strong> {{ vuelo.aerolinea }}</li>
-          <li><strong>TIPO DE AVIÓN:</strong> {{ vuelo.tipo_avion }}</li>
-
-          <li><strong>CLASE:</strong> {{ vuelo.clase_asiento }}</li>
-          <li><strong>FECHA DISPONIBLE:</strong> {{ vuelo.fecha_disponible }}</li>
-
-          <li><strong>PRECIO PROMEDIO (EUR):</strong> {{ vuelo.precio_promedio_ticket_eur }}</li>
-
-        </ul>
-      </div>
+    <div class="botones">
+      <button type="button" class="botonModificar" (click)="vuelo.id !== undefined && activarEdicion_Vuelo(vuelo.id)">
+        MODIFICAR
+      </button>
+      <button type="button" class="botonEliminar" (click)="vuelo.id !== undefined && activarEliminar_Vuelo(vuelo.id)">
+        ELIMINAR
+      </button>
     </div>
-
   </div>
   } @empty {
-    <p>No hay vuelos cargados...</p>
-  }
-  @if (modoEdicion()) {
-    <div id="overlay" class="hidden"></div>
-    <app-vuelo-form 
-      [attr.estadoEdicion]="true" 
-      [attr.vuelo_edicion]="vuelo_editar()">
-    </app-vuelo-form>
+  <p>No hay vuelos cargados..</p>
+  } @if (edicionVuelo()) {
+  <div id="overlay" class="hidden"></div>
+  <app-vuelo-form [estadoEdicion]="true" [vuelo_edicion]="vuelo_editar()"></app-vuelo-form>
   }
 </section>
 }

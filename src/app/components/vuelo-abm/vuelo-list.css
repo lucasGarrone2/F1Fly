@@ -1,11 +1,11 @@
-body{
+body {
     font-family: "Roboto Condensed", sans-serif;
     font-weight: 2;
     margin: 0;
     padding: 0;
 }
 
-#accion-gestion-vuelo{
+#accion-gestion-vuelo {
     display: flex;
     list-style: none;
     gap: 50px;
@@ -17,51 +17,64 @@ body{
     color: rgb(243, 60, 60);
 }
 
-.gestionLI{
+.gestionLI {
     text-decoration: none;
     font-weight: normal;
 }
 
-#boton-agregar{
-    text-align: center;
-    margin-bottom: 30px;
+.botonGestion {
+    all: unset;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
 }
 
-.botonAgregar{
-  font-family: "Roboto Condensed", sans-serif;
-  border: none;
-  border-radius: 8px;
-  padding: 5px 5px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.2s;
-  font-weight: bold;        
-}
-
-.botonAgregar:hover{
-  transform: translateY(-2px);
-}
-
-#ListadoVuelos{
+#ListadoVuelos {
     background-color: rgb(11, 20, 53);
     margin: 0;
     color: white;
 }
 
+h2 {
+    text-align: center;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#boton-agregar {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.botonAgregar {
+    font-family: "Roboto Condensed", sans-serif;
+    border: none;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.botonAgregar:hover {
+    transform: translateY(-2px);
+}
+
+
 .contenedorVuelo {
     display: grid;
-    align-items: start;
-    grid-template-columns: 400px auto; 
-    background-color: #0e265a; 
+    grid-template-columns: 400px auto;
+    background-color: #0e265a;
     color: white;
     margin: 0 auto 70px auto;
-    padding: 15px; 
-    border-radius: 15px; 
+    padding: 15px;
+    border-radius: 15px;
     gap: 20px;
-    max-width: 90vw; 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    max-width: 90vw;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
-    border: 1px solid transparent; 
+    border: 1px solid transparent;
 }
 
 .contenedorVuelo:hover {
@@ -70,87 +83,66 @@ body{
     border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.columna-izquierda {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.imagen-vuelo{
-    padding-top: 30px;
-    padding-left: 4px;
-    width: 400px;
-    height: 220px;
-    object-fit: contain;
-    border-radius: 7px;
-    filter: brightness(0.9);
-}
-
-.botonGestion {
-    all: unset;               
-    cursor: pointer;          
-    font-weight: bold;         
-}
-
-.botonModificar{
-    background-color: greenyellow;
-}
-
-.botonEliminar{
-    background-color: rgb(255, 47, 47);
-}
-
-.botonModificar, .botonEliminar{
-  font-family: "Roboto Condensed", sans-serif;
-  border: none;
-  border-radius: 8px;
-  padding: 5px 5px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.2s;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.botonModificar:hover, .botonEliminar:hover {
-  transform: translateY(-2px);
-}
+/* === BOTONES (MODIFICAR / ELIMINAR) === */
 
 .botones {
     display: flex;
     gap: 20px;
     padding: 10px 0;
-    margin-top: auto;  
+    margin-top: auto;
     align-items: center;
 }
 
-.info_vuelo {
-    flex: 1;
+.botonModificar, .botonEliminar {
+    font-family: "Roboto Condensed", sans-serif;
+    border: none;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: 8px;
 }
 
+.botonModificar {
+    background-color: greenyellow;
+}
+
+.botonEliminar {
+    background-color: rgb(255, 47, 47);
+}
+
+.botonModificar:hover,
+.botonEliminar:hover {
+    transform: translateY(-2px);
+}
+
+/* === PANEL DE INFORMACIÓN DEL VUELO === */
+
 .info-wrapper {
-    background-color: rgba(255, 255, 255, 0.05); 
+    background-color: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
     padding: 15px 20px;
     height: 100%;
-    display: flex;
-    flex-direction: column;
+    flex-direction:row;
+    display:block;
+    justify-content: flex-start;
 }
 
 .lista-informacion-vuelos {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px 30px;
     list-style: none;
     padding: 0;
     margin: 0;
+    color: white;
 }
 
 .lista-informacion-vuelos li {
-    background-color: rgba(0, 0, 0, 0.2); 
+    background-color: rgba(0, 0, 0, 0.2);
     padding: 5px 10px;
     border-radius: 5px;
 }
@@ -161,9 +153,19 @@ body{
     color: #f3f3f3;
     font-weight: bold;
 }
-h2 {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: rgb(255, 255, 255);
+
+/* === OVERLAY CUANDO SE ABRE UN FORMULARIO === */
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+}
+
+.hidden {
+    display: none;
 }

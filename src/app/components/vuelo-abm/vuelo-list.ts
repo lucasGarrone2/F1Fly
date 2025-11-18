@@ -1,117 +1,39 @@
-import { Component, OnInit, inject, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-import { IVuelo } from '../../interfaces/ivuelo';
-import { VueloClient } from '../vuelo/vuelo-service';
-import { VueloFormComponent } from "../vuelo-form/vuelo-form";
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Component, inject, signal } from "@angular/core";
+import { VueloClient } from "../vuelo/vuelo-service";
+import { toSignal } from "@angular/core/rxjs-interop";
+import { IVuelo } from "../../interfaces/ivuelo";
+import { RouterLink } from "@angular/router";
+import { VueloForm } from "../vuelo-form/vuelo-form";
 
 @Component({
-  selector: 'app-vuelo-abm',
-  standalone: true,
-  imports: [CommonModule, VueloFormComponent, RouterLink],
+  selector: 'app-vuelo-list',
   templateUrl: './vuelo-list.html',
+  imports: [RouterLink, VueloForm],
   styleUrls: ['./vuelo-list.css']
 })
-export class VueloAbm implements OnInit {
+export class VueloABM {
+  private readonly vueloClient = inject(VueloClient);
+  protected readonly vuelos = toSignal(this.vueloClient.getVuelos());
+  protected readonly activarFormulzarioVuelo = signal(false);
+  readonly edicionVuelo = signal(false);
+  protected readonly vuelo_editar = signal<IVuelo | undefined>(undefined);
 
-  vueloSrv = inject(VueloClient);
-
-  vuelos = signal<IVuelo[]>([]);
-  mostrarForm = signal<boolean>(false);
-  modoEdicion = signal<boolean>(false);
-  vueloSeleccionado = signal<IVuelo | null>(null);
-
-  ngOnInit(): void {
-    this.cargarVuelos();
+  activarFormulario_Vuelo() {
+    this.activarFormulzarioVuelo.set(!this.activarFormulzarioVuelo());
   }
 
-  cargarVuelos() {
-    this.vueloSrv.getVuelos().subscribe({
-      next: (data) => this.vuelos.set(data),
-      error: (err) => console.error("Error cargando vuelos", err)
+  activarEdicion_Vuelo(id_vuelo: string | number) {
+    this.edicionVuelo.set(!this.edicionVuelo());
+    this.vueloClient.getVuelo_ID(id_vuelo).subscribe((vuelo) => {
+      this.vuelo_editar.set(vuelo);
     });
   }
-
-  abrirFormulario() {
-    this.vueloSeleccionado.set(null);
-    this.modoEdicion.set(false);
-    this.mostrarForm.set(true);
+  activarEliminar_Vuelo(id_vuelo: string | number) {
+    if (confirm("¿Está seguro que desea eliminar este vuelo?")) {
+      this.vueloClient.deleteVuelo(id_vuelo).subscribe(() => {
+        alert("Vuelo eliminado con éxito");
+        window.location.reload();
+      });
+    }
   }
-
-  editarVuelo(vuelo: IVuelo) {
-    this.vueloSeleccionado.set(vuelo);
-    this.modoEdicion.set(true);
-    this.mostrarForm.set(true);
-  }
-
-  cerrarFormulario() {
-    this.mostrarForm.set(false);
-  }
-
-  eliminarVuelo(id_vuelo: string | number | undefined) {
-  if (id_vuelo === undefined || id_vuelo === null) {
-    console.error("Error: ID de vuelo inválido (undefined).");
-    return;
-  }
-
-  if (!confirm("¿Seguro que deseas eliminar este vuelo?")) return;
-
-  this.vueloSrv.deleteVuelo(id_vuelo).subscribe({
-    next: () => this.cargarVuelos(),
-    error: (err) => console.error("Error al eliminar vuelo", err)
-  });
 }
-
-  // -----------------------------------------------------------
-//  MÉTODOS QUE NECESITA EL HTML (alias de tus propios métodos)
-// -----------------------------------------------------------
-
-activarFormularioVuelo() {
- return this.abrirFormulario();
-}
-
-activarEdicionVuelo(id: string | number) {
-  // buscamos el vuelo por ID para que funcione igual que en carreras
-  const vuelo = this.vuelos().find(v => v.id == id);
-  if (vuelo) this.editarVuelo(vuelo);
-}
-
-activarEliminarVuelo(id: string | number) {
-  return this.eliminarVuelo(id);
-}
-
-activarFormularioActivo() {
-  return this.mostrarForm();
-}
-vuelo_editar() {
-  return this.vueloSeleccionado();  
-}
-// editarVuelo(vueloOrId: IVuelo | string | number | undefined) {
-//   // debug
-//   console.log('editarVuelo llamado con:', vueloOrId);
-
-//   // obtener id
-//   const id = typeof vueloOrId === 'object' ? vueloOrId?.id : vueloOrId;
-//   if (id === undefined || id === null) {
-//     console.error('ID inválido para editar', vueloOrId);
-//     return;
-//   }
-
-//   // traemos el vuelo real desde el backend (asegura datos completos)
-//   this.vueloSrv.getVuelo_ID(id).subscribe({
-//     next: (vuelo) => {
-//       this.vueloSeleccionado.set(vuelo);
-//       this.modoEdicion.set(true);
-//       this.mostrarForm.set(true);
-//       console.log('Vuelo cargado para editar:', vuelo);
-//     },
-//     error: (err) => {
-//       console.error('Error trayendo vuelo para editar', err);
-//     }
-//   });
-// }
-
-
-}
-

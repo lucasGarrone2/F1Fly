@@ -1,28 +1,52 @@
-<div id="overlay-vuelo">
-  <section id="formulario-vuelo">
-
-    <div id="header-form">
-      <h2>{{ modoEdicion ? 'Editar vuelo' : 'Nuevo vuelo' }}</h2>
-      <button id="boton-cerrar" (click)="cerrar.emit()">❌</button>
-    </div>
-
-    <form [formGroup]="form" (ngSubmit)="submit()">
-
+<section id="Formulario_Vuelo">
+  <div id="header_form">
+    <h2>Cargue su nueva carrera..</h2> <div><button type="submit" id="boton-cerrar" (click)="cerrarFormulario()">❌</button></div>
+  </div>
+  <div>
+    <form [formGroup]="form" (ngSubmit)="handleSubmit()">
       <ul>
-        <li><label>Carrera ID</label><input type="text" formControlName="carrera_id"></li>
-        <li><label>País origen</label><input type="text" formControlName="pais_origen"></li>
-        <li><label>Ciudad origen</label><input type="text" formControlName="ciudad_origen"></li>
-        <li><label>País destino</label><input type="text" formControlName="pais_destino"></li>
-        <li><label>Ciudad destino</label><input type="text" formControlName="ciudad_destino"></li>
-        <li><label>Aerolínea</label><input type="text" formControlName="aerolinea"></li>
-        <li><label>Fecha disponible</label><input type="date" formControlName="fecha_disponible"></li>
-        <li><label>Tipo avión</label><input type="text" formControlName="tipo_avion"></li>
-        <li><label>Clase asiento</label><input type="text" formControlName="clase_asiento"></li>
-        <li><label>Precio promedio (€)</label><input type="number" formControlName="precio_promedio_ticket_eur"></li>
+        <li>
+          <label for="carrera_id">ID de carrera</label>
+          <input type="text" id="carrera_id" formControlName="carrera_id" placeholder="AB123">
+        </li>
+        <li>
+          <label for="pais_origen">Pais origen</label>
+          <input type="text" id="pais_origen" formControlName="pais_origen" placeholder="Argentina">
+        </li>
+        <li>
+          <label for="ciudad_origen">Ciudad origen</label>
+          <input type="text" id="ciudad_origen" formControlName="ciudad_origen" placeholder="Buenos Aires">
+        </li>
+        <li>
+          <label for="pais_destino">Pais destino</label>
+          <input type="text" id="pais_destino" formControlName="pais_destino" placeholder="Italia">
+        </li>
+        <li>
+          <label for="ciudad_destino">Ciudad destino</label>
+          <input type="text" id="ciudad_destino" formControlName="ciudad_destino" placeholder="Roma">
+        </li>
+        <li>
+          <label for="aerolinea">Aerolinea</label>
+          <input type="text" id="aerolinea" formControlName="aerolinea" placeholder="Alitalia">
+        </li>
+        <li>
+          <label for="fecha_disponible">Fecha disponible</label>
+          <input type="date" id="fecha_disponible" formControlName="fecha_disponible">
+        </li>
+        <li>
+          <label for="tipo_avion">Tipo de avion</label>
+          <input type="text" id="tipo_avion" formControlName="tipo_avion" placeholder="Boeing 737">
+        </li>
+        <li>
+          <label for="clase_asiento">Clase de asiento</label>
+          <input type="text" id="clase_asiento" formControlName="clase_asiento" placeholder="Economica">
+        </li>
+        <li>
+          <label for="precio_promedio_ticket_eur">Precio del vuelo</label>
+          <input type="number" id="precio_promedio_ticket_eur" formControlName="precio_promedio_ticket_eur" placeholder="199.99">
+        </li>
       </ul>
-
-      <button id="guardar" type="submit">{{ modoEdicion ? 'Actualizar' : 'Guardar' }}</button>
+      <button type="submit" id="boton-enviar">Enviar</button>
     </form>
-
-  </section>
-</div>
+  </div>
+</section>
