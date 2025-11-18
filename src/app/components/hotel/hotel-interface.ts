@@ -1,5 +1,5 @@
 export interface Hotel {
-  id: string | number | undefined; 
+  id?: string | number | undefined; 
   nombre_hotel: string;
   carrera_id: number;
   pais: string;
@@ -9,8 +9,5 @@ export interface Hotel {
   tieneAmenities: boolean;
   tieneTransporte: boolean;
   imagenUrl: string; 
-  ubicacion_mapa: {
-    latitud: number;
-    longitud: number;
-  };
+  direccionExacta: string;
 }

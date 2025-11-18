@@ -116,18 +116,22 @@
     align-items: center;
 }
 
-.btn-more, .btn-select {
-    background: transparent;
-    border: none;
+.btn-select {
+     background: rgb(7, 202, 111);
+    border-radius: 8px;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-more{
+    background: rgb(87, 90, 85);
+    border-radius: 8px;
     color: #ddd;
     cursor: pointer;
     font-weight: bold;
 }
 
-.btn-more:hover,
-.btn-select:hover {
-    color: white;
-}
 .race-card {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }

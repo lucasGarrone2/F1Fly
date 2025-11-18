@@ -84,6 +84,11 @@ export class RaceCardComponent implements OnInit {
    
     protected readonly client_fav = inject(ListaFavClient);
 
+    botonVerMas(c : Carrera){
+        this.router.navigateByUrl('carrera-details/' + c.id);
+    }
+
+
     botonFavoritos(carrera_fav : Carrera){
         const user = this.auth.activeUser(); 
         

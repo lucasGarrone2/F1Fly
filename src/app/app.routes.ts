@@ -15,7 +15,7 @@ import { ListaVueloSeleccionar } from './components/lista-vuelo-seleccionar/list
 import { VueloABM } from './components/vuelo-abm/vuelo-list';
 import { UsuariosRegistrados } from './components/usuarios-registrados/usuarios-registrados';
 import { Reserva } from './components/reserva/reserva';
-
+import { DetailsCarrera } from './components/details-carrera/details-carrera';
 
 export const routes: Routes = [
 
@@ -26,7 +26,7 @@ export const routes: Routes = [
   { path: 'gestion-carrera', component: CarreraAbm, canActivate: [authGuardGuard] },
   { path: 'gestion-hoteles', component: HotelAbm, canActivate: [authGuardGuard] },
   { path: 'lista-hoteles', component: HotelList },
-  {path: 'gestion-vuelos', component: VueloABM, canActivate: [authGuardGuard]},
+ {path: 'gestion-vuelos', component: VueloABM, canActivate: [authGuardGuard]},
 {path: 'mi-informacion', component: PerfilUsuario,  canActivate: [authGuardGuard]},
 {path: 'editar-perfil', component: EditarPerfilUsuario,  canActivate: [authGuardGuard]},
 {path: 'gestionar-usuarios', component: UsuariosRegistrados, canActivate: [authGuardGuard] },
@@ -36,6 +36,10 @@ export const routes: Routes = [
     path:"lista-favoritos/:id",
     title: 'Lista favoritos',
     component: ListaFavoritosCarrera
+  },{
+    path: 'carrera-details/:id',
+    title: 'Detalles Carrera',
+    component: DetailsCarrera
   },
   // RUTAS DEL LAYOUT "RESERVAR"
   {
@@ -45,7 +49,7 @@ export const routes: Routes = [
     children: [
       { path: 'carreras', component: RaceList },
       { path: 'hoteles', component: HotelList },
-      { path: 'vuelos', component: ListaVueloSeleccionar },
+     { path: 'vuelos', component: ListaVueloSeleccionar },
       { path: '', redirectTo: 'carreras', pathMatch: 'full' }
     ]
   }
