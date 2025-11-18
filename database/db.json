@@ -124,7 +124,7 @@
   "hoteles": [
     {
       "id": "1",
-      "nombre_hotel": "Sakhir Grand Hotel",
+      "nombre_hotel": "Sofitel Bahrain Zallaq Thalassa Sea & Spa",
       "carrera_id": 1,
       "pais": "Bahrain",
       "ciudad": "Sakhir",
@@ -134,18 +134,15 @@
         "2026-04-13",
         "2026-04-14"
       ],
-      "precio_promedio_habitacion_eur": 160,
+      "precio_promedio_habitacion_eur": 350,
       "tieneAmenities": true,
       "tieneTransporte": true,
       "imagenUrl": "fotosHotel/sakhir.jpg",
-      "ubicacion_mapa": {
-        "latitud": 26.0325,
-        "longitud": 50.5106
-      }
+      "direccionExacta": "105 Zallaq Highway, Zallaq"
     },
     {
       "id": "2",
-      "nombre_hotel": "Manama Beach Resort",
+      "nombre_hotel": "Al Areen Palace & Spa by Accor",
       "carrera_id": 1,
       "pais": "Bahrain",
       "ciudad": "Sakhir",
@@ -154,18 +151,15 @@
         "2026-04-11",
         "2026-04-14"
       ],
-      "precio_promedio_habitacion_eur": 210,
+      "precio_promedio_habitacion_eur": 480,
       "tieneAmenities": true,
       "tieneTransporte": false,
       "imagenUrl": "fotosHotel/beach resort.webp",
-      "ubicacion_mapa": {
-        "latitud": 26.2301,
-        "longitud": 50.5847
-      }
+      "direccionExacta": "Building 2015, Road 6215, Block 1062, Al Areen"
     },
     {
       "id": "3",
-      "nombre_hotel": "Montecarlo Bay Resort",
+      "nombre_hotel": "Montecarlo Bay Hotel & Resort",
       "carrera_id": 2,
       "pais": "Mónaco",
       "ciudad": "Montecarlo",
@@ -178,11 +172,8 @@
       "precio_promedio_habitacion_eur": 420,
       "tieneAmenities": true,
       "tieneTransporte": false,
-      "ubicacion_mapa": {
-        "latitud": 43.7396,
-        "longitud": 7.4276
-      },
-      "imagenUrl": "fotosHotel/montecarlo.jpeg"
+      "imagenUrl": "fotosHotel/montecarlo.jpeg",
+      "direccionExacta": "40 Avenue Princesse Grace"
     },
     {
       "id": "4",
@@ -199,11 +190,8 @@
       "precio_promedio_habitacion_eur": 650,
       "tieneAmenities": true,
       "tieneTransporte": true,
-      "ubicacion_mapa": {
-        "latitud": 43.7383,
-        "longitud": 7.4261
-      },
-      "imagenUrl": "fotosHotel/fairmont.jpg"
+      "imagenUrl": "fotosHotel/fairmont.jpg",
+      "direccionExacta": "12 Avenue des Spélugues"
     },
     {
       "id": "5",
@@ -220,11 +208,8 @@
       "precio_promedio_habitacion_eur": 220,
       "tieneAmenities": true,
       "tieneTransporte": true,
-      "ubicacion_mapa": {
-        "latitud": 52.0733,
-        "longitud": -1.0149
-      },
-      "imagenUrl": "fotosHotel/silverstone.jpg"
+      "imagenUrl": "fotosHotel/silverstone.jpg",
+      "direccionExacta": "Silverstone, Towcester NN12 8TN"
     },
     {
       "id": "6",
@@ -240,11 +225,8 @@
       "precio_promedio_habitacion_eur": 180,
       "tieneAmenities": false,
       "tieneTransporte": true,
-      "ubicacion_mapa": {
-        "latitud": 52.0003,
-        "longitud": -0.9991
-      },
-      "imagenUrl": "fotosHotel/buckingham.webp"
+      "imagenUrl": "fotosHotel/buckingham.webp",
+      "direccionExacta": "A422, Buckingham NN12 8TE"
     },
     {
       "id": "7",
@@ -261,11 +243,8 @@
       "precio_promedio_habitacion_eur": 150,
       "tieneAmenities": true,
       "tieneTransporte": true,
-      "ubicacion_mapa": {
-        "latitud": 45.584,
-        "longitud": 9.2826
-      },
-      "imagenUrl": "fotosHotel/dellaPista.jpg"
+      "imagenUrl": "fotosHotel/dellaPista.jpg",
+      "direccionExacta": "Viale Brianza, 20900 Monza MB"
     },
     {
       "id": "8",
@@ -281,11 +260,8 @@
       "precio_promedio_habitacion_eur": 250,
       "tieneAmenities": true,
       "tieneTransporte": false,
-      "ubicacion_mapa": {
-        "latitud": 45.4851,
-        "longitud": 9.2045
-      },
-      "imagenUrl": "fotosHotel/starhotels.webp"
+      "imagenUrl": "fotosHotel/starhotels.webp",
+      "direccionExacta": "Piazza Duca d'Aosta, 9, 20124 Milano MI"
     },
     {
       "id": "9",
@@ -302,11 +278,8 @@
       "precio_promedio_habitacion_eur": 110,
       "tieneAmenities": true,
       "tieneTransporte": true,
-      "ubicacion_mapa": {
-        "latitud": -23.7036,
-        "longitud": -46.6997
-      },
-      "imagenUrl": "fotosHotel/saopaulo.jpeg"
+      "imagenUrl": "fotosHotel/saopaulo.jpeg",
+      "direccionExacta": "Avenida Jangadeiros, 615, 04771-000 São Paulo"
     },
     {
       "id": "10",
@@ -322,11 +295,8 @@
       "precio_promedio_habitacion_eur": 180,
       "tieneAmenities": true,
       "tieneTransporte": false,
-      "ubicacion_mapa": {
-        "latitud": -23.5658,
-        "longitud": -46.65
-      },
-      "imagenUrl": "fotosHotel/tivoli.jpg"
+      "imagenUrl": "fotosHotel/tivoli.jpg",
+      "direccionExacta": "Alameda Santos, 1437, 01419-001 São Paulo"
     },
     {
       "id": "11",
@@ -343,11 +313,8 @@
       "precio_promedio_habitacion_eur": 280,
       "tieneAmenities": true,
       "tieneTransporte": true,
-      "ubicacion_mapa": {
-        "latitud": 47.4526,
-        "longitud": 13.6873
-      },
-      "imagenUrl": "fotosHotel/falkensteiner.jpg"
+      "imagenUrl": "fotosHotel/falkensteiner.jpg",
+      "direccionExacta": "Europaplatz 472, 8970 Schladming"
     },
     {
       "id": "12",
@@ -363,11 +330,8 @@
       "precio_promedio_habitacion_eur": 190,
       "tieneAmenities": false,
       "tieneTransporte": false,
-      "ubicacion_mapa": {
-        "latitud": 48.2082,
-        "longitud": 16.3738
-      },
-      "imagenUrl": "fotosHotel/grandMercure.jpg"
+      "imagenUrl": "fotosHotel/grandMercure.jpg",
+      "direccionExacta": "Praterstraße 9, 1020 Wien"
     },
     {
       "id": "13",
@@ -384,11 +348,8 @@
       "precio_promedio_habitacion_eur": 350,
       "tieneAmenities": true,
       "tieneTransporte": true,
-      "ubicacion_mapa": {
-        "latitud": 41.3888,
-        "longitud": 2.1884
-      },
-      "imagenUrl": "fotosHotel/artsBarcelo.jpg"
+      "imagenUrl": "fotosHotel/artsBarcelo.jpg",
+      "direccionExacta": "Carrer de la Marina, 19, 21, 08005 Barcelona"
     },
     {
       "id": "14",
@@ -404,11 +365,8 @@
       "precio_promedio_habitacion_eur": 280,
       "tieneAmenities": true,
       "tieneTransporte": false,
-      "ubicacion_mapa": {
-        "latitud": 41.3739,
-        "longitud": 2.1742
-      },
-      "imagenUrl": "fotosHotel/eurostars.avif"
+      "imagenUrl": "fotosHotel/eurostars.avif",
+      "direccionExacta": "Moll de Barcelona, s/n, 08039 Barcelona"
     },
     {
       "id": "15",
@@ -425,11 +383,8 @@
       "precio_promedio_habitacion_eur": 320,
       "tieneAmenities": true,
       "tieneTransporte": true,
-      "ubicacion_mapa": {
-        "latitud": 45.5009,
-        "longitud": -73.5702
-      },
-      "imagenUrl": "fotosHotel/ritz.jpg"
+      "imagenUrl": "fotosHotel/ritz.jpg",
+      "direccionExacta": "1228 Sherbrooke St W, Montreal, QC H3G 1H6"
     },
     {
       "id": "16",
@@ -445,11 +400,8 @@
       "precio_promedio_habitacion_eur": 250,
       "tieneAmenities": true,
       "tieneTransporte": false,
-      "ubicacion_mapa": {
-        "latitud": 45.5008,
-        "longitud": -73.5703
-      },
-      "imagenUrl": "fotosHotel/fairmont.webp"
+      "imagenUrl": "fotosHotel/fairmont.webp",
+      "direccionExacta": "900 René-Lévesque Blvd W, Montreal, QC H3B 4A5"
     },
     {
       "id": "17",
@@ -466,11 +418,8 @@
       "precio_promedio_habitacion_eur": 700,
       "tieneAmenities": true,
       "tieneTransporte": true,
-      "ubicacion_mapa": {
-        "latitud": 1.2816,
-        "longitud": 103.8617
-      },
-      "imagenUrl": "fotosHotel/baysands.jpg"
+      "imagenUrl": "fotosHotel/baysands.jpg",
+      "direccionExacta": "10 Bayfront Ave, Singapore 018956"
     },
     {
       "id": "18",
@@ -486,11 +435,8 @@
       "precio_promedio_habitacion_eur": 550,
       "tieneAmenities": true,
       "tieneTransporte": false,
-      "ubicacion_mapa": {
-        "latitud": 1.2858,
-        "longitud": 103.8569
-      },
-      "imagenUrl": "fotosHotel/fullerton.jpg"
+      "imagenUrl": "fotosHotel/fullerton.jpg",
+      "direccionExacta": "80 Collyer Quay, Singapore 049326"
     },
     {
       "id": "19",
@@ -507,11 +453,8 @@
       "precio_promedio_habitacion_eur": 400,
       "tieneAmenities": true,
       "tieneTransporte": true,
-      "ubicacion_mapa": {
-        "latitud": 30.2644,
-        "longitud": -97.742
-      },
-      "imagenUrl": "fotosHotel/fourseasons.jpeg"
+      "imagenUrl": "fotosHotel/fourseasons.jpeg",
+      "direccionExacta": "98 San Jacinto Blvd, Austin, TX 78701"
     },
     {
       "id": "20",
@@ -527,11 +470,8 @@
       "precio_promedio_habitacion_eur": 350,
       "tieneAmenities": true,
       "tieneTransporte": false,
-      "ubicacion_mapa": {
-        "latitud": 30.2678,
-        "longitud": -97.7402
-      },
-      "imagenUrl": "fotosHotel/zaza.webp"
+      "imagenUrl": "fotosHotel/zaza.webp",
+      "direccionExacta": "400 Lavaca St, Austin, TX 78701"
     }
   ],
   "vuelos": [

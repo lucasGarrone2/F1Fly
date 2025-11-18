@@ -26,12 +26,12 @@ export const routes: Routes = [
   { path: 'gestion-carrera', component: CarreraAbm, canActivate: [authGuardGuard] },
   { path: 'gestion-hoteles', component: HotelAbm, canActivate: [authGuardGuard] },
   { path: 'lista-hoteles', component: HotelList },
-  {path: 'gestion-vuelos', component: VueloABM, canActivate: [authGuardGuard]},
-  {path: 'mi-informacion', component: PerfilUsuario,  canActivate: [authGuardGuard]},
-  {path: 'editar-perfil', component: EditarPerfilUsuario,  canActivate: [authGuardGuard]},
-  {path: 'gestionar-usuarios', component: UsuariosRegistrados, canActivate: [authGuardGuard] },
-  { path: 'vuelos', component: ListaVueloSeleccionar, canActivate: [authGuardGuard] },
-  { path: 'reserva-confirmada', component: Reserva, canActivate: [authGuardGuard]},
+ {path: 'gestion-vuelos', component: VueloABM, canActivate: [authGuardGuard]},
+{path: 'mi-informacion', component: PerfilUsuario,  canActivate: [authGuardGuard]},
+{path: 'editar-perfil', component: EditarPerfilUsuario,  canActivate: [authGuardGuard]},
+{path: 'gestionar-usuarios', component: UsuariosRegistrados, canActivate: [authGuardGuard] },
+{ path: 'vuelos', component: ListaVueloSeleccionar, canActivate: [authGuardGuard] },
+{ path: 'reserva-confirmada', component: Reserva, canActivate: [authGuardGuard]},
   {
     path:"lista-favoritos/:id",
     title: 'Lista favoritos',
@@ -49,7 +49,7 @@ export const routes: Routes = [
     children: [
       { path: 'carreras', component: RaceList },
       { path: 'hoteles', component: HotelList },
-      { path: 'vuelos', component: ListaVueloSeleccionar },
+     { path: 'vuelos', component: ListaVueloSeleccionar },
       { path: '', redirectTo: 'carreras', pathMatch: 'full' }
     ]
   }

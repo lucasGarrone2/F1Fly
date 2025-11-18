@@ -11,36 +11,35 @@ import { signal } from '@angular/core';
 
 @Component({
   selector: 'app-hotel-list',
-  imports: [ CommonModule, RouterLink, HabitacionForm],
+  imports: [CommonModule, RouterLink, HabitacionForm],
   templateUrl: './hotel-list.html',
   styleUrl: './hotel-list.css'
 })
 export class HotelList {
-    private readonly hotelService = inject(HotelService);
-    protected hotelSource = toSignal(this.hotelService.getHoteles()); 
+  private readonly hotelService = inject(HotelService);
+  protected hotelSource = toSignal(this.hotelService.getHoteles());
 
-    ///HABITACION NUEVO
-    activarFormHabitacion = signal(false);
-    hotelSeleccionadoId = signal<string | undefined>(undefined);
-    hotelSeleccNombre = signal<string | undefined>(undefined);
-   
-    onImageError(event: Event): void {
-        const imgElement = event.target as HTMLImageElement;
-        const fallbackSrc = 'assets/default-hotel.jpg'; 
+  ///HABITACION NUEVO
+  activarFormHabitacion = signal(false);
+  hotelSeleccionado = signal<Hotel | undefined>(undefined);
 
-        // Solo cambiamos si la imagen que falló no es la de fallback, para prevenir bucles
-        if (imgElement.src.indexOf(fallbackSrc) === -1) {
-            imgElement.src = fallbackSrc;
-        }
+  onImageError(event: Event): void {
+    const imgElement = event.target as HTMLImageElement;
+    const fallbackSrc = 'assets/default-hotel.jpg';
+
+    // Solo cambiamos si la imagen que falló no es la de fallback, para prevenir bucles
+    if (imgElement.src.indexOf(fallbackSrc) === -1) {
+      imgElement.src = fallbackSrc;
     }
+  }
 
-    constructor(
-      protected reserva: ReservaClient, 
-      private router: Router, 
-      private auth: AuthService
-    ){}
+  constructor(
+    protected reserva: ReservaClient,
+    private router: Router,
+    private auth: AuthService
+  ) { }
 
-    get HotelesFiltrados(): Hotel[] {
+  get HotelesFiltrados(): Hotel[] {
     const hoteles = this.hotelSource();
     const carrera = this.reserva.getCarrera();
 
@@ -51,39 +50,38 @@ export class HotelList {
       h.ciudad.toLowerCase().trim() === carrera.ciudad_carrera.toLowerCase().trim()
     );
   }
-  
-   get hayCarreraSeleccionada(): boolean {
-      return this.reserva.getCarrera() !== undefined;
+
+  get hayCarreraSeleccionada(): boolean {
+    return this.reserva.getCarrera() !== undefined;
+  }
+
+
+  seleccionarHotel(hotel: Hotel) {
+
+    this.reserva.setHotel(hotel);
+
+    if (hotel.id!== undefined && hotel.id!==null) {
+      this.hotelSeleccionado.set(hotel);
+      this.activarFormHabitacion.set(true); //abre el modal 
+    } else {
+      console.error('El hotel seleccionado no tiene ID válido.');
+      return;
+    }
+  }
+
+  cerrarHab() {
+    this.activarFormHabitacion.set(false);
+    this.hotelSeleccionado.set(undefined);
+  }
+
+  irAVuelos() {
+    const carrera = this.reserva.getCarrera();
+    if (!carrera) {
+      console.error("No hay carrera seleccionada, no se puede ir a vuelos");
+      return;
     }
 
-
-     seleccionarHotel(hotel: Hotel) {
-
-  this.reserva.setHotel(hotel);
-
-  if (hotel.id) {
-    this.hotelSeleccionadoId.set(String(hotel.id));
-    this.hotelSeleccNombre.set(hotel.nombre_hotel);
-    this.activarFormHabitacion.set(true); // ✔ abre el modal correctamente
-  } else {
-    console.error('El hotel seleccionado no tiene ID válido.');
-    return;
+    this.router.navigate(['/reservar/vuelos']);
   }
+
 }
-
-        cerrarHab() {
-        this.activarFormHabitacion.set(false);
-        this.hotelSeleccionadoId.set(undefined);
-        this.hotelSeleccNombre.set(undefined);
-    }
-    irAVuelos() {
-  const carrera = this.reserva.getCarrera();
-  if (!carrera) {
-    console.error("No hay carrera seleccionada, no se puede ir a vuelos");
-    return;
-  }
-
-  this.router.navigate(['/reservar/vuelos']);
-}
-
-  }

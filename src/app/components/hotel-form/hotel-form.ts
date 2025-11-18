@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, effect, inject, input } from '@angular/core';
+import { Component, effect, EventEmitter, inject, input, Output } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Hotel } from '../hotel/hotel-interface';
 import { HotelService } from '../hotel/hotel-service';
@@ -16,11 +16,13 @@ import { HotelAbm } from '../hotel-abm/hotel-abm';
 export class HotelForm {
 
   private readonly hotelService = inject(HotelService);
-  private readonly hotelABM = inject(HotelAbm);
   private readonly formBuilder = inject(FormBuilder);
 
   readonly hotelEditar = input<Hotel>();
   readonly estadoEdicion = input(false);
+
+  @Output() formularioGuardado = new EventEmitter<void>();
+  @Output() cancelar = new EventEmitter<void>();
 
 
   protected readonly form = this.formBuilder.nonNullable.group({
@@ -32,15 +34,8 @@ export class HotelForm {
     precio_promedio_habitacion_eur:[0, [Validators.required, Validators.min(50)]],
     tieneAmenities:[false, [Validators.required]],
     tieneTransporte:[false, [Validators.required]],
-    
     imagenUrl: ['', [Validators.required]], 
-
-    ubicacion_mapa: this.formBuilder.nonNullable.group({
-      latitud:[0,[Validators.required]],
-      longitud:[0, [Validators.required]],
-    }),
-    
-  
+    direccionExacta:['', [Validators.required, Validators.minLength(10)]],
     id: ['']
   });
 
@@ -60,10 +55,7 @@ export class HotelForm {
           tieneAmenities: hotel.tieneAmenities,
           tieneTransporte: hotel.tieneTransporte,
           imagenUrl: hotel.imagenUrl, 
-          ubicacion_mapa: {
-            latitud: hotel.ubicacion_mapa.latitud,
-            longitud: hotel.ubicacion_mapa.longitud,
-          },
+          direccionExacta: hotel.direccionExacta,
           id: hotel.id?.toString()
         });
       }
@@ -75,7 +67,7 @@ export class HotelForm {
 
   handleSubmit(): void{
     if(this.form.invalid){
-      alert("El formulario es invalido. Por favor revise los campos.");
+      this.form.markAllAsTouched();
       return;
     }
     
@@ -96,53 +88,41 @@ export class HotelForm {
             tieneTransporte: formValue.tieneTransporte,
             
             imagenUrl: formValue.imagenUrl, 
-
-            ubicacion_mapa: {
-                latitud: formValue.ubicacion_mapa.latitud, 
-                longitud: formValue.ubicacion_mapa.longitud 
-            }
+            direccionExacta: formValue.direccionExacta
         };
-
 
         if (!this.estadoEdicion()) {
             this.hotelService.addHotel(hotel).subscribe({
                 next: () => {
-                    alert('Hotel agregado con éxito!');
-                    this.finalizarOperacion();
+                  alert('Hotel agregado con exito!')
+                  this.form.reset();
+                  this.formularioGuardado.emit();
                 },
                 error: (error) => console.error('Error al agregar el hotel', error)
             });
         }
         else{
-            const idaActualizar = this.hotelEditar()?.id;
-
-            if(idaActualizar){
-              
-              this.hotelService.updateHotel(hotel, idaActualizar).subscribe({
-                next:()=>{
-                  alert("Hotel actualizado/modificado con exito!");
-                  this.finalizarOperacion();
-                },
-                error:(error) => console.error('Error al actualizar el hotel', error)
-              });
-            } else {
-                 alert("Error: No se pudo actualizar el hotel porque falta el ID.");
-            }
+          const idActualizar = this.hotelEditar()?.id;
+          if(!idActualizar){
+            alert("Error: no se pudo actualizar el hotel por falta de ID");
+            return;
+          }  
+          this.hotelService.updateHotel(hotel, idActualizar).subscribe({
+            next:()=>{
+              alert("Hotel modificado con exito!");
+              this.form.reset();
+              this.formularioGuardado.emit();
+            },
+           error: (error) => console.error('Error al actualizar el hotel', error)
+          });
         }
     }
   } 
 
-  finalizarOperacion(): void{
-    if(this.estadoEdicion()){
-      this.hotelABM.editarHotel.set(false);
-    }
-    this.hotelABM.activarFormularioHotel.set(false);
-    this.form.reset();
-    window.location.reload();
-  }
-
   cerrarForm(): void{
-    this.finalizarOperacion();
+    this.form.reset();
+    this.cancelar.emit();
   }
 
-}
+
+} 

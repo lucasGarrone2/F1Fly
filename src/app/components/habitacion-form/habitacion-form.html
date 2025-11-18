@@ -1,55 +1,90 @@
-<div class="habitacion-modal-content">
-  <div class="modal-header">
-    <h2>Seleccionar Habitación en: {{ hotelNombre() }}</h2>
-    <button type="button" class="cerrar-btn" (click)="cerrarFormularioHabitacion()">❌</button>
+<div class="modal-dialog">
+  <div class="modal-content">
+    
+    <button class="close-button" (click)="cerrarFormulario.emit()">
+        &times;
+    </button>
+    
+    <h2 class="modal-title">
+        Seleccionar Habitación en: {{ hotelNombre() }}
+    </h2>
+
+    <form [formGroup]="formu" (ngSubmit)="seleccionarHabitacion()">
+        
+        <div class="date-selection-group">
+            
+            <div class="input-group">
+                <label for="fechaEntrada">Fecha de Entrada:</label>
+                
+                <input id="fechaEntrada" 
+                       type="date"
+                       [formControl]="formu.controls.fechaEntrada" 
+                       class="input-select"
+                       [attr.min]="fechasDisponibles().length > 0 ? fechasDisponibles()[0] : null"
+                       [attr.max]="fechasDisponibles().length > 0 ? fechasDisponibles()[fechasDisponibles().length - 1] : null"> 
+
+                @if (fechasDisponibles().length === 0) {
+                    <p class="error-message">No hay fechas disponibles para este hotel.</p>
+                }
+            </div>
+
+            <div class="input-group">
+                <label for="fechaSalida">Fecha de Salida:</label>
+                
+                <input id="fechaSalida" 
+                       type="date"
+                       [formControl]="formu.controls.fechaSalida" 
+                       class="input-select"
+                       [attr.min]="minFechaSalida()"
+                       [attr.max]="maxFechaSalida()">
+                    
+
+                @if (formu.controls.fechaSalida.disabled) {
+                    <p class="info-message">Seleccione una fecha de entrada válida primero.</p>
+                } 
+                @else if (formu.controls.fechaSalida.hasError('required') && formu.controls.fechaSalida.touched) {
+                    <p class="error-message">Debe seleccionar una fecha de salida.</p>
+                }
+                @else if (formu.controls.fechaSalida.hasError('invalidDuration')) {
+                    <p class="error-message">La estadía debe ser entre 1 y 3 noches, y la fecha debe estar disponible.</p>
+                }
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label for="tipoHabitacion">Tipo de Habitación:</label>
+            <select id="tipoHabitacion" [formControl]="formu.controls.tipoHabitacion" class="input-select">
+                <option value="estandar">Estandar (€{{ getTarifa('estandar') }} / persona)</option>
+                <option value="premium">Premium (€{{ getTarifa('premium') }} / persona)</option>
+                <option value="vip">VIP (€{{ getTarifa('vip') }} / persona)</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="cantPersonas">Cantidad de Personas (1-6):</label>
+            <input id="cantPersonas" 
+                   type="number" 
+                   [formControl]="formu.controls.cantPersonas" 
+                   min="1" max="6" 
+                   class="input-text">
+            @if (formu.controls.cantPersonas.errors?.['max'] || formu.controls.cantPersonas.errors?.['min']) {
+                <p class="error-message">La cantidad debe estar entre 1 y 6 personas.</p>
+            }
+        </div>
+        
+        <div class="price-container">
+            <p>Precio Total Estimado ({{ calcularNoches() }} noches):</p>
+            <p class="price-value">€{{ precioTotal() | number:'1.0-2' }}</p>
+        </div>
+
+        <div class="button-group">
+            <button type="button" class="btn-cancel" (click)="cerrarFormulario.emit()">
+                CANCELAR RESERVA
+            </button>
+            <button type="submit" class="btn-confirm" [disabled]="formu.invalid || calcularNoches() === 0">
+                CONFIRMAR RESERVA
+            </button>
+        </div>
+    </form>
   </div>
-
-  <form [formGroup]="formu" (ngSubmit)="seleccionarHabitacion()">
-    
-    <ul class="form-list">
-      
-      <li>
-        <label for="tipo">Tipo de Habitación:</label>
-        <select id="tipo" formControlName="tipoHabitacion" required>
-          <option value="estandar">Estandar (€{{ getTarifa('estandar') }} / persona)</option>
-          <option value="premiun">Premium (€{{ getTarifa('premiun') }} / persona)</option>
-          <option value="vip">VIP (€{{ getTarifa('vip') }} / persona)</option>
-        </select>
-      </li>
-
-      <li>
-        <label for="personas">Cantidad de Personas (1-6):</label>
-        <input 
-          id="personas" 
-          type="number" 
-          formControlName="cantPersonas" 
-          min="1" 
-          max="6" 
-          required
-        >
-        @if (formu.controls.cantPersonas.invalid && formu.controls.cantPersonas.touched) {
-          <p class="error-msg">Debe ser entre 1 y 6 personas.</p>
-        }
-      </li>
-    </ul>
-
-    
-    <div class="modal-footer">
-      <button 
-        type="button" 
-        class="cancelar-btn"
-        (click)="cerrarFormularioHabitacion()"
-      >
-        CANCELAR RESERVA
-      </button>
-
-      <button 
-        type="submit" 
-        class="confirmar-btn" 
-        [disabled]="formu.invalid"
-      >
-        CONFIRMAR RESERVA
-      </button>
-    </div>
-  </form>
 </div>
