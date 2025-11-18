@@ -18,8 +18,7 @@ import { HeaderGestionAdmin } from "../../header-gestion-admin/header-gestion-ad
 export class HotelAbm {
 
   private readonly hotelService = inject(HotelService);
-  
-  protected readonly hoteles = toSignal(this.hotelService.getHoteles());
+  protected readonly hoteles = signal<Hotel[] | undefined>(undefined);
 
   readonly activarFormularioHotel = signal(false);
   readonly editarHotel = signal(false);
@@ -30,9 +29,22 @@ export class HotelAbm {
   hotelSeleccionadoId = signal<string | undefined>(undefined);
   hotelSeleccNombre = signal<string | undefined>(undefined);
 
+  constructor(){
+    this.cargarHoteles();
+  }
+
+  private cargarHoteles(): void{
+    this.hotelService.getHoteles().subscribe({
+      next:(lista) => this.hoteles.set(lista),
+      error:(err) => console.error('Error cargando hoteles', err)
+    });
+  }
+
   activarFormHotel(): void{
-    this.activarFormularioHotel.set(!this.activarFormularioHotel());
-    if(this.activarFormularioHotel()){
+    const abrir = !this.activarFormularioHotel();
+    this.activarFormularioHotel.set(abrir);
+
+    if(abrir){
       this.editarHotel.set(false);
       this.hotelEditar.set(undefined);
     }
@@ -57,7 +69,7 @@ export class HotelAbm {
       this.hotelService.deleteHotel(id).subscribe({
         next:()=>{
           alert("Hotel borrado con exito!");
-          window.location.reload();
+          this.cargarHoteles();
         },
         error:(error) =>{
           console.error('Error al eliminar el hotel', error);
@@ -83,4 +95,18 @@ export class HotelAbm {
     this.hotelSeleccionadoId.set(undefined);
     this.hotelSeleccNombre.set(undefined);
   }
+
+  onFormularioGuardado(): void{
+    this.activarFormularioHotel.set(false);
+    this.editarHotel.set(false);
+    this.hotelEditar.set(undefined);
+    this.cargarHoteles();
+  }
+
+  onCancelarFormulario(){
+    this.activarFormularioHotel.set(false);
+    this.editarHotel.set(false);
+    this.hotelEditar.set(undefined);
+  }
+  
 }
