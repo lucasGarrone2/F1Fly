@@ -74,6 +74,9 @@ export class RaceCardComponent implements OnInit {
         }
 
         this.reserva.setCarrera(race);
+
+        
+
         this.router.navigate(['/reservar/hoteles']);
     }
 

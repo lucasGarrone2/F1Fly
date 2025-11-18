@@ -1,0 +1,90 @@
+.users-container {
+  max-width: 800px; 
+  margin: 40px auto;
+  background: #0B162F; 
+  padding: 30px;
+  border-radius: 14px;
+  color: #E6E6E6;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.35);
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* --- TÍTULO --- */
+h2 {
+  color: #ff4141; 
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 1.8rem;
+  border-bottom: 1px solid #ff4141;
+  padding-bottom: 10px;
+}
+
+/* --- CARTA DE USUARIO (Item de la lista) --- */
+.dato {
+  background: rgba(255,255,255,0.05);
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 15px; /* Espacio entre usuarios */
+  transition: transform 0.2s ease, background-color 0.2s;
+  border-left: 4px solid transparent; /* Borde invisible para la animación */
+}
+
+/* Efecto Hover: Se ilumina un poco y se mueve a la derecha */
+.dato:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateX(5px);
+  border-left-color: #ff4141; /* Aparece una línea roja a la izquierda */
+}
+
+/* --- TEXTO DENTRO DEL P --- */
+.dato p {
+  margin: 0;
+  color: #eaeaea;
+  font-size: 1rem;
+  line-height: 1.6;
+  word-wrap: break-word; /* Evita que emails o passwords largos rompan el diseño */
+}
+
+/* --- NOMBRE DEL USUARIO (El strong) --- */
+.dato strong {
+  color: #ff7a7a; 
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: block; /* Ponemos el nombre en su propia línea para destacarlo */
+  margin-bottom: 4px;
+  text-transform: capitalize;
+}
+
+.btn-volver {
+  margin-top: 15px;
+  width: 100%;
+  padding: 12px;
+  background: #ff4141;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.2s ease-in-out;
+}
+
+.btn-volver:hover {
+  background: #d93737;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .users-container {
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .dato p {
+    font-size: 0.9rem;
+  }
+}

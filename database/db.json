@@ -566,7 +566,7 @@
       "carrera_id": 2,
       "pais_origen": "España",
       "ciudad_origen": "Madrid",
-      "pais_destino": "Mónaco (Francia)",
+      "pais_destino": "Mónaco",
       "ciudad_destino": "Niza",
       "aerolinea": "Air France",
       "fecha_disponible": "2026-05-23",
@@ -579,7 +579,7 @@
       "carrera_id": 2,
       "pais_origen": "Italia",
       "ciudad_origen": "Roma",
-      "pais_destino": "Mónaco (Francia)",
+      "pais_destino": "Mónaco",
       "ciudad_destino": "Niza",
       "aerolinea": "ITA Airways",
       "fecha_disponible": "2026-05-24",
@@ -960,6 +960,21 @@
       "email": "prueba2@gmail.com",
       "password": "Prueba1234",
       "id": "c6e4"
+    },
+    {
+      "id": "21b6",
+      "nombre": "Valentina",
+      "apellido": "Landaburu",
+      "username": "valenlandaburu",
+      "email": "valenlandaburu@gmail.com",
+      "password": "Valen123",
+      "isAdmin": false,
+      "dni": "333333333",
+      "nacionalidad": "Argentina",
+      "edad": 21,
+      "fecha_nacimiento": "2004-06-09",
+      "listaPilotos": "",
+      "ListaEscuderias": ""
     }
   ],
   "listadoFavoritos": [

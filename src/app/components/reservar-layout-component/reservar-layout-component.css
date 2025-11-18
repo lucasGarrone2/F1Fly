@@ -112,3 +112,38 @@
   font-weight: bold;
   font-size: 1.2rem;
 }
+
+.total-container {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+
+.total-item {
+  display: grid;
+  grid-template-columns: 1fr auto; 
+  align-items: center;
+  color: #ddd;
+  font-size: 0.95rem;
+}
+
+
+.descuento-line {
+  color: #ffcc00; 
+}
+.descuento-valor {
+  font-weight: bold;
+}
+
+
+.total-final {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3); 
+  
+  font-size: 1.1rem; 
+    color: #fff;     
+  font-weight: 700; 
+}

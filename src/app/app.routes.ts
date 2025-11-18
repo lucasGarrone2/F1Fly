@@ -13,21 +13,22 @@ import { PerfilUsuario } from './components/perfil-usuario/perfil-usuario';
 import { EditarPerfilUsuario } from './components/editar-perfil-usuario/editar-perfil-usuario';
 import { ListaVueloSeleccionar } from './components/lista-vuelo-seleccionar/lista-vuelo-seleccionar';
 import { VueloABM } from './components/vuelo-abm/vuelo-list';
+import { UsuariosRegistrados } from './components/usuarios-registrados/usuarios-registrados';
 
 
 export const routes: Routes = [
 
-  // RUTAS GENERALES
   { path: '', component: Home, pathMatch: 'full' },
   { path: 'registro', component: Register },
   { path: 'inicio_sesion', component: Login },
-  { path: 'gestion-carrera', component: CarreraAbm, canActivate: [authGuardGuard] },
   { path: 'lista-de-carreras', component: RaceList },
+  { path: 'gestion-carrera', component: CarreraAbm, canActivate: [authGuardGuard] },
   { path: 'gestion-hoteles', component: HotelAbm, canActivate: [authGuardGuard] },
   { path: 'lista-hoteles', component: HotelList },
   {path: 'gestion-vuelos', component: VueloABM, canActivate: [authGuardGuard]},
 {path: 'mi-informacion', component: PerfilUsuario,  canActivate: [authGuardGuard]},
 {path: 'editar-perfil', component: EditarPerfilUsuario,  canActivate: [authGuardGuard]},
+{path: 'gestionar-usuarios', component: UsuariosRegistrados, canActivate: [authGuardGuard] },
 { path: 'vuelos', component: ListaVueloSeleccionar },
   {
     path:"lista-favoritos/:id",
@@ -38,6 +39,7 @@ export const routes: Routes = [
   {
     path: 'reservar',
     component: ReservarLayoutComponent,
+    canActivate: [authGuardGuard],
     children: [
       { path: 'carreras', component: RaceList },
       { path: 'hoteles', component: HotelList },

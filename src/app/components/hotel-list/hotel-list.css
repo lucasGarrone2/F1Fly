@@ -178,6 +178,11 @@ html, body {
     transform: translateY(-2px);
 }
 
+.btn-seleccionar:hover{
+    background-color: #66bb66; 
+    transform: translateY(-2px);
+}
+
 .btn-seleccionar[disabled] {
     background-color: #555; 
     opacity: 0.6;

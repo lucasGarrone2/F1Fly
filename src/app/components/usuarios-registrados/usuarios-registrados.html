@@ -1,0 +1,17 @@
+<div class="users-container">
+  @let users= this.user();
+  <h2>Lista de todos los usuarios registrados</h2>
+  @if(users) { @for (user of users; track user.id) {
+
+  <div class="dato">
+    <p>
+      <strong>{{ user.nombre }} - {{ user.apellido }}</strong> {{ user.email }} -
+      {{ user.username }} - {{ user.dni }} - {{ user.password }} - {{ user.fecha_nacimiento }} -
+      {{ user.nacionalidad }} - {{ user.listaPilotos }} - {{ user.ListaEscuderias }}
+    </p>
+  </div>
+
+  }
+  <button (click)="volver()" class="btn-volver">Volver</button>
+  }
+</div>

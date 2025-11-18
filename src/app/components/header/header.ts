@@ -44,7 +44,7 @@ export class Header {
 
  gestionarUsuarios()
  {
-
+  this.router.navigateByUrl("/gestionar-usuarios")
  }
  logout()
  {
