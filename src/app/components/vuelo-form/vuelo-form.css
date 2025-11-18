@@ -1,47 +1,43 @@
-/* Tu CSS de formulario.
-  El selector #Formulario_Carrera viene de tu vuelo-form.html.
-  ¡Te sugiero renombrar ese ID a #Formulario_Vuelo en el HTML!
-*/
-#Formulario_Carrera {
+#Formulario_Vuelo {
    position: fixed;
-    top: 1%; 
-    left: 50%; 
+    top: 1%;
+    left: 50%;
     transform: translateX(-50%);
-    background-color: #1a237e; 
+    background-color: #1a237e;
     color: white;
     padding: 0px 40px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    width: 400px; 
-    z-index: 1000; 
+    width: 400px;
+    z-index: 1000;
     text-align: left;
 }
 
-#Formulario_Carrera h2 {
+#Formulario_Vuelo h2 {
     text-align: center;
     margin-bottom: 7px;
     margin-top: 5px;
     font-size: 24px;
 }
 
-#Formulario_Carrera form ul {
+#Formulario_Vuelo form ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-#Formulario_Carrera form li {
+#Formulario_Vuelo form li {
     margin-bottom: 8px;
 }
 
-#Formulario_Carrera label {
+#Formulario_Vuelo label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-#Formulario_Carrera input,
-#Formulario_Carrera textarea {
+#Formulario_Vuelo input,
+#Formulario_Vuelo textarea {
     width: 100%;
     padding: 8px 10px;
     border-radius: 8px;
@@ -49,7 +45,7 @@
     outline: none;
 }
 
-#Formulario_Carrera button {
+#Formulario_Vuelo button {
     display: block;
     width: 100%;
     margin-bottom: 5px;
@@ -63,22 +59,17 @@
     transition: background-color 0.3s ease;
 }
 
-#Formulario_Carrera button:hover {
+#Formulario_Vuelo button:hover {
     background-color: #5c6bc0;
 }
 
 
-#header-form {
+#header_form{
  display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* Tu HTML llama a 'router.navigate' en el botón cerrar,
-  pero el CSS de carrera-form usaba 'cerrarFormulario()'.
-  Te lo cambio para que llame a 'cerrarFormulario()'
-  (ver vuelo-form.html corregido opcional)
-*/
 #boton-cerrar {
     padding: 2px 6px;   
     background: none;
@@ -95,22 +86,22 @@
   transform: scale(1.1);
 }
 
-#Formulario_Carrera #boton-enviar {
+#Formulario_Vuelo #boton-enviar {
   display: block;
-  width: 60%;             
-  margin: 15px auto 10px;  
-  padding: 5px 0;       
-  background-color: #3f51b5;  
+  width: 60%;
+  margin: 15px auto 10px;
+  padding: 5px 0;
+  background-color: #3f51b5;
   color: white;
   font-weight: bold;
-  font-size: 15px;       
+  font-size: 15px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-#Formulario_Carrera #boton-enviar:hover {
-  background-color: #5c6bc0; 
-  transform: scale(1.05);    
+#Formulario_Vuelo #boton-enviar:hover {
+  background-color: #5c6bc0;
+  transform: scale(1.05);
 }

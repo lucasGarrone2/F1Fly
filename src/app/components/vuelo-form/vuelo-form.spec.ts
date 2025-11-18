@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VueloForm } from './vuelo-form';
+import { VueloFormComponent } from './vuelo-form';
 
 describe('VueloForm', () => {
-  let component: VueloForm;
-  let fixture: ComponentFixture<VueloForm>;
+  let component: VueloFormComponent;
+  let fixture: ComponentFixture<VueloFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [VueloForm]
+      imports: [VueloFormComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(VueloForm);
+    fixture = TestBed.createComponent(VueloFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

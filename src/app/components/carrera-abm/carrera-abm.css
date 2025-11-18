@@ -133,7 +133,7 @@ h2 {
   transform: translateY(-2px);
 }
 
-#overlay {
+#overlay { 
   position: fixed;
   top: 0;
   left: 0;
