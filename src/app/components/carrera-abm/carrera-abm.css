@@ -63,12 +63,13 @@ font-family: "Roboto Condensed", sans-serif;
 }
 
 .imagen-carrera{
-    padding-top: 30px;
-    padding-left: 4px;
-    width: 400px;
-    height: 220px;
-    object-fit: cover;
+    width: 100%;          
+    max-width: 400px;     
+    height: 220px;        
+    object-fit: cover;    
     border-radius: 7px;
+    display: block;
+    margin: 0 auto;       
 }
 
 footer{
