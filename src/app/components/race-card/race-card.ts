@@ -105,6 +105,8 @@ export class RaceCardComponent implements OnInit {
     protected readonly tipos_ent = ['Regular','Premium', 'VIP'];
     protected readonly cantidades = [1,2,3,4,5,6];
 
+
+    
     protected readonly form = this.fb.nonNullable.group({
     tipo_entrada: ['', [Validators.required]],
     precio_carrera: [0, [Validators.required]],

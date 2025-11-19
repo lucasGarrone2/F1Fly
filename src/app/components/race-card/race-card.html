@@ -29,10 +29,7 @@
       {{ race.ciudad_carrera }}, {{ race.pais_carrera }}
     </p>
 
-    <hr class="divider">
-
-    <div class="race-data-form">
-      <div class="col-left">
+    <div class="col-left">
         <p class="capacidad">
           <i class="fas fa-users"></i>
           Capacidad: {{ race.capacidad_carrera }}
@@ -42,11 +39,16 @@
         </p>
       </div>
 
+    <hr class="divider">
+
+    <div class="race-data-form">
+      
+
       <div class="col-right formulario">
         <form [formGroup]="form">
           <div class="tipo-entrada-block">
             <div class="tipo-entrada-display">
-              <label for="tipo_entrada">Tipo de entrada:</label>
+              <label for="tipo_entrada">Tipo de entrada: &#8595;</label>
               <select formControlName="tipo_entrada" id="tipo_entrada">
                 <option value="" disabled>Seleccione el tipo de entrada...</option>
                 @for (te of tipos_ent ; track $index) {
@@ -70,14 +72,16 @@
           </div>
 
           <div class="cantidad-display">
-            <label for="cantidad">Cantidad personas:</label>
-            <select formControlName="cantidad" id="cantidad">
-              <option value="" disabled>Seleccione la cantidad de personas...</option>
-              @for (can of cantidades; track $index) {
-                <option [value]="can">{{can}}</option>
-              }
-            </select>
-          </div>
+    <label for="cantidad">Cantidad personas:</label>
+    <select formControlName="cantidad" id="cantidad">
+    <option [ngValue]="null" disabled hidden>Seleccione la cantidad de personas...</option>
+
+  
+    @for (can of cantidades; track $index) {
+      <option [ngValue]="can">{{ can }}</option>
+    }
+  </select>
+</div>
 
         </form>
       </div>
