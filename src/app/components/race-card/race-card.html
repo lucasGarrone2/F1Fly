@@ -4,7 +4,6 @@
          [alt]="'Circuito de ' + race.nombre_carrera" 
          width="100" height="100" />
   </div>
-
   <div class="race-content">
     <div class="race-header">
       <h2 class="race-title">{{ race.nombre_carrera }}</h2>
@@ -48,7 +47,7 @@
         <form [formGroup]="form">
           <div class="tipo-entrada-block">
             <div class="tipo-entrada-display">
-              <label for="tipo_entrada">Tipo de entrada: &#8595;</label>
+              <label for="tipo_entrada">Tipo de entrada:</label>
               <select formControlName="tipo_entrada" id="tipo_entrada">
                 <option value="" disabled>Seleccione el tipo de entrada...</option>
                 @for (te of tipos_ent ; track $index) {
@@ -58,16 +57,16 @@
             </div>
 
             @if (!tipoEntradaSeleccionada) {
-  <p class="precio-display"><i class="fas fa-euro-sign"></i> Precio: Seleccione un tipo de entrada...</p>
-} @else {
-  @if(tipoEntradaSeleccionada === 'Regular'){
-    <p class="precio-display"><i class="fas fa-euro-sign"></i> Precio por persona: {{race.precio_entrada_regular}}</p>    
-  } @else if (tipoEntradaSeleccionada === 'Premium') {
-    <p class="precio-display"><i class="fas fa-euro-sign"></i> Precio por persona: {{race.precio_entrada_premium}}</p>    
-  } @else if (tipoEntradaSeleccionada === 'VIP') {
-    <p class="precio-display"><i class="fas fa-euro-sign"></i> Precio por persona: {{race.precio_entrada_vip}}</p>    
-  }
-}
+              <p class="precio-display"><i class="fas fa-euro-sign"></i> Precio: Seleccione un tipo de entrada...</p>
+            } @else {
+                @if(tipoEntradaSeleccionada === 'Regular'){
+                  <p class="precio-display"><i class="fas fa-euro-sign"></i> Precio por persona: {{race.precio_entrada_regular}}</p>    
+                } @else if (tipoEntradaSeleccionada === 'Premium') {
+                  <p class="precio-display"><i class="fas fa-euro-sign"></i> Precio por persona: {{race.precio_entrada_premium}}</p>    
+                } @else if (tipoEntradaSeleccionada === 'VIP') {
+                    <p class="precio-display"><i class="fas fa-euro-sign"></i> Precio por persona: {{race.precio_entrada_vip}}</p>    
+                } 
+            }
 
           </div>
 
@@ -84,9 +83,10 @@
 </div>
 
         </form>
+
+        
       </div>
     </div>
-
     <div class="race-footer">
       <button class="btn-more" (click)="botonVerMas(race)">Ver Más →</button>
       <button class="btn-select" (click)="reservarCarrera(race)">Seleccionar →</button>
