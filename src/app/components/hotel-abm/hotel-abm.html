@@ -31,14 +31,8 @@
 
   <div class="contenedorHotel">
 
-    <div class="columna-izquierda"> 
-      <img 
-        [src]="hotel.imagenUrl" 
-        [alt]="hotel.nombre_hotel" 
-        class="imagen-hotel"
-        onerror="this.onerror=null; this.src='https://placehold.co/400x200/3F51B5/ffffff?text=HOTEL';"
-      >
-
+    <div class="columna-izquierda">  
+      <img [ngSrc]="hotel.imagenUrl" alt="imagen_hotel" width="100"  height="100" class="imagen-hotel" />
       <div class="accionesHotel">
         <button type="button" class="botonEditar" (click)="activarEditHotel(hotel.id!)">
           ✏️ MODIFICAR

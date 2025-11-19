@@ -6,12 +6,12 @@ import { HotelForm } from '../hotel-form/hotel-form';
 import { Router, RouterLink } from '@angular/router';
 import { HabitacionForm } from '../habitacion-form/habitacion-form';
 import { HeaderGestionAdmin } from "../../header-gestion-admin/header-gestion-admin";
-
+import { NgOptimizedImage } from '@angular/common';
 
 
 @Component({
   selector: 'app-hotel-abm',
-  imports: [HotelForm, HeaderGestionAdmin, HabitacionForm, HeaderGestionAdmin],
+  imports: [HotelForm, HeaderGestionAdmin, NgOptimizedImage, HabitacionForm, HeaderGestionAdmin],
   templateUrl: './hotel-abm.html',
   styleUrl: './hotel-abm.css'
 })

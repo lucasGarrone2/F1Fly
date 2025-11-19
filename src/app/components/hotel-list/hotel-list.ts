@@ -8,10 +8,11 @@ import { ReservaClient } from '../../clients/reserva-client';
 import { AuthService } from '../../auth/auth-service';
 import { HabitacionForm } from '../habitacion-form/habitacion-form';
 import { signal } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-hotel-list',
-  imports: [CommonModule, RouterLink, HabitacionForm],
+  imports: [CommonModule, RouterLink,NgOptimizedImage, HabitacionForm],
   templateUrl: './hotel-list.html',
   styleUrl: './hotel-list.css'
 })

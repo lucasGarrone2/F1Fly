@@ -30,11 +30,8 @@
 
     <div class="hotel-card">
 
-      <div class="hotel-image-wrapper">
-          <img 
-               [src]="hotel.imagenUrl"
-               [alt]="'Imagen del hotel ' + hotel.nombre_hotel"
-               (error)="onImageError($event)">
+      <div class="hotel-image-wrapper">    
+                 <img [ngSrc]="hotel.imagenUrl" alt="imagen_hotel" width="100"  height="100" class="imagen-hotel" />
       </div>
       
       <div class="hotel-content">
