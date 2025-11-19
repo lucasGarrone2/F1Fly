@@ -2,7 +2,7 @@ import { computed, Injectable, signal } from '@angular/core';
 import { User } from '../interfaces/user';
 import { map, of, switchMap, tap, throwError } from 'rxjs';
 import { UserClient } from '../clients/user-client';
-
+import { NotificationService } from '../services/notification-service';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +13,7 @@ export class AuthService {
 
 
 
-  constructor(private userClient: UserClient) {
+  constructor(private userClient: UserClient, private notify: NotificationService) {
   this.restoreSession();
 }
 login(username: string, password: string) {
@@ -61,11 +61,12 @@ login(username: string, password: string) {
   register(newUser: User) {
     this.userExists(newUser).pipe(
       switchMap(() => this.userClient.createUser({ ...newUser, isAdmin: false })),
-      tap(() => alert('Usuario registrado con éxito'))
+      tap(() => this.notify.show("Registro exitoso", "success"))
+      
     ).subscribe({
       next: () => {},
       error: (error) => {
-        alert(error.message);
+        this.notify.show("Error al registrar el usuario", "error");
         console.error('Error al registrar usuario:', error);
       }
     });

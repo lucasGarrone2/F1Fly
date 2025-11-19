@@ -15,7 +15,7 @@ import { NgOptimizedImage } from '@angular/common';
 import { FormsModule, Validators } from "@angular/forms";
 
 import { ReactiveFormsModule, FormBuilder, FormControl } from '@angular/forms';
-
+import { NotificationService } from '../../services/notification-service';
 
 @Component({
   selector: 'app-race-card',
@@ -37,7 +37,7 @@ export class RaceCardComponent implements OnInit {
             this.safeImageUrl = this.sanitizer.bypassSecurityTrustUrl(this.race.imageUrl_carrera);
         }
     }
-  constructor(private reserva: ReservaClient, private router: Router, private auth: AuthService){}
+  constructor(private reserva: ReservaClient, private router: Router, private auth: AuthService, public notify: NotificationService){}
 
     /**
      * Determina el estado de la carrera (Próxima, Pasada, Hoy).
@@ -72,7 +72,8 @@ export class RaceCardComponent implements OnInit {
     {   
 
         if(!this.tipoEntradaSeleccionada){
-            alert('No selecciono el tipo de entrada!');
+           
+            this.notify.show("No se selecciono el tipo de entrada!", "warning")
         }else{
 
         if(this.tipoEntradaSeleccionada === 'Regular'){
@@ -143,7 +144,8 @@ export class RaceCardComponent implements OnInit {
         const user = this.auth.activeUser(); 
         
         if (!user) {
-            alert("Debe iniciar sesión para agregar favoritos");
+            
+            this.notify.show("Debe iniciar sesion para agregar favoritos", "warning")
             return;
         }else{
         const fav_carrera: FavCarrera = {
@@ -157,11 +159,13 @@ export class RaceCardComponent implements OnInit {
         
         if (existe_user.length === 0) {
         this.client_fav.addFavoritos(fav_carrera).subscribe(() => {
-          alert('Carrera agregada con éxito a sus favoritos!');
+          
+          this.notify.show("Carrera agregada con exito a sus favoritos", "success")
           window.location.reload();
         });
         } else {
-        alert('Carrera ya existente en su lista');
+            
+        this.notify.show("Carrera ya existente en su lista", "warning")
         }});
         
     }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from "@angular/router";
 import { AuthService } from '../../auth/auth-service';
+import { NotificationService } from '../../services/notification-service';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -22,7 +23,7 @@ export class Login {
   protected readonly wrongCredentials= signal(false);
   public  passwordVisible= false;
 
-constructor()
+constructor(public notify: NotificationService)
 {
   if (this.auth.isLoggedin()) {
       this.router.navigateByUrl("");
@@ -31,7 +32,7 @@ constructor()
 
    login() {
     if (this.form.invalid) {
-      alert("Error al completar el formulario");
+      this.notify.show("Error al completar el formulario", "error")
       return;
     }
 

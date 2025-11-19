@@ -1,0 +1,9 @@
+<div class="notification"
+   [class.show]="notify.visible()"
+   [class.success]="notify.type()=== 'success'"
+   [class.error]="notify.type()=== 'error'"
+   [class.info]="notify.type()=== 'info'"
+   [class.warning]="notify.type()=== 'warning'">
+   <span>{{notify.message()}} </span>
+    <button class="close-btn" (click)="notify.close()">X</button>
+</div>

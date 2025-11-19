@@ -4,12 +4,13 @@ import { Home } from './components/home/home';
 import { Login } from "./components/login/login";
 import { Header } from "./components/header/header";
 import { Footer } from "./components/footer/footer";
+import { Notification } from "./components/notification/notification";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, Home, Login, Header, Footer],
+  imports: [RouterOutlet, Home, Login, Header, Footer, Notification],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

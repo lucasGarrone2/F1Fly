@@ -7,7 +7,7 @@ import { AuthService } from '../../auth/auth-service';
 import { IVuelo } from '../../interfaces/ivuelo';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-
+import { NotificationService } from '../../services/notification-service';
 
 @Component({
   selector: 'app-lista-vuelo-seleccionar',
@@ -40,7 +40,8 @@ protected readonly client = inject(VueloClient);
 
   constructor(
     protected reserva: ReservaClient,
-    private auth: AuthService
+    private auth: AuthService,
+    public notify:NotificationService
   ) {}
 
   get vuelosFiltrados(): IVuelo[] {
@@ -65,7 +66,8 @@ protected readonly client = inject(VueloClient);
 
     const cantidad = this.cantidadSeleccionada;
     if (!cantidad) {
-        alert("Para seguir con su orden primero ingrese la cantidad de personas");
+        
+        this.notify.show("Para seguir con su orden primero ingrese la cantidad de personas", "warning")
         return; 
     }
     this.reserva.setVuelo(vuelo);

@@ -4,7 +4,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Hotel } from '../hotel/hotel-interface';
 import { HotelService } from '../hotel/hotel-service';
 import { HotelAbm } from '../hotel-abm/hotel-abm';
-
+import { NotificationService } from '../../services/notification-service';
 
 @Component({
   selector: 'app-hotel-form',
@@ -39,7 +39,7 @@ export class HotelForm {
     id: ['']
   });
 
-  constructor(){
+  constructor(public notify: NotificationService){
     effect(()=>{
       const hotel = this.hotelEditar();
       const editando = this.estadoEdicion();
@@ -94,26 +94,28 @@ export class HotelForm {
         if (!this.estadoEdicion()) {
             this.hotelService.addHotel(hotel).subscribe({
                 next: () => {
-                  alert('Hotel agregado con exito!')
+                  this.notify.show("Hotel agregado con exito", "success")
                   this.form.reset();
                   this.formularioGuardado.emit();
                 },
-                error: (error) => console.error('Error al agregar el hotel', error)
+                error: (error) => this.notify.show("Error al agregar el hotel", "error")
             });
         }
         else{
           const idActualizar = this.hotelEditar()?.id;
           if(!idActualizar){
-            alert("Error: no se pudo actualizar el hotel por falta de ID");
+           
+            this.notify.show("No se pudo actualizar el hotel por falta de ID", "error")
             return;
           }  
           this.hotelService.updateHotel(hotel, idActualizar).subscribe({
             next:()=>{
-              alert("Hotel modificado con exito!");
+              
+              this.notify.show("Hotel modificado con exito!", "info")
               this.form.reset();
               this.formularioGuardado.emit();
             },
-           error: (error) => console.error('Error al actualizar el hotel', error)
+           error: (error) => this.notify.show("Error al modificar el hotel", "error")
           });
         }
     }

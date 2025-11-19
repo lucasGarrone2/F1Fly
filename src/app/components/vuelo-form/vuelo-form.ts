@@ -3,7 +3,7 @@ import { VueloClient } from "../vuelo/vuelo-service";
 import { VueloABM } from "../vuelo-abm/vuelo-list";
 import { FormBuilder, ReactiveFormsModule, Validators, ɵInternalFormsSharedModule } from "@angular/forms";
 import { IVuelo } from "../../interfaces/ivuelo";
-
+import { NotificationService } from "../../services/notification-service";
 
 @Component({
   selector: 'app-vuelo-form',
@@ -33,7 +33,7 @@ export class VueloForm {
     precio_promedio_ticket_eur: [0, [Validators.required, Validators.min(50)]],
   });
 
-  constructor() {
+  constructor(public notify:NotificationService) {
     effect(() => {
       const vuelo = this.vuelo_edicion();
       if (this.estadoEdicion() && vuelo) {
@@ -55,7 +55,8 @@ export class VueloForm {
 
  handleSubmit() {
   if (this.form.invalid) {
-    alert("El formulario está inválido");
+    
+    this.notify.show("El formulario es invalido", "error")
     return;
   }
 
@@ -64,7 +65,8 @@ export class VueloForm {
 
     if (!this.estadoEdicion()) {
       this.vueloClient.addVuelo(vuelo).subscribe(() => {
-        alert('Vuelo agregado con éxito!');
+        
+        this.notify.show("Vuelo agregado con exito", "success")
         this.vueloABM.activarFormulario_Vuelo();
         this.form.reset();
         window.location.reload();
@@ -76,10 +78,12 @@ export class VueloForm {
           this.vueloABM.activarFormulario_Vuelo();
           this.form.reset();
           window.location.reload();
-          alert("Vuelo actualizado con éxito!");
+          
+          this.notify.show("Vuelo actualizado con exito", "info")
         });
       } else {
-        alert("No se puede actualizar el vuelo: ID no definido.");
+        
+        this.notify.show("No se puede actualizar el vuelo: ID no definido", "error")
       }
     }
   }

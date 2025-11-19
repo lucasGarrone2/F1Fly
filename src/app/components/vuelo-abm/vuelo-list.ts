@@ -6,7 +6,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { VueloClient } from '../vuelo/vuelo-service';
 import { IVuelo } from '../../interfaces/ivuelo';
 import { VueloForm } from "../vuelo-form/vuelo-form";
-
+import { NotificationService } from '../../services/notification-service';
 
 @Component({
   selector: 'app-vuelo-list',
@@ -25,6 +25,7 @@ export class VueloABM {
     this.activarFormulzarioVuelo.set(!this.activarFormulzarioVuelo());
   }
 
+  constructor(public notify: NotificationService){}
   activarEdicion_Vuelo(id_vuelo: string | number) {
     this.edicionVuelo.set(!this.edicionVuelo());
     this.vueloClient.getVuelo_ID(id_vuelo).subscribe((vuelo) => {
@@ -34,15 +35,11 @@ export class VueloABM {
   activarEliminar_Vuelo(id_vuelo: string | number) {
     if (confirm("¿Está seguro que desea eliminar este vuelo?")) {
       this.vueloClient.deleteVuelo(id_vuelo).subscribe(() => {
-        alert("Vuelo eliminado con éxito");
+       
+        this.notify.show("Vuelo eliminado con exito", "info")
         window.location.reload();
       });
     }
   }
-  //HAY 2 DUPLICADOS NO SE SI EL CORRECTO ES ESTE O EL DE ARRIBA
-   //activarEdicion_Vuelo(id_bus: string | number) {
-   // this.editarVuelo.set(!this.editarVuelo());
-   // this.vueloService.getVuelo_ID(id_bus).subscribe(vuelos => {
-   //   this.vueloEdicion.set(vuelos);
-   // });
+  
   }

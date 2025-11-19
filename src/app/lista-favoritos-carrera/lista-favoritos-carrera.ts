@@ -9,7 +9,7 @@ import { Carrera } from '../components/carrera/carrera-interface';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '../auth/auth-service';
-
+import { NotificationService } from '../services/notification-service';
 @Component({
   selector: 'app-lista-favoritos-carrera',
   imports: [RaceCardComponent],
@@ -30,13 +30,16 @@ export class ListaFavoritosCarrera {
 
   readonly eliminar = signal(false);
 
+
+  constructor(public notify:NotificationService){}
    botonEliminar(){
   this.eliminar.set(!this.eliminar());
   }
 
   eliminarCarreraFav(cf: string | number){
     this.client.deleteCarreraFavoritos(cf).subscribe(()=>{
-      alert('Carrera eliminada con exito!');
+      this.notify.show("Carrera eliminada con exito", "success")
+
       window.location.reload();
     });
   }

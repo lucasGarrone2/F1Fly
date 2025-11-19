@@ -4,6 +4,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from "@angular/router";
 import { AuthService } from '../../auth/auth-service';
 import { User } from '../../interfaces/user';
+import { NotificationService } from '../../services/notification-service';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -57,6 +58,7 @@ protected readonly listaPilotos = [
     "McLaren"
   ];
   
+  constructor(public notify: NotificationService){}
   protected readonly form = this.formBuilder.nonNullable.group({
     nombre: ['', [Validators.required]],
     username: ['', [Validators.required]],
@@ -80,11 +82,13 @@ protected readonly listaPilotos = [
       return;
     }
 
+    
     const {nombre, username,apellido, email, password, password2,dni, nacionalidad, edad, fecha_nacimiento, listaPilotos, ListaEscuderias}= this.form.getRawValue();
 
     if(password!== password2)
     {
-      alert("Las contraseñas no coinciden");
+     
+      this.notify.show("Las contraseñas no coinciden", "error")
       return;
     }
 
@@ -109,7 +113,7 @@ protected readonly listaPilotos = [
   }
   catch(error: any)
   {
-    alert(error.message);
+    this.notify.show("Error", "error")
   }
   
   }

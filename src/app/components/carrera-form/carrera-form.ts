@@ -3,6 +3,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Carrera } from '../carrera/carrera-interface';
 import { CarreraClient } from '../carrera/carrera-client';
 import { CarreraAbm } from '../carrera-abm/carrera-abm';
+import { NotificationService } from '../../services/notification-service';
 @Component({
   selector: 'app-carrera-form',
   imports: [ReactiveFormsModule],
@@ -18,7 +19,7 @@ export class CarreraForm {
   readonly estadoEdicion = input(false);
   readonly out_carrera_edicion = output<Carrera>();
   
-  constructor(){
+  constructor(public notify: NotificationService){
     effect(()=>{
       if(this.carrera_edicion() && this.estadoEdicion()){
         this.form.patchValue(this.carrera_edicion()!);
@@ -90,7 +91,7 @@ get precio_entrada_premium(){
 
    handleSubmit() {
     if (this.form.invalid) {
-      alert("El formulario está inválido");
+      this.notify.show("Error al completar el formulario", "error")
       return;
     }
 
@@ -99,7 +100,7 @@ get precio_entrada_premium(){
 
       if (!this.estadoEdicion()) {
         this.carreraClient.addCarrera(carrera).subscribe(() => {
-          alert('Carrera agregada con éxito!');
+          this.notify.show("Carrera agregada con exito", "success")
           this.carreraABM.botonAgregar();
           this.form.reset();
           window.location.reload();

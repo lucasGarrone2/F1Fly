@@ -6,7 +6,7 @@ import { Carrera } from '../carrera/carrera-interface';
 import { RouterLink } from '@angular/router';
 import { NgOptimizedImage } from '@angular/common';
 import { HeaderGestionAdmin } from "../../header-gestion-admin/header-gestion-admin";
-
+import { NotificationService } from '../../services/notification-service';
 @Component({
   selector: 'app-carrera-abm',
   imports: [CarreraForm, NgOptimizedImage, HeaderGestionAdmin],
@@ -22,6 +22,8 @@ export class CarreraAbm {
   protected readonly activarFormulario = signal(false);
   readonly carreraSeleccionada = signal<Carrera | null>(null);    
   
+  constructor(public notify: NotificationService){}
+
   botonAgregar(){
     this.activarFormulario.set(!this.activarFormulario());
   }
@@ -32,13 +34,14 @@ export class CarreraAbm {
 
   finzalizarEdicion(carreraEditada: Carrera) {
     this.carreraSeleccionada.set(null);
-    alert("Carrera actualizada con éxito!");
+    this.notify.show("Carrera actualizada con exito", "info")
   }
 
   botonEliminar(id_bus : string | number){
     if(confirm("Desea borrar esta carrera?")){
     this.carreraClient.deleteCarrera(id_bus).subscribe(()=>{
-      alert("Carrera borrada con EXITO!");
+      
+      this.notify.show("Carrera borrada con exito", "info")
       window.location.reload();
     });
   }

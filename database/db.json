@@ -321,7 +321,7 @@
       "pais": "Brasil",
       "ciudad": "São Paulo",
       "fechas_disponibles": [
-       "2026-11-07",
+        "2026-11-07",
         "2026-11-08",
         "2026-11-09",
         "2026-11-10"
@@ -969,6 +969,21 @@
       "fecha_nacimiento": "2000-01-01",
       "listaPilotos": "",
       "ListaEscuderias": ""
+    },
+    {
+      "id": "ac51",
+      "nombre": "Kevin",
+      "apellido": "Lomonaco",
+      "username": "kevinlove",
+      "email": "kevin@gmail.com",
+      "password": "kevin123",
+      "isAdmin": false,
+      "dni": "22233312",
+      "nacionalidad": "Argentina",
+      "edad": 22,
+      "fecha_nacimiento": "2002-07-18",
+      "listaPilotos": "",
+      "ListaEscuderias": ""
     }
   ],
   "listadoFavoritos": [
@@ -1158,7 +1173,5 @@
       }
     }
   ],
-  "listado-reservas":[
-    
-  ]
+  "listado-reservas": []
 }

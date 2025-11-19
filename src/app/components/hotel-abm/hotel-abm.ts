@@ -7,7 +7,7 @@ import { Router, RouterLink } from '@angular/router';
 import { HabitacionForm } from '../habitacion-form/habitacion-form';
 import { HeaderGestionAdmin } from "../../header-gestion-admin/header-gestion-admin";
 import { NgOptimizedImage } from '@angular/common';
-
+import { NotificationService } from '../../services/notification-service';
 
 @Component({
   selector: 'app-hotel-abm',
@@ -29,7 +29,7 @@ export class HotelAbm {
   hotelSeleccionadoId = signal<string | undefined>(undefined);
   hotelSeleccNombre = signal<string | undefined>(undefined);
 
-  constructor(){
+  constructor(public notify: NotificationService){
     this.cargarHoteles();
   }
 
@@ -68,12 +68,14 @@ export class HotelAbm {
     if(confirm("Desea borrar este hotel? Esta accion es irreversible")){
       this.hotelService.deleteHotel(id).subscribe({
         next:()=>{
-          alert("Hotel borrado con exito!");
+         
+          this.notify.show("Hotel borrado con exito", "info")
           this.cargarHoteles();
         },
         error:(error) =>{
           console.error('Error al eliminar el hotel', error);
-          alert("Ocurrio un error al intentar eliminar el hotel.");
+          
+          this.notify.show("Ocurrio un error al intentar eliminar el hotel", "error")
         }
       });
     }

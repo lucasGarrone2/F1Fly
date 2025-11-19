@@ -1,0 +1,33 @@
+.notification {
+  position: fixed;
+  top: 20px;
+  right: -400px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  transition: right .3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,.2);
+  z-index: 9999;
+  min-width: 250px;
+}
+
+
+.notification.show {
+  right: 20px;
+}
+
+
+.notification.success { background: #4CAF50; }
+.notification.error { background: #d9534f; }
+.notification.warning { background: #f0ad4e; }
+.notification.info { background: #0275d8; }
+
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 10px;
+}

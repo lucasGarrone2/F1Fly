@@ -3,7 +3,7 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../auth/auth-service';
-
+import { NotificationService } from '../../services/notification-service';
 @Component({
   selector: 'app-editar-perfil-usuario',
   imports: [FormsModule, CommonModule, ReactiveFormsModule],
@@ -57,6 +57,7 @@ export class EditarPerfilUsuario {
     "McLaren"
   ];
   
+  constructor(public notify: NotificationService){}
 
   protected form = this.fb.nonNullable.group({
     username: ['', Validators.required],
@@ -81,7 +82,7 @@ export class EditarPerfilUsuario {
 
   guardarCambios() {
     if (this.form.invalid) {
-      alert("Ocurrio un error al enviar el formulario");
+      this.notify.show("Ocurrio un error al enviar el formulario", "error")
       return;
     }
 
@@ -89,10 +90,11 @@ export class EditarPerfilUsuario {
 
     this.auth.updateUser(cambios)?.subscribe({
       next: () => {
-        alert("Datos actualizados correctamente");
+        
+        this.notify.show("Datos actualizados correctamente", "info")
         this.router.navigateByUrl("/mi-informacion");
       },
-      error: () => alert("Error al actualizar perfil")
+      error: () => this.notify.show("Error al actualizar el perfil", "error")
     });
   }
 }
