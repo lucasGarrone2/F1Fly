@@ -3,14 +3,12 @@
         <router-outlet></router-outlet>
     </main>
 
-    <!-- Panel lateral de reserva (SOLO visible si NO estamos en la ruta de hoteles) -->
     @if (!estaEnHoteles()) {
         <aside class="sidebar">
             <h3>Ficha de Reserva</h3>
 
             @let r = reservaCliente.reserva();
 
-            <!-- Detalle de la Carrera -->
             @if (r?.carrera) {
                 <div class="reserva-item">
                     <strong>Carrera :</strong>
@@ -19,7 +17,6 @@
                 </div>
             }
 
-            <!-- Detalle del Hotel -->
             @if (r?.hotel) {
                 <div class="reserva-item">
                     <strong>Hotel:</strong>
@@ -27,7 +24,6 @@
                 </div>
             }
 
-            <!-- Detalle de la Habitación (Combinado) -->
             @if (r?.habitacion) {
                 <div class="reserva-item">
                     <strong>Habitación ({{ r.habitacion?.cantPersonas }} pers.):</strong>
@@ -36,7 +32,6 @@
                 </div>
             }
 
-            <!-- Detalle del Vuelo -->
             @if (r?.vuelo) {
                 <div class="reserva-item">
                     <strong>Vuelo:</strong>
@@ -62,13 +57,11 @@
 
             <hr>
 
-            <!-- Resumen de Totales -->
             <div class="total-container">
                 
                 @if (reservaCliente.tieneDescuento()) {
                     <div class="total-item descuento-line">
                         <strong>Descuento (20%):</strong>
-                        <!-- Cálculo del descuento para mostrar el valor restado -->
                         <span class="descuento-valor">- €{{ (reservaCliente.subtotal() - reservaCliente.total()) | number:'1.0-2' }}</span>
                     </div>
                 }

@@ -11,5 +11,4 @@ export interface Client{
     escuderia: string
 };
 
-//timestamp para la fecha
 

@@ -2,9 +2,9 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from "@angular/router";
-import { AuthService } from '../../auth/auth-service';
 import { User } from '../../interfaces/user';
 import { NotificationService } from '../../services/notification-service';
+import { AuthService } from '../../auth/auth-service';
 @Component({
   selector: 'app-login',
   standalone: true,

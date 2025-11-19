@@ -1,6 +1,6 @@
 .toast {
   position: fixed;
-  top: 80px;  /* debajo del header */
+  top: 80px; 
   left: 50%;
   transform: translateX(-50%) translateY(-30px);
   background: #0d47a1;
@@ -15,13 +15,11 @@
   z-index: 9999;
 }
 
-/* estado visible */
 .toast.visible {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
 
-/* estado oculto */
 .toast:not(.visible) {
   opacity: 0;
   pointer-events: none;

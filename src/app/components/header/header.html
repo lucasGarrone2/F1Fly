@@ -18,7 +18,6 @@
         {
 
             @if (auth.isAdmin()) {
-             <a routerLink="/gestion-carrera" class="nav-link" (click)="closeMenu()">Gestion Admin</a>
             }
 
             <div class="profile-menu-container">
@@ -34,6 +33,7 @@
             <li (click)="verInfo()">Ver Informacion personal</li>
              <li (click)="modificarPerfil()">Modificar perfil</li>
              @if (auth.isAdmin()) {
+                <li (click)="gestionABM()">Gestion ADMIN</li>
                 <li (click)="gestionarUsuarios()">Ver listado usuarios</li>
              }
             <li (click)="verMisReservas()">Ver mis reservas</li>

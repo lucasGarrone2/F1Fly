@@ -32,7 +32,6 @@
     margin: 0 auto;
 }
 
-/* === TARJETA DE VUELO === */
 .flight-card {
     background: #0b1e46;
     border-radius: 15px;
@@ -51,7 +50,6 @@
     border: 1px solid rgba(255,255,255,0.15);
 }
 
-/* === HEADER === */
 .header {
     display: flex;
     justify-content: space-between;
@@ -67,7 +65,6 @@
     opacity: 0.8;
 }
 
-/* === RUTA === */
 .route {
     display: flex;
     justify-content: space-between;
@@ -90,7 +87,6 @@
     opacity: 0.8;
 }
 
-/* === INFORMACIÓN === */
 .info {
     display: flex;
     justify-content: space-between;
@@ -153,8 +149,8 @@
 .cantidad-display label {
     font-weight: 500;
     color: #e0e0e0;
-    white-space: nowrap; /* Evita que el label se corte */
-    flex-shrink: 0; /* No se comprime el label */
+    white-space: nowrap; 
+    flex-shrink: 0; 
 }
 
 .cantidad-display select {

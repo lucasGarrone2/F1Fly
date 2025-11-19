@@ -2,8 +2,15 @@
   <div class="race-image-wrapper">
     <img [ngSrc]="race.imageUrl_carrera" 
          [alt]="'Circuito de ' + race.nombre_carrera" 
-         width="100" height="100" />
+         width="300" height="180" />
+
+    <!-- Botones debajo de la imagen -->
+    <div class="race-footer">
+      <button class="btn-more" (click)="botonVerMas(race)">Ver Más →</button>
+      <button class="btn-select" (click)="reservarCarrera(race)">Seleccionar →</button>
+    </div>
   </div>
+
   <div class="race-content">
     <div class="race-header">
       <h2 class="race-title">{{ race.nombre_carrera }}</h2>
@@ -29,20 +36,18 @@
     </p>
 
     <div class="col-left">
-        <p class="capacidad">
-          <i class="fas fa-users"></i>
-          Capacidad: {{ race.capacidad_carrera }}
-        </p>
-        <p class="race-date">
-          <i class="fas fa-calendar-alt"></i> {{ race.fecha_carrera }}
-        </p>
-      </div>
+      <p class="capacidad">
+        <i class="fas fa-users"></i>
+        Capacidad: {{ race.capacidad_carrera }}
+      </p>
+      <p class="race-date">
+        <i class="fas fa-calendar-alt"></i> {{ race.fecha_carrera }}
+      </p>
+    </div>
 
     <hr class="divider">
 
     <div class="race-data-form">
-      
-
       <div class="col-right formulario">
         <form [formGroup]="form">
           <div class="tipo-entrada-block">
@@ -67,29 +72,19 @@
                     <p class="precio-display"><i class="fas fa-euro-sign"></i> Precio por persona: {{race.precio_entrada_vip}}</p>    
                 } 
             }
-
           </div>
 
           <div class="cantidad-display">
-    <label for="cantidad">Cantidad personas:</label>
-    <select formControlName="cantidad" id="cantidad">
-    <option [ngValue]="null" disabled hidden>Seleccione la cantidad de personas...</option>
-
-  
-    @for (can of cantidades; track $index) {
-      <option [ngValue]="can">{{ can }}</option>
-    }
-  </select>
-</div>
-
+            <label for="cantidad">Cantidad personas:</label>
+            <select formControlName="cantidad" id="cantidad">
+              <option [ngValue]="null" disabled hidden>Seleccione la cantidad de personas...</option>
+              @for (can of cantidades; track $index) {
+                <option [ngValue]="can">{{ can }}</option>
+              }
+            </select>
+          </div>
         </form>
-
-        
       </div>
-    </div>
-    <div class="race-footer">
-      <button class="btn-more" (click)="botonVerMas(race)">Ver Más →</button>
-      <button class="btn-select" (click)="reservarCarrera(race)">Seleccionar →</button>
     </div>
   </div>
 </div>

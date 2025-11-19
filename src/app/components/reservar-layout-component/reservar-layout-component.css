@@ -32,7 +32,7 @@
 
 .reserva-item {
   display: grid;
-  grid-template-columns: 1fr auto; /* info izquierda - precio derecha */
+  grid-template-columns: 1fr auto; 
   row-gap: 6px;
   column-gap: 10px;
   padding: 10px 0;
@@ -49,7 +49,7 @@
 }
 
 .precio {
-  grid-column: 2; /* siempre alineado a la derecha */
+  grid-column: 2; 
   font-weight: bold;
   color: #ff5555 !important;
 }

@@ -85,7 +85,7 @@ font-size: 1.1em;
 color: #ff5555;
  font-size: 0.85em;
 margin: 4px 0 0 0;
- height: 14px; /* mantiene el espacio aunque no haya error */
+ height: 14px; 
 }
 
 .input-error {

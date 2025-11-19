@@ -1,12 +1,12 @@
 
 :root {
-    --color-primary: #CC1C4A; /* Rojo de tu CSS de referencia */
-    --color-secondary: #0B162F; /* Fondo principal muy oscuro */
-    --color-text-light: white; /* Texto claro */
-    --color-form-bg: #0B162F; /* Fondo del formulario (igual que el body) */
-    --color-input-bg: #0c0c1a; /* Fondo del input */
-    --color-shadow: rgba(204, 28, 74, 0.5); /* Sombra roja/rosa fuerte */
-    --color-border: #182A4B; /* Borde sutil */
+    --color-primary: #CC1C4A; 
+    --color-secondary: #0B162F; 
+    --color-text-light: white; 
+    --color-form-bg: #0B162F; 
+    --color-input-bg: #0c0c1a; 
+    --color-shadow: rgba(204, 28, 74, 0.5); 
+    --color-border: #182A4B; 
 }
 
 
@@ -25,7 +25,6 @@ body{
     transition: background-color 0.5 ease;
 }
 .form {
-    /* CRÍTICO: El formulario ahora actúa como el contenedor de la parrilla de 2 columnas. */
     background-color: var(--color-form-bg); 
     border: 1px solid var(--color-border);
     border-radius: 10px;
@@ -34,10 +33,9 @@ body{
     width: 90%;
     max-width: 550px; 
     
-    /* PROPIEDADES DE GRID PARA LAYOUT DE 2 COLUMNAS */
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Dos columnas de igual ancho para los pares de campos */
-    gap: 1.2rem 1rem; /* Ajuste del espaciado entre filas y columnas */
+    grid-template-columns: 1fr 1fr; 
+    gap: 1.2rem 1rem; 
 
     box-shadow: 0 0 20px #CC1C4A;
     transition: box-shadow 0.4s ease, transform 0.4s ease;
@@ -66,7 +64,6 @@ h2{
     border-bottom: 1px solid var(--color-border);
     text-transform: uppercase;
 }
-/* Espacio entre el icono y el texto */
 .form h5 i {
     font-style: normal;     
     font-weight: 900; 
@@ -87,7 +84,6 @@ h2{
     letter-spacing: 0.75px;
 }
 
-/*Inputs y selects*/
 
 .form-field input,
 .form-field select {
@@ -100,7 +96,6 @@ h2{
     outline: none;
 }
 
-/*Esto es para cuando aprieto un campo para llenar, cambia el color*/
 .form-field input:focus, 
 .form-field select:focus {
     border-color: var(--color-primary);
@@ -119,7 +114,7 @@ h2{
 }
 
 .btn-submit {
-    grid-column: 1 / -1; /* Ocupa ambas columnas */
+    grid-column: 1 / -1; 
     margin-top: 10px;
     text-align: center;
 }
@@ -139,17 +134,17 @@ h2{
 }
 
 .btn-submit button[type="submit"]:hover {
-    background-color: #ff3333; /* Usando un rojo brillante para el hover */
+    background-color: #ff3333; 
     transform: translateY(-2px);
     box-shadow: 0 0 12px rgba(204, 28, 74, 0.8);
 }
 
 
 .error-text {
-  color: #ff5555; /* Rojo para errores */
+  color: #ff5555; 
   font-size: 0.85em;
   margin: 4px 0 0 0;
-  height: 14px; /* Mantiene el espacio fijo */
+  height: 14px; 
 }
 
 .input-error {
@@ -169,7 +164,6 @@ h2{
     font-size: 0.7em;
 }
 
-/* --- RESPONSIVE --- */
 @media (max-width: 600px) {
     form.form {
         padding: 25px 20px;

@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../../auth/auth-service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { UserClient } from '../../clients/user-client';
 import { User } from '../../interfaces/user';
+import { AuthService } from '../../auth/auth-service';
 @Component({
   selector: 'app-usuarios-registrados',
   imports: [],

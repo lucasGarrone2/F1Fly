@@ -27,7 +27,6 @@ export class RaceList {
     this.toastService.show("🎊🎊Felicidades! Obtuviste un descuento del 20% utilizando el cupon F1FLY20 🏎️")
   }
 
-  /**Diccionario para el tema de las regiones y paises */
   private readonly countryRegionMap: { [key: string]: string } = {
     'italia': 'europe',
     'españa': 'europe',
@@ -58,11 +57,9 @@ export class RaceList {
     return this.countryRegionMap[normalizedCountry] || 'other'; 
   }
 
-  /* Signals para almacenar los filtros */
   protected readonly dateFilter = signal<string[]>([]); 
   protected readonly regionFilter= signal<string[]>([]);
 
-  /* Signal computado para filtrar carreras */
   protected readonly filteredRaces= computed(()=> {
     const races = this.raceSource(); 
     const dates = this.dateFilter();
@@ -86,7 +83,6 @@ export class RaceList {
     return filteredList;
   });
 
-  /** Handlers para actualizar los signals */
   onDateChange(event: Event) {
     const input = event.target as HTMLInputElement;
     const quarter = input.value; 

@@ -3,12 +3,11 @@ import { VueloClient } from '../vuelo/vuelo-service';
 import { Router } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ReservaClient } from '../../clients/reserva-client';
-import { AuthService } from '../../auth/auth-service';
 import { IVuelo } from '../../interfaces/ivuelo';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NotificationService } from '../../services/notification-service';
-
+import { AuthService } from '../../auth/auth-service';
 @Component({
   selector: 'app-lista-vuelo-seleccionar',
   imports: [CommonModule, ReactiveFormsModule],

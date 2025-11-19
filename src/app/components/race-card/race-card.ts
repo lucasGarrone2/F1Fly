@@ -10,10 +10,9 @@ import { User } from '../../interfaces/user';
 import { FavCarrera } from '../../interfaces/fav-carrera';
 import { ListaFavClient } from '../../services/lista-fav-client';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { AuthService } from '../../auth/auth-service';
 import { NgOptimizedImage } from '@angular/common';
 import { FormsModule, Validators } from "@angular/forms";
-
+import { AuthService } from '../../auth/auth-service';
 import { ReactiveFormsModule, FormBuilder, FormControl } from '@angular/forms';
 import { NotificationService } from '../../services/notification-service';
 

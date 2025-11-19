@@ -5,7 +5,6 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { ReservaClient } from '../../clients/reserva-client'; // Su inyección
 import { Subscription } from 'rxjs';
 
-/// PRECIO BASE POR NOCHE Y PERSONA
 const tarifas: { [key: string]: number } = {
   estandar: 200,
   premium: 500,
@@ -42,7 +41,6 @@ export class HabitacionForm implements OnInit, OnDestroy {
   });
 
 
-  // Verifica que las noches sean válidas y este adentro del rango (max 3 dias minimo 1)
   calcularNoches = computed((): number => {
     const fechaEntradaStr = this.formu.controls.fechaEntrada.value;
     const fechaSalidaStr = this.formu.getRawValue().fechaSalida; 
@@ -74,7 +72,6 @@ export class HabitacionForm implements OnInit, OnDestroy {
 
     let tarifaBasePorPersona = this.tarifas[tipoHab as keyof typeof this.tarifas];
 
-    // Aseguramos que la tarifa sea válida y haya al menos 1 persona y 1 noche
     if (typeof tarifaBasePorPersona === 'number' && noches > 0 && personas >= 1) {
         
         return tarifaBasePorPersona * personas * noches; 
@@ -90,10 +87,8 @@ export class HabitacionForm implements OnInit, OnDestroy {
     const disponibles = this.fechasDisponibles();
     
     if (disponibles && disponibles.length >= 2) {
-        // 1. Inicializar la Fecha de Entrada con la primera disponible
         this.formu.controls.fechaEntrada.setValue(disponibles[0]);
         
-        // 2. Establecer el efecto de cambio de entrada
         this.subs.add(
             this.formu.controls.fechaEntrada.valueChanges.subscribe(() => {
                 this.actualizarFechasDeSalida(true); 
@@ -126,11 +121,9 @@ export class HabitacionForm implements OnInit, OnDestroy {
     }
 
     const indexEntrada = disponibles.indexOf(entradaStr);
-    const minSalidaIndex = indexEntrada + 1; // Mínimo: 1 noche después
+    const minSalidaIndex = indexEntrada + 1; 
     
-    // Si la fecha de entrada no está en la lista (indexEntrada = -1) o no hay una fecha posterior
     if (indexEntrada === -1 || minSalidaIndex >= disponibles.length) {
-        // La fecha de entrada no es válida o es la última disponible
         this.minFechaSalida.set(null);
         this.maxFechaSalida.set(null);
         this.formu.controls.fechaSalida.disable();
@@ -139,29 +132,23 @@ export class HabitacionForm implements OnInit, OnDestroy {
     }
 
 
-    // Hay al menos una noche disponible
     this.formu.controls.fechaSalida.enable();
     
-    // 1. Establecer el MÍNIMO (1 noche después)
     const minValida = disponibles[minSalidaIndex];
     this.minFechaSalida.set(minValida);
 
-    // 2. Establecer el MÁXIMO (Máximo 3 noches después O la última fecha disponible)
-    // La fecha de salida para 3 noches es indexEntrada + 3.
+    
     const maxIndexNoches = indexEntrada + 3; 
     const salidaMaxIndex = Math.min(maxIndexNoches, disponibles.length - 1);
     const maxValida = disponibles[salidaMaxIndex];
     this.maxFechaSalida.set(maxValida);
 
-    // 3. Si se fuerza (ej. al cambiar la entrada), establecer el valor por defecto (1 noche)
     if (forceDefaultValue) {
-        // Asegurarse de que el valor por defecto no sea mayor que el máximo permitido
         const currentValue = this.formu.controls.fechaSalida.value;
         if (!currentValue || currentValue < minValida || currentValue > maxValida) {
            this.formu.controls.fechaSalida.setValue(minValida);
         } else {
-           // Si el valor actual es válido, lo mantenemos (esto puede pasar en un ngOnInit inicial)
-           // Sin embargo, si la fecha de entrada cambió, debemos resetear a minValida
+           
            if (forceDefaultValue) {
               this.formu.controls.fechaSalida.setValue(minValida);
            }
@@ -175,7 +162,6 @@ export class HabitacionForm implements OnInit, OnDestroy {
     this.formu.markAllAsTouched();
     const noches = this.calcularNoches();
     
-    // Validar duración y establecer error si es 0 noches (por rangos inválidos, no por requerimiento)
     if (noches === 0 && this.formu.controls.fechaEntrada.valid && this.formu.controls.fechaSalida.valid) {
         this.formu.controls.fechaSalida.setErrors({ 'invalidDuration': true });
     } else if (this.formu.controls.fechaSalida.hasError('invalidDuration')) {
@@ -183,7 +169,7 @@ export class HabitacionForm implements OnInit, OnDestroy {
     }
     
     if (this.formu.valid && noches > 0) {
-      this.formu.controls.fechaSalida.setErrors(null); // Asegurar que no quede el error
+      this.formu.controls.fechaSalida.setErrors(null); 
       
       const seleccion = {
         tipoHabitacion: this.formu.controls.tipoHabitacion.value,

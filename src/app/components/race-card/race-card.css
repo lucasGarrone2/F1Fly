@@ -18,6 +18,14 @@
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
+/* Contenedor de la imagen y los botones */
+.race-image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea todo a la izquierda */
+  gap: 10px; /* espacio entre imagen y botones */
+}
+
 .race-image-wrapper img {
   width: 300px;
   height: 180px;
@@ -91,7 +99,6 @@
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
-
 }
 
 .col-left,
@@ -122,16 +129,14 @@
 }
 
 
-
 .race-footer {
-  margin-top: auto;
-  padding-top: 10px;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  flex-direction: column; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
   gap: 10px; 
+  margin-top: 5px;
 }
-
 
 .btn-select,
 .btn-more {
@@ -148,7 +153,6 @@
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
-
 .btn-select {
   background: linear-gradient(135deg, #0ac77c, #07a864);
   color: #fff;
@@ -158,7 +162,6 @@
   transform: translateY(-3px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
 }
-
 
 .btn-more {
   background: linear-gradient(135deg, #5a5d5c, #3c3d3c);
@@ -193,10 +196,10 @@
 
 .tipo-entrada-display label,
 .cantidad-display label {
-    font-weight: 500;
-    color: #e0e0e0;
-    white-space: nowrap; /* Evita que el label se corte */
-    flex-shrink: 0; /* No se comprime el label */
+  font-weight: 500;
+  color: #e0e0e0;
+  white-space: nowrap; 
+  flex-shrink: 0; 
 }
 
 .tipo-entrada-display,
@@ -206,7 +209,6 @@
   gap: 15px;
   margin-bottom: 10px; 
 }
-
 
 .capacidad {
   display: flex;
@@ -220,43 +222,36 @@
   margin-bottom: 15px; 
 }
 
-
-
 .precio-display {
-   
-    margin-top: 5px !important; 
-    font-weight: 600;
-    color: #ffd700; 
+  margin-top: 5px !important; 
+  font-weight: 600;
+  color: #ffd700; 
 }
 
 .precio-display {
   margin-top: 50px; 
 }
 
-
-
 .formulario select {
-
-    background-color: #1a316b; 
-    color: white; 
-    border: 1px solid #29406c; 
-    border-radius: 6px; 
-    padding: 8px 12px; 
-    height: 38px;
-    width: auto; 
-    flex-grow: 1; 
-    font-weight: 600;
-    font-size: 0.95rem; 
-    outline: none;
-    cursor: pointer;
-    transition: border-color 0.2s ease, background-color 0.2s ease;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    
+  background-color: #1a316b; 
+  color: white; 
+  border: 1px solid #29406c; 
+  border-radius: 6px; 
+  padding: 8px 12px; 
+  height: 38px;
+  width: auto; 
+  flex-grow: 1; 
+  font-weight: 600;
+  font-size: 0.95rem; 
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .formulario select:hover {
-    background-color: #203f7a; 
-    border-color: #4dabf7; 
+  background-color: #203f7a; 
+  border-color: #4dabf7; 
 }

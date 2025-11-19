@@ -70,7 +70,7 @@ h2{
 }
 
 .btn-submit {
-    grid-column: 1 / -1; /* Ocupa ambas columnas */
+    grid-column: 1 / -1; 
     margin-top: 10px;
     text-align: center;
 }

@@ -6,7 +6,6 @@ import { IReserva } from '../interfaces/ireserva';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth/auth-service';
-
 @Component({
   selector: 'app-listado-reservas',
   imports: [],

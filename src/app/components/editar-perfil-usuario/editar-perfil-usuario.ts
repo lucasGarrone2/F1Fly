@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../../auth/auth-service';
 import { NotificationService } from '../../services/notification-service';
+import { AuthService } from '../../auth/auth-service';
 @Component({
   selector: 'app-editar-perfil-usuario',
   imports: [FormsModule, CommonModule, ReactiveFormsModule],

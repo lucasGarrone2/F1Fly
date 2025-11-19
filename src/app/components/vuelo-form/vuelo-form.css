@@ -1,7 +1,4 @@
-/* Tu CSS de formulario.
-  El selector #Formulario_Carrera viene de tu vuelo-form.html.
-  ¡Te sugiero renombrar ese ID a #Formulario_Vuelo en el HTML!
-*/
+
  #Formulario_Carrera {
    position: fixed;
     top: 1%; 
@@ -74,11 +71,6 @@
   align-items: center;
 } 
 
-/* Tu HTML llama a 'router.navigate' en el botón cerrar,
-  pero el CSS de carrera-form usaba 'cerrarFormulario()'.
-  Te lo cambio para que llame a 'cerrarFormulario()'
-  (ver vuelo-form.html corregido opcional)
-*/
  #boton-cerrar {
     padding: 2px 6px;   
     background: none;

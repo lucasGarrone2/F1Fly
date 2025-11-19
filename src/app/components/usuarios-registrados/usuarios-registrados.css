@@ -9,7 +9,6 @@
   font-family: "Segoe UI", sans-serif;
 }
 
-/* --- TÍTULO --- */
 h2 {
   color: #ff4141; 
   margin-bottom: 25px;
@@ -19,38 +18,34 @@ h2 {
   padding-bottom: 10px;
 }
 
-/* --- CARTA DE USUARIO (Item de la lista) --- */
 .dato {
   background: rgba(255,255,255,0.05);
   padding: 15px 20px;
   border-radius: 8px;
-  margin-bottom: 15px; /* Espacio entre usuarios */
+  margin-bottom: 15px; 
   transition: transform 0.2s ease, background-color 0.2s;
-  border-left: 4px solid transparent; /* Borde invisible para la animación */
+  border-left: 4px solid transparent; 
 }
 
-/* Efecto Hover: Se ilumina un poco y se mueve a la derecha */
 .dato:hover {
   background: rgba(255,255,255,0.08);
   transform: translateX(5px);
-  border-left-color: #ff4141; /* Aparece una línea roja a la izquierda */
+  border-left-color: #ff4141; 
 }
 
-/* --- TEXTO DENTRO DEL P --- */
 .dato p {
   margin: 0;
   color: #eaeaea;
   font-size: 1rem;
   line-height: 1.6;
-  word-wrap: break-word; /* Evita que emails o passwords largos rompan el diseño */
+  word-wrap: break-word; 
 }
 
-/* --- NOMBRE DEL USUARIO (El strong) --- */
 .dato strong {
   color: #ff7a7a; 
   font-weight: 600;
   font-size: 1.1rem;
-  display: block; /* Ponemos el nombre en su propia línea para destacarlo */
+  display: block; 
   margin-bottom: 4px;
   text-transform: capitalize;
 }
@@ -73,7 +68,6 @@ h2 {
   background: #d93737;
 }
 
-/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
   .users-container {
     padding: 20px;

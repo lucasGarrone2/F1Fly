@@ -5,11 +5,10 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { Hotel } from '../hotel/hotel-interface';
 import { HotelService } from '../hotel/hotel-service';
 import { ReservaClient } from '../../clients/reserva-client';
-import { AuthService } from '../../auth/auth-service';
 import { HabitacionForm } from '../habitacion-form/habitacion-form';
 import { signal } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
-
+import { AuthService } from '../../auth/auth-service';
 @Component({
   selector: 'app-hotel-list',
   imports: [CommonModule, RouterLink,NgOptimizedImage, HabitacionForm],
@@ -20,7 +19,6 @@ export class HotelList {
   private readonly hotelService = inject(HotelService);
   protected hotelSource = toSignal(this.hotelService.getHoteles());
 
-  ///HABITACION NUEVO
   activarFormHabitacion = signal(false);
   hotelSeleccionado = signal<Hotel | undefined>(undefined);
 
@@ -28,7 +26,6 @@ export class HotelList {
     const imgElement = event.target as HTMLImageElement;
     const fallbackSrc = 'assets/default-hotel.jpg';
 
-    // Solo cambiamos si la imagen que falló no es la de fallback, para prevenir bucles
     if (imgElement.src.indexOf(fallbackSrc) === -1) {
       imgElement.src = fallbackSrc;
     }
@@ -63,7 +60,7 @@ export class HotelList {
 
     if (hotel.id!== undefined && hotel.id!==null) {
       this.hotelSeleccionado.set(hotel);
-      this.activarFormHabitacion.set(true); //abre el modal 
+      this.activarFormHabitacion.set(true);  
     } else {
       console.error('El hotel seleccionado no tiene ID válido.');
       return;
