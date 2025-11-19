@@ -1,13 +1,11 @@
+<section id="Formulario_Carrera">
 
-
-<section id="Formulario_Carrera"> 
-    
     <div id="header-form">
         <h2>
             @if (!estadoEdicion()) {
-                Cargue su nuevo vuelo...
+            Cargue su nuevo vuelo...
             } @else {
-                Edite los datos del vuelo...
+            Edite los datos del vuelo...
             }
         </h2>
 
@@ -21,61 +19,161 @@
     <div>
         <form [formGroup]="form" (ngSubmit)="handleSubmit()">
             <ul>
+                <li>
+                    <label for="carrera_id">ID de la carrera:</label>
+                    <input type="text" id="carrera_id" formControlName="carrera_id" placeholder="ABC123">
+                    @if(carrera_id.dirty || carrera_id.touched){
+                    @if(carrera_id.hasError('required')){
+                    <span>Campo requerido</span>
+                    }@else if(carrera_id.hasError('minlength')){
+                    <span>Debe contener al menos 3 caracteres</span>
+                    }@else if(carrera_id.hasError('maxlength')){
+                    <span>Debe contener menos de 10 caracteres</span>
+                    }
+                    }
+                </li>
 
                 <li>
                     <label for="pais_origen">País Origen:</label>
                     <input type="text" id="pais_origen" formControlName="pais_origen" placeholder="Argentina...">
+                    @if(pais_origen.dirty || pais_origen.touched){
+                    @if(pais_origen.hasError('required')){
+                    <span>Campo requerido</span>
+                    }@else if(pais_origen.hasError('minlength')){
+                    <span>Debe contener más de 2 caracteres</span>
+                    }@else if(pais_origen.hasError('maxlength')){
+                    <span>Debe contener menos de 40 caracteres</span>
+                    }
+                    }
                 </li>
 
                 <li>
                     <label for="ciudad_origen">Ciudad Origen:</label>
                     <input type="text" id="ciudad_origen" formControlName="ciudad_origen" placeholder="Buenos Aires...">
+                    @if(ciudad_origen.dirty || ciudad_origen.touched){
+                    @if(ciudad_origen.hasError('required')){
+                    <span>Campo requerido</span>
+                    }@else if(ciudad_origen.hasError('minlength')){
+                    <span>Debe contener más de 2 caracteres</span>
+                    }@else if(ciudad_origen.hasError('maxlength')){
+                    <span>Debe contener menos de 40 caracteres</span>
+                    }
+                    }
                 </li>
 
                 <li>
                     <label for="pais_destino">País Destino:</label>
                     <input type="text" id="pais_destino" formControlName="pais_destino" placeholder="España...">
+                    @if(pais_destino.dirty || pais_destino.touched){
+                    @if(pais_destino.hasError('required')){
+                    <span>Campo requerido</span>
+                    }@else if(pais_destino.hasError('minlength')){
+                    <span>Debe contener más de 2 caracteres</span>
+                    }@else if(pais_destino.hasError('maxlength')){
+                    <span>Debe contener menos de 40 caracteres</span>
+                    }
+                    }
                 </li>
 
                 <li>
                     <label for="ciudad_destino">Ciudad Destino:</label>
                     <input type="text" id="ciudad_destino" formControlName="ciudad_destino" placeholder="Barcelona...">
+                    @if(ciudad_destino.dirty || ciudad_destino.touched){
+                    @if(ciudad_destino.hasError('required')){
+                    <span>Campo requerido</span>
+                    }@else if(ciudad_destino.hasError('minlength')){
+                    <span>Debe contener más de 2 caracteres</span>
+                    }@else if(ciudad_destino.hasError('maxlength')){
+                    <span>Debe contener menos de 40 caracteres</span>
+                    }
+                    }
                 </li>
 
                 <li>
                     <label for="aerolinea">Aerolínea:</label>
-                    <input type="text" id="aerolinea" formControlName="aerolinea" placeholder="Iberia, Aerolíneas, etc.">
+                    <input type="text" id="aerolinea" formControlName="aerolinea"
+                        placeholder="Iberia, Aerolíneas, etc.">
+                    @if(aerolinea.dirty || aerolinea.touched){
+                    @if(aerolinea.hasError('required')){
+                    <span>Campo requerido</span>
+                    }@else if(aerolinea.hasError('minlength')){
+                    <span>Debe contener más de 2 caracteres</span>
+                    }@else if(aerolinea.hasError('maxlength')){
+                    <span>Debe contener menos de 40 caracteres</span>
+                    }
+                    }
                 </li>
 
                 <li>
                     <label for="fecha_disponible">Fecha Disponible:</label>
                     <input type="date" id="fecha_disponible" formControlName="fecha_disponible">
+                    @if(fecha_disponible.dirty || fecha_disponible.touched){
+                    @if(fecha_disponible.hasError('required')){
+                    <span>Campo requerido</span>
+                    }
+                    }
                 </li>
 
                 <li>
                     <label for="tipo_avion">Tipo de Avión:</label>
                     <input type="text" id="tipo_avion" formControlName="tipo_avion" placeholder="Airbus A320...">
+                    @if(tipo_avion.dirty || tipo_avion.touched){
+                    @if(tipo_avion.hasError('required')){
+                    <span>Campo requerido</span>
+                    }@else if(tipo_avion.hasError('minlength')){
+                    <span>Debe contener más de 2 caracteres</span>
+                    }@else if(tipo_avion.hasError('maxlength')){
+                    <span>Debe contener menos de 40 caracteres</span>
+                    }
+                    }
                 </li>
 
                 <li>
                     <label for="clase_asiento">Clase Asiento:</label>
-                    <input type="text" id="clase_asiento" formControlName="clase_asiento" placeholder="Económica, Business...">
+                    <input type="text" id="clase_asiento" formControlName="clase_asiento"
+                        placeholder="Económica, Business...">
+                    @if(clase_asiento.dirty || clase_asiento.touched){
+                    @if(clase_asiento.hasError('required')){
+                    <span>Campo requerido</span>
+                    }@else if(clase_asiento.hasError('minlength')){
+                    <span>Debe contener más de 2 caracteres</span>
+                    }@else if(clase_asiento.hasError('maxlength')){
+                    <span>Debe contener menos de 40 caracteres</span>
+                    }
+                    }
                 </li>
 
                 <li>
                     <label for="precio_promedio_ticket_eur">Precio Ticket (€):</label>
                     <input type="number" id="precio_promedio_ticket_eur" formControlName="precio_promedio_ticket_eur">
+                    @if(precio_promedio_ticket_eur.dirty || precio_promedio_ticket_eur.touched){
+                    @if(precio_promedio_ticket_eur.hasError('required')){
+                    <span>Campo requerido</span>
+                    }@else if(precio_promedio_ticket_eur.hasError('min')){
+                    <span>El precio mínimo debe ser de €50</span>
+                    }@else if(precio_promedio_ticket_eur.hasError('max')){
+                    <span>El precio máximo debe ser de €5000</span>
+                    }
+                    }
                 </li>
+
 
             </ul>
 
-            <button type="submit" id="boton-enviar" [disabled]="form.invalid">
-                @if (!estadoEdicion()) {
+            <div class="botones-formulario">
+                <button type="submit" id="boton-enviar" [disabled]="form.invalid">
+                    @if (!estadoEdicion()) {
                     ENVIAR
-                } @else {
+                    } @else {
                     ACTUALIZAR
-                }
-            </button>
+                    }
+                </button>
+
+                <button type="button" id="boton-reiniciar" (click)="form.reset()">
+                    REINICIAR
+                </button>
+            </div>
+
         </form>
     </div>
 
