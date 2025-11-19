@@ -530,8 +530,7 @@
   ],
   "vuelos": [
     {
-      "id": "2",
-      "carrera_id": 1,
+      "carrera_id": "1",
       "pais_origen": "Alemania",
       "ciudad_origen": "Frankfurt",
       "pais_destino": "Bahrain",
@@ -540,7 +539,8 @@
       "fecha_disponible": "2026-04-12",
       "tipo_avion": "Airbus A330",
       "clase_asiento": "Business",
-      "precio_promedio_ticket_eur": 750
+      "precio_promedio_ticket_eur": 750,
+      "id": "2"
     },
     {
       "id": "3",

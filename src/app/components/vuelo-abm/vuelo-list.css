@@ -64,7 +64,6 @@ h2 {
 
 .contenedorVuelo {
     display: grid;
-    grid-template-columns: 400px auto;
     background-color: #0e265a;
     color: white;
     margin: 0 auto 70px auto;

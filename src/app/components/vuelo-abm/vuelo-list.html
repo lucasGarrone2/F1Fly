@@ -11,7 +11,7 @@
   <h2>F1FLY ADMIN VUELOS</h2>
   <div id="boton-agregar">
     <button type="button" class="botonAgregar" (click)="activarFormulario_Vuelo()">
-      AGREGAR NUEVO VUELO
+      ➕ AGREGAR NUEVO VUELO ➕
     </button>
   </div>
   @for (vuelo of vuelos; track vuelo.id) {
@@ -29,12 +29,13 @@
         <li><strong>PRECIO:</strong> ${{ vuelo.precio_promedio_ticket_eur }}</li>
       </ul>
     </div>
+    <br>
     <div class="botones">
       <button type="button" class="botonModificar" (click)="vuelo.id !== undefined && activarEdicion_Vuelo(vuelo.id)">
-        MODIFICAR
+        ✏️ MODIFICAR
       </button>
       <button type="button" class="botonEliminar" (click)="vuelo.id !== undefined && activarEliminar_Vuelo(vuelo.id)">
-        ELIMINAR
+        🗑️ ELIMINAR
       </button>
     </div>
   </div>
