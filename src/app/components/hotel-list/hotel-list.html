@@ -72,10 +72,6 @@
         </div>
 
         <div class="hotel-footer">
-          <button routerLink="/hoteles/{{hotel.id}}" class="btn-detalles">
-            Ver Detalles →
-          </button>
-
           <button class="btn-seleccionar"
                   [title]="!hayCarreraSeleccionada ? 'Primero seleccione una carrera' : 'Abrir formulario de gestión de habitaciones' "
                   (click)="seleccionarHotel(hotel)">
