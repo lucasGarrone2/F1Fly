@@ -65,5 +65,6 @@ closeMenu()
 
  gestionABM(){
   this.router.navigateByUrl('/gestion-carrera');
+  this.closeMenu();
  }
 }
