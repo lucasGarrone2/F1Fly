@@ -321,7 +321,7 @@
       "pais": "Brasil",
       "ciudad": "São Paulo",
       "fechas_disponibles": [
-       "2026-11-07",
+        "2026-11-07",
         "2026-11-08",
         "2026-11-09",
         "2026-11-10"
@@ -1158,7 +1158,126 @@
       }
     }
   ],
-  "listado-reservas":[
-    
+  "listado-reservas": [
+    {
+      "id": "22c9",
+      "id_user": "1",
+      "precio_total_reserva": 4190,
+      "carrera": {
+        "nombre_carrera": "Bahrain International Circuit",
+        "fecha_carrera": "2026-04-13",
+        "capacidad_carrera": 70000,
+        "descripcion_carrera": "Pista desértica, diseño Tilke, carreras bajo luces.",
+        "cantidad_vueltas_carrera": 100,
+        "ciudad_carrera": "Sakhir",
+        "pais_carrera": "Bahrain",
+        "imageUrl_carrera": "bahrein.jpg",
+        "precio_entrada_regular": 120,
+        "precio_entrada_premium": 150,
+        "precio_entrada_vip": 600,
+        "tipo_entrada": "Regular",
+        "id": "bbab",
+        "precio_carrera": 240
+      },
+      "hotel": {
+        "id": "1",
+        "nombre_hotel": "Sofitel Bahrain Zallaq Thalassa Sea & Spa",
+        "carrera_id": 1,
+        "pais": "Bahrain",
+        "ciudad": "Sakhir",
+        "fechas_disponibles": [
+          "2026-04-11",
+          "2026-04-12",
+          "2026-04-13",
+          "2026-04-14"
+        ],
+        "precio_promedio_habitacion_eur": 350,
+        "tieneAmenities": true,
+        "tieneTransporte": true,
+        "imagenUrl": "fotosHotel/sakhir.jpg",
+        "direccionExacta": "105 Zallaq Highway, Zallaq"
+      },
+      "habitacion": {
+        "tipoHabitacion": "estandar",
+        "cantPersonas": 1,
+        "fechaEntrada": "2026-04-11",
+        "fechaSalida": "2026-04-12",
+        "noches": 1,
+        "precioTotal": 200
+      },
+      "vuelo": {
+        "id": "2",
+        "carrera_id": 1,
+        "pais_origen": "Alemania",
+        "ciudad_origen": "Frankfurt",
+        "pais_destino": "Bahrain",
+        "ciudad_destino": "Manama",
+        "aerolinea": "Lufthansa",
+        "fecha_disponible": "2026-04-12",
+        "tipo_avion": "Airbus A330",
+        "clase_asiento": "Business",
+        "precio_promedio_ticket_eur": 750
+      }
+    },
+    {
+      "id": "86a4",
+      "id_user": "1",
+      "precio_total_reserva": 680,
+      "carrera": {
+        "nombre_carrera": "Circuit de Monaco",
+        "fecha_carrera": "2026-05-25",
+        "capacidad_carrera": 37000,
+        "descripcion_carrera": "El clásico urbano: curvas estrechas y glamour en la Riviera.",
+        "cantidad_vueltas_carrera": 99,
+        "ciudad_carrera": "Montecarlo",
+        "pais_carrera": "Mónaco",
+        "imageUrl_carrera": "monaco.png",
+        "precio_entrada_regular": 80,
+        "precio_entrada_premium": 150,
+        "precio_entrada_vip": 300,
+        "tipo_entrada": "VIP",
+        "id": "5d57",
+        "precio_carrera": 300
+      },
+      "hotel": {
+        "id": "3",
+        "nombre_hotel": "Montecarlo Bay Hotel & Resort",
+        "carrera_id": 2,
+        "pais": "Mónaco",
+        "ciudad": "Montecarlo",
+        "fechas_disponibles": [
+          "2026-05-23",
+          "2026-05-24",
+          "2026-05-25",
+          "2026-05-26"
+        ],
+        "precio_promedio_habitacion_eur": 420,
+        "tieneAmenities": true,
+        "tieneTransporte": false,
+        "imagenUrl": "fotosHotel/montecarlo.jpeg",
+        "direccionExacta": "40 Avenue Princesse Grace"
+      },
+      "habitacion": {
+        "tipoHabitacion": "estandar",
+        "cantPersonas": 1,
+        "fechaEntrada": "2026-05-23",
+        "fechaSalida": "2026-05-24",
+        "noches": 1,
+        "precioTotal": 200
+      },
+      "vuelo": {
+        "id": "4",
+        "carrera_id": 2,
+        "pais_origen": "España",
+        "ciudad_origen": "Madrid",
+        "pais_destino": "Mónaco",
+        "ciudad_destino": "Niza",
+        "aerolinea": "Air France",
+        "fecha_disponible": "2026-05-23",
+        "tipo_avion": "Airbus A320",
+        "clase_asiento": "Economy",
+        "precio_promedio_ticket_eur": 180
+      }
+    }
   ]
 }

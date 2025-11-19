@@ -1,7 +1,11 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, inject, input } from '@angular/core';
 import { Reserva } from '../components/reserva/reserva';
 import { ClientListaReservas } from '../client-lista-reservas';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { IReserva } from '../interfaces/ireserva';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth/auth-service';
 
 @Component({
   selector: 'app-listado-reservas',
@@ -11,11 +15,22 @@ import { toSignal } from '@angular/core/rxjs-interop';
 })
 export class ListadoReservas {
   protected readonly client = inject(ClientListaReservas);
+  protected readonly route = inject(ActivatedRoute);
+  protected readonly router = inject(Router);
+  protected readonly auth = inject(AuthService);
 
-  protected readonly reservas_todas = toSignal(this.client.getReservas());
-  protected readonly isLoading = computed(()=>this.reservas_todas===undefined);
-
-
+  protected readonly id_bus = this.route.snapshot.paramMap.get('id');
   
+  protected readonly reservas_bus = (() => {
+    if (this.id_bus !== '1') {
+      return toSignal(this.client.getFavoritosByUser(this.id_bus!));
+    } else {
+      return toSignal(this.client.getReservas());
+    }
+  })();
+
+  protected readonly isLoading = computed(()=>this.reservas_bus===undefined);
+
+  protected readonly user = this.auth.activeUser();
 
 }

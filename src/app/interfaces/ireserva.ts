@@ -6,6 +6,7 @@ import { Injectable } from "@angular/core"
 export interface IReserva {
     id?:string |number,
     id_user?: string | number,
+    precio_total_reserva?: number,
     carrera?: Carrera;
     hotel?:Hotel;
     vuelo?:IVuelo;

@@ -41,7 +41,8 @@ closeMenu()
 
  verMisReservas()
  {
-
+  const user = this.auth.activeUser(); 
+  this.router.navigateByUrl('lista-reservas/' + user?.id);
   this.closeMenu();
  }
 

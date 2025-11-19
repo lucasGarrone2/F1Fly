@@ -16,6 +16,7 @@ import { VueloABM } from './components/vuelo-abm/vuelo-list';
 import { UsuariosRegistrados } from './components/usuarios-registrados/usuarios-registrados';
 import { Reserva } from './components/reserva/reserva';
 import { DetailsCarrera } from './components/details-carrera/details-carrera';
+import { ListadoReservas } from './listado-reservas/listado-reservas';
 
 export const routes: Routes = [
 
@@ -26,12 +27,12 @@ export const routes: Routes = [
   { path: 'gestion-carrera', component: CarreraAbm, canActivate: [authGuardGuard] },
   { path: 'gestion-hoteles', component: HotelAbm, canActivate: [authGuardGuard] },
   { path: 'lista-hoteles', component: HotelList },
- {path: 'gestion-vuelos', component: VueloABM, canActivate: [authGuardGuard]},
-{path: 'mi-informacion', component: PerfilUsuario,  canActivate: [authGuardGuard]},
-{path: 'editar-perfil', component: EditarPerfilUsuario,  canActivate: [authGuardGuard]},
-{path: 'gestionar-usuarios', component: UsuariosRegistrados, canActivate: [authGuardGuard] },
-{ path: 'vuelos', component: ListaVueloSeleccionar, canActivate: [authGuardGuard] },
-{ path: 'reserva-confirmada', component: Reserva, canActivate: [authGuardGuard]},
+  {path: 'gestion-vuelos', component: VueloABM, canActivate: [authGuardGuard]},
+  {path: 'mi-informacion', component: PerfilUsuario,  canActivate: [authGuardGuard]},
+  {path: 'editar-perfil', component: EditarPerfilUsuario,  canActivate: [authGuardGuard]},
+  {path: 'gestionar-usuarios', component: UsuariosRegistrados, canActivate: [authGuardGuard] },
+  { path: 'vuelos', component: ListaVueloSeleccionar, canActivate: [authGuardGuard] },
+  { path: 'reserva-confirmada', component: Reserva, canActivate: [authGuardGuard]},
   {
     path:"lista-favoritos/:id",
     title: 'Lista favoritos',
@@ -41,7 +42,11 @@ export const routes: Routes = [
     title: 'Detalles Carrera',
     component: DetailsCarrera
   },
-  // RUTAS DEL LAYOUT "RESERVAR"
+  {
+    path: 'lista-reservas/:id',
+    title: 'Lista reservas',
+    component: ListadoReservas
+  },
   {
     path: 'reservar',
     component: ReservarLayoutComponent,
