@@ -11,7 +11,10 @@
             <h2>Tu experiencia F1 completa, en un solo lugar</h2>
             <p>Reserva carreras, viajes y hoteles juntos. Vivi la experiencia de la Formula 1 sin complicaciones.</p>
           <button class="btn-rojo" (click)="botonExplorar()" onclick="document.getElementById('carreras').scrollIntoView({behavior:'smooth'})">Explorar Carreras</button>
-            <button class="btn-blanco" routerLink="/registro">Crear Cuenta</button>
+            @if(!auth.isLoggedin())
+            {
+                <button class="btn-blanco" routerLink="/registro">Crear Cuenta</button>
+            }
         </section>
         <section class="servicios">
             <div class="cards">

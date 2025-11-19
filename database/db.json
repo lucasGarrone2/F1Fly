@@ -149,21 +149,6 @@
       "precio_entrada_vip": 300,
       "tipo_entrada": "Regular",
       "id": "62ad"
-    },
-    {
-      "id": "cd84",
-      "nombre_carrera": "Circuito Galvez",
-      "fecha_carrera": "2026-01-01",
-      "capacidad_carrera": 100000,
-      "descripcion_carrera": "Circuito galvez",
-      "cantidad_vueltas_carrera": 60,
-      "ciudad_carrera": "Buenos Aires",
-      "pais_carrera": "Argentina",
-      "imageUrl_carrera": "https://www.solotc.com.ar/wp-content/uploads/2025/07/autodromo-buenos-aires-reformas-f1-scaled.jpg",
-      "precio_entrada_regular": 80,
-      "precio_entrada_premium": 300,
-      "precio_entrada_vip": 300,
-      "tipo_entrada": "Regular"
     }
   ],
   "hoteles": [
@@ -932,103 +917,24 @@
       "dni": "00000000",
       "nacionalidad": "Argentina",
       "edad": 30,
-      "fecha_nacimiento": "1995-01-01"
+      "fecha_nacimiento": "1995-01-01",
+      "listaPilotos": "Franco Colapinto",
+      "ListaEscuderias": "Mercedes"
     },
     {
-      "id": "428b",
-      "username": "lucasgarrone2",
-      "password": "Futbolteamo2",
+      "id": "7ee7",
+      "nombre": "Prueba",
+      "apellido": "Final",
+      "username": "pruebafinal",
+      "email": "prueba@gmail.com",
+      "password": "Prueba123",
       "isAdmin": false,
-      "email": "lucasgarrone3@gmail.com",
-      "nombre": "Lucas",
-      "apellido": "Garrone",
-      "dni": 44860455,
+      "dni": "44860455",
       "nacionalidad": "Argentina",
       "edad": 22,
       "fecha_nacimiento": "2003-08-08",
       "listaPilotos": "Franco Colapinto",
       "ListaEscuderias": "Mercedes"
-    },
-    {
-      "username": "prueba2",
-      "email": "prueba2@gmail.com",
-      "password": "Prueba1234",
-      "id": "c6e4"
-    },
-    {
-      "id": "21b6",
-      "nombre": "Valentina",
-      "apellido": "Landaburu",
-      "username": "valenlandaburu",
-      "email": "valenlandaburu@gmail.com",
-      "password": "Valen123",
-      "isAdmin": false,
-      "dni": "333333333",
-      "nacionalidad": "Argentina",
-      "edad": 21,
-      "fecha_nacimiento": "2004-06-09",
-      "listaPilotos": "",
-      "ListaEscuderias": ""
-    },
-    {
-      "id": "6d93",
-      "nombre": "Pepe",
-      "apellido": "Reyes",
-      "username": "pepe444",
-      "email": "pepe444@gmail.com",
-      "password": "Prueba1234",
-      "isAdmin": false,
-      "dni": "88888888",
-      "nacionalidad": "Argentina",
-      "edad": 44,
-      "fecha_nacimiento": "2000-01-01",
-      "listaPilotos": "",
-      "ListaEscuderias": ""
-    },
-    {
-      "id": "ac51",
-      "nombre": "Kevin",
-      "apellido": "Lomonaco",
-      "username": "kevinlove",
-      "email": "kevin@gmail.com",
-      "password": "kevin123",
-      "isAdmin": false,
-      "dni": "22233312",
-      "nacionalidad": "Argentina",
-      "edad": 22,
-      "fecha_nacimiento": "2002-07-18",
-      "listaPilotos": "",
-      "ListaEscuderias": ""
-    },
-    {
-      "id": "b411",
-      "nombre": "Felipe",
-      "apellido": "Loyol",
-      "username": "pipeloyola",
-      "email": "pipe@gmail.com",
-      "password": "pipe123",
-      "isAdmin": false,
-      "dni": "29929292",
-      "nacionalidad": "Chile",
-      "edad": 24,
-      "fecha_nacimiento": "2025-05-08",
-      "listaPilotos": "",
-      "ListaEscuderias": ""
-    },
-    {
-      "id": "bd1f",
-      "nombre": "persona",
-      "apellido": "prueba",
-      "username": "prueba99",
-      "email": "prueba@gmail.com",
-      "password": "prueba123",
-      "isAdmin": false,
-      "dni": "92929292",
-      "nacionalidad": "Argentina",
-      "edad": 22,
-      "fecha_nacimiento": "2003-08-08",
-      "listaPilotos": "",
-      "ListaEscuderias": ""
     }
   ],
   "listadoFavoritos": [
@@ -1520,36 +1426,6 @@
       }
     },
     {
-      "id": "7347",
-      "precio_total_reserva": 0,
-      "id_user": "428b"
-    },
-    {
-      "id": "9c72",
-      "precio_total_reserva": 0,
-      "id_user": "428b"
-    },
-    {
-      "id": "3c38",
-      "precio_total_reserva": 0,
-      "id_user": "428b"
-    },
-    {
-      "id": "6719",
-      "precio_total_reserva": 0,
-      "id_user": "428b"
-    },
-    {
-      "id": "055a",
-      "precio_total_reserva": 0,
-      "id_user": "428b"
-    },
-    {
-      "id": "44d7",
-      "precio_total_reserva": 0,
-      "id_user": "428b"
-    },
-    {
       "id": "37de",
       "id_user": "428b",
       "precio_total_reserva": 2300,
@@ -1610,9 +1486,184 @@
       }
     },
     {
-      "id": "2741",
-      "precio_total_reserva": 0,
-      "id_user": "428b"
+      "id": "3bf5",
+      "id_user": "1",
+      "precio_total_reserva": 7080,
+      "carrera": {
+        "nombre_carrera": "Silverstone Circuit",
+        "fecha_carrera": "2026-07-06",
+        "capacidad_carrera": 150000,
+        "descripcion_carrera": " La cuna del automovilismo británico, combinaciones rápidas y espectaculares gradas.",
+        "cantidad_vueltas_carrera": 52,
+        "ciudad_carrera": "Silverstone",
+        "pais_carrera": "Reino Unido",
+        "imageUrl_carrera": "silverstone.jpg",
+        "precio_entrada_regular": 80,
+        "precio_entrada_premium": 150,
+        "precio_entrada_vip": 300,
+        "tipo_entrada": "Premium",
+        "id": "24cc",
+        "precio_carrera": 450
+      },
+      "hotel": {
+        "id": "5",
+        "nombre_hotel": "Silverstone Lodge",
+        "carrera_id": 3,
+        "pais": "Reino Unido",
+        "ciudad": "Silverstone",
+        "fechas_disponibles": [
+          "2026-07-04",
+          "2026-07-05",
+          "2026-07-06",
+          "2026-07-07"
+        ],
+        "precio_promedio_habitacion_eur": 220,
+        "tieneAmenities": true,
+        "tieneTransporte": true,
+        "imagenUrl": "fotosHotel/silverstone.jpg",
+        "direccionExacta": "Silverstone, Towcester NN12 8TN"
+      },
+      "habitacion": {
+        "tipoHabitacion": "vip",
+        "cantPersonas": 3,
+        "fechaEntrada": "2026-07-04",
+        "fechaSalida": "2026-07-05",
+        "noches": 1,
+        "precioTotal": 3000
+      },
+      "vuelo": {
+        "id": "8",
+        "carrera_id": 3,
+        "pais_origen": "Argentina",
+        "ciudad_origen": "Buenos Aires",
+        "pais_destino": "Reino Unido",
+        "ciudad_destino": "Londres",
+        "aerolinea": "Aerolíneas Argentinas",
+        "fecha_disponible": "2026-07-03",
+        "tipo_avion": "Airbus A330",
+        "clase_asiento": "Business",
+        "precio_promedio_ticket_eur": 1800
+      }
+    },
+    {
+      "id": "77d4",
+      "id_user": "428b",
+      "precio_total_reserva": 9840,
+      "carrera": {
+        "nombre_carrera": "Bahrain International Circuita",
+        "fecha_carrera": "2026-04-13",
+        "capacidad_carrera": 70000,
+        "descripcion_carrera": "Pista desértica, diseño Tilke, carreras bajo luces.",
+        "cantidad_vueltas_carrera": 100,
+        "ciudad_carrera": "Sakhir",
+        "pais_carrera": "Bahrain",
+        "imageUrl_carrera": "bahrein.jpg",
+        "precio_entrada_regular": 100,
+        "precio_entrada_premium": 300,
+        "precio_entrada_vip": 600,
+        "tipo_entrada": "Premium",
+        "id": "bbab",
+        "precio_carrera": 1800
+      },
+      "hotel": {
+        "id": "1",
+        "nombre_hotel": "Sofitel Bahrain Zallaq Thalassa Sea & Spa",
+        "carrera_id": 1,
+        "pais": "Bahrain",
+        "ciudad": "Sakhir",
+        "fechas_disponibles": [
+          "2026-04-11",
+          "2026-04-12",
+          "2026-04-13",
+          "2026-04-14"
+        ],
+        "precio_promedio_habitacion_eur": 350,
+        "tieneAmenities": true,
+        "tieneTransporte": true,
+        "imagenUrl": "fotosHotel/sakhir.jpg",
+        "direccionExacta": "105 Zallaq Highway, Zallaq"
+      },
+      "habitacion": {
+        "tipoHabitacion": "vip",
+        "cantPersonas": 6,
+        "fechaEntrada": "2026-04-11",
+        "fechaSalida": "2026-04-12",
+        "noches": 1,
+        "precioTotal": 6000
+      },
+      "vuelo": {
+        "carrera_id": "1",
+        "pais_origen": "Alemania",
+        "ciudad_origen": "Frankfurt",
+        "pais_destino": "Bahrain",
+        "ciudad_destino": "Manama",
+        "aerolinea": "Lufthansa",
+        "fecha_disponible": "2026-04-12",
+        "tipo_avion": "Airbus A330",
+        "clase_asiento": "Business",
+        "precio_promedio_ticket_eur": 750,
+        "id": "2"
+      }
+    },
+    {
+      "id": "c15f",
+      "id_user": "7ee7",
+      "precio_total_reserva": 2400,
+      "carrera": {
+        "nombre_carrera": "Circuit de Monaco",
+        "fecha_carrera": "2026-05-25",
+        "capacidad_carrera": 37000,
+        "descripcion_carrera": "El clásico urbano: curvas estrechas y glamour en la Riviera.",
+        "cantidad_vueltas_carrera": 99,
+        "ciudad_carrera": "Montecarlo",
+        "pais_carrera": "Mónaco",
+        "imageUrl_carrera": "monaco.png",
+        "precio_entrada_regular": 80,
+        "precio_entrada_premium": 150,
+        "precio_entrada_vip": 300,
+        "tipo_entrada": "Premium",
+        "id": "5d57",
+        "precio_carrera": 300
+      },
+      "hotel": {
+        "id": "3",
+        "nombre_hotel": "Montecarlo Bay Hotel & Resort",
+        "carrera_id": 2,
+        "pais": "Mónaco",
+        "ciudad": "Montecarlo",
+        "fechas_disponibles": [
+          "2026-05-23",
+          "2026-05-24",
+          "2026-05-25",
+          "2026-05-26"
+        ],
+        "precio_promedio_habitacion_eur": 420,
+        "tieneAmenities": true,
+        "tieneTransporte": false,
+        "imagenUrl": "fotosHotel/montecarlo.jpeg",
+        "direccionExacta": "40 Avenue Princesse Grace"
+      },
+      "habitacion": {
+        "tipoHabitacion": "vip",
+        "cantPersonas": 2,
+        "fechaEntrada": "2026-05-23",
+        "fechaSalida": "2026-05-24",
+        "noches": 1,
+        "precioTotal": 2000
+      },
+      "vuelo": {
+        "id": "5",
+        "carrera_id": 2,
+        "pais_origen": "Italia",
+        "ciudad_origen": "Roma",
+        "pais_destino": "Mónaco",
+        "ciudad_destino": "Niza",
+        "aerolinea": "ITA Airways",
+        "fecha_disponible": "2026-05-24",
+        "tipo_avion": "Embraer 190",
+        "clase_asiento": "Business",
+        "precio_promedio_ticket_eur": 350
+      }
     }
   ]
 }

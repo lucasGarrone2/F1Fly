@@ -119,9 +119,6 @@ aplicarCupon() {
         const order = await actions.order.capture();
         console.log("Pago completado:", order);
 
-        const audio = new Audio('/cancionF1.mp3');
-        audio.play().catch(err => console.log("Autoplay bloqueado:", err));
-
         this.router.navigateByUrl("/reserva-confirmada");
       },
       onError: (err: any) => {
