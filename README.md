@@ -1,6 +1,33 @@
-# F1Fly
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.3.
+🏎️ F1Fly
+F1Fly es una aplicación web desarrollada en Angular que permite gestionar carreras de Fórmula 1, reservas de hoteles, vuelos y usuarios.
+Incluye autenticación, panel administrativo, notificaciones personalizadas, validaciones avanzadas y un flujo completo de reserva.
+
+Este proyecto fue generado usando Angular CLI versión 20.3.3.
+
+---
+
+📌
+ Funcionalidades principales
+Gestión de carreras, hoteles y vuelos(altas, bajas, modificaciones).
+Reservas completas con carrera + hotel + vuelo.
+Sistema de autenticación (login / registro).
+Validaciones de formularios.
+Vista de reservas confirmadas con animaciones y audio.
+Diseño responsivo para uso en desktop y mobile.
+Interacción con servicios propios para datos dinámicos.
+
+---
+
+🛠️
+ Tecnologías utilizadas
+Angular 20
+TypeScript
+HTML5 / CSS3
+JSON-Server
+
+---
+
 
 ## Development server
 
