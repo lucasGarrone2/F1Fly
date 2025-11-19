@@ -124,7 +124,7 @@ nav {
 }
 
 .btn-perfil i {
-  font-size: 28px;
+  font-size: 60px;
   color: white;
 }
 
@@ -132,8 +132,9 @@ nav {
 
 .menu-perfil {
   position: absolute;
-  top: 45px;        
-  right: 0;
+  top: 65px;        
+  left: 50%;           
+  transform: translate(-50%, -10px); 
   width: 200px;
   background: #1c1c1c;
   color: white;
@@ -144,15 +145,13 @@ nav {
   box-shadow: 0 4px 15px rgba(0,0,0,0.35);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-10px);
   transition: all 0.2s ease-out;
 }
-
 
 .menu-perfil.open {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
+  transform: translate(-50%, 0); 
 }
 
 .menu-perfil li {
@@ -170,11 +169,14 @@ nav {
   display: none;
 }
 
-.saludo{
-  text-align: center;
+.saludo {
+    display: block;               
+    text-align: center;           
     color: #FF5555; 
     font-size: 16px; 
     letter-spacing: 0.5px;
-    margin-right: 8px; 
-    transition: color 0.3s ease-in-out;
+    padding: 8px 15px;            
+    margin: 8px 0;                
+    border-bottom: 2px solid #FF5555; 
+    transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }

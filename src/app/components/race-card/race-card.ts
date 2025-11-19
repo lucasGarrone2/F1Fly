@@ -70,6 +70,10 @@ export class RaceCardComponent implements OnInit {
     reservarCarrera(race: Carrera)
     {   
 
+        if (this.form.invalid) {
+        this.notify.show("Debe seleccionar tipo de entrada y cantidad de personas", "warning");
+        return;
+    }
         if(!this.tipoEntradaSeleccionada){
            
             this.notify.show("No se selecciono el tipo de entrada!", "warning")
