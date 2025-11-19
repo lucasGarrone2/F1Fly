@@ -1,4 +1,4 @@
-<section id="Formulario_Hotel"> 
+<section id="Formulario_Hotel">
   <div id="hotel-header-form">
     <h2>{{ estadoEdicion() ? 'Modificar hotel...' : 'Cargar nuevo hotel...' }}</h2>
     <div>
@@ -8,98 +8,153 @@
 
   <form [formGroup]="form" (ngSubmit)="handleSubmit()">
     <ul>
-      
+
       @if (estadoEdicion()) {
-        <li>
-          <label>ID HOTEL:</label>
-          <input type="text" formControlName="id" readonly>
-        </li>
+      <li>
+        <label>ID HOTEL:</label>
+        <input type="text" formControlName="id" readonly>
+      </li>
       }
-
       <li>
-        <label>Nombre hotel:</label>
-        <input type="text" formControlName="nombre_hotel">
-        @if (form.get('nombre_hotel')?.invalid && form.get('nombre_hotel')?.touched) {
-          <p class="hotel-error-text">El nombre es obligatorio (mínimo 3 caracteres).</p>
+        <label for="nombre_hotel">Nombre del hotel:</label>
+        <input type="text" id="nombre_hotel" formControlName="nombre_hotel" placeholder="Hotel Central...">
+        @if(nombre_hotel.dirty || nombre_hotel.touched){
+        @if(nombre_hotel.hasError('required')){
+        <span>Campo requerido</span>
+        }@else if(nombre_hotel.hasError('minlength')){
+        <span>Debe contener al menos 3 caracteres</span>
+        }@else if(nombre_hotel.hasError('maxlength')){
+        <span>Debe contener menos de 40 caracteres</span>
+        }
         }
       </li>
 
       <li>
-        <label>Carrera asociada (ID):</label>
-        <input type="number" formControlName="carrera_id">
-        @if (form.get('carrera_id')?.invalid && form.get('carrera_id')?.touched) {
-          <p class="hotel-error-text">Debe ingresar un ID de carrera mayor o igual a 1.</p>
+        <label for="carrera_id">ID de Carrera:</label>
+        <input type="number" id="carrera_id" formControlName="carrera_id" placeholder="1, 2, 3...">
+        @if(carrera_id.dirty || carrera_id.touched){
+        @if(carrera_id.hasError('required')){
+        <span>Campo requerido</span>
+        }@else if(carrera_id.hasError('min')){
+        <span>Debe ser mayor a 0</span>
+        }
         }
       </li>
 
       <li>
-        <label>País:</label>
-        <input type="text" formControlName="pais">
-        @if (form.get('pais')?.invalid && form.get('pais')?.touched) {
-          <p class="hotel-error-text">El país es obligatorio.</p>
+        <label for="pais">País:</label>
+        <input type="text" id="pais" formControlName="pais" placeholder="Argentina...">
+        @if(pais.dirty || pais.touched){
+        @if(pais.hasError('required')){
+        <span>Campo requerido</span>
+        }@else if(pais.hasError('minlength')){
+        <span>Debe contener más de 2 caracteres</span>
+        }@else if(pais.hasError('maxlength')){
+        <span>Debe contener menos de 40 caracteres</span>
+        }
         }
       </li>
 
       <li>
-        <label>Ciudad:</label>
-        <input type="text" formControlName="ciudad">
-        @if (form.get('ciudad')?.invalid && form.get('ciudad')?.touched) {
-          <p class="hotel-error-text">La ciudad es obligatoria.</p>
+        <label for="ciudad">Ciudad:</label>
+        <input type="text" id="ciudad" formControlName="ciudad" placeholder="Buenos Aires...">
+        @if(ciudad.dirty || ciudad.touched){
+        @if(ciudad.hasError('required')){
+        <span>Campo requerido</span>
+        }@else if(ciudad.hasError('minlength')){
+        <span>Debe contener más de 2 caracteres</span>
+        }@else if(ciudad.hasError('maxlength')){
+        <span>Debe contener menos de 40 caracteres</span>
+        }
         }
       </li>
 
       <li>
-        <label>Fechas disponibles (separadas por coma):</label>
-        <input type="text" formControlName="fechas_disponibles_text" placeholder="2026-10-24, 2026-10-25">
-        @if (form.get('fechas_disponibles_text')?.invalid && form.get('fechas_disponibles_text')?.touched) {
-          <p class="hotel-error-text">Debe ingresar al menos una fecha.</p>
+        <label for="fechas_disponibles_text">Fechas Disponibles:</label>
+        <input type="text" id="fechas_disponibles_text" formControlName="fechas_disponibles_text"
+          placeholder="2026-10-24, 2026-10-25...">
+        @if(fechas_disponibles_text.dirty || fechas_disponibles_text.touched){
+        @if(fechas_disponibles_text.hasError('required')){
+        <span>Campo requerido</span>
+        }@else if(fechas_disponibles_text.hasError('minlength')){
+        <span>Debe contener más de 2 caracteres</span>
+        }@else if(fechas_disponibles_text.hasError('maxlength')){
+        <span>Debe contener menos de 100 caracteres</span>
+        }
         }
       </li>
 
       <li>
-        <label>Precio Promedio (€):</label>
-        <input type="number" formControlName="precio_promedio_habitacion_eur">
-        @if (form.get('precio_promedio_habitacion_eur')?.invalid && form.get('precio_promedio_habitacion_eur')?.touched) {
-          <p class="hotel-error-text">Precio mínimo permitido: 50 €.</p>
+        <label for="precio_promedio_habitacion_eur">Precio Habitación (€):</label>
+        <input type="number" id="precio_promedio_habitacion_eur" formControlName="precio_promedio_habitacion_eur">
+        @if(precio_promedio_habitacion_eur.dirty || precio_promedio_habitacion_eur.touched){
+        @if(precio_promedio_habitacion_eur.hasError('required')){
+        <span>Campo requerido</span>
+        }@else if(precio_promedio_habitacion_eur.hasError('min')){
+        <span>El precio mínimo debe ser de €50</span>
         }
-      </li>
-
-      <li class="checkbox-group">
-        <div class="checkbox-item">
-            <label>Amenities:</label>
-            <input type="checkbox" formControlName="tieneAmenities">
-        </div>
-        
-        <div class="checkbox-item">
-            <label>Transporte:</label>
-            <input type="checkbox" formControlName="tieneTransporte">
-        </div>
-      </li>
-      <li>
-        <label>Imagen URL:</label>
-        <input type="text" formControlName="imagenUrl" placeholder="https://ejemplo.com/imagen.jpg o assets/fotosHotel/...">
-        @if (form.get('imagenUrl')?.invalid && form.get('imagenUrl')?.touched) {
-          <p class="hotel-error-text">Debe ingresar una URL de imagen.</p>
         }
       </li>
 
       <li>
-        <label>Dirección Exacta:</label>
-        <input type="text" formControlName="direccionExacta" placeholder="Ej: 105 Zallaq Highway, Zallaq, Bahrain">
-        @if (form.get('direccionExacta')?.invalid && form.get('direccionExacta')?.touched) {
-          <p class="hotel-error-text">La dirección es obligatoria (mínimo 10 caracteres).</p>
+        <label for="tieneAmenities">Tiene amenities:</label>
+        <input type="checkbox" id="tieneAmenities" formControlName="tieneAmenities">
+        @if(tieneAmenities.dirty || tieneAmenities.touched){
+        @if(tieneAmenities.hasError('required')){
+        <span>Campo requerido</span>
+        }
         }
       </li>
+
+      <li>
+        <label for="tieneTransporte">Tiene transporte:</label>
+        <input type="checkbox" id="tieneTransporte" formControlName="tieneTransporte">
+        @if(tieneTransporte.dirty || tieneTransporte.touched){
+        @if(tieneTransporte.hasError('required')){
+        <span>Campo requerido</span>
+        }
+        }
+      </li>
+
+      <li>
+        <label for="imagenUrl">URL Imagen:</label>
+        <input type="text" id="imagenUrl" formControlName="imagenUrl" placeholder="https://...">
+        @if(imagenUrl.dirty || imagenUrl.touched){
+        @if(imagenUrl.hasError('required')){
+        <span>Campo requerido</span>
+        }@else if(imagenUrl.hasError('minlength')){
+        <span>Debe contener al menos 5 caracteres</span>
+        }@else if(imagenUrl.hasError('maxlength')){
+        <span>Debe contener menos de 200 caracteres</span>
+        }
+        }
+      </li>
+
+      <li>
+        <label for="direccionExacta">Dirección exacta:</label>
+        <input type="text" id="direccionExacta" formControlName="direccionExacta" placeholder="Av. Siempreviva 742...">
+        @if(direccionExacta.dirty || direccionExacta.touched){
+        @if(direccionExacta.hasError('required')){
+        <span>Campo requerido</span>
+        }@else if(direccionExacta.hasError('minlength')){
+        <span>Debe contener al menos 10 caracteres</span>
+        }@else if(direccionExacta.hasError('maxlength')){
+        <span>Debe contener menos de 100 caracteres</span>
+        }
+        }
+      </li>
+
+
 
     </ul>
 
     <div class="botones-formulario">
-        <button id="hotel-boton-enviar" type="submit" [disabled]="form.invalid">
-            {{ estadoEdicion() ? 'GUARDAR CAMBIOS' : 'ENVIAR' }}
-        </button>
-        <button type="button" id="hotel-boton-reiniciar" (click)="cerrarForm()">
-            CANCELAR
-        </button>
+      <button id="hotel-boton-enviar" type="submit" [disabled]="form.invalid">
+        {{ estadoEdicion() ? 'GUARDAR CAMBIOS' : 'ENVIAR' }}
+      </button>
+      <button type="button" id="hotel-boton-reiniciar" (click)="cerrarForm()">
+        CANCELAR
+      </button>
     </div>
 
   </form>
