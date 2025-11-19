@@ -108,19 +108,26 @@ nav {
 
 
 .btn-perfil {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 28px;
-  color: white;
-  padding: 5px;
+    
+    display: flex; 
+    align-items: center;
+    gap: 8px; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 15px; 
+    color: white; 
+    font-size: 16px; 
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out; 
+    box-shadow: none; 
 }
-
 
 .btn-perfil i {
   font-size: 28px;
   color: white;
 }
+
 
 
 .menu-perfil {
@@ -161,4 +168,13 @@ nav {
 
 .btn-cerrar-sesion {
   display: none;
+}
+
+.saludo{
+  text-align: center;
+    color: #FF5555; 
+    font-size: 16px; 
+    letter-spacing: 0.5px;
+    margin-right: 8px; 
+    transition: color 0.3s ease-in-out;
 }

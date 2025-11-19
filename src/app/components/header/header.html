@@ -10,15 +10,15 @@
         
         @if (!auth.isLoggedin())
          {
-            <a routerLink="/registro" class="btn-registrarse">Registrarse</a> 
-
+            <a routerLink="/registro" class="btn-registrarse" (click)="closeMenu()">Registrarse</a> 
+            
         
         } 
              @if(auth.isLoggedin())
         {
 
             @if (auth.isAdmin()) {
-             <a routerLink="/gestion-carrera" class="nav-link">Gestion Admin</a>
+             <a routerLink="/gestion-carrera" class="nav-link" (click)="closeMenu()">Gestion Admin</a>
             }
 
             <div class="profile-menu-container">
@@ -28,6 +28,9 @@
             </button> 
 
         <ul class="menu-perfil" [class.open]="menuOpen">
+            @if (auth.activeUser()?.nombre) {
+                <span class="saludo">Bienvenido {{auth.activeUser()?.nombre}}! </span>
+            }
             <li (click)="verInfo()">Ver Informacion personal</li>
              <li (click)="modificarPerfil()">Modificar perfil</li>
              @if (auth.isAdmin()) {
@@ -43,11 +46,11 @@
             
         }
         @else {
-         <a routerLink="/inicio_sesion" class="nav-link">Iniciar sesion</a>
+         <a routerLink="/inicio_sesion" class="nav-link" (click)="closeMenu()">Iniciar sesion</a>
 
         }
-        <a routerLink="lista-de-carreras" class="nav-link">Lista de carreras</a>
-        <a routerLink="/lista-hoteles" class="nav-link">Lista de hoteles</a>
+        <a routerLink="lista-de-carreras" class="nav-link" (click)="closeMenu()">Lista de carreras</a>
+        <a routerLink="/lista-hoteles" class="nav-link" (click)="closeMenu()">Lista de hoteles</a>
 
     </nav>
 </header>

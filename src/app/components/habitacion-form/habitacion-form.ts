@@ -1,5 +1,5 @@
 
-import { CommonModule, CurrencyPipe, DatePipe, DecimalPipe } from '@angular/common';
+import { CommonModule} from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, computed, inject, input, output, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ReservaClient } from '../../clients/reserva-client'; // Su inyección
@@ -14,7 +14,7 @@ const tarifas: { [key: string]: number } = {
 
 @Component({
   selector: 'app-habitacion-form',
-  imports: [CommonModule, ReactiveFormsModule, DecimalPipe],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './habitacion-form.html',
   styleUrl: './habitacion-form.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

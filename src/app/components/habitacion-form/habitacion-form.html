@@ -59,9 +59,9 @@
             <div class="input-group">
                 <label for="tipoHabitacion">Tipo de Habitación:</label>
                 <select id="tipoHabitacion" [formControl]="formu.controls.tipoHabitacion" class="input-select">
-                    <option value="estandar">Estándar (€{{ getTarifa('estandar') | number:'1.0-0' }} / persona)</option>
-                    <option value="premium">Premium (€{{ getTarifa('premium') | number:'1.0-0' }} / persona)</option>
-                    <option value="vip">VIP (€{{ getTarifa('vip') | number:'1.0-0' }} / persona)</option>
+                    <option value="estandar">Estándar (€{{ getTarifa('estandar')}} / Persona)</option>
+                    <option value="premium">Premium (€{{ getTarifa('premium') }} / Persona)</option>
+                    <option value="vip">VIP (€{{ getTarifa('vip')}} / Persona)</option>
                 </select>
             </div>
 

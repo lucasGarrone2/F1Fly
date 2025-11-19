@@ -281,7 +281,7 @@
       "nombre_hotel": "Starhotels Anderson Milan",
       "carrera_id": 4,
       "pais": "Italia",
-      "ciudad": "Monza(Milán)",
+      "ciudad": "Monza (Milán)",
       "fechas_disponibles": [
         "2026-09-04",
         "2026-09-05",
@@ -1076,22 +1076,6 @@
       }
     },
     {
-      "id": "add0",
-      "id_user": "428b",
-      "carrera": {
-        "nombre_carrera": "Bahrain International Circuit",
-        "fecha_carrera": "2026-04-13",
-        "capacidad_carrera": 70000,
-        "descripcion_carrera": "Pista desértica, diseño Tilke, carreras bajo luces.",
-        "cantidad_vueltas_carrera": 100,
-        "ciudad_carrera": "Sakhir",
-        "pais_carrera": "Bahrain",
-        "precio_carrera": 120,
-        "imageUrl_carrera": "bahrein.jpg",
-        "id": "bbab"
-      }
-    },
-    {
       "id": "202a",
       "id_user": "428b",
       "carrera": {
@@ -1143,6 +1127,25 @@
         "precio_entrada_vip": 600,
         "tipo_entrada": "VIP",
         "id": "bbab"
+      }
+    },
+    {
+      "id": "483e",
+      "id_user": "428b",
+      "carrera": {
+        "nombre_carrera": "Autódromo José Carlos Pace (Interlagos)",
+        "fecha_carrera": "2026-11-09",
+        "capacidad_carrera": 110000,
+        "descripcion_carrera": "Pista favorita por los aficionados latinoamericanos; ambiente de carnaval durante la carrera.",
+        "cantidad_vueltas_carrera": 71,
+        "ciudad_carrera": "São Paulo",
+        "pais_carrera": "Brasil",
+        "imageUrl_carrera": "interlagos.jpg",
+        "precio_entrada_regular": 80,
+        "precio_entrada_premium": 150,
+        "precio_entrada_vip": 300,
+        "tipo_entrada": "Regular",
+        "id": "625b"
       }
     }
   ]

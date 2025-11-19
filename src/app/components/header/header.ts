@@ -16,6 +16,11 @@ export class Header {
 
  menuOpen= false;
 
+closeMenu()
+{
+  this.menuOpen = false;
+}
+
  toggleMenu()
  {
   this.menuOpen= !this.menuOpen;
@@ -24,31 +29,37 @@ export class Header {
  verListadoFavoritos(){
   const user = this.auth.activeUser(); 
   this.router.navigateByUrl('lista-favoritos/' + user?.id);
+  this.closeMenu();
  }
 
 
  verInfo()
  {
   this.router.navigateByUrl("/mi-informacion");
+  this.closeMenu();
  }
 
  verMisReservas()
  {
 
+  this.closeMenu();
  }
 
  modificarPerfil()
  {
   this.router.navigateByUrl("/editar-perfil")
+  this.closeMenu();
  }
 
  gestionarUsuarios()
  {
   this.router.navigateByUrl("/gestionar-usuarios")
+  this.closeMenu();
  }
  logout()
  {
   this.auth.logout();
   this.router.navigateByUrl("/inicio_sesion");
+  this.closeMenu();
  }
 }
