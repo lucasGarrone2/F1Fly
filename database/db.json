@@ -9,8 +9,8 @@
       "ciudad_carrera": "Sakhir",
       "pais_carrera": "Bahrain",
       "imageUrl_carrera": "bahrein.jpg",
-      "precio_entrada_regular": 120,
-      "precio_entrada_premium": 150,
+      "precio_entrada_regular": 100,
+      "precio_entrada_premium": 300,
       "precio_entrada_vip": 600,
       "tipo_entrada": "VIP",
       "id": "bbab"
@@ -138,7 +138,7 @@
     {
       "nombre_carrera": "Circuit of the Americas (COTA)",
       "fecha_carrera": "2026-10-26",
-      "capacidad_carrera": 150000,
+      "capacidad_carrera": 151000,
       "descripcion_carrera": "Circuito moderno con grandes cambios de elevación y ambiente festivo.",
       "cantidad_vueltas_carrera": 56,
       "ciudad_carrera": "Austin, Texas",
@@ -149,6 +149,21 @@
       "precio_entrada_vip": 300,
       "tipo_entrada": "Regular",
       "id": "62ad"
+    },
+    {
+      "id": "cd84",
+      "nombre_carrera": "Circuito Galvez",
+      "fecha_carrera": "2026-01-01",
+      "capacidad_carrera": 100000,
+      "descripcion_carrera": "Circuito galvez",
+      "cantidad_vueltas_carrera": 60,
+      "ciudad_carrera": "Buenos Aires",
+      "pais_carrera": "Argentina",
+      "imageUrl_carrera": "https://www.solotc.com.ar/wp-content/uploads/2025/07/autodromo-buenos-aires-reformas-f1-scaled.jpg",
+      "precio_entrada_regular": 80,
+      "precio_entrada_premium": 300,
+      "precio_entrada_vip": 300,
+      "tipo_entrada": "Regular"
     }
   ],
   "hoteles": [
@@ -984,6 +999,36 @@
       "fecha_nacimiento": "2002-07-18",
       "listaPilotos": "",
       "ListaEscuderias": ""
+    },
+    {
+      "id": "b411",
+      "nombre": "Felipe",
+      "apellido": "Loyol",
+      "username": "pipeloyola",
+      "email": "pipe@gmail.com",
+      "password": "pipe123",
+      "isAdmin": false,
+      "dni": "29929292",
+      "nacionalidad": "Chile",
+      "edad": 24,
+      "fecha_nacimiento": "2025-05-08",
+      "listaPilotos": "",
+      "ListaEscuderias": ""
+    },
+    {
+      "id": "bd1f",
+      "nombre": "persona",
+      "apellido": "prueba",
+      "username": "prueba99",
+      "email": "prueba@gmail.com",
+      "password": "prueba123",
+      "isAdmin": false,
+      "dni": "92929292",
+      "nacionalidad": "Argentina",
+      "edad": 22,
+      "fecha_nacimiento": "2003-08-08",
+      "listaPilotos": "",
+      "ListaEscuderias": ""
     }
   ],
   "listadoFavoritos": [
@@ -1353,6 +1398,221 @@
         "clase_asiento": "Economy",
         "precio_promedio_ticket_eur": 180
       }
+    },
+    {
+      "id": "6c80",
+      "id_user": "1",
+      "precio_total_reserva": 4560,
+      "carrera": {
+        "nombre_carrera": "Bahrain International Circuit",
+        "fecha_carrera": "2026-04-13",
+        "capacidad_carrera": 70000,
+        "descripcion_carrera": "Pista desértica, diseño Tilke, carreras bajo luces.",
+        "cantidad_vueltas_carrera": 100,
+        "ciudad_carrera": "Sakhir",
+        "pais_carrera": "Bahrain",
+        "imageUrl_carrera": "bahrein.jpg",
+        "precio_entrada_regular": 120,
+        "precio_entrada_premium": 150,
+        "precio_entrada_vip": 600,
+        "tipo_entrada": "Premium",
+        "id": "bbab",
+        "precio_carrera": 450
+      },
+      "hotel": {
+        "id": "1",
+        "nombre_hotel": "Sofitel Bahrain Zallaq Thalassa Sea & Spa",
+        "carrera_id": 1,
+        "pais": "Bahrain",
+        "ciudad": "Sakhir",
+        "fechas_disponibles": [
+          "2026-04-11",
+          "2026-04-12",
+          "2026-04-13",
+          "2026-04-14"
+        ],
+        "precio_promedio_habitacion_eur": 350,
+        "tieneAmenities": true,
+        "tieneTransporte": true,
+        "imagenUrl": "fotosHotel/sakhir.jpg",
+        "direccionExacta": "105 Zallaq Highway, Zallaq"
+      },
+      "habitacion": {
+        "tipoHabitacion": "vip",
+        "cantPersonas": 3,
+        "fechaEntrada": "2026-04-11",
+        "fechaSalida": "2026-04-12",
+        "noches": 1,
+        "precioTotal": 3000
+      },
+      "vuelo": {
+        "id": "2",
+        "carrera_id": 1,
+        "pais_origen": "Alemania",
+        "ciudad_origen": "Frankfurt",
+        "pais_destino": "Bahrain",
+        "ciudad_destino": "Manama",
+        "aerolinea": "Lufthansa",
+        "fecha_disponible": "2026-04-12",
+        "tipo_avion": "Airbus A330",
+        "clase_asiento": "Business",
+        "precio_promedio_ticket_eur": 750
+      }
+    },
+    {
+      "id": "9514",
+      "id_user": "428b",
+      "precio_total_reserva": 3400,
+      "carrera": {
+        "nombre_carrera": "Bahrain International Circuit",
+        "fecha_carrera": "2026-04-13",
+        "capacidad_carrera": 70000,
+        "descripcion_carrera": "Pista desértica, diseño Tilke, carreras bajo luces.",
+        "cantidad_vueltas_carrera": 100,
+        "ciudad_carrera": "Sakhir",
+        "pais_carrera": "Bahrain",
+        "imageUrl_carrera": "bahrein.jpg",
+        "precio_entrada_regular": 100,
+        "precio_entrada_premium": 300,
+        "precio_entrada_vip": 600,
+        "tipo_entrada": "Premium",
+        "id": "bbab",
+        "precio_carrera": 900
+      },
+      "hotel": {
+        "id": "1",
+        "nombre_hotel": "Sofitel Bahrain Zallaq Thalassa Sea & Spa",
+        "carrera_id": 1,
+        "pais": "Bahrain",
+        "ciudad": "Sakhir",
+        "fechas_disponibles": [
+          "2026-04-11",
+          "2026-04-12",
+          "2026-04-13",
+          "2026-04-14"
+        ],
+        "precio_promedio_habitacion_eur": 350,
+        "tieneAmenities": true,
+        "tieneTransporte": true,
+        "imagenUrl": "fotosHotel/sakhir.jpg",
+        "direccionExacta": "105 Zallaq Highway, Zallaq"
+      },
+      "habitacion": {
+        "tipoHabitacion": "premium",
+        "cantPersonas": 2,
+        "fechaEntrada": "2026-04-11",
+        "fechaSalida": "2026-04-12",
+        "noches": 1,
+        "precioTotal": 1000
+      },
+      "vuelo": {
+        "id": "2",
+        "carrera_id": 1,
+        "pais_origen": "Alemania",
+        "ciudad_origen": "Frankfurt",
+        "pais_destino": "Bahrain",
+        "ciudad_destino": "Manama",
+        "aerolinea": "Lufthansa",
+        "fecha_disponible": "2026-04-12",
+        "tipo_avion": "Airbus A330",
+        "clase_asiento": "Business",
+        "precio_promedio_ticket_eur": 750
+      }
+    },
+    {
+      "id": "7347",
+      "precio_total_reserva": 0,
+      "id_user": "428b"
+    },
+    {
+      "id": "9c72",
+      "precio_total_reserva": 0,
+      "id_user": "428b"
+    },
+    {
+      "id": "3c38",
+      "precio_total_reserva": 0,
+      "id_user": "428b"
+    },
+    {
+      "id": "6719",
+      "precio_total_reserva": 0,
+      "id_user": "428b"
+    },
+    {
+      "id": "055a",
+      "precio_total_reserva": 0,
+      "id_user": "428b"
+    },
+    {
+      "id": "44d7",
+      "precio_total_reserva": 0,
+      "id_user": "428b"
+    },
+    {
+      "id": "37de",
+      "id_user": "428b",
+      "precio_total_reserva": 2300,
+      "carrera": {
+        "nombre_carrera": "Bahrain International Circuit",
+        "fecha_carrera": "2026-04-13",
+        "capacidad_carrera": 70000,
+        "descripcion_carrera": "Pista desértica, diseño Tilke, carreras bajo luces.",
+        "cantidad_vueltas_carrera": 100,
+        "ciudad_carrera": "Sakhir",
+        "pais_carrera": "Bahrain",
+        "imageUrl_carrera": "bahrein.jpg",
+        "precio_entrada_regular": 100,
+        "precio_entrada_premium": 300,
+        "precio_entrada_vip": 600,
+        "tipo_entrada": "Premium",
+        "id": "bbab",
+        "precio_carrera": 600
+      },
+      "hotel": {
+        "id": "1",
+        "nombre_hotel": "Sofitel Bahrain Zallaq Thalassa Sea & Spa",
+        "carrera_id": 1,
+        "pais": "Bahrain",
+        "ciudad": "Sakhir",
+        "fechas_disponibles": [
+          "2026-04-11",
+          "2026-04-12",
+          "2026-04-13",
+          "2026-04-14"
+        ],
+        "precio_promedio_habitacion_eur": 350,
+        "tieneAmenities": true,
+        "tieneTransporte": true,
+        "imagenUrl": "fotosHotel/sakhir.jpg",
+        "direccionExacta": "105 Zallaq Highway, Zallaq"
+      },
+      "habitacion": {
+        "tipoHabitacion": "estandar",
+        "cantPersonas": 1,
+        "fechaEntrada": "2026-04-11",
+        "fechaSalida": "2026-04-12",
+        "noches": 1,
+        "precioTotal": 200
+      },
+      "vuelo": {
+        "id": "2",
+        "carrera_id": 1,
+        "pais_origen": "Alemania",
+        "ciudad_origen": "Frankfurt",
+        "pais_destino": "Bahrain",
+        "ciudad_destino": "Manama",
+        "aerolinea": "Lufthansa",
+        "fecha_disponible": "2026-04-12",
+        "tipo_avion": "Airbus A330",
+        "clase_asiento": "Business",
+        "precio_promedio_ticket_eur": 750
+      }
+    },
+    {
+      "id": "2741",
+      "precio_total_reserva": 0,
+      "id_user": "428b"
     }
   ]
 }

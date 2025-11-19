@@ -118,11 +118,15 @@ aplicarCupon() {
       onApprove: async (data: any, actions: any) => {
         const order = await actions.order.capture();
         console.log("Pago completado:", order);
+
+        const audio = new Audio('/cancionF1.mp3');
+        audio.play().catch(err => console.log("Autoplay bloqueado:", err));
+
         this.router.navigateByUrl("/reserva-confirmada");
       },
       onError: (err: any) => {
         console.log("Error en Paypal:", err);
-        this.router.navigateByUrl("/reserva-rechazada");
+        this.router.navigateByUrl("/lista-de-carreras");
       }
     }).render('#paypal-button-container');
   }
