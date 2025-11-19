@@ -112,6 +112,8 @@ export class ReservaClient {
 
     resetReserva() {
   this._reserva.set({
+    id: undefined,
+    id_user: undefined,
     carrera: undefined,
     hotel: undefined,
     habitacion: undefined,
