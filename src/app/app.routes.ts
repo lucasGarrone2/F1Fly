@@ -16,6 +16,7 @@ import { VueloABM } from './components/vuelo-abm/vuelo-list';
 import { UsuariosRegistrados } from './components/usuarios-registrados/usuarios-registrados';
 import { Reserva } from './components/reserva/reserva';
 import { DetailsCarrera } from './components/details-carrera/details-carrera';
+import { ReservaRechazada } from './components/reserva-rechazada/reserva-rechazada';
 
 export const routes: Routes = [
 
@@ -32,6 +33,7 @@ export const routes: Routes = [
 {path: 'gestionar-usuarios', component: UsuariosRegistrados, canActivate: [authGuardGuard] },
 { path: 'vuelos', component: ListaVueloSeleccionar, canActivate: [authGuardGuard] },
 { path: 'reserva-confirmada', component: Reserva, canActivate: [authGuardGuard]},
+{path: 'reserva-rechazada', component: ReservaRechazada, canActivate: [authGuardGuard]}, 
   {
     path:"lista-favoritos/:id",
     title: 'Lista favoritos',
