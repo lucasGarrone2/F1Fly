@@ -92,6 +92,9 @@ readonly subtotal = computed(() => {
     this.cantidadEntradas = cantidad;
 
     this._reserva.update(r => ({
+      id: undefined,
+      id_user: undefined,
+      precio_total_reserva: undefined,
       carrera,
       hotel: undefined,       
       habitacion: undefined, 
@@ -132,6 +135,7 @@ readonly subtotal = computed(() => {
   this._reserva.set({
     id: undefined,
     id_user: undefined,
+    precio_total_reserva: undefined,
     carrera: undefined,
     hotel: undefined,
     habitacion: undefined,
