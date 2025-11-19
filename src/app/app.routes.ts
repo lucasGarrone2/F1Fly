@@ -16,7 +16,11 @@ import { VueloABM } from './components/vuelo-abm/vuelo-list';
 import { UsuariosRegistrados } from './components/usuarios-registrados/usuarios-registrados';
 import { Reserva } from './components/reserva/reserva';
 import { DetailsCarrera } from './components/details-carrera/details-carrera';
+<<<<<<< HEAD
 import { ListadoReservas } from './listado-reservas/listado-reservas';
+=======
+import { ReservaRechazada } from './components/reserva-rechazada/reserva-rechazada';
+>>>>>>> a0ea810b27cd4c4f26f83b85bdd130f054ab0ad3
 
 export const routes: Routes = [
 
@@ -27,12 +31,22 @@ export const routes: Routes = [
   { path: 'gestion-carrera', component: CarreraAbm, canActivate: [authGuardGuard] },
   { path: 'gestion-hoteles', component: HotelAbm, canActivate: [authGuardGuard] },
   { path: 'lista-hoteles', component: HotelList },
+<<<<<<< HEAD
   {path: 'gestion-vuelos', component: VueloABM, canActivate: [authGuardGuard]},
   {path: 'mi-informacion', component: PerfilUsuario,  canActivate: [authGuardGuard]},
   {path: 'editar-perfil', component: EditarPerfilUsuario,  canActivate: [authGuardGuard]},
   {path: 'gestionar-usuarios', component: UsuariosRegistrados, canActivate: [authGuardGuard] },
   { path: 'vuelos', component: ListaVueloSeleccionar, canActivate: [authGuardGuard] },
   { path: 'reserva-confirmada', component: Reserva, canActivate: [authGuardGuard]},
+=======
+ {path: 'gestion-vuelos', component: VueloABM, canActivate: [authGuardGuard]},
+{path: 'mi-informacion', component: PerfilUsuario,  canActivate: [authGuardGuard]},
+{path: 'editar-perfil', component: EditarPerfilUsuario,  canActivate: [authGuardGuard]},
+{path: 'gestionar-usuarios', component: UsuariosRegistrados, canActivate: [authGuardGuard] },
+{ path: 'vuelos', component: ListaVueloSeleccionar, canActivate: [authGuardGuard] },
+{ path: 'reserva-confirmada', component: Reserva, canActivate: [authGuardGuard]},
+{path: 'reserva-rechazada', component: ReservaRechazada, canActivate: [authGuardGuard]}, 
+>>>>>>> a0ea810b27cd4c4f26f83b85bdd130f054ab0ad3
   {
     path:"lista-favoritos/:id",
     title: 'Lista favoritos',

@@ -98,6 +98,15 @@ aplicarCupon() {
     container.innerHTML = '';
 
     paypal.Buttons({
+
+    style: {
+    layout: 'vertical',
+    color: 'gold',     
+    shape: 'pill',
+    label: 'pay',
+    height: 45
+      },
+
       createOrder: (data: any, actions: any) => {
         const total = this.reservaCliente.total();
         return actions.order.create({
@@ -113,7 +122,7 @@ aplicarCupon() {
       },
       onError: (err: any) => {
         console.log("Error en Paypal:", err);
-        this.router.navigateByUrl("/lista-de-carreras");
+        this.router.navigateByUrl("/reserva-rechazada");
       }
     }).render('#paypal-button-container');
   }
