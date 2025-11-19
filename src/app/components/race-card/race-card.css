@@ -121,12 +121,6 @@
   font-weight: bold;
 }
 
-.cantidad-display {
-  display: flex;
-  flex-direction: row;
-  align-items: center; 
-  gap: 10px; 
-}
 
 
 .race-footer {
@@ -190,6 +184,30 @@
   font-weight: bold;
 }
 
+.cantidad-display {
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+  gap: 10px; 
+}
+
+.tipo-entrada-display label,
+.cantidad-display label {
+    font-weight: 500;
+    color: #e0e0e0;
+    white-space: nowrap; /* Evita que el label se corte */
+    flex-shrink: 0; /* No se comprime el label */
+}
+
+.tipo-entrada-display,
+.cantidad-display {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px; 
+}
+
+
 .capacidad {
   display: flex;
   flex-direction: row; 
@@ -202,13 +220,6 @@
   margin-bottom: 15px; 
 }
 
-.tipo-entrada-display,
-.cantidad-display {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 10px; 
-}
 
 
 .precio-display {
@@ -222,13 +233,7 @@
   margin-top: 50px; 
 }
 
-.tipo-entrada-display label,
-.cantidad-display label {
-    font-weight: 500;
-    color: #e0e0e0;
-    white-space: nowrap; /* Evita que el label se corte */
-    flex-shrink: 0; /* No se comprime el label */
-}
+
 
 .formulario select {
 

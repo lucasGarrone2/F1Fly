@@ -143,3 +143,59 @@
         gap: 10px;
     }
 }
+
+.cantidad-display label {
+  margin: 0;
+  white-space: nowrap; 
+}
+
+
+.cantidad-display label {
+    font-weight: 500;
+    color: #e0e0e0;
+    white-space: nowrap; /* Evita que el label se corte */
+    flex-shrink: 0; /* No se comprime el label */
+}
+
+.cantidad-display select {
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    
+   
+    background-color: #1a316b; 
+    color: white; 
+    border: 1px solid #29406c; 
+    
+
+    padding: 8px 12px; 
+    border-radius: 10px; 
+    height: 40px;
+    width: 250px; 
+    
+
+    font-weight: 600;
+    font-size: 0.95rem; 
+    
+    
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+
+.cantidad-display select:hover {
+    background-color: #203f7a; 
+    border-color: #ff3333; 
+}
+
+
+
+.cantidad-display {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    margin-bottom: 15px;
+}
+

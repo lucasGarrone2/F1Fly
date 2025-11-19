@@ -39,11 +39,28 @@
           </div>
 
           <div>
-            <span class="label">Precio desde</span>
-            <p class="price">€{{ v.precio_promedio_ticket_eur }}</p>
+            <span class="label">Precio</span>
+            <p class="price">€{{getPrecioTotalVuelo(v.precio_promedio_ticket_eur)}}</p>
           </div>
         </div>
 
+
+
+        <form [formGroup]="form">
+      <div class="cantidad-display">
+     <label for="cantidad">Cantidad personas:</label>
+      <select formControlName="cantidad" id="cantidad">
+      <option [ngValue]="null" disabled hidden>Cantidad de personas...</option>
+
+    @for (can of cantidades; track $index) {
+      <option [ngValue]="can">{{ can }}</option>
+    }
+     </select>
+        </div>
+
+        </form>
+
+           
         <button class="btn-seleccionar"
                 [disabled]="!reserva.getHotel() || !reserva.getCarrera()"
                 (click)="seleccionarVuelo(v)">

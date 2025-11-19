@@ -13,9 +13,9 @@
             <!-- Detalle de la Carrera -->
             @if (r?.carrera) {
                 <div class="reserva-item">
-                    <strong>Carrera:</strong>
+                    <strong>Carrera :</strong>
                     <span>{{ r.carrera?.nombre_carrera }}</span>
-                    <span class="precio">€{{ r.carrera?.precio_carrera | number:'1.0-2' }}</span>
+                    <span class="precio">€{{reservaCliente.getPrecioCarreraSeleccionada() | number:'1.0-2' }}</span>
                 </div>
             }
 
@@ -41,7 +41,7 @@
                 <div class="reserva-item">
                     <strong>Vuelo:</strong>
                     <span>{{ r.vuelo?.ciudad_origen }} → {{ r.vuelo?.ciudad_destino }}</span>
-                    <span class="precio">€{{ r.vuelo?.precio_promedio_ticket_eur | number:'1.0-2' }}</span>
+                    <span class="precio">€{{ reservaCliente.getPrecioTotalVuelo() | number:'1.0-2' }}</span>
                 </div>
             }
 

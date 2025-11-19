@@ -89,8 +89,11 @@ export class RaceCardComponent implements OnInit {
             this.router.navigate(['/inicio_sesion']);
             return;
         }
-
-        this.reserva.setCarrera(race);
+        
+        this.reserva.setCantidadPersonas(this.cantidadSeleccionada!); 
+        
+       race.tipo_entrada = this.tipoEntradaSeleccionada;
+        this.reserva.setCarrera(race, this.cantidadSeleccionada!);
 
         
 

@@ -10,8 +10,11 @@ import { IVuelo } from '../interfaces/ivuelo';
 export class ReservaClient {
 
   private readonly _reserva = signal<IReserva>({});
-
   readonly reserva = computed(() => this._reserva());
+  private cantidadPesonas: number | null = null;
+  private vuelo: IVuelo | null = null;
+  private cantidadEntradas: number = 1;
+
 
    setHabitacion(data: {
     tipoHabitacion: string,
@@ -44,24 +47,35 @@ export class ReservaClient {
     return false; 
   }
 
+  
+  setCantidadPersonas(cantidad: number): void {
+        this.cantidadPesonas = cantidad;
+    }
+
+    getCantidadPersonas(): number | null {
+        return this.cantidadPesonas;
+    }
+
+    getPrecioTotalVuelo(): number | null {
+        if (this.vuelo && this.cantidadPesonas) {
+            return this.vuelo.precio_promedio_ticket_eur * this.cantidadPesonas;
+        }
+        return null;
+    }
 
   
-  readonly subtotal = computed(() => {
-  const r = this._reserva();
-
-  const precioCarrera = (() => {
-    if (!r.carrera) return 0;
-    switch (r.carrera.tipo_entrada) {
-      case 'Regular': return r.carrera.precio_entrada_regular;
-      case 'Premium': return r.carrera.precio_entrada_premium;
-      case 'VIP': return r.carrera.precio_entrada_vip;
-      default: return 0;
-    }
-  })();
-
-  return precioCarrera +
-         (r.vuelo?.precio_promedio_ticket_eur ?? 0) +
-         (r.habitacion?.precioTotal ?? 0);
+readonly subtotal = computed(() => {
+    const r = this._reserva();
+    
+    const precioCarrera = this.getPrecioCarreraSeleccionada() ?? 0;
+    
+    const precioVueloTotal = this.getPrecioTotalVuelo() ?? 0;
+    
+    const precioHabitacion = r.habitacion?.precioTotal ?? 0;
+    
+    return precioCarrera +
+           precioVueloTotal + 
+           precioHabitacion;
 });
 
   readonly total = computed(() => {
@@ -72,14 +86,17 @@ export class ReservaClient {
     return sub;
   });
 
-  setCarrera(carrera: Carrera) {
-  this._reserva.update(r => ({
-    carrera,
-    hotel: undefined,       
-    habitacion: undefined, 
-    vuelo: undefined,         
-  }));
+  
 
+  setCarrera(carrera: Carrera, cantidad: number) {
+    this.cantidadEntradas = cantidad;
+
+    this._reserva.update(r => ({
+      carrera,
+      hotel: undefined,       
+      habitacion: undefined, 
+      vuelo: undefined,         
+    }));
   this.tieneDescuento.set(false);
 }
 
@@ -89,6 +106,7 @@ export class ReservaClient {
   }
 
   setVuelo(vuelo: IVuelo) {
+     this.vuelo = vuelo;  
     this._reserva.update(r => ({ ...r, vuelo }));
     this.tieneDescuento.set(false);
   }
@@ -120,6 +138,22 @@ export class ReservaClient {
  
 }
 
+getPrecioCarreraSeleccionada(): number {
+    const r = this._reserva();
 
+    const cant = this.cantidadEntradas; 
+
+    if (!r.carrera || !r.carrera.tipo_entrada) return 0;
+
+    let precioUnitario = 0;
+
+    switch (r.carrera.tipo_entrada) {
+        case 'Regular': precioUnitario = r.carrera.precio_entrada_regular; break;
+        case 'Premium': precioUnitario = r.carrera.precio_entrada_premium; break;
+        case 'VIP': precioUnitario = r.carrera.precio_entrada_vip; break;
+    }
+
+    return precioUnitario * cant;
+  }
 
 }
