@@ -7,11 +7,12 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { ViewChild, ElementRef } from '@angular/core';
 import { Input } from '@angular/core';
 import { CarreraClient } from '../carrera/carrera-client';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RaceCardComponent, RouterLink],
+  imports: [CommonModule, RouterLink],
   templateUrl: './home.html',
    styleUrls: ['./home.css']
 })
@@ -30,6 +31,11 @@ export class Home {
     } else {
       container.scrollBy({ left: cardWidth, behavior: 'smooth' });
     }
+  }
+
+  protected readonly router = inject(Router);
+  botonExplorar(){
+    this.router.navigateByUrl('lista-de-carreras');
   }
 
 }
