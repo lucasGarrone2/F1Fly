@@ -12,7 +12,7 @@
     </aside>
     <div class="contenedor-carreras">
     @if(isLoading()){
-        <p>Cargando lista de carreras favoritas...</p>
+        <p class="mensaje">Cargando lista de carreras favoritas...</p>
     }@else if(carreras_fav && carreras_fav.length > 0){
         @for (carrera_f of carreras_fav; track carrera_f.id) {
             <section class="carreras" id="carreras">
@@ -27,7 +27,7 @@
             </section>
 }
     }@else {
-        <p>No hay carreras cargadas!</p>
+        <p class="mensaje">No hay carreras cargadas!</p>
     }
     </div>
     </div>

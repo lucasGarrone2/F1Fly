@@ -4,7 +4,7 @@
 <h2>Listado de reservas : {{u.nombre}}</h2>
 
 @if(isLoading()){
-    <p>Cargando listado de reservas...</p>
+    <p class="mensaje">Cargando listado de reservas...</p>
 }
 @else if (reservas && reservas.length > 0) {
 
@@ -70,5 +70,5 @@
 
 }
 @else {
-    <p>No tiene reservas!</p>
+    <p class="mensaje">No tiene reservas!</p>
 }

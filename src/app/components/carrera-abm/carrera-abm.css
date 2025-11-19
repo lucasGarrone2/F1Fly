@@ -192,3 +192,8 @@ h2 {
     color: #f3f3f3;
     font-weight: bold;
 }
+
+.mensaje{
+    text-align: center;
+    color: white;
+}
