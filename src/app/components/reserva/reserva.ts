@@ -28,6 +28,10 @@ export class Reserva implements OnDestroy {
     this.reservaCliente.resetReserva();
   }
   
+  volver(){           
+     this.notify.show("Reserva cancelada!", "info");
+    this.router.navigateByUrl("/");
+  }
 
  
 
