@@ -1664,6 +1664,113 @@
         "clase_asiento": "Business",
         "precio_promedio_ticket_eur": 350
       }
+    },
+    {
+      "id": "961a",
+      "id_user": "1",
+      "precio_total_reserva": 400,
+      "carrera": {
+        "nombre_carrera": "Bahrain International Circuita",
+        "fecha_carrera": "2026-04-13",
+        "capacidad_carrera": 70000,
+        "descripcion_carrera": "Pista desértica, diseño Tilke, carreras bajo luces.",
+        "cantidad_vueltas_carrera": 100,
+        "ciudad_carrera": "Sakhir",
+        "pais_carrera": "Bahrain",
+        "imageUrl_carrera": "bahrein.jpg",
+        "precio_entrada_regular": 100,
+        "precio_entrada_premium": 300,
+        "precio_entrada_vip": 600,
+        "tipo_entrada": "Regular",
+        "id": "bbab",
+        "precio_carrera": 200
+      },
+      "hotel": {
+        "id": "1",
+        "nombre_hotel": "Sofitel Bahrain Zallaq Thalassa Sea & Spa",
+        "carrera_id": 1,
+        "pais": "Bahrain",
+        "ciudad": "Sakhir",
+        "fechas_disponibles": [
+          "2026-04-11",
+          "2026-04-12",
+          "2026-04-13",
+          "2026-04-14"
+        ],
+        "precio_promedio_habitacion_eur": 350,
+        "tieneAmenities": true,
+        "tieneTransporte": true,
+        "imagenUrl": "fotosHotel/sakhir.jpg",
+        "direccionExacta": "105 Zallaq Highway, Zallaq"
+      },
+      "habitacion": {
+        "tipoHabitacion": "estandar",
+        "cantPersonas": 1,
+        "fechaEntrada": "2026-04-11",
+        "fechaSalida": "2026-04-12",
+        "noches": 1,
+        "precioTotal": 200
+      }
+    },
+    {
+      "id": "dd2e",
+      "id_user": "1",
+      "precio_total_reserva": 840,
+      "carrera": {
+        "nombre_carrera": "Autodromo Nazionale Monza",
+        "fecha_carrera": "2026-09-07",
+        "capacidad_carrera": 120000,
+        "descripcion_carrera": "Alta velocidad, largas rectas y la histórica banking.",
+        "cantidad_vueltas_carrera": 53,
+        "ciudad_carrera": "Monza (Milán)",
+        "pais_carrera": "Italia",
+        "imageUrl_carrera": "monzaa.jpg",
+        "precio_entrada_regular": 80,
+        "precio_entrada_premium": 150,
+        "precio_entrada_vip": 300,
+        "tipo_entrada": "Regular",
+        "id": "ad83",
+        "precio_carrera": 400
+      },
+      "hotel": {
+        "id": "8",
+        "nombre_hotel": "Starhotels Anderson Milan",
+        "carrera_id": 4,
+        "pais": "Italia",
+        "ciudad": "Monza (Milán)",
+        "fechas_disponibles": [
+          "2026-09-05",
+          "2026-09-06",
+          "2026-09-07",
+          "2026-09-08"
+        ],
+        "precio_promedio_habitacion_eur": 250,
+        "tieneAmenities": true,
+        "tieneTransporte": false,
+        "imagenUrl": "fotosHotel/starhotels.webp",
+        "direccionExacta": "Piazza Duca d'Aosta, 9, 20124 Milano MI"
+      },
+      "habitacion": {
+        "tipoHabitacion": "estandar",
+        "cantPersonas": 1,
+        "fechaEntrada": "2026-09-05",
+        "fechaSalida": "2026-09-06",
+        "noches": 1,
+        "precioTotal": 200
+      },
+      "vuelo": {
+        "id": "10",
+        "carrera_id": 4,
+        "pais_origen": "Alemania",
+        "ciudad_origen": "Berlín",
+        "pais_destino": "Italia",
+        "ciudad_destino": "Milán",
+        "aerolinea": "ITA Airways",
+        "fecha_disponible": "2026-09-05",
+        "tipo_avion": "Airbus A321",
+        "clase_asiento": "Economy",
+        "precio_promedio_ticket_eur": 120
+      }
     }
   ]
 }
