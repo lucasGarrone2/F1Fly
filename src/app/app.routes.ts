@@ -38,16 +38,19 @@ export const routes: Routes = [
   {
     path:"lista-favoritos/:id",
     title: 'Lista favoritos',
-    component: ListaFavoritosCarrera
+    component: ListaFavoritosCarrera,
+    canActivate: [authGuardGuard]
   },{
     path: 'carrera-details/:id',
     title: 'Detalles Carrera',
-    component: DetailsCarrera
+    component: DetailsCarrera,
+    canActivate: [authGuardGuard]
   },
   {
     path: 'lista-reservas/:id',
     title: 'Lista reservas',
-    component: ListadoReservas
+    component: ListadoReservas,
+    canActivate: [authGuardGuard]
   },
   {
     path: 'reservar',

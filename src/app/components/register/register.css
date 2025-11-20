@@ -174,19 +174,34 @@ h2{
     }
 }
 
-.back-home{
+.back-home {
     display: flex;
     justify-content: flex-start;
     width: 100%;
     margin-left: 125px;
+}
+
+.back-home-button {
+    background: #CC1C4A;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    box-shadow: 0 4px 10px rgba(204, 28, 74, 0.3);
     
 }
 
-.back-home-button{
-    background-color: #CC1C4A;
-    color: white;
-    
-    
+.back-home-button:hover {
+    background: #e02556;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(204, 28, 74, 0.4);
 }
 
 .back-home-button:hover{

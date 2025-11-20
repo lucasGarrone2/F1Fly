@@ -11,7 +11,7 @@
 
             @if (r?.carrera) {
                 <div class="reserva-item">
-                    <strong>Carrera :</strong>
+                    <strong>Carrera:</strong>
                     <span>{{ r.carrera?.nombre_carrera }}</span>
                     <span class="precio">€{{reservaCliente.getPrecioCarreraSeleccionada() | number:'1.0-2' }}</span>
                 </div>

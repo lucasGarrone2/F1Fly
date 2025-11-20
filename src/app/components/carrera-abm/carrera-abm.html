@@ -7,7 +7,7 @@
 } 
 
 @if (isLoading()){
-<p>Cargando Carreras...</p>
+<p class="mensaje">Cargando Carreras...</p>
 } @else if(carreras && carreras.length > 0){
 <section id="ListadoCarreras">
   <h2>F1FLY ADMIN CARRERAS</h2>
@@ -54,7 +54,7 @@
     </div>
   </div>
   } @empty {
-  <p>No hay carreras cargadas...</p>
+  <p class="mensaje">No hay carreras cargadas...</p>
   }
    @if(carreraSeleccionada()){
         <div id="overlay" class="hidden"></div>

@@ -7,6 +7,7 @@ import { ListadoReservas } from '../../listado-reservas/listado-reservas';
 import { ClientListaReservas } from '../../client-lista-reservas';
 import { AuthService } from '../../auth/auth-service';
 import { User } from '../../interfaces/user';
+import { NotificationService } from '../../services/notification-service';
 
 @Component({
   selector: 'app-reserva',
@@ -27,29 +28,29 @@ export class Reserva implements OnDestroy {
     this.reservaCliente.resetReserva();
   }
   
-
-  volver()
-  {
-    this.router.navigateByUrl("");
+  volver(){           
+     this.notify.show("Reserva cancelada!", "info");
+    this.router.navigateByUrl("/");
   }
+
+ 
 
   protected readonly client = inject(ClientListaReservas);
   protected readonly auth = inject(AuthService);
+  protected readonly notify = inject(NotificationService);
 
+  confirmarReserva(): void {
+    if (!this.reserva) return;
 
-  agregarReserva(nueva_reserva: IReserva) {
-    this.client.addReserva(nueva_reserva).subscribe(() => {
-      console.log('Reserva agregada al listado');
+    const user = this.auth.activeUser();
+    this.reserva.precio_total_reserva = this.total;
+    this.reserva.id_user = user?.id;
+
+    this.client.addReserva(this.reserva).subscribe(() => {
+            this.notify.show("Reserva confirmada con exito", "success");
+            this.router.navigateByUrl("/");
     });
   }
 
 
-  ngOnInit(): void {
-    const user = this.auth.activeUser(); 
-    if (this.reserva) {
-      this.reserva.precio_total_reserva= this.total;
-      this.reserva.id_user = user?.id;
-      this.agregarReserva(this.reserva);
-    }
-  }
 }

@@ -8,7 +8,7 @@ import { ViewChild, ElementRef } from '@angular/core';
 import { Input } from '@angular/core';
 import { CarreraClient } from '../carrera/carrera-client';
 import { Router } from '@angular/router';
-
+import { AuthService } from '../../auth/auth-service';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -19,20 +19,8 @@ import { Router } from '@angular/router';
 export class Home {
   private readonly client = inject(CarreraClient);
   protected raceSource = toSignal(this.client.getCarreras());
-  
-  @ViewChild('racesContainer', { static: false }) racesContainer!: ElementRef;
 
-  scrollCarousel(direction: 'left' | 'right') {
-    const container = this.racesContainer.nativeElement;
-    const cardWidth = 340; // ancho aproximado de una card + margen
-
-    if (direction === 'left') {
-      container.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-    } else {
-      container.scrollBy({ left: cardWidth, behavior: 'smooth' });
-    }
-  }
-
+  constructor(protected auth:AuthService){}
   protected readonly router = inject(Router);
   botonExplorar(){
     this.router.navigateByUrl('lista-de-carreras');
