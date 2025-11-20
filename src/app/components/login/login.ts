@@ -44,7 +44,7 @@ constructor(public notify: NotificationService)
         this.router.navigateByUrl("");
       },
       error: () => {
-        
+        this.notify.show("Credenciales incorrectas", "error")
         this.wrongCredentials.set(true);
         setTimeout(() => {
           this.wrongCredentials.set(false);
