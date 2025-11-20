@@ -29,7 +29,7 @@ export class Reserva implements OnDestroy {
   }
   
   volver(){           
-     this.notify.show("Reserva cancelada!", "info");
+     this.notify.show("Reserva cancelada!", "warning");
     this.router.navigateByUrl("/");
   }
 

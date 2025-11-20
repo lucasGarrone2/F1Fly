@@ -72,9 +72,8 @@
     <input type="number" id="dni" formControlName="dni" placeholder="12345678" [class.input-error]="form.controls.dni.invalid && form.controls.dni.touched">
     
     <p class="error-text">
-
     @if (form.controls.dni.errors?.['required'] && form.controls.dni.touched) {
-            <P>El dni es requerido</P>   
+            <p>El dni es requerido</p>   
         }
 
     @if (form.controls.dni.errors?.['dni'] && form.controls.dni.touched) {

@@ -153,24 +153,6 @@
   ],
   "hoteles": [
     {
-      "id": "1",
-      "nombre_hotel": "Sofitel Bahrain Zallaq Thalassa Sea & Spa",
-      "carrera_id": 1,
-      "pais": "Bahrain",
-      "ciudad": "Sakhir",
-      "fechas_disponibles": [
-        "2026-04-11",
-        "2026-04-12",
-        "2026-04-13",
-        "2026-04-14"
-      ],
-      "precio_promedio_habitacion_eur": 350,
-      "tieneAmenities": true,
-      "tieneTransporte": true,
-      "imagenUrl": "fotosHotel/sakhir.jpg",
-      "direccionExacta": "105 Zallaq Highway, Zallaq"
-    },
-    {
       "id": "2",
       "nombre_hotel": "Al Areen Palace & Spa by Accor",
       "carrera_id": 1,
@@ -511,6 +493,24 @@
       "tieneTransporte": false,
       "imagenUrl": "fotosHotel/zaza.webp",
       "direccionExacta": "400 Lavaca St, Austin, TX 78701"
+    },
+    {
+      "id": "1",
+      "nombre_hotel": "Sofitel Bahrain Zallaq Thalassa Sea & Spa",
+      "carrera_id": 1,
+      "pais": "Bahrain",
+      "ciudad": "Sakhir",
+      "fechas_disponibles": [
+        "2026-04-11",
+        "2026-04-12",
+        "2026-04-13",
+        "2026-04-14"
+      ],
+      "precio_promedio_habitacion_eur": 350,
+      "tieneAmenities": true,
+      "tieneTransporte": true,
+      "imagenUrl": "fotosHotel/sakhir.jpg",
+      "direccionExacta": "105 Zallaq Highway, Zallaq"
     }
   ],
   "vuelos": [
