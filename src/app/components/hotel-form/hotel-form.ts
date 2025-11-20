@@ -30,7 +30,8 @@ export class HotelForm {
     carrera_id: [0, [Validators.required, Validators.min(1)]],
     pais: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(40)]],
     ciudad: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(40)]],
-    fechas_disponibles_text: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(100)]],
+    fecha_inicio_disponible:['', [Validators.required]],
+    fecha_fin_disponible:['', [Validators.required]],
     precio_promedio_habitacion_eur: [0, [Validators.required, Validators.min(50)]],
     tieneAmenities: [false, [Validators.required]],
     tieneTransporte: [false, [Validators.required]],
@@ -55,8 +56,12 @@ get ciudad() {
   return this.form.controls.ciudad;
 }
 
-get fechas_disponibles_text() {
-  return this.form.controls.fechas_disponibles_text;
+get fecha_inicio_disponible(){
+  return this.form.controls.fecha_inicio_disponible;
+}
+
+get fecha_fin_disponible(){
+  return this.form.controls.fecha_fin_disponible;
 }
 
 get precio_promedio_habitacion_eur() {
@@ -89,14 +94,20 @@ get id() {
     effect(() => {
       const hotel = this.hotelEditar();
       const editando = this.estadoEdicion();
+      const fechas = hotel?.fechas_disponibles || [];
 
       if (editando && hotel) {
+
+        const incioDisp = fechas.length > 0? fechas[0]: '';
+        const finDisp = fechas.length > 0? fechas[fechas.length-1]:'';
+
         this.form.patchValue({
           nombre_hotel: hotel.nombre_hotel,
           carrera_id: hotel.carrera_id,
           pais: hotel.pais,
           ciudad: hotel.ciudad,
-          fechas_disponibles_text: hotel.fechas_disponibles.join(', '),
+          fecha_inicio_disponible: incioDisp,
+          fecha_fin_disponible: finDisp,
           precio_promedio_habitacion_eur: hotel.precio_promedio_habitacion_eur,
           tieneAmenities: hotel.tieneAmenities,
           tieneTransporte: hotel.tieneTransporte,
@@ -109,6 +120,19 @@ get id() {
         this.form.reset();
       }
     });
+  }
+
+  private generarFechasDisp(inicio: string, fin: string): string[]{
+    if(!inicio || !fin) return [];
+    const fechas = [];
+    let actual = new Date(inicio + 'T00:00:00');
+    const finn = new Date(fin + 'T00:00:00');
+
+    while(actual <= finn){
+      fechas.push(actual.toISOString().split('T')[0]);
+      actual.setDate(actual.getDate() + 1);
+    }
+    return fechas;
   }
 
   handleSubmit(): void {
@@ -126,9 +150,10 @@ get id() {
         carrera_id: formValue.carrera_id,
         pais: formValue.pais,
         ciudad: formValue.ciudad,
-        fechas_disponibles: formValue.fechas_disponibles_text ?
-          formValue.fechas_disponibles_text.split(',').map((fecha: string) => fecha.trim()) :
-          [],
+        fechas_disponibles: this.generarFechasDisp(
+          formValue.fecha_inicio_disponible,
+          formValue.fecha_fin_disponible
+        ),
         precio_promedio_habitacion_eur: formValue.precio_promedio_habitacion_eur,
         tieneAmenities: formValue.tieneAmenities,
         tieneTransporte: formValue.tieneTransporte,
