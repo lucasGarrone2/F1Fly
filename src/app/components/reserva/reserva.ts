@@ -47,7 +47,7 @@ export class Reserva implements OnDestroy {
     this.reserva.id_user = user?.id;
 
     this.client.addReserva(this.reserva).subscribe(() => {
-            this.notify.show("Carrera borrada con exito", "info");
+            this.notify.show("Reserva confirmada con exito", "success");
             this.router.navigateByUrl("/");
     });
   }
