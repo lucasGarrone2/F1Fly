@@ -59,6 +59,9 @@
             </div>
 
             <div class="footer">
+                <div>
+                    <button class="boton-cancelar" (click)="botonEliminar(reserva.id!)">Cancelar Reserva</button>
+                </div>
                 <div class="plane-icon">
                     <i class="fa-solid fa-plane"></i>
                 </div>
@@ -72,3 +75,14 @@
 @else {
     <p class="mensaje">No tiene reservas!</p>
 }
+
+@if(cancelado()){
+<div class="overlay">
+    <div class="cartel-cancelado">
+        <button class="boton-cerrar" (click)="botonCerrarCuadro()">❌</button>
+        <p class="reservac">Reserva Cancelada!</p>
+        <p><strong>ATENCION:</strong> En los próximos <strong>7 días hábiles</strong>, recibirá la  <strong>devolución</strong> de lo pagado. Muchas gracias.</p>
+    </div>
+</div>
+}
+

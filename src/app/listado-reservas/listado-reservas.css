@@ -84,11 +84,10 @@ h2{
     color: #4CAF50;
     font-size: 18px;
 }
-
 .footer {
     display: flex;
-    justify-content: flex-end;
-    align-items: end;
+    justify-content: space-between;
+    align-items: center;
     margin-top: 20px;
 }
 
@@ -119,4 +118,89 @@ h2{
 .mensaje{
     text-align: center;
     color: white;
+}
+
+
+.boton-cancelar {
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.boton-cancelar{
+  background: linear-gradient(135deg, #c70a0a, #a80707);
+  color: #fff;
+}
+
+.boton-cancelar:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+.cartel-cancelado{
+    background-color: #102b55;
+    text-align: center;
+    color: white;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.cartel-cancelado {
+    background-color: #102b55;
+    padding: 20px;
+    width: 600px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+.boton-cerrar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.boton-cerrar:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+.reservac {
+    font-size: 36px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ff4d4d;
+    text-shadow: 0 0 10px rgba(255, 77, 77, 0.6);
+    margin-bottom: 20px;
+    margin-top: -10px;
+    border-bottom: 2px solid #ff1a1a;
 }

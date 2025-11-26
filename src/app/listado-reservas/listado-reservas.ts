@@ -1,4 +1,4 @@
-import { Component, computed, inject, input } from '@angular/core';
+import { Component, computed, inject, input, signal } from '@angular/core';
 import { Reserva } from '../components/reserva/reserva';
 import { ClientListaReservas } from '../client-lista-reservas';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -29,7 +29,21 @@ export class ListadoReservas {
   })();
 
   protected readonly isLoading = computed(()=>this.reservas_bus===undefined);
-
   protected readonly user = this.auth.activeUser();
+  protected readonly cancelado = signal(false);
+
+  botonEliminar(reserva_id : string | number){
+    if(confirm('Desea cancelar su reserva?')){
+    this.client.deleteReserva(reserva_id).subscribe(()=>{
+      this.cancelado.set(true);
+    });
+  }
+  }
+
+  botonCerrarCuadro(){
+    this.cancelado.set(false);
+    window.location.reload();
+  }
+
 
 }
