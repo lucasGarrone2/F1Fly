@@ -18,6 +18,7 @@ import { Reserva } from './components/reserva/reserva';
 import { DetailsCarrera } from './components/details-carrera/details-carrera';
 import { ListadoReservas } from './listado-reservas/listado-reservas';
 import { ReservaRechazada } from './components/reserva-rechazada/reserva-rechazada';
+import { InfoTemporada } from './components/info-temporada/info-temporada';
 
 export const routes: Routes = [
 
@@ -35,7 +36,8 @@ export const routes: Routes = [
 { path: 'vuelos', component: ListaVueloSeleccionar, canActivate: [authGuardGuard] },
 { path: 'reserva-confirmada', component: Reserva, canActivate: [authGuardGuard]},
 {path: 'reserva-rechazada', component: ReservaRechazada, canActivate: [authGuardGuard]}, 
-  {
+{path: 'info-temporada', component: InfoTemporada},  
+{
     path:"lista-favoritos/:id",
     title: 'Lista favoritos',
     component: ListaFavoritosCarrera,

@@ -37,10 +37,12 @@
              @if (auth.isAdmin()) {
                 <li (click)="gestionABM()">Gestion ADMIN</li>
                 <li (click)="gestionarUsuarios()">Ver listado usuarios</li>
-             }
+                
+            }
             <li (click)="verMisReservas()">Ver mis reservas</li>
             <li (click)="verListadoFavoritos()">Mi lista de favoritos</li>
             <li (click)="logout()">Cerrar sesion</li>
+            <li (click)="verInfoTemporada()">Informacion de la temporada actual </li>
         </ul>
         <button class="btn-cerrar-sesion" (click)="logout()">Cerrar sesion</button>
         

@@ -1,0 +1,164 @@
+/* === CONFIGURACIÓN GLOBAL DEL COMPONENTE === */
+:host {
+  display: block;
+  font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.contenedor {
+  background-color: #0B162F; /* Fondo azul oscuro global */
+  min-height: 100vh;
+  padding: 40px 20px;
+  color: white;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 60px;
+  color: #a0aec0;
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* === ESTILO DE LAS CARTAS (Igual que Hotels/Flights) === */
+.card {
+  background: #0b1e46; /* Azul de las tarjetas */
+  padding: 25px;
+  margin: 0 auto 30px auto;
+  max-width: 1000px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  border: 1px solid transparent; /* Para evitar saltos en el hover */
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
+}
+
+.card:hover {
+  transform: scale(1.01); /* Efecto hover sutil */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* === TÍTULOS === */
+.card h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  margin-top: 0;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #ff3333; /* Línea roja característica */
+  padding-bottom: 10px;
+  text-align: left; /* Alineación limpia */
+}
+
+.card h3 {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #ff3333; /* Rojo para subtítulos */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* === TABLAS Y LISTAS === */
+.tabla {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Filas de la tabla (Pilotos y Constructores) */
+.fila {
+  display: grid;
+  grid-template-columns: 50px 1fr 1fr 100px;
+  padding: 15px 10px;
+  border-bottom: 1px solid #29406c; /* Divisor azul sutil */
+  align-items: center;
+  transition: background 0.2s;
+  border-radius: 8px;
+}
+
+.fila:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.fila:last-child {
+  border-bottom: none;
+}
+
+/* Filas del Calendario */
+.fila-cal {
+  display: grid;
+  grid-template-columns: 1fr 150px 200px;
+  padding: 15px 10px;
+  border-bottom: 1px solid #29406c;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.fila-cal:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* === DETALLES DE TEXTO === */
+.pos {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #facc15; /* Amarillo brillante para la posición */
+}
+
+.nombre {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.equipo {
+  color: #a0aec0; /* Gris azulado suave */
+  font-size: 0.95rem;
+}
+
+.puntos {
+  font-weight: bold;
+  text-align: right;
+  color: #22c55e; /* Verde brillante para puntos */
+  font-size: 1.1rem;
+}
+
+/* Texto general dentro de las cartas (Próxima carrera, etc) */
+.card p {
+  margin: 8px 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.card strong {
+  color: #ff3333; /* Rojo para etiquetas fuertes */
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .fila {
+    grid-template-columns: 40px 1fr 80px; /* Ocultamos equipo o ajustamos en móviles */
+    font-size: 0.9rem;
+  }
+  
+  .fila .equipo {
+    display: none; /* Ocultar equipo en pantallas muy pequeñas si es necesario */
+  }
+
+  .fila-cal {
+    grid-template-columns: 1fr; /* Calendario en pila vertical */
+    gap: 5px;
+    text-align: center;
+  }
+  
+  .fila-cal span {
+    display: block;
+    margin-bottom: 2px;
+
+
+
+    
+  }
+}

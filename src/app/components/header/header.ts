@@ -70,4 +70,10 @@ closeMenu()
   this.router.navigateByUrl('/gestion-carrera');
   this.closeMenu();
  }
+
+ verInfoTemporada()
+ {
+  this.router.navigateByUrl("/info-temporada")
+  this.closeMenu();
+ }
 }

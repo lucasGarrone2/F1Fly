@@ -1,0 +1,89 @@
+<div class="contenedor">
+
+  @if (loading) {
+    <div class="loading">Cargando información de la temporada...</div>
+  }
+
+  @else {
+    <div>
+      
+      <section class="card">
+        <h2>Tabla de Pilotos – Temporada Actual</h2>
+        <div class="tabla">
+          @for (p of pilots; track $index) {
+            <div class="fila">
+              <span class="pos">{{ $index + 1 }}</span>
+              <span class="nombre">
+                {{ p.Driver.givenName }} {{ p.Driver.familyName }}
+              </span>
+              <span class="equipo">
+                {{ p.Constructors[0].name }}
+              </span>
+              <span class="puntos">
+                {{ p.points }} pts
+              </span>
+            </div>
+          }
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Tabla de Constructores</h2>
+        <div class="tabla">
+          @for (c of constructors; track $index) {
+            <div class="fila">
+              <span class="pos">{{ $index + 1 }}</span>
+              <span class="nombre">
+                {{ c.Constructor.name }}
+              </span>
+              <span class="puntos">
+                {{ c.points }} pts
+              </span>
+            </div>
+          }
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Próxima Carrera</h2>
+        <p><strong>{{ nextRace?.raceName }}</strong></p>
+        <p>{{ nextRace?.Circuit?.circuitName }}</p>
+        <p><strong>Fecha:</strong> {{ nextRace?.date }} – {{ nextRace?.time }}</p>
+        <p>
+          <strong>Ubicación:</strong>
+          {{ nextRace?.Circuit?.Location?.locality }},
+          {{ nextRace?.Circuit?.Location?.country }}
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Última Carrera</h2>
+        <p><strong>{{ lastRace?.raceName }}</strong></p>
+        <p>{{ lastRace?.Circuit?.circuitName }}</p>
+        <p>{{ lastRace?.date }}</p>
+        <h3>Ganador</h3>
+        <p>
+          {{ lastRace?.Results[0]?.Driver?.givenName }}
+          {{ lastRace?.Results[0]?.Driver?.familyName }}
+          ({{ lastRace?.Results[0]?.Constructor?.name }})
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Calendario Completo</h2>
+        <div class="tabla">
+          @for (r of races; track $index) {
+            <div class="fila-cal">
+              <span>{{ r.raceName }}</span>
+              <span>{{ r.date }}</span>
+              <span>
+                {{ r.Circuit.Location.locality }} – {{ r.Circuit.Location.country }}
+              </span>
+            </div>
+          }
+        </div>
+      </section>
+
+    </div>
+  }
+</div>
