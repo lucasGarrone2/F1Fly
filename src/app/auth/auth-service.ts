@@ -3,6 +3,8 @@ import { User } from '../interfaces/user';
 import { map, of, switchMap, tap, throwError } from 'rxjs';
 import { UserClient } from '../clients/user-client';
 import { NotificationService } from '../services/notification-service';
+import { PILOTOS_IMG } from '../components/Pilotos_img';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -93,6 +95,17 @@ login(username: string, password: string) {
       localStorage.setItem('loggedUser', JSON.stringify(merged));
     })
   );
+}
+
+getProfileImage(): string {
+  const user = this.activeUser();
+
+  if (!user || !user.listaPilotos) {
+    return PILOTOS_IMG['Default'];
+  }
+
+  const key = user.listaPilotos.trim();
+  return PILOTOS_IMG[key] || PILOTOS_IMG['Default'];
 }
 }
 

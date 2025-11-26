@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../../auth/auth-service';
 @Component({
@@ -14,6 +14,9 @@ export class Header {
  private readonly router= inject(Router);
 
  menuOpen= false;
+
+ // computed property providing the profile image observable/value
+ protected readonly profileImg = computed(() => this.auth.getProfileImage());
 
 closeMenu()
 {

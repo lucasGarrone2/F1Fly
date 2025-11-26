@@ -171,3 +171,12 @@ nav {
     border-bottom: 2px solid #FF5555; 
     transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
+.profile-img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #cc1c4a;
+  cursor: pointer;
+}
+

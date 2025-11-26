@@ -1,21 +1,6 @@
 {
   "carreras": [
     {
-      "nombre_carrera": "Bahrain International Circuita",
-      "fecha_carrera": "2026-04-13",
-      "capacidad_carrera": 70000,
-      "descripcion_carrera": "Pista desértica, diseño Tilke, carreras bajo luces.",
-      "cantidad_vueltas_carrera": 100,
-      "ciudad_carrera": "Sakhir",
-      "pais_carrera": "Bahrain",
-      "imageUrl_carrera": "bahrein.jpg",
-      "precio_entrada_regular": 100,
-      "precio_entrada_premium": 300,
-      "precio_entrada_vip": 600,
-      "tipo_entrada": "VIP",
-      "id": "bbab"
-    },
-    {
       "nombre_carrera": "Circuit de Monaco",
       "fecha_carrera": "2026-05-25",
       "capacidad_carrera": 37000,
@@ -918,8 +903,8 @@
       "nacionalidad": "Argentina",
       "edad": 30,
       "fecha_nacimiento": "1995-01-01",
-      "listaPilotos": "Franco Colapinto",
-      "ListaEscuderias": "Mercedes"
+      "listaPilotos": "Fernando Alonso",
+      "ListaEscuderias": "Aston Martin"
     },
     {
       "id": "7ee7",
@@ -935,25 +920,39 @@
       "fecha_nacimiento": "2003-08-08",
       "listaPilotos": "Franco Colapinto",
       "ListaEscuderias": "Mercedes"
+    },
+    {
+      "id": "3559",
+      "nombre": "prueba2",
+      "apellido": "oficial",
+      "username": "prueba2",
+      "email": "prueba@c.com",
+      "password": "Prueba2",
+      "isAdmin": false,
+      "dni": "333333333",
+      "nacionalidad": "Argebtuba",
+      "edad": 33,
+      "fecha_nacimiento": "2000-01-01",
+      "listaPilotos": "",
+      "ListaEscuderias": ""
+    },
+    {
+      "id": "dbfc",
+      "nombre": "Lucas ",
+      "apellido": "Garrone",
+      "username": "lucasgarrone2",
+      "email": "lucasgarrone2@gmail.com",
+      "password": "prueba123",
+      "isAdmin": false,
+      "dni": "44388205",
+      "nacionalidad": "Argentina",
+      "edad": 22,
+      "fecha_nacimiento": "2003-08-08",
+      "listaPilotos": "Oscar Piastri",
+      "ListaEscuderias": "Williams"
     }
   ],
   "listadoFavoritos": [
-    {
-      "id": "d362",
-      "id_user": 1,
-      "carrera": {
-        "nombre_carrera": "Autodromo Nazionale Monza",
-        "pais_carrera": "Italia",
-        "ciudad_carrera": "Monza (Milán)",
-        "fecha_carrera": "2026-09-07",
-        "capacidad_carrera": 120000,
-        "cantidad_vueltas_carrera": 53,
-        "precio_carrera": 140,
-        "descripcion_carrera": "Alta velocidad, largas rectas y la histórica banking.",
-        "imageUrl_carrera": "monzaa.jpg",
-        "id": "ad83"
-      }
-    },
     {
       "id": "567b",
       "id_user": 1,
@@ -1121,6 +1120,25 @@
         "precio_entrada_vip": 300,
         "tipo_entrada": "Regular",
         "id": "625b"
+      }
+    },
+    {
+      "id": "d5e3",
+      "id_user": "1",
+      "carrera": {
+        "nombre_carrera": "Autodromo Nazionale Monza",
+        "fecha_carrera": "2026-09-07",
+        "capacidad_carrera": 120000,
+        "descripcion_carrera": "Alta velocidad, largas rectas y la histórica banking.",
+        "cantidad_vueltas_carrera": 53,
+        "ciudad_carrera": "Monza (Milán)",
+        "pais_carrera": "Italia",
+        "imageUrl_carrera": "monzaa.jpg",
+        "precio_entrada_regular": 80,
+        "precio_entrada_premium": 150,
+        "precio_entrada_vip": 300,
+        "tipo_entrada": "Regular",
+        "id": "ad83"
       }
     }
   ],
@@ -1770,6 +1788,126 @@
         "tipo_avion": "Airbus A321",
         "clase_asiento": "Economy",
         "precio_promedio_ticket_eur": 120
+      }
+    },
+    {
+      "id": "62c8",
+      "id_user": "1",
+      "precio_total_reserva": 4920,
+      "carrera": {
+        "nombre_carrera": "Bahrain International Circuita",
+        "fecha_carrera": "2026-04-13",
+        "capacidad_carrera": 70000,
+        "descripcion_carrera": "Pista desértica, diseño Tilke, carreras bajo luces.",
+        "cantidad_vueltas_carrera": 100,
+        "ciudad_carrera": "Sakhir",
+        "pais_carrera": "Bahrain",
+        "imageUrl_carrera": "bahrein.jpg",
+        "precio_entrada_regular": 100,
+        "precio_entrada_premium": 300,
+        "precio_entrada_vip": 600,
+        "tipo_entrada": "Premium",
+        "id": "bbab",
+        "precio_carrera": 900
+      },
+      "hotel": {
+        "id": "2",
+        "nombre_hotel": "Al Areen Palace & Spa by Accor",
+        "carrera_id": 1,
+        "pais": "Bahrain",
+        "ciudad": "Sakhir",
+        "fechas_disponibles": [
+          "2026-04-11",
+          "2026-04-12",
+          "2026-04-13",
+          "2026-04-14"
+        ],
+        "precio_promedio_habitacion_eur": 480,
+        "tieneAmenities": true,
+        "tieneTransporte": false,
+        "imagenUrl": "fotosHotel/beach resort.webp",
+        "direccionExacta": "Building 2015, Road 6215, Block 1062, Al Areen"
+      },
+      "habitacion": {
+        "tipoHabitacion": "vip",
+        "cantPersonas": 3,
+        "fechaEntrada": "2026-04-11",
+        "fechaSalida": "2026-04-12",
+        "noches": 1,
+        "precioTotal": 3000
+      },
+      "vuelo": {
+        "carrera_id": "1",
+        "pais_origen": "Alemania",
+        "ciudad_origen": "Frankfurt",
+        "pais_destino": "Bahrain",
+        "ciudad_destino": "Manama",
+        "aerolinea": "Lufthansa",
+        "fecha_disponible": "2026-04-12",
+        "tipo_avion": "Airbus A330",
+        "clase_asiento": "Business",
+        "precio_promedio_ticket_eur": 750,
+        "id": "2"
+      }
+    },
+    {
+      "id": "c349",
+      "id_user": "1",
+      "precio_total_reserva": 7920,
+      "carrera": {
+        "nombre_carrera": "Circuit de Monaco",
+        "fecha_carrera": "2026-05-25",
+        "capacidad_carrera": 37000,
+        "descripcion_carrera": "El clásico urbano: curvas estrechas y glamour en la Riviera.",
+        "cantidad_vueltas_carrera": 99,
+        "ciudad_carrera": "Montecarlo",
+        "pais_carrera": "Mónaco",
+        "imageUrl_carrera": "monaco.png",
+        "precio_entrada_regular": 80,
+        "precio_entrada_premium": 150,
+        "precio_entrada_vip": 300,
+        "tipo_entrada": "VIP",
+        "id": "5d57",
+        "precio_carrera": 1800
+      },
+      "hotel": {
+        "id": "3",
+        "nombre_hotel": "Montecarlo Bay Hotel & Resort",
+        "carrera_id": 2,
+        "pais": "Mónaco",
+        "ciudad": "Montecarlo",
+        "fechas_disponibles": [
+          "2026-05-23",
+          "2026-05-24",
+          "2026-05-25",
+          "2026-05-26"
+        ],
+        "precio_promedio_habitacion_eur": 420,
+        "tieneAmenities": true,
+        "tieneTransporte": false,
+        "imagenUrl": "fotosHotel/montecarlo.jpeg",
+        "direccionExacta": "40 Avenue Princesse Grace"
+      },
+      "habitacion": {
+        "tipoHabitacion": "vip",
+        "cantPersonas": 6,
+        "fechaEntrada": "2026-05-23",
+        "fechaSalida": "2026-05-24",
+        "noches": 1,
+        "precioTotal": 6000
+      },
+      "vuelo": {
+        "id": "5",
+        "carrera_id": 2,
+        "pais_origen": "Italia",
+        "ciudad_origen": "Roma",
+        "pais_destino": "Mónaco",
+        "ciudad_destino": "Niza",
+        "aerolinea": "ITA Airways",
+        "fecha_disponible": "2026-05-24",
+        "tipo_avion": "Embraer 190",
+        "clase_asiento": "Business",
+        "precio_promedio_ticket_eur": 350
       }
     }
   ]

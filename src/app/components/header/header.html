@@ -19,11 +19,13 @@
 
             @if (auth.isAdmin()) {
             }
-
             <div class="profile-menu-container">
 
             <button class="btn-perfil" (click)="toggleMenu()">
-                <i class="fa-regular fa-circle-user" aria-hidden="true"></i>
+               <img 
+                [src]="profileImg()" 
+                class="profile-img"
+                alt="foto de perfil">
             </button> 
 
         <ul class="menu-perfil" [class.open]="menuOpen">
