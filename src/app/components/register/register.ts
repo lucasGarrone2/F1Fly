@@ -32,17 +32,9 @@ protected readonly listaPilotos = [
     'Pierre Gasly',
     'Alexander Albon',
     'Franco Colapinto',
-    'Daniel Ricciardo',
     'Yuki Tsunoda',
-    'Valtteri Bottas',
-    'Guanyu Zhou',
     'Nico Hülkenberg',
-    'Kevin Magnussen',
-    'Michael Schumacher',
-    'Ayrton Senna',
-    'Juan Manuel Fangio',
-    'Alain Prost',
-    'Niki Lauda',
+    
   ];
 
   protected readonly listaEscuderias = [

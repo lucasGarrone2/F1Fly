@@ -61,7 +61,7 @@
                 
                 @if (reservaCliente.tieneDescuento()) {
                     <div class="total-item descuento-line">
-                        <strong>Descuento (20%):</strong>
+                        <strong>Descuento:</strong>
                         <span class="descuento-valor">- €{{ (reservaCliente.subtotal() - reservaCliente.total()) | number:'1.0-2' }}</span>
                     </div>
                 }

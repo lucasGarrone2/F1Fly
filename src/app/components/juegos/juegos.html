@@ -1,0 +1,43 @@
+<div class="quiz-container">
+  <h2>🏁 Trivia de Fórmula 1</h2>
+    <app-toast-component></app-toast-component>
+  @for (pregunta of preguntas; track i; let i = $index) {
+    <div class="pregunta-card">
+      <p class="titulo">{{ i + 1 }}. {{ pregunta.question }}</p>
+
+      <div class="opciones-grid">
+        @for (opcion of pregunta.options; track $index) {
+          
+          <label class="opcion-btn" [class.seleccionada]="respuestas[i] === opcion">
+            <input 
+              type="radio"
+              [name]="'pregunta_' + i" 
+              [value]="opcion"
+              (change)="responder(i, opcion)"
+              [checked]="respuestas[i] === opcion"
+            />
+            <span class="texto-opcion">{{ opcion }}</span>
+          </label>
+
+        }
+      </div>
+    </div>
+  }
+
+  <div class="acciones">
+    <button class="btn-finalizar" (click)="finalizar()" [disabled]="!juegoCompleto()">
+      Finalizar Quiz
+    </button>
+  </div>
+
+  @if (resultado) {
+    <div class="resultado-box" [class.error]="!resultado.includes('Felicidades')">
+      {{ resultado }}
+    </div>
+  }
+  @if (resultadoError) {
+  <div class="resultado-error">
+    {{ resultadoError }}
+  </div>
+}
+</div>

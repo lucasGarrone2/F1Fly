@@ -14,7 +14,13 @@ export class ReservaClient {
   private cantidadPesonas: number | null = null;
   private vuelo: IVuelo | null = null;
   private cantidadEntradas: number = 1;
+  private codigoCuponAplicado: string | null = null;
+  private porcentajeDescuento = 0;
 
+  private readonly cuponesValidos: Record<string, number>={
+    'F1FLY20':20,
+    'QUIZ15':15
+  }
 
    setHabitacion(data: {
     tipoHabitacion: string,
@@ -37,16 +43,24 @@ export class ReservaClient {
 
 
   aplicarCupon(codigo: string): boolean {
+    const codigoUpper= codigo.toUpperCase();
     if (this.tieneDescuento()) return false; 
 
-    if (codigo.toUpperCase() === 'F1FLY20') {
+    if(this.cuponesValidos[codigoUpper])
+    {
       this.tieneDescuento.set(true);
+      this.codigoCuponAplicado= codigoUpper;
+      this.porcentajeDescuento= this.cuponesValidos[codigoUpper];
       return true;
     }
 
     return false; 
   }
 
+  getCuponAplicado(): string | null
+  {
+    return this.codigoCuponAplicado;
+  }
   
   setCantidadPersonas(cantidad: number): void {
         this.cantidadPesonas = cantidad;
@@ -81,7 +95,7 @@ readonly subtotal = computed(() => {
   readonly total = computed(() => {
     const sub = this.subtotal();
     if (this.tieneDescuento()) {
-      return sub - (sub * this.porcentaje / 100);
+      return sub - (sub * this.porcentajeDescuento / 100);
     }
     return sub;
   });
