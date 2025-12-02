@@ -1,0 +1,113 @@
+/* juegos.css */
+
+.quiz-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 20px;
+  /* Fondo transparente o muy sutil para integrarse a tu página */
+  background-color: transparent; 
+}
+
+h2 {
+  text-align: center;
+  color: #ff1801; /* Rojo F1 vibrante */
+  font-family: 'Titillium Web', sans-serif; /* Si tenés la fuente de F1 */
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- TARJETA OSCURA --- */
+.pregunta-card {
+  /* Aquí está el cambio: Azul oscuro grisáceo en vez de blanco */
+  background-color: #1e293b; 
+  color: #f8fafc; /* Texto casi blanco */
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  /* Borde sutil para separarlo del fondo */
+  border: 1px solid #334155; 
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
+
+.titulo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.opciones-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Una columna en móvil */
+  gap: 12px;
+}
+
+/* En PC usamos 2 columnas si hay espacio */
+@media (min-width: 600px) {
+  .opciones-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- BOTONES DE OPCIÓN DARK MODE --- */
+.opcion-btn {
+  display: block;
+  padding: 14px;
+  background-color: #0f172a; /* Fondo más oscuro que la tarjeta */
+  border: 2px solid #334155;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  color: #cbd5e1; /* Gris claro */
+  font-weight: 500;
+}
+
+.opcion-btn:hover {
+  border-color: #ff1801; /* Borde rojo al pasar el mouse */
+  background-color: #1e293b;
+}
+
+.opcion-btn.seleccionada {
+  background-color: #ff1801; /* Fondo rojo al seleccionar */
+  color: white;
+  border-color: #ff1801;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(255, 24, 1, 0.4);
+}
+
+/* Esconder el radio button nativo */
+.opcion-btn input[type="radio"] {
+  display: none;
+}
+
+/* --- BOTÓN FINALIZAR --- */
+.btn-finalizar {
+  width: 100%;
+  padding: 16px;
+  background-color: white; /* Contraste máximo */
+  color: #1e293b;
+  border: none;
+  border-radius: 50px; /* Estilo píldora más moderno */
+  font-size: 1.1rem;
+  font-weight: 800;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: transform 0.1s;
+}
+
+.btn-finalizar:active {
+  transform: scale(0.98);
+}
+
+/* --- MENSAJES DE ERROR --- */
+.resultado-error {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #7f1d1d; /* Rojo oscuro de error */
+  color: #fecaca; /* Texto rojo claro */
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid #991b1b;
+}

@@ -134,6 +134,21 @@
       "precio_entrada_vip": 300,
       "tipo_entrada": "Regular",
       "id": "62ad"
+    },
+    {
+      "nombre_carrera": "Circuito Galvez",
+      "fecha_carrera": "2026-01-01",
+      "capacidad_carrera": 5600,
+      "descripcion_carrera": "Alto circuito",
+      "cantidad_vueltas_carrera": 60,
+      "ciudad_carrera": "Buenos Aires",
+      "pais_carrera": "Argentina",
+      "imageUrl_carrera": "https://www.solotc.com.ar/wp-content/uploads/2025/07/autodromo-buenos-aires-reformas-f1-scaled.jpg",
+      "precio_entrada_regular": 80,
+      "precio_entrada_premium": 300,
+      "precio_entrada_vip": 300,
+      "tipo_entrada": "Premium",
+      "id": "85ab"
     }
   ],
   "hoteles": [
@@ -903,7 +918,7 @@
       "nacionalidad": "Argentina",
       "edad": 30,
       "fecha_nacimiento": "1995-01-01",
-      "listaPilotos": "Franco Colapinto",
+      "listaPilotos": "Max Verstappen",
       "ListaEscuderias": "Mercedes"
     },
     {
@@ -948,7 +963,7 @@
       "nacionalidad": "Argentina",
       "edad": 22,
       "fecha_nacimiento": "2003-08-08",
-      "listaPilotos": "Oscar Piastri",
+      "listaPilotos": "Franco Colapinto",
       "ListaEscuderias": "Williams"
     }
   ],
@@ -1139,6 +1154,25 @@
         "precio_entrada_vip": 300,
         "tipo_entrada": "Regular",
         "id": "ad83"
+      }
+    },
+    {
+      "id": "b24b",
+      "id_user": "1",
+      "carrera": {
+        "nombre_carrera": "Circuit de Monaco",
+        "fecha_carrera": "2026-05-25",
+        "capacidad_carrera": 37000,
+        "descripcion_carrera": "El clásico urbano: curvas estrechas y glamour en la Riviera.",
+        "cantidad_vueltas_carrera": 99,
+        "ciudad_carrera": "Montecarlo",
+        "pais_carrera": "Mónaco",
+        "imageUrl_carrera": "monaco.png",
+        "precio_entrada_regular": 80,
+        "precio_entrada_premium": 150,
+        "precio_entrada_vip": 300,
+        "tipo_entrada": "Regular",
+        "id": "5d57"
       }
     }
   ],
@@ -1595,6 +1629,66 @@
         "fechaSalida": "2026-05-24",
         "noches": 1,
         "precioTotal": 6000
+      },
+      "vuelo": {
+        "id": "5",
+        "carrera_id": 2,
+        "pais_origen": "Italia",
+        "ciudad_origen": "Roma",
+        "pais_destino": "Mónaco",
+        "ciudad_destino": "Niza",
+        "aerolinea": "ITA Airways",
+        "fecha_disponible": "2026-05-24",
+        "tipo_avion": "Embraer 190",
+        "clase_asiento": "Business",
+        "precio_promedio_ticket_eur": 350
+      }
+    },
+    {
+      "id": "593d",
+      "id_user": "1",
+      "precio_total_reserva": 4520,
+      "carrera": {
+        "nombre_carrera": "Circuit de Monaco",
+        "fecha_carrera": "2026-05-25",
+        "capacidad_carrera": 37000,
+        "descripcion_carrera": "El clásico urbano: curvas estrechas y glamour en la Riviera.",
+        "cantidad_vueltas_carrera": 99,
+        "ciudad_carrera": "Montecarlo",
+        "pais_carrera": "Mónaco",
+        "imageUrl_carrera": "monaco.png",
+        "precio_entrada_regular": 80,
+        "precio_entrada_premium": 150,
+        "precio_entrada_vip": 300,
+        "tipo_entrada": "Premium",
+        "id": "5d57",
+        "precio_carrera": 600
+      },
+      "hotel": {
+        "id": "4",
+        "nombre_hotel": "Fairmont Monte Carlo",
+        "carrera_id": 2,
+        "pais": "Mónaco",
+        "ciudad": "Montecarlo",
+        "fechas_disponibles": [
+          "2026-05-23",
+          "2026-05-24",
+          "2026-05-25",
+          "2026-05-26"
+        ],
+        "precio_promedio_habitacion_eur": 650,
+        "tieneAmenities": true,
+        "tieneTransporte": true,
+        "imagenUrl": "fotosHotel/fairmont.jpg",
+        "direccionExacta": "12 Avenue des Spélugues"
+      },
+      "habitacion": {
+        "tipoHabitacion": "vip",
+        "cantPersonas": 4,
+        "fechaEntrada": "2026-05-23",
+        "fechaSalida": "2026-05-24",
+        "noches": 1,
+        "precioTotal": 4000
       },
       "vuelo": {
         "id": "5",
