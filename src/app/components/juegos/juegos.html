@@ -1,9 +1,32 @@
 <div class="quiz-container">
   <h2>🏁 Trivia de Fórmula 1</h2>
-    <app-toast-component></app-toast-component>
+  <!-- Tu componente de Toast, asumo que esta en el mismo nivel que Juegos -->
+  <app-toast-component></app-toast-component>
+
   @for (pregunta of preguntas; track i; let i = $index) {
     <div class="pregunta-card">
-      <p class="titulo">{{ i + 1 }}. {{ pregunta.question }}</p>
+      <p class="titulo">{{ i + 1 }}. 
+        <!-- Si es una pregunta de circuito, el titulo será más directo -->
+        @if (pregunta.category === 'circuito') {
+          ¿Qué circuito es?
+        } @else {
+          {{ pregunta.question }}
+        }
+      </p>
+
+    
+      @if (pregunta.imageUrl) {
+        <div class="circuito-imagen-container">
+          <img 
+            [src]="pregunta.imageUrl" 
+            alt="Outline del circuito para adivinar" 
+            class="circuito-imagen"
+          />
+        </div>
+      } @else {
+         
+         <p class="sub-titulo">{{ pregunta.question }}</p>
+      }
 
       <div class="opciones-grid">
         @for (opcion of pregunta.options; track $index) {
@@ -25,19 +48,21 @@
   }
 
   <div class="acciones">
-    <button class="btn-finalizar" (click)="finalizar()" [disabled]="!juegoCompleto()">
+    <button type="button" class="btn-finalizar" (click)="finalizar()" [disabled]="!juegoCompleto()">
       Finalizar Quiz
     </button>
   </div>
+  
+  
+  @if (resultadoError) {
+    <div class="resultado-error">
+      {{ resultadoError }}
 
-  @if (resultado) {
-    <div class="resultado-box" [class.error]="!resultado.includes('Felicidades')">
+      <button class="btn-reiniciar" (click)="iniciarJuego()">Intentar con nuevas preguntas</button>
+    </div>
+  } @else if (resultado) {
+     <div class="resultado-box">
       {{ resultado }}
     </div>
   }
-  @if (resultadoError) {
-  <div class="resultado-error">
-    {{ resultadoError }}
-  </div>
-}
 </div>

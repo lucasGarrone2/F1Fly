@@ -35,6 +35,7 @@ export class Juegos implements OnInit {
     this.preguntas = this.quiz.getRandomQuestions();
     this.respuestas = new Array(this.preguntas.length).fill('');
     this.resultado = null;
+    this.resultadoError = null;
   }
 
   responder(index: number, opcion: string) {
@@ -64,7 +65,7 @@ export class Juegos implements OnInit {
     } else {
       this.resultado = "Alguna respuesta es incorrecta, intentalo nuevamente.";
       this.resultadoError = "❌ Incorrecto. Revisa tus respuestas e intenta de nuevo.";
-      // Opcional: reiniciar juego si falla
+   
        this.iniciarJuego(); 
     }
   }

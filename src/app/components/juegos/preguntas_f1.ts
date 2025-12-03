@@ -2,9 +2,11 @@ export interface PreguntaF1 {
   question: string;
   options: string[];
   answer: string;
+  category: "general" | "circuito",
+  imageUrl?: string
 }
 
-export const PREGUNTAS_F1 = [
+export const PREGUNTAS_GENERALES : PreguntaF1[]= [
  
   {
     question: "¿Cuántos puntos recibe el ganador de una carrera?",

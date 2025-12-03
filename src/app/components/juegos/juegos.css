@@ -1,4 +1,4 @@
-/* juegos.css */
+/* --- ESTILOS DE LA SECCIÓN QUIZ --- */
 
 .quiz-container {
   max-width: 800px;
@@ -33,16 +33,50 @@ h2 {
 .titulo {
   font-size: 1.2rem;
   font-weight: 600;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem; /* Ajustado para dar espacio a la sub-pregunta */
 }
 
+.sub-titulo {
+  font-size: 1rem;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  color: #94a3b8;
+}
+
+/* --- CONTENEDOR DE LA IMAGEN DEL CIRCUITO --- */
+.circuito-imagen-container {
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid #5b0101; /* Borde rojo sutil */
+  
+  /* NUEVOS ESTILOS PARA LIMITAR Y CENTRAR LA IMAGEN */
+  max-width: 450px; /* Ancho máximo para que no sea muy grande en escritorio */
+  width: 100%; /* Asegura que ocupe el ancho disponible en móvil */
+  margin-left: auto; /* Centra el contenedor dentro de la tarjeta */
+  margin-right: auto;
+}
+
+/* --- IMAGEN DEL CIRCUITO (DENTRO DEL CONTENEDOR) --- */
+.circuito-imagen {
+  width: 100%; /* La imagen siempre llena el ancho de su contenedor limitado */
+  height: auto;
+  display: block;
+  object-fit: contain; /* Asegura que la imagen no se recorte */
+  
+  /* El filtro Invert y hue-rotate ayuda si la imagen de outline es blanca, la hace oscura */
+  filter: invert(100%) hue-rotate(180deg); 
+  mix-blend-mode: luminosity; 
+}
+
+
+/* --- OPCIONES GRID --- */
 .opciones-grid {
   display: grid;
-  grid-template-columns: 1fr; /* Una columna en móvil */
+  grid-template-columns: 1fr;
   gap: 12px;
 }
 
-/* En PC usamos 2 columnas si hay espacio */
 @media (min-width: 600px) {
   .opciones-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -53,59 +87,91 @@ h2 {
 .opcion-btn {
   display: block;
   padding: 14px;
-  background-color: #0f172a; /* Fondo más oscuro que la tarjeta */
+  background-color: #0f172a; 
   border: 2px solid #334155;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
   text-align: center;
-  color: #cbd5e1; /* Gris claro */
+  color: #cbd5e1; 
   font-weight: 500;
 }
 
 .opcion-btn:hover {
-  border-color: #ff1801; /* Borde rojo al pasar el mouse */
+  border-color: #ff1801; 
   background-color: #1e293b;
 }
 
 .opcion-btn.seleccionada {
-  background-color: #ff1801; /* Fondo rojo al seleccionar */
+  background-color: #ff1801; 
   color: white;
   border-color: #ff1801;
   font-weight: bold;
   box-shadow: 0 0 10px rgba(255, 24, 1, 0.4);
 }
 
-/* Esconder el radio button nativo */
 .opcion-btn input[type="radio"] {
   display: none;
 }
 
-/* --- BOTÓN FINALIZAR --- */
+/* --- BOTONES GENERALES --- */
 .btn-finalizar {
   width: 100%;
   padding: 16px;
-  background-color: white; /* Contraste máximo */
+  background-color: white; 
   color: #1e293b;
   border: none;
-  border-radius: 50px; /* Estilo píldora más moderno */
+  border-radius: 50px; 
   font-size: 1.1rem;
   font-weight: 800;
   cursor: pointer;
   text-transform: uppercase;
   transition: transform 0.1s;
+  margin-top: 2rem;
+}
+
+.btn-finalizar:disabled {
+  background-color: #525252;
+  color: #a1a1a1;
+  cursor: not-allowed;
 }
 
 .btn-finalizar:active {
   transform: scale(0.98);
 }
 
-/* --- MENSAJES DE ERROR --- */
+.btn-reiniciar {
+  background: none;
+  border: 1px solid #fecaca;
+  color: #fecaca;
+  padding: 8px 15px;
+  border-radius: 4px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- MENSAJES --- */
+
+.resultado-box {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #166534; /* Verde éxito */
+  color: #dcfce7;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
 .resultado-error {
   margin-top: 20px;
   padding: 15px;
-  background-color: #7f1d1d; /* Rojo oscuro de error */
-  color: #fecaca; /* Texto rojo claro */
+  background-color: #7f1d1d; 
+  color: #fecaca; 
   border-radius: 8px;
   text-align: center;
   font-weight: bold;
