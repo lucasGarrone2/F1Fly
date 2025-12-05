@@ -57,6 +57,17 @@
                 <span class="icon">🚌</span>
                 <span>Transporte: {{ hotel.tieneTransporte ? 'Sí ✅' : 'No ❌' }}</span>
             </div>
+            <div class="map-container">
+  <google-map height="200px"
+              width="100%"
+              [center]="{ lat: hotel.ubicacionEnMapa.latitud, lng: hotel.ubicacionEnMapa.longitud }"
+              [zoom]="15">
+      <map-marker [position]="{ lat: hotel.ubicacionEnMapa.latitud, lng: hotel.ubicacionEnMapa.longitud }"
+                  [title]="hotel.nombre_hotel">
+      </map-marker>
+  </google-map>
+</div>
+
             
             <div class="hotel-row fechas-row">
                 <span class="icon">📅</span>

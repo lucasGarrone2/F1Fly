@@ -168,7 +168,11 @@
       "tieneAmenities": true,
       "tieneTransporte": false,
       "imagenUrl": "fotosHotel/beach resort.webp",
-      "direccionExacta": "Building 2015, Road 6215, Block 1062, Al Areen"
+      "direccionExacta": "Building 2015, Road 6215, Block 1062, Al Areen",
+      "ubicacionEnMapa": {
+        "latitud": 26.0364,
+        "longitud": 50.4936
+      }
     },
     {
       "id": "3",
@@ -186,7 +190,11 @@
       "tieneAmenities": true,
       "tieneTransporte": false,
       "imagenUrl": "fotosHotel/montecarlo.jpeg",
-      "direccionExacta": "40 Avenue Princesse Grace"
+      "direccionExacta": "40 Avenue Princesse Grace",
+      "ubicacionEnMapa": {
+        "latitud": 43.7333,
+        "longitud": 7.4167
+      }
     },
     {
       "id": "4",
@@ -204,7 +212,11 @@
       "tieneAmenities": true,
       "tieneTransporte": true,
       "imagenUrl": "fotosHotel/fairmont.jpg",
-      "direccionExacta": "12 Avenue des Spélugues"
+      "direccionExacta": "12 Avenue des Spélugues",
+      "ubicacionEnMapa": {
+        "latitud": 43.7345,
+        "longitud": 7.4246
+      }
     },
     {
       "id": "5",
@@ -222,7 +234,11 @@
       "tieneAmenities": true,
       "tieneTransporte": true,
       "imagenUrl": "fotosHotel/silverstone.jpg",
-      "direccionExacta": "Silverstone, Towcester NN12 8TN"
+      "direccionExacta": "Silverstone, Towcester NN12 8TN",
+      "ubicacionEnMapa": {
+        "latitud": 52.0733,
+        "longitud": -1.0144
+      }
     },
     {
       "id": "6",
@@ -240,7 +256,11 @@
       "tieneAmenities": false,
       "tieneTransporte": true,
       "imagenUrl": "fotosHotel/buckingham.webp",
-      "direccionExacta": "A422, Buckingham NN12 8TE"
+      "direccionExacta": "A422, Buckingham NN12 8TE",
+      "ubicacionEnMapa": {
+        "latitud": 52.0605,
+        "longitud": -1.0003
+      }
     },
     {
       "id": "7",
@@ -258,7 +278,11 @@
       "tieneAmenities": true,
       "tieneTransporte": true,
       "imagenUrl": "fotosHotel/dellaPista.jpg",
-      "direccionExacta": "Viale Brianza, 20900 Monza MB"
+      "direccionExacta": "Viale Brianza, 20900 Monza MB",
+      "ubicacionEnMapa": {
+        "latitud": 45.5846,
+        "longitud": 9.2733
+      }
     },
     {
       "id": "8",
@@ -276,7 +300,11 @@
       "tieneAmenities": true,
       "tieneTransporte": false,
       "imagenUrl": "fotosHotel/starhotels.webp",
-      "direccionExacta": "Piazza Duca d'Aosta, 9, 20124 Milano MI"
+      "direccionExacta": "Piazza Duca d'Aosta, 9, 20124 Milano MI",
+      "ubicacionEnMapa": {
+        "latitud": 45.4845,
+        "longitud": 9.2041
+      }
     },
     {
       "id": "9",
@@ -294,7 +322,11 @@
       "tieneAmenities": true,
       "tieneTransporte": true,
       "imagenUrl": "fotosHotel/saopaulo.jpeg",
-      "direccionExacta": "Avenida Jangadeiros, 615, 04771-000 São Paulo"
+      "direccionExacta": "Avenida Jangadeiros, 615, 04771-000 São Paulo",
+      "ubicacionEnMapa": {
+        "latitud": -23.6346,
+        "longitud": -46.7139
+      }
     },
     {
       "id": "10",
@@ -312,7 +344,11 @@
       "tieneAmenities": true,
       "tieneTransporte": false,
       "imagenUrl": "fotosHotel/tivoli.jpg",
-      "direccionExacta": "Alameda Santos, 1437, 01419-001 São Paulo"
+      "direccionExacta": "Alameda Santos, 1437, 01419-001 São Paulo",
+      "ubicacionEnMapa": {
+        "latitud": -23.5645,
+        "longitud": -46.6544
+      }
     },
     {
       "id": "11",
@@ -330,7 +366,11 @@
       "tieneAmenities": true,
       "tieneTransporte": true,
       "imagenUrl": "fotosHotel/falkensteiner.jpg",
-      "direccionExacta": "Europaplatz 472, 8970 Schladming"
+      "direccionExacta": "Europaplatz 472, 8970 Schladming",
+      "ubicacionEnMapa": {
+        "latitud": 47.3879,
+        "longitud": 13.7184
+      }
     },
     {
       "id": "12",
@@ -348,7 +388,11 @@
       "tieneAmenities": false,
       "tieneTransporte": false,
       "imagenUrl": "fotosHotel/grandMercure.jpg",
-      "direccionExacta": "Praterstraße 9, 1020 Wien"
+      "direccionExacta": "Praterstraße 9, 1020 Wien",
+      "ubicacionEnMapa": {
+        "latitud": 48.2164,
+        "longitud": 16.3996
+      }
     },
     {
       "id": "13",
@@ -366,7 +410,11 @@
       "tieneAmenities": true,
       "tieneTransporte": true,
       "imagenUrl": "fotosHotel/artsBarcelo.jpg",
-      "direccionExacta": "Carrer de la Marina, 19, 21, 08005 Barcelona"
+      "direccionExacta": "Carrer de la Marina, 19, 21, 08005 Barcelona",
+      "ubicacionEnMapa": {
+        "latitud": 41.4106,
+        "longitud": 2.1996
+      }
     },
     {
       "id": "14",
@@ -384,7 +432,11 @@
       "tieneAmenities": true,
       "tieneTransporte": false,
       "imagenUrl": "fotosHotel/eurostars.avif",
-      "direccionExacta": "Moll de Barcelona, s/n, 08039 Barcelona"
+      "direccionExacta": "Moll de Barcelona, s/n, 08039 Barcelona",
+      "ubicacionEnMapa": {
+        "latitud": 41.3755,
+        "longitud": 2.1894
+      }
     },
     {
       "id": "15",
@@ -402,7 +454,11 @@
       "tieneAmenities": true,
       "tieneTransporte": true,
       "imagenUrl": "fotosHotel/ritz.jpg",
-      "direccionExacta": "1228 Sherbrooke St W, Montreal, QC H3G 1H6"
+      "direccionExacta": "1228 Sherbrooke St W, Montreal, QC H3G 1H6",
+      "ubicacionEnMapa": {
+        "latitud": 45.4972,
+        "longitud": -73.5794
+      }
     },
     {
       "id": "16",
@@ -420,7 +476,11 @@
       "tieneAmenities": true,
       "tieneTransporte": false,
       "imagenUrl": "fotosHotel/fairmont.webp",
-      "direccionExacta": "900 René-Lévesque Blvd W, Montreal, QC H3B 4A5"
+      "direccionExacta": "900 René-Lévesque Blvd W, Montreal, QC H3B 4A5",
+      "ubicacionEnMapa": {
+        "latitud": 45.4980,
+        "longitud": -73.5693
+      }
     },
     {
       "id": "17",
@@ -438,7 +498,11 @@
       "tieneAmenities": true,
       "tieneTransporte": true,
       "imagenUrl": "fotosHotel/baysands.jpg",
-      "direccionExacta": "10 Bayfront Ave, Singapore 018956"
+      "direccionExacta": "10 Bayfront Ave, Singapore 018956",
+      "ubicacionEnMapa": {
+        "latitud": 1.2834,
+        "longitud": 103.8607
+      }
     },
     {
       "id": "18",
@@ -456,7 +520,11 @@
       "tieneAmenities": true,
       "tieneTransporte": false,
       "imagenUrl": "fotosHotel/fullerton.jpg",
-      "direccionExacta": "80 Collyer Quay, Singapore 049326"
+      "direccionExacta": "80 Collyer Quay, Singapore 049326",
+      "ubicacionEnMapa": {
+        "latitud": 1.2864,
+        "longitud": 103.8510
+      }
     },
     {
       "id": "19",
@@ -474,7 +542,11 @@
       "tieneAmenities": true,
       "tieneTransporte": true,
       "imagenUrl": "fotosHotel/fourseasons.jpeg",
-      "direccionExacta": "98 San Jacinto Blvd, Austin, TX 78701"
+      "direccionExacta": "98 San Jacinto Blvd, Austin, TX 78701",
+      "ubicacionEnMapa": {
+        "latitud": 30.2672,
+        "longitud": -97.7431
+      }
     },
     {
       "id": "20",
@@ -492,7 +564,11 @@
       "tieneAmenities": true,
       "tieneTransporte": false,
       "imagenUrl": "fotosHotel/zaza.webp",
-      "direccionExacta": "400 Lavaca St, Austin, TX 78701"
+      "direccionExacta": "400 Lavaca St, Austin, TX 78701",
+      "ubicacionEnMapa": {
+        "latitud": 30.2675,
+        "longitud": -97.7429
+      }
     },
     {
       "id": "1",
@@ -510,7 +586,11 @@
       "tieneAmenities": true,
       "tieneTransporte": true,
       "imagenUrl": "fotosHotel/sakhir.jpg",
-      "direccionExacta": "105 Zallaq Highway, Zallaq"
+      "direccionExacta": "105 Zallaq Highway, Zallaq",
+      "ubicacionEnMapa": {
+        "latitud": 26.0360,
+        "longitud": 50.4875
+      }
     }
   ],
   "vuelos": [
@@ -918,7 +998,7 @@
       "nacionalidad": "Argentina",
       "edad": 30,
       "fecha_nacimiento": "1995-01-01",
-      "listaPilotos": "Max Verstappen",
+      "listaPilotos": "Lewis Hamilton",
       "ListaEscuderias": "Mercedes"
     },
     {
