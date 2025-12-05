@@ -9,9 +9,11 @@ import { HabitacionForm } from '../habitacion-form/habitacion-form';
 import { signal } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { AuthService } from '../../auth/auth-service';
+import {GoogleMapsModule} from '@angular/google-maps';
+import { GoogleMap } from '@angular/google-maps';
 @Component({
   selector: 'app-hotel-list',
-  imports: [CommonModule, RouterLink,NgOptimizedImage, HabitacionForm],
+  imports: [CommonModule, RouterLink,NgOptimizedImage, HabitacionForm, GoogleMapsModule, GoogleMap],
   templateUrl: './hotel-list.html',
   styleUrl: './hotel-list.css'
 })

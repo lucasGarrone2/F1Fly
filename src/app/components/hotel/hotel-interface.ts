@@ -10,4 +10,8 @@ export interface Hotel {
   tieneTransporte: boolean;
   imagenUrl: string; 
   direccionExacta: string;
+  ubicacionEnMapa: {
+    latitud: number;
+    longitud: number;
+  };
 }
