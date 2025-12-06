@@ -478,7 +478,7 @@
       "imagenUrl": "fotosHotel/fairmont.webp",
       "direccionExacta": "900 René-Lévesque Blvd W, Montreal, QC H3B 4A5",
       "ubicacionEnMapa": {
-        "latitud": 45.4980,
+        "latitud": 45.498,
         "longitud": -73.5693
       }
     },
@@ -523,7 +523,7 @@
       "direccionExacta": "80 Collyer Quay, Singapore 049326",
       "ubicacionEnMapa": {
         "latitud": 1.2864,
-        "longitud": 103.8510
+        "longitud": 103.851
       }
     },
     {
@@ -588,7 +588,7 @@
       "imagenUrl": "fotosHotel/sakhir.jpg",
       "direccionExacta": "105 Zallaq Highway, Zallaq",
       "ubicacionEnMapa": {
-        "latitud": 26.0360,
+        "latitud": 26.036,
         "longitud": 50.4875
       }
     }
@@ -1761,6 +1761,70 @@
         "tieneTransporte": true,
         "imagenUrl": "fotosHotel/fairmont.jpg",
         "direccionExacta": "12 Avenue des Spélugues"
+      },
+      "habitacion": {
+        "tipoHabitacion": "vip",
+        "cantPersonas": 4,
+        "fechaEntrada": "2026-05-23",
+        "fechaSalida": "2026-05-24",
+        "noches": 1,
+        "precioTotal": 4000
+      },
+      "vuelo": {
+        "id": "5",
+        "carrera_id": 2,
+        "pais_origen": "Italia",
+        "ciudad_origen": "Roma",
+        "pais_destino": "Mónaco",
+        "ciudad_destino": "Niza",
+        "aerolinea": "ITA Airways",
+        "fecha_disponible": "2026-05-24",
+        "tipo_avion": "Embraer 190",
+        "clase_asiento": "Business",
+        "precio_promedio_ticket_eur": 350
+      }
+    },
+    {
+      "id": "cb6e",
+      "id_user": "1",
+      "precio_total_reserva": 5100,
+      "carrera": {
+        "nombre_carrera": "Circuit de Monaco",
+        "fecha_carrera": "2026-05-25",
+        "capacidad_carrera": 37000,
+        "descripcion_carrera": "El clásico urbano: curvas estrechas y glamour en la Riviera.",
+        "cantidad_vueltas_carrera": 99,
+        "ciudad_carrera": "Montecarlo",
+        "pais_carrera": "Mónaco",
+        "imageUrl_carrera": "monaco.png",
+        "precio_entrada_regular": 80,
+        "precio_entrada_premium": 150,
+        "precio_entrada_vip": 300,
+        "tipo_entrada": "VIP",
+        "id": "5d57",
+        "precio_carrera": 600
+      },
+      "hotel": {
+        "id": "4",
+        "nombre_hotel": "Fairmont Monte Carlo",
+        "carrera_id": 2,
+        "pais": "Mónaco",
+        "ciudad": "Montecarlo",
+        "fechas_disponibles": [
+          "2026-05-23",
+          "2026-05-24",
+          "2026-05-25",
+          "2026-05-26"
+        ],
+        "precio_promedio_habitacion_eur": 650,
+        "tieneAmenities": true,
+        "tieneTransporte": true,
+        "imagenUrl": "fotosHotel/fairmont.jpg",
+        "direccionExacta": "12 Avenue des Spélugues",
+        "ubicacionEnMapa": {
+          "latitud": 43.7345,
+          "longitud": 7.4246
+        }
       },
       "habitacion": {
         "tipoHabitacion": "vip",

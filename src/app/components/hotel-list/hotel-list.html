@@ -60,9 +60,9 @@
             <div class="map-container">
   <google-map height="200px"
               width="100%"
-              [center]="{ lat: hotel.ubicacionEnMapa.latitud, lng: hotel.ubicacionEnMapa.longitud }"
+              [center]="{ lat: hotel.ubicacionEnMapa?.latitud ?? 0, lng: hotel.ubicacionEnMapa?.longitud ?? 0 }"
               [zoom]="15">
-      <map-marker [position]="{ lat: hotel.ubicacionEnMapa.latitud, lng: hotel.ubicacionEnMapa.longitud }"
+      <map-marker [position]="{ lat: hotel.ubicacionEnMapa?.latitud ?? 0, lng: hotel.ubicacionEnMapa?.longitud ?? 0 }"
                   [title]="hotel.nombre_hotel">
       </map-marker>
   </google-map>
