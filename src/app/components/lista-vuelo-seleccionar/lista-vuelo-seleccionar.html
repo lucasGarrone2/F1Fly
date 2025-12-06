@@ -1,5 +1,6 @@
-<div class="flight-list-wrapper">
-    
+<div class="flight-list-wrapper"> 
+   
+    <app-toast-component></app-toast-component>
   <h2 class="title">✈️ Vuelos disponibles</h2>
 
   <div class="flight-grid">
@@ -7,7 +8,7 @@
     @for (v of vuelosFiltrados; track v.id) {
 
       <div class="flight-card">
-
+         
         <div class="header">
           <span class="airline">{{ v.aerolinea }}</span>
           <span class="class">{{ v.clase_asiento }}</span>

@@ -8,9 +8,11 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NotificationService } from '../../services/notification-service';
 import { AuthService } from '../../auth/auth-service';
+import { ToastService } from '../../services/toast-service';
+import { ToastComponent } from '../toast-component/toast-component';
 @Component({
   selector: 'app-lista-vuelo-seleccionar',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, ToastComponent],
   templateUrl: './lista-vuelo-seleccionar.html',
   styleUrl: './lista-vuelo-seleccionar.css'
 })
@@ -40,7 +42,8 @@ protected readonly client = inject(VueloClient);
   constructor(
     protected reserva: ReservaClient,
     private auth: AuthService,
-    public notify:NotificationService
+    public notify:NotificationService,
+    private toastService: ToastService
   ) {}
 
   get vuelosFiltrados(): IVuelo[] {
@@ -52,6 +55,10 @@ protected readonly client = inject(VueloClient);
       v.pais_destino.toLowerCase().trim() === carrera.pais_carrera.toLowerCase().trim(),
       
   )};
+
+   ngOnInit() {
+    this.toastService.show("🎊🎊Felicidades! Obtuviste un descuento del 5% utilizando el cupon F1FLY5 🏎️")
+  }
 
   protected readonly cantidades = [1,2,3,4,5,6];
 

@@ -18,7 +18,7 @@ export class ReservaClient {
   private porcentajeDescuento = 0;
 
   private readonly cuponesValidos: Record<string, number>={
-    'F1FLY20':20,
+    'F1FLY5':5,
     'QUIZ15':15
   }
 
@@ -39,7 +39,7 @@ export class ReservaClient {
 
   // CONTROL DEL CUPÓN
   readonly tieneDescuento = signal(false);
-  private readonly porcentaje = 20;
+  private readonly porcentaje = 5;
 
 
   aplicarCupon(codigo: string): boolean {
