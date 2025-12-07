@@ -54,6 +54,7 @@ export class Juegos implements OnInit {
     const acertoTodo = this.quiz.verificarRespuestas(this.preguntas, respuestasObj);
 
     if (acertoTodo) {
+      this.reservaCliente.marcarQuizGanado();
       this.reservaCliente.aplicarCupon("QUIZ15");
       this.toast.show("🎉 ¡Felicidades! Cupón: QUIZ15 (15% OFF)");
       this.resultado = "¡Correcto! Descuento aplicado.";

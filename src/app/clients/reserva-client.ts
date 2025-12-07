@@ -3,6 +3,7 @@ import { IReserva } from '../interfaces/ireserva';
 import { Carrera } from '../components/carrera/carrera-interface';
 import { Hotel } from '../components/hotel/hotel-interface';
 import { IVuelo } from '../interfaces/ivuelo';
+import { NotificationService } from '../services/notification-service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class ReservaClient {
   private cantidadEntradas: number = 1;
   private codigoCuponAplicado: string | null = null;
   private porcentajeDescuento = 0;
-
+  
   private readonly cuponesValidos: Record<string, number>={
     'F1FLY5':5,
     'QUIZ15':15
@@ -41,10 +42,17 @@ export class ReservaClient {
   readonly tieneDescuento = signal(false);
   private readonly porcentaje = 5;
 
-
+ constructor(private notify: NotificationService) {}
   aplicarCupon(codigo: string): boolean {
     const codigoUpper= codigo.toUpperCase();
     if (this.tieneDescuento()) return false; 
+
+    if(codigoUpper==="QUIZ15" && !this.quizGanado)
+    {
+      this.notify.show("No puede usar este cupon sin haber ganado los juegos antes", "error");
+      return false;
+    }
+
 
     if(this.cuponesValidos[codigoUpper])
     {
@@ -176,4 +184,16 @@ getPrecioCarreraSeleccionada(): number {
     return precioUnitario * cant;
   }
 
+
+  private quizGanado= false;
+
+
+  marcarQuizGanado()
+  {
+    this.quizGanado=true;
+  }
+  puedeAplicarQuiz15(): boolean
+  {
+    return this.quizGanado;
+  }
 }
