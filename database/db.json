@@ -1038,7 +1038,7 @@
       "nacionalidad": "Argentina",
       "edad": 30,
       "fecha_nacimiento": "1995-01-01",
-      "listaPilotos": "Oscar Piastri",
+      "listaPilotos": "Andrea Kimi Antonelli",
       "ListaEscuderias": "McLaren"
     },
     {
@@ -1087,17 +1087,32 @@
       "ListaEscuderias": "Williams"
     },
     {
-      "id": "4f6b",
+      "id": "ccac",
+      "nombre": "Valentina",
+      "apellido": "Landaburu",
+      "username": "valen2",
+      "email": "valen@gmail.com",
+      "password": "valentina1",
+      "isAdmin": false,
+      "dni": "44202332",
+      "nacionalidad": "Bolivia",
+      "edad": 22,
+      "fecha_nacimiento": "3322-02-23",
+      "listaPilotos": "Gabriel Bortoleto",
+      "ListaEscuderias": "Aston Martin"
+    },
+    {
+      "id": "a942",
       "nombre": "Franco",
       "apellido": "Vello",
       "username": "francovello",
-      "email": "francovello@gmail.com",
+      "email": "franco1@gmail.com",
       "password": "franco1",
       "isAdmin": false,
-      "dni": "2.2222244444449495e+27",
-      "nacionalidad": "Argentina",
+      "dni": "42231220",
+      "nacionalidad": "Española",
       "edad": 26,
-      "fecha_nacimiento": "3993-08-08",
+      "fecha_nacimiento": "1999-10-26",
       "listaPilotos": "",
       "ListaEscuderias": ""
     }

@@ -19,7 +19,6 @@ export class Register {
 
 protected readonly listaPilotos = [
     'Max Verstappen',
-    'Sergio Pérez',
     'Lewis Hamilton',
     'George Russell',
     'Charles Leclerc',
@@ -34,6 +33,11 @@ protected readonly listaPilotos = [
     'Franco Colapinto',
     'Yuki Tsunoda',
     'Nico Hülkenberg',
+    'Liam Lawson',
+    'Isack Hadjar',
+    'Andrea Kimi Antonelli',
+    'Gabriel Bortoleto',
+    'Oliver Bearman'
     
   ];
 
@@ -58,12 +62,12 @@ protected readonly listaPilotos = [
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.min(8), Validators.max(16)]],
    password2: ['', [Validators.required, Validators.min(8), Validators.max(16)]],
-    dni: ['', [Validators.required, Validators.min(10000000)]],
+    dni: ['', [Validators.required, Validators.min(1000000), Validators.max(99999999)]],
     nacionalidad: ['', [Validators.required]],
     edad: ['', [Validators.required, Validators.min(18)]],
-    fecha_nacimiento: ['', [Validators.required]],
-    listaPilotos: [''],
-    ListaEscuderias: [''],
+    fecha_nacimiento: ['', [Validators.required,]],
+    listaPilotos: ['', Validators.required],
+    ListaEscuderias: ['', Validators.required],
   });
 
   handleSubmit()

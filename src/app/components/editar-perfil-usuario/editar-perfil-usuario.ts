@@ -18,7 +18,6 @@ export class EditarPerfilUsuario {
 
  protected readonly listaPilotos = [
     'Max Verstappen',
-    'Sergio Pérez',
     'Lewis Hamilton',
     'George Russell',
     'Charles Leclerc',
@@ -31,17 +30,13 @@ export class EditarPerfilUsuario {
     'Pierre Gasly',
     'Alexander Albon',
     'Franco Colapinto',
-    'Daniel Ricciardo',
     'Yuki Tsunoda',
-    'Valtteri Bottas',
-    'Guanyu Zhou',
     'Nico Hülkenberg',
-    'Kevin Magnussen',
-    'Michael Schumacher',
-    'Ayrton Senna',
-    'Juan Manuel Fangio',
-    'Alain Prost',
-    'Niki Lauda',
+    'Liam Lawson',
+    'Isack Hadjar',
+    'Andrea Kimi Antonelli',
+    'Gabriel Bortoleto',
+    'Oliver Bearman'
   ];
 
   protected readonly listaEscuderias = [

@@ -67,7 +67,6 @@ export class Juegos implements OnInit {
       this.resultado = "Alguna respuesta es incorrecta, intentalo nuevamente.";
       this.resultadoError = "❌ Incorrecto. Revisa tus respuestas e intenta de nuevo.";
    
-       this.iniciarJuego(); 
     }
   }
 }

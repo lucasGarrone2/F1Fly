@@ -1,184 +1,198 @@
-
 <body>
-    
-<h2>Te damos la bienvenida a F1Fly</h2>
-<div class="back-home">
-    <button routerLink="/" class="back-home-button"> Volver al Menu</button>
-</div>
 
-<form [formGroup]="form" (ngSubmit)="handleSubmit()" class="form">
-
-   <h5 class="informacion_personal">
-    <i class="fas fa-user"></i>Informacion Personal 
-</h5> 
-<div class="form-field">
-    <label for="nombre">Nombre</label>
-    <input type="text" id="nombre" formControlName="nombre" placeholder="Tu nombre..." [class.input-error]="form.controls.nombre.invalid && form.controls.nombre.touched">
-    <p class="error-text">
-        @if (form.controls.nombre.errors?.['required'] && form.controls.nombre.touched) {
-            El nombre es requerido
-        }
-    </p>
-</div>
-
-<div class="form-field">
-    <label for="apellido">Apellido</label>
-    <input type="text" id="apellido" formControlName="apellido" placeholder="Tu apellido..." [class.input-error]="form.controls.apellido.invalid && form.controls.apellido.touched">
-   
-   <p class="error-text">
-    @if (form.controls.apellido.errors?.['required'] && form.controls.apellido.touched) {
-            El apellido es requerido
-        }
-   </p>
-    
-</div>
-
-<div class="form-field">
-  <label for="username">Nombre de usuario</label>
-  <input 
-    type="text" 
-    id="username" 
-    formControlName="username" 
-    placeholder="Tu nombre de usuario..." 
-    [class.input-error]="form.controls.username.invalid && form.controls.username.touched">
-  
-  <p class="error-text">
-    @if (form.controls.username.errors?.['required'] && form.controls.username.touched) {
-      El nombre de usuario es requerido
-    }
-  </p>
-</div>
-
-<div class="form-field">
-    <label for="email">Email</label>
-    <input type="email" id="email" formControlName="email" placeholder="tuEmail@email.com" [class.input-error]="form.controls.email.invalid && form.controls.email.touched">
-   
-    <p class="error-text">
-
-    @if (form.controls.email.errors?.['required'] && form.controls.email.touched) {
-            El email es requerido
-        }
-
-    @if (form.controls.email.errors?.['email'] && form.controls.email.touched) {
-            El formato del email no es valido
-        }
-    </p>
-    
-
-</div>
-
-<div class="form-field">
-    <label for="dni">Dni</label>
-    <input type="number" id="dni" formControlName="dni" placeholder="12345678" [class.input-error]="form.controls.dni.invalid && form.controls.dni.touched">
-    
-    <p class="error-text">
-    @if (form.controls.dni.errors?.['required'] && form.controls.dni.touched) {
-            <p>El dni es requerido</p>   
-        }
-
-    @if (form.controls.dni.errors?.['dni'] && form.controls.dni.touched) {
-           <p>El formato del dni no es valido</p> 
-        }
-
-    </p>
-
-</div>
-
-
-<div class="form-field">
-    <label for="nacionalidad">Nacionalidad</label>
-    <input type="string" id="nacionalidad" formControlName="nacionalidad" placeholder="Argentina" [class.input-error]="form.controls.nacionalidad.invalid && form.controls.nacionalidad.touched">
-    <p class="error-text">
-
-@if (form.controls.nacionalidad.errors?.['required'] && form.controls.nacionalidad.touched) {
-            La nacionalidad es requerida
-        }
-    </p>
-      
-
-   
-</div>
-
-
-<div class="form-field">
-    <label for="edad">Edad</label>
-    <input type="number" id="edad" formControlName="edad" placeholder="18" [class.input-error]="form.controls.edad.invalid && form.controls.edad.touched">
-    <p class="error-text">
-
-    @if (form.controls.edad.errors?.['required'] && form.controls.edad.touched) {
-            La edad es requerida
-        }
-
-    @if (form.controls.edad.errors?.['min'] && form.controls.edad.touched) {
-        Debes ser mayor de 18 años.
-      }
-
-    </p>
-   
-</div>
-
-<div class="form-field">
-    <label for="fecha_nacimiento">Fecha de nacimiento</label>
-    <input type="date" id="fecha_nacimiento" formControlName="fecha_nacimiento" placeholder="08/08/2003" [class.input-error]="form.controls.fecha_nacimiento.invalid && form.controls.fecha_nacimiento.touched">
-  
-    <p class="error-text">
-@if (form.controls.fecha_nacimiento.errors?.['required'] && form.controls.fecha_nacimiento.touched) {
-            La fecha de nacimiento no es valida
-        }
-
-    </p>
-    
-</div>
-
-
-
-    <h5 class="seguridad">
-    <i class="fas fa-lock"></i>Seguridad
-    </h5>
-<div class="form-field">
-    <label for="password">Contraseña</label>
-    <input type="password" id="password" formControlName="password" placeholder="*****">
-</div>
-
-<div class="form-field">
-    <label for="password2">Repita su contraseña</label>
-    <input type="password" id="password2" formControlName="password2" placeholder="*****">
-</div>
-
-    <h5 class="preferencias">
-      <i class="fas fa-car"></i>Preferencias de Formula1 (Opcional)
-    </h5>
-<div class="form-field">
-    <label for="piloto">Piloto</label>
-    <select id="piloto">
-
-    <option value="" selected disabled>Seleccione su piloto Favorito</option>
-    @for (piloto of listaPilotos; track $index)
-    {
-        <option [value]="piloto">{{piloto}}</option>
-    }
-    </select>
-</div>
-
-<div class="form-field">
-    <label for="escuderia">Escuderia</label>
-    <select id="escuderia">
-
-    <option value="" selected disabled>Seleccione su escuderia favorita</option>
-    @for (escuderia of listaEscuderias; track $index)
-    {
-        <option [value]="escuderia">{{escuderia}}</option>
-    }
-    </select>
-</div>
-    <div class="btn-submit">
-        <button type="submit" [disabled]="form.invalid">Enviar</button>
+    <h2>Te damos la bienvenida a F1Fly</h2>
+    <div class="back-home">
+        <button routerLink="/" class="back-home-button"> Volver al Menu</button>
     </div>
 
+    <form [formGroup]="form" (ngSubmit)="handleSubmit()" class="form">
 
-   <p class="text-AlreadyAccount">
-  ¿Ya tiene una cuenta?
-  <a routerLink="/inicio_sesion" class="login-link">Inicie sesión</a>
-</p>
-</form>
+        <h5 class="informacion_personal">
+            <i class="fas fa-user"></i>Informacion Personal
+        </h5>
+        <div class="form-field">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" formControlName="nombre" placeholder="Tu nombre..."
+                [class.input-error]="form.controls.nombre.invalid && form.controls.nombre.touched">
+            <p class="error-text">
+                @if (form.controls.nombre.errors?.['required'] && form.controls.nombre.touched) {
+                El nombre es requerido
+                }
+            </p>
+        </div>
+
+        <div class="form-field">
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" formControlName="apellido" placeholder="Tu apellido..."
+                [class.input-error]="form.controls.apellido.invalid && form.controls.apellido.touched">
+
+            <p class="error-text">
+                @if (form.controls.apellido.errors?.['required'] && form.controls.apellido.touched) {
+                El apellido es requerido
+                }
+            </p>
+
+        </div>
+
+        <div class="form-field">
+            <label for="username">Nombre de usuario</label>
+            <input type="text" id="username" formControlName="username" placeholder="Tu nombre de usuario..."
+                [class.input-error]="form.controls.username.invalid && form.controls.username.touched">
+
+            <p class="error-text">
+                @if (form.controls.username.errors?.['required'] && form.controls.username.touched) {
+                El nombre de usuario es requerido
+                }
+            </p>
+        </div>
+
+        <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" formControlName="email" placeholder="tuEmail@email.com"
+                [class.input-error]="form.controls.email.invalid && form.controls.email.touched">
+
+            <p class="error-text">
+
+                @if (form.controls.email.errors?.['required'] && form.controls.email.touched) {
+                El email es requerido
+                }
+
+                @if (form.controls.email.errors?.['email'] && form.controls.email.touched) {
+                El formato del email no es valido
+                }
+            </p>
+
+
+        </div>
+
+        <div class="form-field">
+            <label for="dni">Dni</label>
+            <input type="number" id="dni" formControlName="dni" placeholder="12345678"
+                [class.input-error]="form.controls.dni.invalid && form.controls.dni.touched">
+            <p class="error-text">
+                @if (form.controls.dni.errors?.['required'] && form.controls.dni.touched) {
+            <p>El dni es requerido</p>
+            }
+            @if (form.controls.dni.errors?.['min'] && form.controls.dni.touched) {
+            <p>El formato del dni no es valido</p>
+            }
+            @if (form.controls.dni.errors?.['max'] && form.controls.dni.touched) {
+            <p>El formato del dni no es valido</p>
+            }
+
+            </p>
+
+        </div>
+
+
+        <div class="form-field">
+            <label for="nacionalidad">Nacionalidad</label>
+            <input type="string" id="nacionalidad" formControlName="nacionalidad" placeholder="Argentina"
+                [class.input-error]="form.controls.nacionalidad.invalid && form.controls.nacionalidad.touched">
+            <p class="error-text">
+
+                @if (form.controls.nacionalidad.errors?.['required'] && form.controls.nacionalidad.touched) {
+                La nacionalidad es requerida
+                }
+            </p>
+
+
+
+        </div>
+
+
+        <div class="form-field">
+            <label for="edad">Edad</label>
+            <input type="number" id="edad" formControlName="edad" placeholder="18"
+                [class.input-error]="form.controls.edad.invalid && form.controls.edad.touched">
+            <p class="error-text">
+
+                @if (form.controls.edad.errors?.['required'] && form.controls.edad.touched) {
+                La edad es requerida
+                }
+
+                @if (form.controls.edad.errors?.['min'] && form.controls.edad.touched) {
+                Debes ser mayor de 18 años.
+                }
+
+            </p>
+
+        </div>
+
+        <div class="form-field">
+            <label for="fecha_nacimiento">Fecha de nacimiento</label>
+            <input type="date" id="fecha_nacimiento" formControlName="fecha_nacimiento" placeholder="08/08/2003"
+                [class.input-error]="form.controls.fecha_nacimiento.invalid && form.controls.fecha_nacimiento.touched">
+
+            <p class="error-text">
+                @if (form.controls.fecha_nacimiento.errors?.['required'] && form.controls.fecha_nacimiento.touched) {
+                La fecha de nacimiento no es valida
+                }
+
+            </p>
+
+        </div>
+
+
+
+        <h5 class="seguridad">
+            <i class="fas fa-lock"></i>Seguridad
+        </h5>
+
+        <div class="form-field">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" formControlName="password" placeholder="*****">
+        </div>
+        <div class="form-field">
+            <label for="password2">Repita su contraseña</label>
+            <input type="password" id="password2" formControlName="password2" placeholder="*****">
+        </div>
+
+        <h5 class="preferencias">
+            <i class="fas fa-car"></i>Preferencias de Formula1
+        </h5>
+        <div class="form-field">
+            <label for="piloto">Piloto</label>
+            <select id="piloto">
+
+                <option value="" selected disabled>Seleccione su piloto Favorito</option>
+                @for (piloto of listaPilotos; track $index)
+                {
+                <option [value]="piloto">{{piloto}}</option>
+                }
+            </select>
+            <!-- MIRAR FUNCIONAMIENTO -->
+            <p class="error-text">
+                @if (form.get('piloto')?.hasError('required') && form.get('piloto')?.touched) {
+                El piloto favorito es requerido
+                }
+            </p>
+        </div>
+
+        <div class="form-field">
+            <label for="escuderia">Escuderia</label>
+            <select id="escuderia">
+
+                <option value="" selected disabled>Seleccione su escuderia favorita</option>
+                @for (escuderia of listaEscuderias; track $index)
+                {
+                <option [value]="escuderia">{{escuderia}}</option>
+                }
+            </select>
+            <!-- MIRAR FUNCIONAMIENTO -->
+            <p class="error-text">
+                @if (form.get('escuderia')?.hasError('required') && form.get('escuderia')?.touched) {
+                La escuderia favorita es requerida
+                }
+        </div>
+        <div class="btn-submit">
+            <button type="submit" [disabled]="form.invalid">Enviar</button>
+        </div>
+
+
+        <p class="text-AlreadyAccount">
+            ¿Ya tiene una cuenta?
+            <a routerLink="/inicio_sesion" class="login-link">Inicie sesión</a>
+        </p>
+    </form>
 </body>

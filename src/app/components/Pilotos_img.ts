@@ -37,6 +37,6 @@ export const PILOTOS_IMG: any={
     'Liam Lawson': 'https://ratings-images-prod.pulse.ea.com/F1-25/portraits/p2.png?im=FaceCrop,algorithm=dnn,padding=0.7,width=256,height=256',
     'Isack Hadjar': 'https://soymotor.com/sites/default/files/2025-03/ihadjar_2025.png',
 
-    'Default': 'https://media.gettyimages.com/id/165498974/es/vector/piloto-de-coches-de-carrera.jpg?s=612x612&w=gi&k=20&c=tDM9eSOx9ULmtBJtp7H7kq9_s4zW9lR2Fer_U6q2zbg='
+    'Default': 'https://cdn.worldvectorlogo.com/logos/fia-federation-internationale-de-lautomobile.svg'
     
 };

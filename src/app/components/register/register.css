@@ -54,7 +54,7 @@ h2{
 
 .form h5 { 
     grid-column: 1 / -1; 
-    text-align: left; 
+    text-align: center; 
     font-size: 1.1rem; 
     font-weight: 700; 
     color: var(--color-primary);
@@ -63,6 +63,7 @@ h2{
     padding-bottom: 5px;
     border-bottom: 1px solid var(--color-border);
     text-transform: uppercase;
+    
 }
 .form h5 i {
     font-style: normal;     
