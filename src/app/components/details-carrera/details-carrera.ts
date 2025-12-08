@@ -4,10 +4,11 @@ import { CarreraClient } from '../carrera/carrera-client';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
-
+import { GoogleMapsModule, MapMarker } from '@angular/google-maps';
+import { GoogleMap } from '@angular/google-maps';
 @Component({
   selector: 'app-details-carrera',
-  imports: [],
+  imports: [MapMarker, GoogleMap],
   templateUrl: './details-carrera.html',
   styleUrl: './details-carrera.css'
 })

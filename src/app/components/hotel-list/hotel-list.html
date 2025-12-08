@@ -43,8 +43,6 @@
            📍 {{ hotel.pais }} - {{ hotel.direccionExacta }}
         </p>
 
-        <hr class="divider">
-
         <div class="hotel-data">
             
 
@@ -57,17 +55,6 @@
                 <span class="icon">🚌</span>
                 <span>Transporte: {{ hotel.tieneTransporte ? 'Sí ✅' : 'No ❌' }}</span>
             </div>
-            <div class="map-container">
-  <google-map height="200px"
-              width="100%"
-              [center]="{ lat: hotel.ubicacionEnMapa?.latitud ?? 0, lng: hotel.ubicacionEnMapa?.longitud ?? 0 }"
-              [zoom]="15">
-      <map-marker [position]="{ lat: hotel.ubicacionEnMapa?.latitud ?? 0, lng: hotel.ubicacionEnMapa?.longitud ?? 0 }"
-                  [title]="hotel.nombre_hotel">
-      </map-marker>
-  </google-map>
-</div>
-
             
             <div class="hotel-row fechas-row">
                 <span class="icon">📅</span>
@@ -80,6 +67,15 @@
                     }
                 </ul>
             </div>
+            <hr class="divider">
+             <google-map height="200px"
+              width="100%"
+              [center]="{ lat: hotel.ubicacionEnMapa?.latitud ?? 0, lng: hotel.ubicacionEnMapa?.longitud ?? 0 }"
+              [zoom]="15">
+      <map-marker [position]="{ lat: hotel.ubicacionEnMapa?.latitud ?? 0, lng: hotel.ubicacionEnMapa?.longitud ?? 0 }"
+                  [title]="hotel.nombre_hotel">
+      </map-marker>
+  </google-map>
         </div>
 
         <div class="hotel-footer">

@@ -31,8 +31,6 @@ export class GameQuizService {
     };
   }
 
-
-
   getRandomQuestions(): PreguntaF1[] {
     const preguntasFinales: PreguntaF1[] = [];
     

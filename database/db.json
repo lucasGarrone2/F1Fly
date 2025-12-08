@@ -13,7 +13,11 @@
       "precio_entrada_premium": 150,
       "precio_entrada_vip": 300,
       "tipo_entrada": "Regular",
-      "id": "5d57"
+      "id": "5d57",
+      "ubicacionEnMapa": {
+        "latitud": 43.7347,
+        "longitud": 7.4206
+      }
     },
     {
       "nombre_carrera": "Silverstone Circuit",
@@ -28,7 +32,11 @@
       "precio_entrada_premium": 150,
       "precio_entrada_vip": 300,
       "tipo_entrada": "Regular",
-      "id": "24cc"
+      "id": "24cc",
+      "ubicacionEnMapa": {
+        "latitud": 52.0733,
+        "longitud": -1.0144
+      }
     },
     {
       "nombre_carrera": "Autodromo Nazionale Monza",
@@ -43,7 +51,11 @@
       "precio_entrada_premium": 150,
       "precio_entrada_vip": 300,
       "tipo_entrada": "Regular",
-      "id": "ad83"
+      "id": "ad83",
+      "ubicacionEnMapa": {
+        "latitud": 45.5846,
+        "longitud": 9.2733
+      }
     },
     {
       "nombre_carrera": "Autódromo José Carlos Pace (Interlagos)",
@@ -58,7 +70,11 @@
       "precio_entrada_premium": 150,
       "precio_entrada_vip": 300,
       "tipo_entrada": "Regular",
-      "id": "625b"
+      "id": "625b",
+      "ubicacionEnMapa": {
+        "latitud": -23.7036,
+        "longitud": -46.6997
+      }
     },
     {
       "nombre_carrera": "Red Bull Ring",
@@ -73,7 +89,11 @@
       "precio_entrada_premium": 150,
       "precio_entrada_vip": 300,
       "tipo_entrada": "VIP",
-      "id": "443a"
+      "id": "443a",
+      "ubicacionEnMapa": {
+        "latitud": 47.2197,
+        "longitud": 14.7644
+      }
     },
     {
       "nombre_carrera": "Circuit de Barcelona-Catalunya",
@@ -88,7 +108,11 @@
       "precio_entrada_premium": 150,
       "precio_entrada_vip": 300,
       "tipo_entrada": "Premium",
-      "id": "6a4a"
+      "id": "6a4a",
+      "ubicacionEnMapa": {
+        "latitud": 41.57,
+        "longitud": 2.2611
+      }
     },
     {
       "nombre_carrera": "Circuit Gilles Villeneuve",
@@ -103,7 +127,11 @@
       "precio_entrada_premium": 150,
       "precio_entrada_vip": 300,
       "tipo_entrada": "Premium",
-      "id": "b97e"
+      "id": "b97e",
+      "ubicacionEnMapa": {
+        "latitud": 45.5,
+        "longitud": -73.5228
+      }
     },
     {
       "nombre_carrera": "Marina Bay Street Circuit",
@@ -118,7 +146,11 @@
       "precio_entrada_premium": 150,
       "precio_entrada_vip": 300,
       "tipo_entrada": "Premium",
-      "id": "7ea8"
+      "id": "7ea8",
+      "ubicacionEnMapa": {
+        "latitud": 1.2914,
+        "longitud": 103.8636
+      }
     },
     {
       "nombre_carrera": "Circuit of the Americas (COTA)",
@@ -133,7 +165,11 @@
       "precio_entrada_premium": 150,
       "precio_entrada_vip": 300,
       "tipo_entrada": "Regular",
-      "id": "62ad"
+      "id": "62ad",
+      "ubicacionEnMapa": {
+        "latitud": 30.1328,
+        "longitud": -97.6411
+      }
     },
     {
       "nombre_carrera": "Circuito Galvez",
@@ -148,7 +184,11 @@
       "precio_entrada_premium": 300,
       "precio_entrada_vip": 300,
       "tipo_entrada": "Premium",
-      "id": "85ab"
+      "id": "85ab",
+      "ubicacionEnMapa": {
+        "latitud": -34.6037,
+        "longitud": -58.3816
+      }
     }
   ],
   "hoteles": [
@@ -214,8 +254,8 @@
       "imagenUrl": "fotosHotel/fairmont.jpg",
       "direccionExacta": "12 Avenue des Spélugues",
       "ubicacionEnMapa": {
-        "latitud": 43.7345,
-        "longitud": 7.4246
+        "latitud": 43.73993877883644,
+        "longitud": 7.430032737943306
       }
     },
     {
@@ -998,8 +1038,8 @@
       "nacionalidad": "Argentina",
       "edad": 30,
       "fecha_nacimiento": "1995-01-01",
-      "listaPilotos": "Lewis Hamilton",
-      "ListaEscuderias": "Mercedes"
+      "listaPilotos": "Oscar Piastri",
+      "ListaEscuderias": "McLaren"
     },
     {
       "id": "7ee7",
@@ -1045,6 +1085,21 @@
       "fecha_nacimiento": "2003-08-08",
       "listaPilotos": "Max Verstappen",
       "ListaEscuderias": "Williams"
+    },
+    {
+      "id": "4f6b",
+      "nombre": "Franco",
+      "apellido": "Vello",
+      "username": "francovello",
+      "email": "francovello@gmail.com",
+      "password": "franco1",
+      "isAdmin": false,
+      "dni": "2.2222244444449495e+27",
+      "nacionalidad": "Argentina",
+      "edad": 26,
+      "fecha_nacimiento": "3993-08-08",
+      "listaPilotos": "",
+      "ListaEscuderias": ""
     }
   ],
   "listadoFavoritos": [
@@ -1761,70 +1816,6 @@
         "tieneTransporte": true,
         "imagenUrl": "fotosHotel/fairmont.jpg",
         "direccionExacta": "12 Avenue des Spélugues"
-      },
-      "habitacion": {
-        "tipoHabitacion": "vip",
-        "cantPersonas": 4,
-        "fechaEntrada": "2026-05-23",
-        "fechaSalida": "2026-05-24",
-        "noches": 1,
-        "precioTotal": 4000
-      },
-      "vuelo": {
-        "id": "5",
-        "carrera_id": 2,
-        "pais_origen": "Italia",
-        "ciudad_origen": "Roma",
-        "pais_destino": "Mónaco",
-        "ciudad_destino": "Niza",
-        "aerolinea": "ITA Airways",
-        "fecha_disponible": "2026-05-24",
-        "tipo_avion": "Embraer 190",
-        "clase_asiento": "Business",
-        "precio_promedio_ticket_eur": 350
-      }
-    },
-    {
-      "id": "cb6e",
-      "id_user": "1",
-      "precio_total_reserva": 5100,
-      "carrera": {
-        "nombre_carrera": "Circuit de Monaco",
-        "fecha_carrera": "2026-05-25",
-        "capacidad_carrera": 37000,
-        "descripcion_carrera": "El clásico urbano: curvas estrechas y glamour en la Riviera.",
-        "cantidad_vueltas_carrera": 99,
-        "ciudad_carrera": "Montecarlo",
-        "pais_carrera": "Mónaco",
-        "imageUrl_carrera": "monaco.png",
-        "precio_entrada_regular": 80,
-        "precio_entrada_premium": 150,
-        "precio_entrada_vip": 300,
-        "tipo_entrada": "VIP",
-        "id": "5d57",
-        "precio_carrera": 600
-      },
-      "hotel": {
-        "id": "4",
-        "nombre_hotel": "Fairmont Monte Carlo",
-        "carrera_id": 2,
-        "pais": "Mónaco",
-        "ciudad": "Montecarlo",
-        "fechas_disponibles": [
-          "2026-05-23",
-          "2026-05-24",
-          "2026-05-25",
-          "2026-05-26"
-        ],
-        "precio_promedio_habitacion_eur": 650,
-        "tieneAmenities": true,
-        "tieneTransporte": true,
-        "imagenUrl": "fotosHotel/fairmont.jpg",
-        "direccionExacta": "12 Avenue des Spélugues",
-        "ubicacionEnMapa": {
-          "latitud": 43.7345,
-          "longitud": 7.4246
-        }
       },
       "habitacion": {
         "tipoHabitacion": "vip",

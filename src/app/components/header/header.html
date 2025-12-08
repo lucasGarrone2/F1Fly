@@ -7,7 +7,7 @@
     <h1 style="position: absolute; left: -9999px;">Bienvenido a F1Fly</h1>
     
     <nav>
-        
+        <a routerLink="/" class="nav-link" (click)="closeMenu()">Inicio</a>
         @if (!auth.isLoggedin())
          {
             <a routerLink="/registro" class="btn-registrarse" (click)="closeMenu()">Registrarse</a> 
@@ -53,8 +53,8 @@
 
         }
         <a routerLink="lista-de-carreras" class="nav-link" (click)="closeMenu()">Carreras</a>
-        <a routerLink="/" class="nav-link" (click)="closeMenu()">Inicio</a>
-        <a routerLink="/info-temporada" class="nav-link">Informacion de la temporada actual </a>
+        
+        <a routerLink="/info-temporada" class="nav-link">Informacion de temporada</a>
         <a routerLink="juegos" class="nav-link" (click)="closeMenu()">Juegos</a>
     </nav>
 </header>

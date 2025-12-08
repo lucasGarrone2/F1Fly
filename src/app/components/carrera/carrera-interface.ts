@@ -13,4 +13,8 @@ export interface Carrera{
     precio_entrada_vip: number,
     precio_carrera: number,
     imageUrl_carrera: string
+    ubicacionEnMapa?: {
+        latitud: number,
+        longitud: number
+    }
 };

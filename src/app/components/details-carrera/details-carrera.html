@@ -12,6 +12,15 @@
         <li class="details-carrera" ><strong>Descripcion del circuito </strong></li>
         <li>{{carrera.descripcion_carrera}}</li>
     </ul>
+
+     <google-map height="200px"
+              width="100%"
+              [center]="{ lat: carrera.ubicacionEnMapa?.latitud ?? 0, lng: carrera.ubicacionEnMapa?.longitud ?? 0 }"
+              [zoom]="15">
+      <map-marker [position]="{ lat: carrera.ubicacionEnMapa?.latitud ?? 0, lng: carrera.ubicacionEnMapa?.longitud ?? 0 }"
+                  [title]="carrera.nombre_carrera">
+      </map-marker>
+  </google-map>
 </div>
 </div>
 }
