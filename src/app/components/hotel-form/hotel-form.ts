@@ -37,6 +37,10 @@ export class HotelForm {
     tieneTransporte: [false, [Validators.required]],
     imagenUrl: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(200)]],
     direccionExacta: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(100)]],
+    ubicacionEnMapa: this.formBuilder.nonNullable.group({
+      latitud:[0,[Validators.required]],
+      longitud:[0,[Validators.required]]
+    }),
     id: ['']
   });
 
@@ -84,6 +88,14 @@ get direccionExacta() {
   return this.form.controls.direccionExacta;
 }
 
+get latitud() {
+  return this.form.controls.ubicacionEnMapa.controls.latitud;
+}
+
+get longitud() {
+  return this.form.controls.ubicacionEnMapa.controls.longitud;
+}
+
 get id() {
   return this.form.controls.id;
 }
@@ -113,6 +125,10 @@ get id() {
           tieneTransporte: hotel.tieneTransporte,
           imagenUrl: hotel.imagenUrl,
           direccionExacta: hotel.direccionExacta,
+          ubicacionEnMapa:{
+            latitud: hotel.ubicacionEnMapa?.latitud,
+            longitud: hotel.ubicacionEnMapa?.longitud
+          },
           id: hotel.id?.toString()
         });
       }
@@ -159,7 +175,11 @@ get id() {
         tieneTransporte: formValue.tieneTransporte,
 
         imagenUrl: formValue.imagenUrl,
-        direccionExacta: formValue.direccionExacta
+        direccionExacta: formValue.direccionExacta,
+        ubicacionEnMapa:{
+          latitud: formValue.ubicacionEnMapa.latitud,
+          longitud: formValue.ubicacionEnMapa.longitud
+        }
       };
 
       if (!this.estadoEdicion()) {

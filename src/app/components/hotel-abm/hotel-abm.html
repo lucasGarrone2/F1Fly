@@ -64,6 +64,10 @@
           <strong>DIRECCIÓN:</strong> {{ hotel.direccionExacta }}
         </li>
 
+        <li>
+          <strong>LATITUD:</strong> {{hotel.ubicacionEnMapa?.latitud}}
+        </li>
+
         <li> 
           <strong>FECHAS DISPONIBLES:</strong>
           <div class="tags-fechas">
@@ -73,6 +77,10 @@
               <span>(No hay fechas disponibles)</span>
             }
           </div>
+        </li>
+
+        <li>
+          <strong>LONGITUD:</strong>{{hotel.ubicacionEnMapa?.longitud}}
         </li>
       </ul>
     </div>

@@ -105,3 +105,18 @@ span {
     font-weight: bold;
 }
 
+.coord-row {
+    display: flex;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.coord-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.coord-item input {
+    padding: 10px; 
+}

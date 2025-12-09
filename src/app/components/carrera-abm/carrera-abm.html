@@ -44,9 +44,11 @@
         <li><strong>CIUDAD CARRERA:</strong> {{ carrera.ciudad_carrera }}</li>
         <li><strong>TIPO ENTRADA | PRECIO CARRERA:</strong> VIP | {{carrera.precio_entrada_vip}}$</li>
         <li><strong>CAPACIDAD ESPECTADORES CARRERA:</strong> {{ carrera.capacidad_carrera }}</li>
-        <li><strong>DESCRIPCION CARRERA:</strong> {{ carrera.descripcion_carrera }}</li>        
+        <li><strong>LONGITUD CARRERA:</strong> {{carrera.ubicacionEnMapa?.longitud}} </li>
         <li><strong>CANTIDAD VUELTAS CARRERA:</strong> {{ carrera.cantidad_vueltas_carrera }}</li>
-        
+        <li><strong>LATITUD CARRERA:</strong> {{carrera.ubicacionEnMapa?.latitud}} </li>
+        <li><strong>DESCRIPCION CARRERA:</strong> {{ carrera.descripcion_carrera }}</li>        
+
 
         <li><strong>URL IMAGEN CARRERA:</strong> {{ carrera.imageUrl_carrera }}</li>
       </ul>

@@ -41,7 +41,11 @@ export class CarreraForm {
   precio_entrada_regular: [80, [Validators.required, Validators.min(80), Validators.max(150)]],
   precio_entrada_premium: [150, [Validators.required, Validators.min(150), Validators.max(300)]],
   precio_entrada_vip: [300, [Validators.required, Validators.min(300), Validators.max(800)]],
-  tipo_entrada: ['', [Validators.required]]
+  tipo_entrada: ['', [Validators.required]],
+  ubicacionEnMapa: this.formBuilder.nonNullable.group({
+    latitud:[0,[Validators.required]],
+    longitud:[0, [Validators.required]]
+  })
 });
 
   get nombre_carrera(){
@@ -87,6 +91,14 @@ get precio_entrada_premium(){
 
   get tipo_entrada(){
     return this.form.controls.tipo_entrada;
+  }
+
+  get latitud(){
+    return this.form.controls.ubicacionEnMapa.controls.latitud;
+  }
+
+  get longitud(){
+    return this.form.controls.ubicacionEnMapa.controls.longitud;
   }
 
    handleSubmit() {
