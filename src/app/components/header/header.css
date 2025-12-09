@@ -42,11 +42,12 @@ header {
    width: 100%; 
     display: flex;
     background-color: #0d1d4291;
-    justify-content: flex-start; 
+    justify-content: space-between; 
     align-items: center;
-    padding: 20px 0; 
+    padding: 20px 5px 20px 40px; 
     position: relative;
     z-index: 10;
+    box-sizing: border-box;
 }
 
 nav {
@@ -55,7 +56,6 @@ nav {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-left: 800px; 
     font-weight: bold;
 
 }

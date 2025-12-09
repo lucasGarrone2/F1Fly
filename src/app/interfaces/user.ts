@@ -10,6 +10,6 @@ export interface User {
     nacionalidad: string,
     edad: number,
     fecha_nacimiento: string,
-    listaPilotos?: string,
+    listaPilotos: string,
     ListaEscuderias?: string
 }

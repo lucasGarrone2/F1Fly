@@ -79,8 +79,9 @@ export class ReservaClient {
     }
 
     getPrecioTotalVuelo(): number | null {
-        if (this.vuelo && this.cantidadPesonas) {
-            return this.vuelo.precio_promedio_ticket_eur * this.cantidadPesonas;
+      const r = this._reserva();
+        if (r.vuelo && this.cantidadPesonas) {
+            return r.vuelo.precio_promedio_ticket_eur * this.cantidadPesonas;
         }
         return null;
     }
@@ -112,6 +113,11 @@ readonly subtotal = computed(() => {
 
   setCarrera(carrera: Carrera, cantidad: number) {
     this.cantidadEntradas = cantidad;
+
+
+    this.vuelo=null;
+    this.cantidadPesonas=null;
+
 
     this._reserva.update(r => ({
       id: undefined,

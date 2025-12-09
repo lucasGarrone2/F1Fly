@@ -105,43 +105,6 @@
                     }
                 </li>
 
-                <li class="coord-row" formGroupName="ubicacionEnMapa">
-                    <div class="coord-item">
-                        <label for="latitud">Latitud:</label>
-                        <input type="number" id="latitud" formControlName="latitud" />
-                        @if (latitud.dirty || latitud.touched) {
-                        @if (latitud.hasError('required')) {
-                        <span>Campo requerido</span>
-                        }
-                        }
-                    </div>
-
-                    <div class="coord-item">
-                        <label for="longitud">Longitud:</label>
-                        <input type="number" id="longitud" formControlName="longitud" />
-                        @if (longitud.dirty || longitud.touched) {
-                        @if (longitud.hasError('required')) {
-                        <span>Campo requerido</span>
-                        }
-                        }
-                    </div>
-                </li>
-
-
-                <li>
-                    <label for="descripcion_carrera">Descripción:</label>
-                    <textarea id="descripcion_circuito" formControlName="descripcion_carrera"
-                        placeholder="Descripción..."></textarea>
-                    @if(descripcion_carrera.dirty || descripcion_carrera.touched){
-                    @if(descripcion_carrera.hasError('required')){
-                    <span>Campo requerido</span>
-                    }@else if (descripcion_carrera.hasError('minlength')) {
-                    <span>Debe contener mas de 5 caracteres</span>
-                    }@else if (descripcion_carrera.hasError('maxlength')) {
-                    <span>Debe contener menos de 200 caracteres</span>
-                    }
-                    }
-                </li>
                 @if(tipoEntradaSeleccionada === 'Regular'){
                 <li>
                     <label for="precio_entrada_regular">Precio:</label>
@@ -185,6 +148,45 @@
                     }
                 </li>
                 }
+
+                <li class="coord-row" formGroupName="ubicacionEnMapa">
+                    <div class="coord-item">
+                        <label for="latitud">Latitud:</label>
+                        <input type="number" id="latitud" formControlName="latitud" />
+                        @if (latitud.dirty || latitud.touched) {
+                        @if (latitud.hasError('required')) {
+                        <span>Campo requerido</span>
+                        }
+                        }
+                    </div>
+
+                    <div class="coord-item">
+                        <label for="longitud">Longitud:</label>
+                        <input type="number" id="longitud" formControlName="longitud" />
+                        @if (longitud.dirty || longitud.touched) {
+                        @if (longitud.hasError('required')) {
+                        <span>Campo requerido</span>
+                        }
+                        }
+                    </div>
+                </li>
+
+
+                <li>
+                    <label for="descripcion_carrera">Descripción:</label>
+                    <textarea id="descripcion_circuito" formControlName="descripcion_carrera"
+                        placeholder="Descripción..."></textarea>
+                    @if(descripcion_carrera.dirty || descripcion_carrera.touched){
+                    @if(descripcion_carrera.hasError('required')){
+                    <span>Campo requerido</span>
+                    }@else if (descripcion_carrera.hasError('minlength')) {
+                    <span>Debe contener mas de 5 caracteres</span>
+                    }@else if (descripcion_carrera.hasError('maxlength')) {
+                    <span>Debe contener menos de 200 caracteres</span>
+                    }
+                    }
+                </li>
+                
             </ul>
             <div class="botones-formulario">
                 <button type="submit" id="boton-enviar" [disabled]="form.invalid">ENVIAR</button>

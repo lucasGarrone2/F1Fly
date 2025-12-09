@@ -170,25 +170,6 @@
         "latitud": 30.1328,
         "longitud": -97.6411
       }
-    },
-    {
-      "nombre_carrera": "Circuito Galvez",
-      "fecha_carrera": "2026-01-01",
-      "capacidad_carrera": 5600,
-      "descripcion_carrera": "Alto circuito",
-      "cantidad_vueltas_carrera": 60,
-      "ciudad_carrera": "Buenos Aires",
-      "pais_carrera": "Argentina",
-      "imageUrl_carrera": "https://www.solotc.com.ar/wp-content/uploads/2025/07/autodromo-buenos-aires-reformas-f1-scaled.jpg",
-      "precio_entrada_regular": 80,
-      "precio_entrada_premium": 300,
-      "precio_entrada_vip": 300,
-      "tipo_entrada": "Premium",
-      "id": "85ab",
-      "ubicacionEnMapa": {
-        "latitud": -34.6037,
-        "longitud": -58.3816
-      }
     }
   ],
   "hoteles": [
@@ -1042,36 +1023,6 @@
       "ListaEscuderias": "McLaren"
     },
     {
-      "id": "7ee7",
-      "nombre": "Prueba",
-      "apellido": "Final",
-      "username": "pruebafinal",
-      "email": "prueba@gmail.com",
-      "password": "Prueba123",
-      "isAdmin": false,
-      "dni": "44860455",
-      "nacionalidad": "Argentina",
-      "edad": 22,
-      "fecha_nacimiento": "2003-08-08",
-      "listaPilotos": "Franco Colapinto",
-      "ListaEscuderias": "Mercedes"
-    },
-    {
-      "id": "3559",
-      "nombre": "prueba2",
-      "apellido": "oficial",
-      "username": "prueba2",
-      "email": "prueba@c.com",
-      "password": "Prueba2",
-      "isAdmin": false,
-      "dni": "333333333",
-      "nacionalidad": "Argebtuba",
-      "edad": 33,
-      "fecha_nacimiento": "2000-01-01",
-      "listaPilotos": "",
-      "ListaEscuderias": ""
-    },
-    {
       "id": "dbfc",
       "nombre": "Lucas ",
       "apellido": "Garrone",
@@ -1087,34 +1038,19 @@
       "ListaEscuderias": "Williams"
     },
     {
-      "id": "ccac",
-      "nombre": "Valentina",
-      "apellido": "Landaburu",
-      "username": "valen2",
-      "email": "valen@gmail.com",
-      "password": "valentina1",
+      "id": "dc38",
+      "nombre": "Lucas",
+      "apellido": "Garrone",
+      "username": "lucas",
+      "email": "lucasgarrone4@gmail.com",
+      "password": "lucas123",
       "isAdmin": false,
-      "dni": "44202332",
-      "nacionalidad": "Bolivia",
+      "dni": "44300453",
+      "nacionalidad": "Argentina",
       "edad": 22,
-      "fecha_nacimiento": "3322-02-23",
-      "listaPilotos": "Gabriel Bortoleto",
-      "ListaEscuderias": "Aston Martin"
-    },
-    {
-      "id": "a942",
-      "nombre": "Franco",
-      "apellido": "Vello",
-      "username": "francovello",
-      "email": "franco1@gmail.com",
-      "password": "franco1",
-      "isAdmin": false,
-      "dni": "42231220",
-      "nacionalidad": "Española",
-      "edad": 26,
-      "fecha_nacimiento": "1999-10-26",
-      "listaPilotos": "",
-      "ListaEscuderias": ""
+      "fecha_nacimiento": "2003-08-08",
+      "listaPilotos": "George Russell",
+      "ListaEscuderias": "Williams"
     }
   ],
   "listadoFavoritos": [
@@ -1852,6 +1788,74 @@
         "tipo_avion": "Embraer 190",
         "clase_asiento": "Business",
         "precio_promedio_ticket_eur": 350
+      }
+    },
+    {
+      "id": "2c7b",
+      "id_user": "b3b0",
+      "precio_total_reserva": 4080,
+      "carrera": {
+        "nombre_carrera": "Marina Bay Street Circuit",
+        "fecha_carrera": "2026-10-05",
+        "capacidad_carrera": 80000,
+        "descripcion_carrera": "Primera carrera nocturna en la historia de la F1; mucho calor y humedad.",
+        "cantidad_vueltas_carrera": 62,
+        "ciudad_carrera": "Singapur",
+        "pais_carrera": "Singapur",
+        "imageUrl_carrera": "singapur.avif",
+        "precio_entrada_regular": 80,
+        "precio_entrada_premium": 150,
+        "precio_entrada_vip": 300,
+        "tipo_entrada": "Premium",
+        "id": "7ea8",
+        "ubicacionEnMapa": {
+          "latitud": 1.2914,
+          "longitud": 103.8636
+        },
+        "precio_carrera": 450
+      },
+      "hotel": {
+        "id": "17",
+        "nombre_hotel": "Marina Bay Sands",
+        "carrera_id": 9,
+        "pais": "Singapur",
+        "ciudad": "Singapur",
+        "fechas_disponibles": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06"
+        ],
+        "precio_promedio_habitacion_eur": 700,
+        "tieneAmenities": true,
+        "tieneTransporte": true,
+        "imagenUrl": "fotosHotel/baysands.jpg",
+        "direccionExacta": "10 Bayfront Ave, Singapore 018956",
+        "ubicacionEnMapa": {
+          "latitud": 1.2834,
+          "longitud": 103.8607
+        }
+      },
+      "habitacion": {
+        "tipoHabitacion": "premium",
+        "cantPersonas": 3,
+        "fechaEntrada": "2026-10-03",
+        "fechaSalida": "2026-10-04",
+        "noches": 1,
+        "precioTotal": 1500
+      },
+      "vuelo": {
+        "id": "25",
+        "carrera_id": 9,
+        "pais_origen": "Australia",
+        "ciudad_origen": "Sídney",
+        "pais_destino": "Singapur",
+        "ciudad_destino": "Singapur",
+        "aerolinea": "Singapore Airlines",
+        "fecha_disponible": "2026-10-03",
+        "tipo_avion": "Airbus A380",
+        "clase_asiento": "Business",
+        "precio_promedio_ticket_eur": 950
       }
     }
   ]

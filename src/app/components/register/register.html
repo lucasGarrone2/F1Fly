@@ -1,5 +1,4 @@
 <body>
-
     <h2>Te damos la bienvenida a F1Fly</h2>
     <div class="back-home">
         <button routerLink="/" class="back-home-button"> Volver al Menu</button>
@@ -10,13 +9,14 @@
         <h5 class="informacion_personal">
             <i class="fas fa-user"></i>Informacion Personal
         </h5>
+        
         <div class="form-field">
             <label for="nombre">Nombre</label>
             <input type="text" id="nombre" formControlName="nombre" placeholder="Tu nombre..."
                 [class.input-error]="form.controls.nombre.invalid && form.controls.nombre.touched">
             <p class="error-text">
                 @if (form.controls.nombre.errors?.['required'] && form.controls.nombre.touched) {
-                El nombre es requerido
+                    El nombre es requerido
                 }
             </p>
         </div>
@@ -25,23 +25,20 @@
             <label for="apellido">Apellido</label>
             <input type="text" id="apellido" formControlName="apellido" placeholder="Tu apellido..."
                 [class.input-error]="form.controls.apellido.invalid && form.controls.apellido.touched">
-
             <p class="error-text">
                 @if (form.controls.apellido.errors?.['required'] && form.controls.apellido.touched) {
-                El apellido es requerido
+                    El apellido es requerido
                 }
             </p>
-
         </div>
 
         <div class="form-field">
             <label for="username">Nombre de usuario</label>
             <input type="text" id="username" formControlName="username" placeholder="Tu nombre de usuario..."
                 [class.input-error]="form.controls.username.invalid && form.controls.username.touched">
-
             <p class="error-text">
                 @if (form.controls.username.errors?.['required'] && form.controls.username.touched) {
-                El nombre de usuario es requerido
+                    El nombre de usuario es requerido
                 }
             </p>
         </div>
@@ -50,19 +47,14 @@
             <label for="email">Email</label>
             <input type="email" id="email" formControlName="email" placeholder="tuEmail@email.com"
                 [class.input-error]="form.controls.email.invalid && form.controls.email.touched">
-
             <p class="error-text">
-
                 @if (form.controls.email.errors?.['required'] && form.controls.email.touched) {
-                El email es requerido
+                    El email es requerido
                 }
-
                 @if (form.controls.email.errors?.['email'] && form.controls.email.touched) {
-                El formato del email no es valido
+                    El formato del email no es valido
                 }
             </p>
-
-
         </div>
 
         <div class="form-field">
@@ -71,69 +63,52 @@
                 [class.input-error]="form.controls.dni.invalid && form.controls.dni.touched">
             <p class="error-text">
                 @if (form.controls.dni.errors?.['required'] && form.controls.dni.touched) {
-            <p>El dni es requerido</p>
-            }
-            @if (form.controls.dni.errors?.['min'] && form.controls.dni.touched) {
-            <p>El formato del dni no es valido</p>
-            }
-            @if (form.controls.dni.errors?.['max'] && form.controls.dni.touched) {
-            <p>El formato del dni no es valido</p>
-            }
-
+                    El dni es requerido
+                }
+                @if (form.controls.dni.errors?.['min'] && form.controls.dni.touched) {
+                    El DNI debe ser válido
+                }
+                @if (form.controls.dni.errors?.['max'] && form.controls.dni.touched) {
+                    El DNI es demasiado largo
+                }
             </p>
-
         </div>
-
 
         <div class="form-field">
             <label for="nacionalidad">Nacionalidad</label>
-            <input type="string" id="nacionalidad" formControlName="nacionalidad" placeholder="Argentina"
+            <input type="text" id="nacionalidad" formControlName="nacionalidad" placeholder="Argentina"
                 [class.input-error]="form.controls.nacionalidad.invalid && form.controls.nacionalidad.touched">
             <p class="error-text">
-
                 @if (form.controls.nacionalidad.errors?.['required'] && form.controls.nacionalidad.touched) {
-                La nacionalidad es requerida
+                    La nacionalidad es requerida
                 }
             </p>
-
-
-
         </div>
-
 
         <div class="form-field">
             <label for="edad">Edad</label>
             <input type="number" id="edad" formControlName="edad" placeholder="18"
                 [class.input-error]="form.controls.edad.invalid && form.controls.edad.touched">
             <p class="error-text">
-
                 @if (form.controls.edad.errors?.['required'] && form.controls.edad.touched) {
-                La edad es requerida
+                    La edad es requerida
                 }
-
                 @if (form.controls.edad.errors?.['min'] && form.controls.edad.touched) {
-                Debes ser mayor de 18 años.
+                    Debes ser mayor de 18 años.
                 }
-
             </p>
-
         </div>
 
         <div class="form-field">
             <label for="fecha_nacimiento">Fecha de nacimiento</label>
-            <input type="date" id="fecha_nacimiento" formControlName="fecha_nacimiento" placeholder="08/08/2003"
+            <input type="date" id="fecha_nacimiento" formControlName="fecha_nacimiento"
                 [class.input-error]="form.controls.fecha_nacimiento.invalid && form.controls.fecha_nacimiento.touched">
-
             <p class="error-text">
                 @if (form.controls.fecha_nacimiento.errors?.['required'] && form.controls.fecha_nacimiento.touched) {
-                La fecha de nacimiento no es valida
+                    La fecha de nacimiento es requerida
                 }
-
             </p>
-
         </div>
-
-
 
         <h5 class="seguridad">
             <i class="fas fa-lock"></i>Seguridad
@@ -141,54 +116,71 @@
 
         <div class="form-field">
             <label for="password">Contraseña</label>
-            <input type="password" id="password" formControlName="password" placeholder="*****">
+            <input type="password" id="password" formControlName="password" placeholder="*****"
+                   [class.input-error]="form.controls.password.invalid && form.controls.password.touched">
+            <p class="error-text">
+                @if (form.controls.password.errors?.['required'] && form.controls.password.touched) {
+                    La contraseña es requerida
+                }
+                @if ((form.controls.password.errors?.['minlength'] || form.controls.password.errors?.['maxlength']) && form.controls.password.touched) {
+                    Debe tener entre 8 y 16 caracteres
+                }
+            </p>
         </div>
+
         <div class="form-field">
             <label for="password2">Repita su contraseña</label>
-            <input type="password" id="password2" formControlName="password2" placeholder="*****">
+            <input type="password" id="password2" formControlName="password2" placeholder="*****"
+                   [class.input-error]="form.controls.password2.invalid && form.controls.password2.touched">
+            <p class="error-text">
+                @if (form.controls.password2.errors?.['required'] && form.controls.password2.touched) {
+                    Repetir la contraseña es requerido
+                }
+                @if (form.value.password !== form.value.password2 && form.controls.password2.touched) {
+                    Las contraseñas no coinciden
+                }
+            </p>
         </div>
 
         <h5 class="preferencias">
             <i class="fas fa-car"></i>Preferencias de Formula1
         </h5>
+        
         <div class="form-field">
             <label for="piloto">Piloto</label>
-            <select id="piloto">
-
+            <select id="piloto" formControlName="listaPilotos"
+                    [class.input-error]="form.controls.listaPilotos.invalid && form.controls.listaPilotos.touched">
                 <option value="" selected disabled>Seleccione su piloto Favorito</option>
-                @for (piloto of listaPilotos; track $index)
-                {
-                <option [value]="piloto">{{piloto}}</option>
+                @for (piloto of listaPilotos; track $index) {
+                    <option [value]="piloto">{{piloto}}</option>
                 }
             </select>
-            <!-- MIRAR FUNCIONAMIENTO -->
             <p class="error-text">
-                @if (form.get('piloto')?.hasError('required') && form.get('piloto')?.touched) {
-                El piloto favorito es requerido
+                @if (form.controls.listaPilotos.errors?.['required'] && form.controls.listaPilotos.touched) {
+                    El piloto favorito es requerido
                 }
             </p>
         </div>
 
         <div class="form-field">
             <label for="escuderia">Escuderia</label>
-            <select id="escuderia">
-
+            <select id="escuderia" formControlName="ListaEscuderias"
+                    [class.input-error]="form.controls.ListaEscuderias.invalid && form.controls.ListaEscuderias.touched">
                 <option value="" selected disabled>Seleccione su escuderia favorita</option>
-                @for (escuderia of listaEscuderias; track $index)
-                {
-                <option [value]="escuderia">{{escuderia}}</option>
+                @for (escuderia of listaEscuderias; track $index) {
+                    <option [value]="escuderia">{{escuderia}}</option>
                 }
             </select>
-            <!-- MIRAR FUNCIONAMIENTO -->
             <p class="error-text">
-                @if (form.get('escuderia')?.hasError('required') && form.get('escuderia')?.touched) {
-                La escuderia favorita es requerida
+                @if (form.controls.ListaEscuderias.errors?.['required'] && form.controls.ListaEscuderias.touched) {
+                    La escuderia favorita es requerida
                 }
-        </div>
-        <div class="btn-submit">
-            <button type="submit" [disabled]="form.invalid">Enviar</button>
+            </p>
         </div>
 
+        <div class="btn-submit">
+            <button type="submit">Enviar</button> 
+        </div>
 
         <p class="text-AlreadyAccount">
             ¿Ya tiene una cuenta?
