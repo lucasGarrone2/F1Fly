@@ -1,86 +1,58 @@
+# 🏎️ F1Fly - F1 Travel & Management Platform
 
-🏎️ F1Fly
-F1Fly es una aplicación web desarrollada en Angular que permite gestionar carreras de Fórmula 1, reservas de hoteles, vuelos y usuarios.
-Incluye autenticación, panel administrativo, notificaciones personalizadas, validaciones avanzadas y un flujo completo de reserva.
+**F1Fly** es una solución integral para la gestión y reserva de paquetes de viaje para la Fórmula 1. La aplicación permite administrar carreras, hoteles y vuelos, ofreciendo una experiencia de usuario fluida desde la autenticación hasta la confirmación de la reserva.
 
-Este proyecto fue generado usando Angular CLI versión 20.3.3.
-
----
-
-📌
- Funcionalidades principales
-Gestión de carreras, hoteles y vuelos(altas, bajas, modificaciones).
-Reservas completas con carrera + hotel + vuelo.
-Sistema de autenticación (login / registro).
-Validaciones de formularios.
-Vista de reservas confirmadas con animaciones y audio.
-Diseño responsivo para uso en desktop y mobile.
-Interacción con servicios propios para datos dinámicos.
+Este proyecto demuestra habilidades en el desarrollo de aplicaciones empresariales escalables, manejo de estados dinámicos y validaciones complejas.
 
 ---
 
-🛠️
- Tecnologías utilizadas
-Angular 20
-TypeScript
-HTML5 / CSS3
-JSON-Server
+## 🚀 Funcionalidades Principales
+
+* **Gestión Administrativa (CRUD):** Panel completo para la administración de carreras, plazas hoteleras y disponibilidad de vuelos.
+* **Sistema de Reservas Inteligente:** Flujo dinámico que integra la selección de carrera + hotel + vuelo en una sola transacción.
+* **Autenticación y Seguridad:** Módulo de login y registro de usuarios para acceso personalizado.
+* **Experiencia de Usuario (UX/UI):** * Diseño **fully responsive** (Desktop/Mobile).
+    * Feedback visual mediante animaciones y notificaciones personalizadas.
+    * Confirmación de reserva con integración de audio y transiciones.
+* **Validaciones Avanzadas:** Control estricto de formularios para garantizar la integridad de los datos de reserva.
+
+## 🛠️ Stack Tecnológico
+
+* **Frontend:** [Angular](https://angular.io/) (v19+) con **TypeScript**.
+* **Estilos:** **CSS3** avanzado con enfoque en diseño responsivo y animaciones.
+* **Backend (Simulado):** **JSON-Server** para una gestión ágil de APIs REST durante el desarrollo.
+* **Herramientas:** Angular CLI para scaffolding y optimización de builds.
 
 ---
 
+## 📐 Arquitectura de la Solución
 
-## Development server
+El proyecto sigue las mejores prácticas de Angular:
+- **Servicios:** Centralización de la lógica de negocio y llamadas a API.
+- **Guardias (Guards):** Protección de rutas para usuarios no autenticados.
+- **Componentización:** Estructura modular para facilitar el mantenimiento y la escalabilidad.
 
-To start a local development server, run:
+---
 
-```bash
+## 💻 Instalación y Uso
+
+Para correr este proyecto localmente, seguí estos pasos:
+
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [https://github.com/lucasGarrone2/f1fly.git]
+Instalar dependencias:
+
+Bash
+npm install
+Levantar el Servidor de Desarrollo:
+
+Bash
 ng serve
-```
+Navega a http://localhost:4200/. La aplicación se recargará automáticamente ante cualquier cambio.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Levantar el Backend (JSON-Server):
+(Asegúrate de tener configurado tu db.json)
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Bash
+json-server --watch db.json
